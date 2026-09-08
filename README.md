@@ -6,25 +6,36 @@
   </picture>
 </p>
 
-# OTDR Inside
+<p align="center">
+  <strong>Evidence-aware analysis of OTDR SOR traces.</strong><br>
+  Safe binary parsing, multi-vendor interpretation, trace reconstruction and event analysis without losing data provenance.
+</p>
 
-**Evidence-aware analysis of OTDR SOR traces.**  
-A local engineering prototype for safe binary parsing, multi-vendor interpretation, trace reconstruction and event analysis without losing the provenance of the underlying data.
+<p align="center">
+  <a href="#overview">Overview</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#current-capabilities">Capabilities</a> ·
+  <a href="#current-scope">Scope</a> ·
+  <a href="#validation">Validation</a> ·
+  <a href="#roadmap">Roadmap</a>
+</p>
 
-**English** · [Español](README.es.md)
+<p align="center">
+  <strong>English</strong> · <a href="README.es.md">Español</a>
+</p>
 
 ---
 
-## Overview
+<h2 id="overview" align="center">Overview</h2>
 
 OTDR SOR files are designed to store optical time-domain reflectometry measurements, but real-world files are not always semantically uniform. Vendor extensions, rewritten metadata, ambiguous scales and different event representations can make a file structurally readable without making every value equally trustworthy.
 
 OTDR Inside addresses that problem by separating **structure**, **interpretation**, **calculation** and **confidence**. The goal is not to force every trace into a universal model, but to expose what is known, how it was derived and what remains unresolved.
 
-## Architecture
+<h2 id="architecture" align="center">Architecture</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/architecture.svg" alt="OTDR Inside analysis pipeline" width="94%">
+  <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/architecture.svg" alt="OTDR Inside analysis pipeline" width="92%">
 </p>
 
 The pipeline is deliberately layered:
@@ -38,7 +49,7 @@ The pipeline is deliberately layered:
 
 This separation prevents structural readability from being mistaken for semantic certainty.
 
-## Engineering approach
+<h2 id="engineering-approach" align="center">Engineering approach</h2>
 
 Four distinctions guide the implementation:
 
@@ -65,9 +76,9 @@ normalized_field = {
 
 This allows an empirical conversion, vendor-specific scale or inferred meaning to remain distinguishable from a value explicitly stored in the file.
 
-## Current capabilities
+<h2 id="current-capabilities" align="center">Current capabilities</h2>
 
-The current development line combines the following functions:
+The current development line combines:
 
 - safe inspection of SOR 2.00 block structure and metadata;
 - evidence-based selection of supported vendor profiles;
@@ -78,7 +89,7 @@ The current development line combines the following functions:
 - JSON export of the analysis model and CSV export of event data;
 - graceful handling of partially supported variants without modifying the source trace.
 
-## Current scope · v0.3.x
+<h2 id="current-scope" align="center">Current scope · v0.3.x</h2>
 
 | Ecosystem | Status | Role in the project |
 |---|---|---|
@@ -86,11 +97,11 @@ The current development line combines the following functions:
 | **Ceyear CE6422** | **Active development** | Trace interpretation and calculated event detection when `KeyEvents` is absent. |
 | **Yokogawa AQ1000** | **Structural** | File structure characterized; vendor-specific semantic normalization remains pending. |
 
-Support is treated as a progression rather than a binary label:
+<p align="center">
+  <strong>structurally readable → profile identified → semantically characterized → empirically validated</strong>
+</p>
 
-**structurally readable → profile identified → semantically characterized → empirically validated**
-
-## Event provenance
+<h2 id="event-provenance" align="center">Event provenance</h2>
 
 Event handling is one of the main differences between the early reader and the current analysis pipeline.
 
@@ -98,7 +109,7 @@ A `KeyEvents` table is treated as **stored event information**. Events proposed 
 
 This distinction is particularly important for Ceyear files used during development: the absence of `KeyEvents` means that the SOR contains **no stored event table**; it does not demonstrate that the optical trace itself contains no events.
 
-## Validation
+<h2 id="validation" align="center">Validation</h2>
 
 Validation is performed at several levels rather than through a single pass/fail criterion:
 
@@ -111,13 +122,13 @@ Validation is performed at several levels rather than through a single pass/fail
 
 Operational measurements used for engineering validation remain outside the public repository.
 
-## Data handling
+<h2 id="data-handling" align="center">Data handling</h2>
 
 OTDR Inside is designed as a **local, read-only workflow**. Source traces are analyzed from temporary copies and are not overwritten by the viewer.
 
 This repository does not distribute real operational `.sor`, `.ei` or `.otdr` measurements, customer or route identifiers, proprietary vendor executables, commercial manuals, licensed standards, or derived files that expose confidential trace metadata. Public examples and tests should rely on synthetic or explicitly sanitized data.
 
-## Known limitations
+<h2 id="known-limitations" align="center">Known limitations</h2>
 
 - The current viewer works with `.SOR`; `.EI` and `.otdr` are not yet part of the normal processing path.
 - Vendor-specific interpretation is profile-based and should not be read as universal SOR compatibility.
@@ -125,7 +136,7 @@ This repository does not distribute real operational `.sor`, `.ei` or `.otdr` me
 - OTDR Inside does not claim independent certification of Telcordia SR-4731 compliance.
 - Unsupported vendor semantics remain explicitly unresolved rather than being assigned speculative values.
 
-## Roadmap
+<h2 id="roadmap" align="center">Roadmap</h2>
 
 - improve event detection and confidence criteria;
 - compare paired wavelengths and multi-trace behavior;
@@ -133,8 +144,10 @@ This repository does not distribute real operational `.sor`, `.ei` or `.otdr` me
 - expand semantic support for additional vendor profiles;
 - build a compatibility matrix based on reproducible validation evidence.
 
-## Author
+<h2 id="author" align="center">Author</h2>
 
-**Esteban Erazo**  
-Mechatronics Engineering · Universidad Nacional de Colombia  
-GitHub: [@EstebanErazo500](https://github.com/EstebanErazo500)
+<p align="center">
+  <strong>Esteban Erazo</strong><br>
+  Mechatronics Engineering · Universidad Nacional de Colombia<br>
+  <a href="https://github.com/EstebanErazo500">@EstebanErazo500</a>
+</p>
