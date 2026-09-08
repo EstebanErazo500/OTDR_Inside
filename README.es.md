@@ -12,16 +12,17 @@
 </p>
 
 <p align="center">
-  <a href="#descripción-general">Descripción</a> ·
-  <a href="#arquitectura">Arquitectura</a> ·
-  <a href="#capacidades-actuales">Capacidades</a> ·
-  <a href="#alcance-actual">Alcance</a> ·
-  <a href="#validación">Validación</a> ·
-  <a href="#hoja-de-ruta">Hoja de ruta</a>
+  <a href="#descripción-general"><img src="assets/nav/descripcion.svg" alt="Descripción"></a>
+  <a href="#arquitectura"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="#capacidades-actuales"><img src="assets/nav/capacidades.svg" alt="Capacidades"></a>
+  <a href="#alcance-actual"><img src="assets/nav/alcance.svg" alt="Alcance"></a>
+  <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="#hoja-de-ruta"><img src="assets/nav/hoja-ruta.svg" alt="Hoja de ruta"></a>
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> · <strong>Español</strong>
+  <a href="README.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="README.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 ---
@@ -35,7 +36,7 @@ OTDR Inside aborda este problema separando **estructura**, **interpretación**, 
 <h2 id="arquitectura" align="center">Arquitectura</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/architecture.svg" alt="Cadena de análisis de OTDR Inside" width="92%">
+  <img src="assets/architecture-v2-es.svg" alt="Cadena de análisis de OTDR Inside" width="94%">
 </p>
 
 La cadena de procesamiento se divide deliberadamente en capas:
