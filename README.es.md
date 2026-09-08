@@ -149,6 +149,6 @@ Este repositorio no distribuye mediciones operativas reales `.sor`, `.ei` u `.ot
 
 <p align="center">
   <strong>Esteban Erazo</strong><br>
-  Ingeniería Mecatrónica · Universidad Nacional de Colombia<br>
-  <a href="https://github.com/EstebanErazo500">@EstebanErazo500</a>
+  Ingeniería Mecatrónica · Universidad Nacional de Colombia<br><br>
+  <a href="https://github.com/EstebanErazo500"><img src="assets/nav/profile.svg" alt="@EstebanErazo500"></a>
 </p>
