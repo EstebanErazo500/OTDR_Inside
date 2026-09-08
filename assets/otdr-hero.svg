@@ -1,53 +1,31 @@
-<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="80" y1="40" x2="1320" y2="390" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#07111F"/>
-      <stop offset="0.55" stop-color="#0B1730"/>
-      <stop offset="1" stop-color="#101827"/>
-    </linearGradient>
-    <linearGradient id="trace" x1="660" y1="0" x2="1270" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#59E2C2"/>
-      <stop offset="0.52" stop-color="#69C9FF"/>
-      <stop offset="1" stop-color="#A58BFF"/>
-    </linearGradient>
-    <filter id="glow" x="-15%" y="-60%" width="130%" height="220%">
-      <feGaussianBlur stdDeviation="5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
-  <rect width="1400" height="420" rx="26" fill="url(#bg)"/>
-  <rect x="1" y="1" width="1398" height="418" rx="25" stroke="#24364F" stroke-opacity="0.9"/>
-
-  <g opacity="0.1" stroke="#9CB1CB">
-    <path d="M650 92H1300"/><path d="M650 152H1300"/><path d="M650 212H1300"/><path d="M650 272H1300"/><path d="M650 332H1300"/>
-    <path d="M710 64V354"/><path d="M830 64V354"/><path d="M950 64V354"/><path d="M1070 64V354"/><path d="M1190 64V354"/>
-  </g>
-
-  <text x="92" y="126" fill="#F5F8FD" font-size="62" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="750">OTDR Inside</text>
-  <text x="94" y="171" fill="#A9BCD5" font-size="23" font-family="Inter,Segoe UI,Arial,sans-serif">Read the trace. Trace the evidence.</text>
-
-  <g font-family="Inter,Segoe UI,Arial,sans-serif">
-    <rect x="92" y="220" width="127" height="38" rx="19" fill="#0B2630" stroke="#2B7B77"/>
-    <text x="155" y="244" text-anchor="middle" fill="#77E5CF" font-size="14" font-weight="700">SOR · v0.3.x</text>
-
-    <rect x="232" y="220" width="116" height="38" rx="19" fill="#0C2031" stroke="#315776"/>
-    <text x="290" y="244" text-anchor="middle" fill="#94CAFF" font-size="14" font-weight="650">local-first</text>
-
-    <rect x="361" y="220" width="116" height="38" rx="19" fill="#151D34" stroke="#4B4A78"/>
-    <text x="419" y="244" text-anchor="middle" fill="#C1B4FF" font-size="14" font-weight="650">read-only</text>
-  </g>
-
-  <text x="94" y="315" fill="#D8E3F1" font-size="17" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600">STRUCTURE · TRACE · EVENTS · PROVENANCE</text>
-  <text x="94" y="348" fill="#7187A2" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif">binary SOR → evidence-aware interpretation</text>
-
-  <path d="M650 288 L680 204 L704 258 L754 266 L806 272 L850 268 L884 238 L905 277 L958 284 L1009 290 L1054 287 L1080 252 L1101 294 L1147 301 L1188 305 L1221 301 L1248 226 L1268 313 L1300 319" stroke="#162F48" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
-  <path d="M650 288 L680 204 L704 258 L754 266 L806 272 L850 268 L884 238 L905 277 L958 284 L1009 290 L1054 287 L1080 252 L1101 294 L1147 301 L1188 305 L1221 301 L1248 226 L1268 313 L1300 319" stroke="url(#trace)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-
-  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="700">
-    <circle cx="680" cy="204" r="5" fill="#59E2C2"/><text x="680" y="188" text-anchor="middle" fill="#82EBD8">E1</text>
-    <circle cx="884" cy="238" r="5" fill="#69C9FF"/><text x="884" y="222" text-anchor="middle" fill="#9BD9FF">E2</text>
-    <circle cx="1080" cy="252" r="5" fill="#7FB7FF"/><text x="1080" y="236" text-anchor="middle" fill="#A5CFFF">E3</text>
-    <circle cx="1248" cy="226" r="5" fill="#A58BFF"/><text x="1248" y="210" text-anchor="middle" fill="#C0B1FF">E4</text>
-  </g>
+<svg width="1400" height="440" viewBox="0 0 1400 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1400" height="440" rx="22" fill="#0B1118"/>
+<g opacity="0.14" stroke="#7890A8" stroke-width="1">
+  <path d="M54 92H1346"/><path d="M54 142H1346"/><path d="M54 192H1346"/><path d="M54 242H1346"/><path d="M54 292H1346"/><path d="M54 342H1346"/>
+  <path d="M194 66V374"/><path d="M354 66V374"/><path d="M514 66V374"/><path d="M674 66V374"/><path d="M834 66V374"/><path d="M994 66V374"/><path d="M1154 66V374"/><path d="M1314 66V374"/>
+</g>
+<g font-family="Inter,Segoe UI,Arial,sans-serif">
+  <text x="68" y="66" fill="#F5F8FB" font-size="44" font-weight="700">OTDR Inside</text>
+  <text x="70" y="98" fill="#7F93A8" font-size="16">SOR analysis with provenance-aware interpretation</text>
+  <text x="1268" y="64" text-anchor="end" fill="#65D8C6" font-size="13" font-weight="700" letter-spacing="1.6">v0.3.x</text>
+  <text x="1268" y="89" text-anchor="end" fill="#7F93A8" font-size="12">local · read-only · multi-vendor research</text>
+</g>
+<path d="M74 301 L102 224 L126 270 L182 276 L238 280 L294 284 L350 288 L397 283 L420 259 L443 291 L502 296 L560 300 L618 303 L671 306 L716 279 L741 311 L798 315 L858 318 L918 321 L978 325 L1037 329 L1086 331 L1129 307 L1155 338 L1215 342 L1274 346 L1328 349" stroke="#183145" stroke-width="11" stroke-linecap="round" opacity="0.65"/>
+<path d="M74 301 L102 224 L126 270 L182 276 L238 280 L294 284 L350 288 L397 283 L420 259 L443 291 L502 296 L560 300 L618 303 L671 306 L716 279 L741 311 L798 315 L858 318 L918 321 L978 325 L1037 329 L1086 331 L1129 307 L1155 338 L1215 342 L1274 346 L1328 349" stroke="#5FD7C3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
+  <text x="68" y="388" fill="#60768C">relative level</text>
+  <text x="1328" y="388" text-anchor="end" fill="#60768C">distance →</text>
+</g>
+<g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">
+  <path d="M102 218V178" stroke="#5FD7C3" stroke-dasharray="4 4"/><circle cx="102" cy="224" r="5" fill="#5FD7C3"/><text x="102" y="168" text-anchor="middle" fill="#79E0CF">E1</text>
+  <path d="M420 253V213" stroke="#68BDE8" stroke-dasharray="4 4"/><circle cx="420" cy="259" r="5" fill="#68BDE8"/><text x="420" y="203" text-anchor="middle" fill="#88CFF0">E2</text>
+  <path d="M716 273V233" stroke="#7AA6FF" stroke-dasharray="4 4"/><circle cx="716" cy="279" r="5" fill="#7AA6FF"/><text x="716" y="223" text-anchor="middle" fill="#98B9FF">E3</text>
+  <path d="M1129 301V261" stroke="#A58BFF" stroke-dasharray="4 4"/><circle cx="1129" cy="307" r="5" fill="#A58BFF"/><text x="1129" y="251" text-anchor="middle" fill="#B8A5FF">E4</text>
+</g>
+<g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">
+  <text x="70" y="417" fill="#8194A8">STRUCTURE</text><text x="164" y="417" fill="#44576A">/</text>
+  <text x="184" y="417" fill="#8194A8">TRACE</text><text x="235" y="417" fill="#44576A">/</text>
+  <text x="255" y="417" fill="#8194A8">EVENTS</text><text x="318" y="417" fill="#44576A">/</text>
+  <text x="338" y="417" fill="#8194A8">PROVENANCE</text>
+</g>
 </svg>
