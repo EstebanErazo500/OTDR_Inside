@@ -1,0 +1,76 @@
+<svg width="1400" height="560" viewBox="0 0 1400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="0.52" stop-color="#0B1830"/>
+      <stop offset="1" stop-color="#11162A"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="130" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#56E0C5"/>
+      <stop offset="0.58" stop-color="#73C9FF"/>
+      <stop offset="1" stop-color="#A68CFF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#12223D" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#0B1426" stop-opacity="0.72"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="560" rx="28" fill="url(#bg)"/>
+
+  <g opacity="0.14" stroke="#90A7C7" stroke-width="1">
+    <path d="M80 92H1320"/><path d="M80 152H1320"/><path d="M80 212H1320"/><path d="M80 272H1320"/><path d="M80 332H1320"/><path d="M80 392H1320"/><path d="M80 452H1320"/>
+    <path d="M140 72V478"/><path d="M300 72V478"/><path d="M460 72V478"/><path d="M620 72V478"/><path d="M780 72V478"/><path d="M940 72V478"/><path d="M1100 72V478"/><path d="M1260 72V478"/>
+  </g>
+
+  <rect x="70" y="58" width="1260" height="444" rx="24" fill="url(#panel)" stroke="#274364"/>
+
+  <text x="110" y="122" fill="#F4F8FF" font-size="54" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700">OTDR Inside</text>
+  <text x="110" y="162" fill="#A9BCD5" font-size="22" font-family="Inter,Segoe UI,Arial,sans-serif">Read the trace. Trace the evidence.</text>
+
+  <rect x="1075" y="92" width="184" height="42" rx="21" fill="#0C2433" stroke="#2C6C7A"/>
+  <text x="1167" y="119" text-anchor="middle" fill="#76E7D0" font-size="17" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600">SOR · v0.3.x</text>
+
+  <g>
+    <rect x="105" y="210" width="160" height="54" rx="12" fill="#0D2031" stroke="#28516A"/>
+    <text x="185" y="233" text-anchor="middle" fill="#8FC8FF" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700">STRUCTURE</text>
+    <text x="185" y="253" text-anchor="middle" fill="#8EA6C1" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif">blocks · bounds</text>
+
+    <rect x="282" y="210" width="160" height="54" rx="12" fill="#0D2031" stroke="#28516A"/>
+    <text x="362" y="233" text-anchor="middle" fill="#8FC8FF" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700">TRACE</text>
+    <text x="362" y="253" text-anchor="middle" fill="#8EA6C1" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif">reconstruction</text>
+
+    <rect x="459" y="210" width="160" height="54" rx="12" fill="#0D2031" stroke="#28516A"/>
+    <text x="539" y="233" text-anchor="middle" fill="#8FC8FF" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700">EVENTS</text>
+    <text x="539" y="253" text-anchor="middle" fill="#8EA6C1" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif">stored · detected</text>
+
+    <rect x="636" y="210" width="160" height="54" rx="12" fill="#0D2031" stroke="#28516A"/>
+    <text x="716" y="233" text-anchor="middle" fill="#8FC8FF" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700">PROVENANCE</text>
+    <text x="716" y="253" text-anchor="middle" fill="#8EA6C1" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif">rules · confidence</text>
+  </g>
+
+  <g opacity="0.8">
+    <text x="103" y="329" fill="#7891AE" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">relative level</text>
+    <text x="1224" y="468" fill="#7891AE" font-size="12" text-anchor="end" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">distance →</text>
+  </g>
+
+  <path d="M110 388 L138 322 L160 360 L212 366 L260 371 L315 374 L350 365 L387 376 L445 382 L501 386 L546 388 L581 354 L604 390 L663 395 L720 399 L781 403 L842 407 L891 410 L928 405 L963 414 L1018 418 L1066 421 L1108 425 L1143 358 L1162 432 L1215 439 L1260 442" stroke="#17334A" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+  <path d="M110 388 L138 322 L160 360 L212 366 L260 371 L315 374 L350 365 L387 376 L445 382 L501 386 L546 388 L581 354 L604 390 L663 395 L720 399 L781 403 L842 407 L891 410 L928 405 L963 414 L1018 418 L1066 421 L1108 425 L1143 358 L1162 432 L1215 439 L1260 442" stroke="url(#trace)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="600">
+    <circle cx="138" cy="322" r="6" fill="#56E0C5"/><path d="M138 315V286" stroke="#56E0C5" stroke-dasharray="4 4"/><text x="138" y="278" text-anchor="middle" fill="#7DEAD6">E1</text>
+    <circle cx="350" cy="365" r="5" fill="#69D6EE"/><path d="M350 358V333" stroke="#69D6EE" stroke-dasharray="4 4"/><text x="350" y="325" text-anchor="middle" fill="#8BDEEF">E2</text>
+    <circle cx="581" cy="354" r="6" fill="#73C9FF"/><path d="M581 347V316" stroke="#73C9FF" stroke-dasharray="4 4"/><text x="581" y="308" text-anchor="middle" fill="#96D8FF">E3</text>
+    <circle cx="1143" cy="358" r="6" fill="#A68CFF"/><path d="M1143 351V319" stroke="#A68CFF" stroke-dasharray="4 4"/><text x="1143" y="311" text-anchor="middle" fill="#B8A7FF">E4</text>
+  </g>
+
+  <text x="110" y="476" fill="#D9E5F5" font-size="16" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600">binary SOR → evidence-aware interpretation</text>
+  <text x="1260" y="476" text-anchor="end" fill="#748AA6" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif">local · read-only · multi-vendor</text>
+</svg>
