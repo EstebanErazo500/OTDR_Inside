@@ -149,6 +149,6 @@ This repository does not distribute real operational `.sor`, `.ei` or `.otdr` me
 
 <p align="center">
   <strong>Esteban Erazo</strong><br>
-  Mechatronics Engineering · Universidad Nacional de Colombia<br>
-  <a href="https://github.com/EstebanErazo500">@EstebanErazo500</a>
+  Mechatronics Engineering · Universidad Nacional de Colombia<br><br>
+  <a href="https://github.com/EstebanErazo500"><img src="assets/nav/profile.svg" alt="@EstebanErazo500"></a>
 </p>
