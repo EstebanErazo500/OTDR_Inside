@@ -1,112 +1,140 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/otdr-hero.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/otdr-hero-light.svg">
-    <img src="assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero-light.svg">
+    <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
   </picture>
 </p>
 
-<h1 align="center">OTDR Inside</h1>
+# OTDR Inside
 
-<p align="center">
-  <strong>Read the trace. Trace the evidence.</strong><br>
-  A local SOR analysis toolkit that separates what a trace stores, what can be interpreted, and what is calculated from it.
-</p>
+**Evidence-aware analysis of OTDR SOR traces.**  
+A local engineering prototype for safe binary parsing, multi-vendor interpretation, trace reconstruction and event analysis without losing the provenance of the underlying data.
 
-<p align="center">
-  <strong>English</strong> · <a href="README.es.md">Español</a>
-</p>
+**English** · [Español](README.es.md)
 
 ---
 
-## What is OTDR Inside?
+## Overview
 
-Plotting an OTDR curve is easy. **Knowing what can actually be trusted is not.**
+OTDR SOR files are designed to store optical time-domain reflectometry measurements, but real-world files are not always semantically uniform. Vendor extensions, rewritten metadata, ambiguous scales and different event representations can make a file structurally readable without making every value equally trustworthy.
 
-Real SOR files mix standard structures with vendor extensions, rewritten metadata, ambiguous scales and different event representations. OTDR Inside treats that as an evidence problem: it parses safely, reconstructs the trace, applies vendor-aware rules only when supported, and preserves the origin and confidence of interpreted values.
+OTDR Inside addresses that problem by separating **structure**, **interpretation**, **calculation** and **confidence**. The goal is not to force every trace into a universal model, but to expose what is known, how it was derived and what remains unresolved.
 
-> **Unknown is a valid result.** The analyzer should not turn uncertainty into a number just because a field exists.
+## Architecture
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/architecture-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/architecture-light.svg">
-    <img src="assets/architecture-light.svg" alt="OTDR Inside analysis pipeline" width="92%">
-  </picture>
+  <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/architecture.svg" alt="OTDR Inside analysis pipeline" width="94%">
 </p>
 
-## What makes it different
+The pipeline is deliberately layered:
 
-| Principle | In practice |
+| Layer | Responsibility |
 |---|---|
-| **Safe binary parsing** | SOR blocks, sizes and offsets are checked before they are trusted. |
-| **Traceable interpretation** | Raw value, normalized value, rule, source and confidence stay linked. |
-| **Event provenance** | Stored events and calculated event candidates are never presented as equivalent. |
-| **Local & read-only** | Operational traces are analyzed locally from temporary copies; originals are not overwritten. |
+| **Structural parsing** | Reads SOR blocks, revisions, sizes, offsets and sample regions with explicit boundary checks. |
+| **Profile & normalization** | Applies vendor-aware rules only when the available evidence supports them. |
+| **Trace analysis** | Reconstructs the distance axis and curve, then handles stored and calculated event information separately. |
+| **Presentation** | Exposes parameters, structure, provenance and events through a local viewer and JSON/CSV exports. |
 
-The project deliberately keeps a few distinctions visible:
+This separation prevents structural readability from being mistaken for semantic certainty.
 
-<p align="center">
-  <code>structure ≠ semantics</code> ·
-  <code>equipment ≠ file writer</code> ·
-  <code>stored ≠ calculated</code> ·
-  <code>unknown ≠ corrupt</code>
-</p>
+## Engineering approach
+
+Four distinctions guide the implementation:
+
+- **Structure is not semantics.** A file can be parsed safely while some magnitudes remain uninterpreted.
+- **Equipment is not necessarily the file writer.** Proprietary blocks may identify a software lineage without proving which OTDR acquired the trace.
+- **Stored is not calculated.** Values or events added by analysis software remain distinguishable from information present in the original SOR.
+- **Unknown is not corrupt.** Unsupported semantics should remain explicit instead of being silently guessed.
+
+### Provenance-aware normalization
+
+Normalized fields retain the evidence required to explain their displayed value:
+
+```python
+normalized_field = {
+    "value": ...,
+    "raw_value": ...,
+    "unit": ...,
+    "source": ...,
+    "rule_id": ...,
+    "confidence": ...,
+    "evidence": ...,
+}
+```
+
+This allows an empirical conversion, vendor-specific scale or inferred meaning to remain distinguishable from a value explicitly stored in the file.
+
+## Current capabilities
+
+The current development line combines the following functions:
+
+- safe inspection of SOR 2.00 block structure and metadata;
+- evidence-based selection of supported vendor profiles;
+- trace reconstruction from stored sample data;
+- interactive local visualization of the OTDR curve;
+- display of parameters, file structure and interpretation provenance;
+- separation of stored events from calculated event candidates;
+- JSON export of the analysis model and CSV export of event data;
+- graceful handling of partially supported variants without modifying the source trace.
 
 ## Current scope · v0.3.x
 
-| Ecosystem | Status | Current role |
+| Ecosystem | Status | Role in the project |
 |---|---|---|
 | **EXFO** | **Validated reference** | SOR 2.00 parsing, normalized parameters, stored events and trace visualization. |
 | **Ceyear CE6422** | **Active development** | Trace interpretation and calculated event detection when `KeyEvents` is absent. |
 | **Yokogawa AQ1000** | **Structural** | File structure characterized; vendor-specific semantic normalization remains pending. |
 
-Support is intentionally progressive rather than a simple yes/no label: **readable → identified → characterized → validated**.
+Support is treated as a progression rather than a binary label:
 
-## Event analysis without hiding the source
+**structurally readable → profile identified → semantically characterized → empirically validated**
 
-The current development line makes event provenance explicit. If a SOR contains `KeyEvents`, those events remain **stored** events. If the curve is analyzed to propose additional events, they remain **calculated candidates**.
+## Event provenance
 
-That matters especially for Ceyear files where the absence of `KeyEvents` means *“no stored event table”* — not *“no events exist.”*
+Event handling is one of the main differences between the early reader and the current analysis pipeline.
+
+A `KeyEvents` table is treated as **stored event information**. Events proposed from the reconstructed curve are treated as **calculated candidates** and retain that origin in the model and exports.
+
+This distinction is particularly important for Ceyear files used during development: the absence of `KeyEvents` means that the SOR contains **no stored event table**; it does not demonstrate that the optical trace itself contains no events.
 
 ## Validation
 
-The project combines synthetic/sanitized tests with regression over private reference traces:
+Validation is performed at several levels rather than through a single pass/fail criterion:
 
-**boundary checks → profile regression → trace reconstruction → reference comparison → manual viewer validation**
+1. structural and boundary checks;
+2. synthetic or sanitized tests for public regression;
+3. profile regression against private reference traces;
+4. trace reconstruction checks;
+5. comparison with reference software where appropriate;
+6. manual validation of the local viewer.
 
-Operational traces used for engineering validation remain outside the public repository.
+Operational measurements used for engineering validation remain outside the public repository.
+
+## Data handling
+
+OTDR Inside is designed as a **local, read-only workflow**. Source traces are analyzed from temporary copies and are not overwritten by the viewer.
+
+This repository does not distribute real operational `.sor`, `.ei` or `.otdr` measurements, customer or route identifiers, proprietary vendor executables, commercial manuals, licensed standards, or derived files that expose confidential trace metadata. Public examples and tests should rely on synthetic or explicitly sanitized data.
+
+## Known limitations
+
+- The current viewer works with `.SOR`; `.EI` and `.otdr` are not yet part of the normal processing path.
+- Vendor-specific interpretation is profile-based and should not be read as universal SOR compatibility.
+- The displayed vertical trace level is relative and is not presented as universally calibrated optical power.
+- OTDR Inside does not claim independent certification of Telcordia SR-4731 compliance.
+- Unsupported vendor semantics remain explicitly unresolved rather than being assigned speculative values.
 
 ## Roadmap
 
-- Strengthen event detection and confidence criteria.
-- Compare paired wavelengths and multi-trace behavior.
-- Add batch analysis, duplicate detection and anomaly review.
-- Expand the compatibility matrix only when new interpretations are reproducibly validated.
-
-<details>
-<summary><strong>Methodological safeguards</strong></summary>
-
-- Incomplete or malformed structures produce diagnostics instead of silent corruption.
-- Unknown or proprietary blocks are preserved rather than discarded automatically.
-- A single vendor string or proprietary marker is not enough to establish provenance.
-- OTDR Inside does not claim universal SOR compatibility or independent certification of Telcordia SR-4731 compliance.
-
-</details>
-
-<details>
-<summary><strong>Repository data policy</strong></summary>
-
-This public repository does not distribute real operational `.sor`, `.ei` or `.otdr` measurements, customer or route identifiers, proprietary vendor executables, commercial manuals, licensed standards, or derived files exposing confidential trace metadata. Public examples and tests should use synthetic or explicitly sanitized data.
-
-</details>
+- improve event detection and confidence criteria;
+- compare paired wavelengths and multi-trace behavior;
+- add batch processing, duplicate detection and anomaly review;
+- expand semantic support for additional vendor profiles;
+- build a compatibility matrix based on reproducible validation evidence.
 
 ## Author
 
 **Esteban Erazo**  
 Mechatronics Engineering · Universidad Nacional de Colombia  
 GitHub: [@EstebanErazo500](https://github.com/EstebanErazo500)
-
-<p align="center">
-  <sub>When the file is ambiguous, the software should be explicit.</sub>
-</p>
