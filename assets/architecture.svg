@@ -1,0 +1,39 @@
+<svg width="1240" height="290" viewBox="0 0 1240 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1240" height="290" rx="18" fill="#0D1420"/>
+<g opacity="0.16" stroke="#7690AA" stroke-width="1">
+  <path d="M40 68H1200"/><path d="M40 112H1200"/><path d="M40 156H1200"/><path d="M40 200H1200"/><path d="M40 244H1200"/>
+</g>
+<text x="48" y="38" fill="#8DA3BA" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif" letter-spacing="2">OTDR INSIDE · ANALYSIS PIPELINE</text>
+<g font-family="Inter,Segoe UI,Arial,sans-serif">
+  <text x="72" y="104" fill="#66D8C6" font-size="12" font-weight="700" letter-spacing="1.5">INPUT</text>
+  <text x="72" y="137" fill="#F2F6FA" font-size="25" font-weight="650">.SOR</text>
+  <text x="72" y="164" fill="#8194A8" font-size="13">read-only source</text>
+
+  <text x="310" y="104" fill="#66D8C6" font-size="12" font-weight="700" letter-spacing="1.5">STRUCTURE</text>
+  <text x="310" y="137" fill="#F2F6FA" font-size="19" font-weight="650">Safe parsing</text>
+  <text x="310" y="164" fill="#8194A8" font-size="13">blocks · revisions · bounds</text>
+  <text x="310" y="185" fill="#8194A8" font-size="13">metadata · samples</text>
+
+  <text x="585" y="104" fill="#66D8C6" font-size="12" font-weight="700" letter-spacing="1.5">INTERPRETATION</text>
+  <text x="585" y="137" fill="#F2F6FA" font-size="19" font-weight="650">Profiles & provenance</text>
+  <text x="585" y="164" fill="#8194A8" font-size="13">normalization · confidence</text>
+  <text x="585" y="185" fill="#8194A8" font-size="13">raw value retained</text>
+
+  <text x="880" y="104" fill="#66D8C6" font-size="12" font-weight="700" letter-spacing="1.5">ANALYSIS</text>
+  <text x="880" y="137" fill="#F2F6FA" font-size="19" font-weight="650">Trace & events</text>
+  <text x="880" y="164" fill="#8194A8" font-size="13">distance reconstruction</text>
+  <text x="880" y="185" fill="#8194A8" font-size="13">stored ≠ calculated</text>
+
+  <text x="1080" y="104" fill="#66D8C6" font-size="12" font-weight="700" letter-spacing="1.5">OUTPUT</text>
+  <text x="1080" y="137" fill="#F2F6FA" font-size="19" font-weight="650">Viewer</text>
+  <text x="1080" y="164" fill="#8194A8" font-size="13">JSON · CSV</text>
+</g>
+<g stroke="#3B536B" stroke-width="2">
+  <path d="M190 146H274"/><path d="M470 146H550"/><path d="M800 146H845"/><path d="M1015 146H1050"/>
+</g>
+<g fill="#66D8C6">
+  <path d="M274 146L264 140V152L274 146Z"/><path d="M550 146L540 140V152L550 146Z"/><path d="M845 146L835 140V152L845 146Z"/><path d="M1050 146L1040 140V152L1050 146Z"/>
+</g>
+<path d="M72 231H1168" stroke="#233446" stroke-width="1"/>
+<text x="72" y="258" fill="#657A90" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">structure first  /  interpretation second  /  evidence preserved</text>
+</svg>
