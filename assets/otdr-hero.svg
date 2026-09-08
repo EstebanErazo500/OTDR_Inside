@@ -1,31 +1,51 @@
-<svg width="1400" height="440" viewBox="0 0 1400 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1400" height="440" rx="22" fill="#0B1118"/>
-<g opacity="0.14" stroke="#7890A8" stroke-width="1">
-  <path d="M54 92H1346"/><path d="M54 142H1346"/><path d="M54 192H1346"/><path d="M54 242H1346"/><path d="M54 292H1346"/><path d="M54 342H1346"/>
-  <path d="M194 66V374"/><path d="M354 66V374"/><path d="M514 66V374"/><path d="M674 66V374"/><path d="M834 66V374"/><path d="M994 66V374"/><path d="M1154 66V374"/><path d="M1314 66V374"/>
+<svg width="1400" height="500" viewBox="0 0 1400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="500" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#07101B"/>
+    <stop offset="0.55" stop-color="#0B1422"/>
+    <stop offset="1" stop-color="#101425"/>
+  </linearGradient>
+  <linearGradient id="trace" x1="92" y1="0" x2="1308" y2="0" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#47E6C1"/>
+    <stop offset="0.48" stop-color="#5EC6FF"/>
+    <stop offset="1" stop-color="#9A82FF"/>
+  </linearGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#5EC6FF" stop-opacity="0.16"/>
+    <stop offset="1" stop-color="#5EC6FF" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="glow" x="-10%" y="-80%" width="120%" height="260%">
+    <feGaussianBlur stdDeviation="7" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="1400" height="500" rx="26" fill="url(#bg)"/>
+
+<g opacity="0.11" stroke="#8CA4BE" stroke-width="1">
+  <path d="M70 74H1330"/><path d="M70 124H1330"/><path d="M70 174H1330"/><path d="M70 224H1330"/><path d="M70 274H1330"/><path d="M70 324H1330"/><path d="M70 374H1330"/><path d="M70 424H1330"/>
+  <path d="M100 52V448"/><path d="M260 52V448"/><path d="M420 52V448"/><path d="M580 52V448"/><path d="M740 52V448"/><path d="M900 52V448"/><path d="M1060 52V448"/><path d="M1220 52V448"/>
 </g>
-<g font-family="Inter,Segoe UI,Arial,sans-serif">
-  <text x="68" y="66" fill="#F5F8FB" font-size="44" font-weight="700">OTDR Inside</text>
-  <text x="70" y="98" fill="#7F93A8" font-size="16">SOR analysis with provenance-aware interpretation</text>
-  <text x="1268" y="64" text-anchor="end" fill="#65D8C6" font-size="13" font-weight="700" letter-spacing="1.6">v0.3.x</text>
-  <text x="1268" y="89" text-anchor="end" fill="#7F93A8" font-size="12">local · read-only · multi-vendor research</text>
+
+<text x="700" y="78" text-anchor="middle" fill="#7D92AB" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600" letter-spacing="3">OPTICAL TIME-DOMAIN REFLECTOMETRY</text>
+<text x="700" y="151" text-anchor="middle" fill="#F4F7FB" font-size="68" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="750" letter-spacing="-1">OTDR Inside</text>
+<text x="700" y="191" text-anchor="middle" fill="#AAB8CA" font-size="22" font-family="Inter,Segoe UI,Arial,sans-serif">Evidence-aware SOR analysis</text>
+
+<text x="92" y="242" fill="#6F849B" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">RELATIVE LEVEL</text>
+<text x="1308" y="242" text-anchor="end" fill="#6F849B" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">DISTANCE →</text>
+
+<path d="M92 364 L118 302 L137 350 L197 354 L258 358 L315 361 L372 364 L430 367 L479 369 L520 344 L540 370 L600 373 L662 376 L718 379 L776 382 L831 384 L882 387 L923 373 L944 389 L1003 391 L1053 394 L1094 396 L1134 318 L1155 402 L1214 407 L1260 409 L1308 411 L1308 438 L92 438 Z" fill="url(#fade)"/>
+<path d="M92 364 L118 302 L137 350 L197 354 L258 358 L315 361 L372 364 L430 367 L479 369 L520 344 L540 370 L600 373 L662 376 L718 379 L776 382 L831 384 L882 387 L923 373 L944 389 L1003 391 L1053 394 L1094 396 L1134 318 L1155 402 L1214 407 L1260 409 L1308 411" stroke="#19354A" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"/>
+<path d="M92 364 L118 302 L137 350 L197 354 L258 358 L315 361 L372 364 L430 367 L479 369 L520 344 L540 370 L600 373 L662 376 L718 379 L776 382 L831 384 L882 387 L923 373 L944 389 L1003 391 L1053 394 L1094 396 L1134 318 L1155 402 L1214 407 L1260 409 L1308 411" stroke="url(#trace)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+<g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">
+  <g><circle cx="118" cy="302" r="5" fill="#47E6C1"/><path d="M118 294V267" stroke="#47E6C1" stroke-dasharray="3 4"/><text x="118" y="258" text-anchor="middle" fill="#6DEDD0">E1</text></g>
+  <g><circle cx="520" cy="344" r="5" fill="#58D3E9"/><path d="M520 336V309" stroke="#58D3E9" stroke-dasharray="3 4"/><text x="520" y="300" text-anchor="middle" fill="#7EDFEF">E2</text></g>
+  <g><circle cx="923" cy="373" r="5" fill="#72B5FF"/><path d="M923 365V338" stroke="#72B5FF" stroke-dasharray="3 4"/><text x="923" y="329" text-anchor="middle" fill="#93C8FF">E3</text></g>
+  <g><circle cx="1134" cy="318" r="5" fill="#9A82FF"/><path d="M1134 310V283" stroke="#9A82FF" stroke-dasharray="3 4"/><text x="1134" y="274" text-anchor="middle" fill="#B3A3FF">E4</text></g>
 </g>
-<path d="M74 301 L102 224 L126 270 L182 276 L238 280 L294 284 L350 288 L397 283 L420 259 L443 291 L502 296 L560 300 L618 303 L671 306 L716 279 L741 311 L798 315 L858 318 L918 321 L978 325 L1037 329 L1086 331 L1129 307 L1155 338 L1215 342 L1274 346 L1328 349" stroke="#183145" stroke-width="11" stroke-linecap="round" opacity="0.65"/>
-<path d="M74 301 L102 224 L126 270 L182 276 L238 280 L294 284 L350 288 L397 283 L420 259 L443 291 L502 296 L560 300 L618 303 L671 306 L716 279 L741 311 L798 315 L858 318 L918 321 L978 325 L1037 329 L1086 331 L1129 307 L1155 338 L1215 342 L1274 346 L1328 349" stroke="#5FD7C3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-<g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
-  <text x="68" y="388" fill="#60768C">relative level</text>
-  <text x="1328" y="388" text-anchor="end" fill="#60768C">distance →</text>
-</g>
-<g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">
-  <path d="M102 218V178" stroke="#5FD7C3" stroke-dasharray="4 4"/><circle cx="102" cy="224" r="5" fill="#5FD7C3"/><text x="102" y="168" text-anchor="middle" fill="#79E0CF">E1</text>
-  <path d="M420 253V213" stroke="#68BDE8" stroke-dasharray="4 4"/><circle cx="420" cy="259" r="5" fill="#68BDE8"/><text x="420" y="203" text-anchor="middle" fill="#88CFF0">E2</text>
-  <path d="M716 273V233" stroke="#7AA6FF" stroke-dasharray="4 4"/><circle cx="716" cy="279" r="5" fill="#7AA6FF"/><text x="716" y="223" text-anchor="middle" fill="#98B9FF">E3</text>
-  <path d="M1129 301V261" stroke="#A58BFF" stroke-dasharray="4 4"/><circle cx="1129" cy="307" r="5" fill="#A58BFF"/><text x="1129" y="251" text-anchor="middle" fill="#B8A5FF">E4</text>
-</g>
-<g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">
-  <text x="70" y="417" fill="#8194A8">STRUCTURE</text><text x="164" y="417" fill="#44576A">/</text>
-  <text x="184" y="417" fill="#8194A8">TRACE</text><text x="235" y="417" fill="#44576A">/</text>
-  <text x="255" y="417" fill="#8194A8">EVENTS</text><text x="318" y="417" fill="#44576A">/</text>
-  <text x="338" y="417" fill="#8194A8">PROVENANCE</text>
-</g>
+
+<text x="700" y="463" text-anchor="middle" fill="#798EA5" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="650" letter-spacing="1.5">STRUCTURE  ·  TRACE  ·  EVENTS  ·  PROVENANCE</text>
+<text x="92" y="42" fill="#64788E" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">SOR / v0.3.x</text>
+<text x="1308" y="42" text-anchor="end" fill="#64788E" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">LOCAL · READ-ONLY · MULTI-VENDOR</text>
 </svg>
