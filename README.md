@@ -12,16 +12,17 @@
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a> ·
-  <a href="#architecture">Architecture</a> ·
-  <a href="#current-capabilities">Capabilities</a> ·
-  <a href="#current-scope">Scope</a> ·
-  <a href="#validation">Validation</a> ·
-  <a href="#roadmap">Roadmap</a>
+  <a href="#overview"><img src="assets/nav/overview.svg" alt="Overview"></a>
+  <a href="#architecture"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="#current-capabilities"><img src="assets/nav/capabilities.svg" alt="Capabilities"></a>
+  <a href="#current-scope"><img src="assets/nav/scope.svg" alt="Scope"></a>
+  <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="#roadmap"><img src="assets/nav/roadmap.svg" alt="Roadmap"></a>
 </p>
 
 <p align="center">
-  <strong>English</strong> · <a href="README.es.md">Español</a>
+  <a href="README.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="README.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 ---
@@ -35,7 +36,7 @@ OTDR Inside addresses that problem by separating **structure**, **interpretation
 <h2 id="architecture" align="center">Architecture</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/architecture.svg" alt="OTDR Inside analysis pipeline" width="92%">
+  <img src="assets/architecture-v2.svg" alt="OTDR Inside analysis pipeline" width="94%">
 </p>
 
 The pipeline is deliberately layered:
