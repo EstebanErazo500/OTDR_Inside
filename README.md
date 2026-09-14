@@ -18,7 +18,7 @@
   <a href="#current-scope"><img src="assets/nav/scope.svg" alt="Scope"></a>
   <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
   <a href="#roadmap"><img src="assets/nav/roadmap.svg" alt="Roadmap"></a>
-  <a href="docs/README.md"><img src="assets/nav/docs.svg" alt="Docs"></a>
+  <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical Docs"></a>
 </p>
 
 <p align="center">

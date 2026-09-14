@@ -1,8 +1,16 @@
-# Historial de versiones
+<h1 align="center">Historial de versiones</h1>
+
+<p align="center">
+  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+</p>
+
+<p align="center">
+  <a href="version-history.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
+  <a href="version-history.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+</p>
 
 > Este historial público se reconstruye a partir de entregas archivadas del desarrollo. Documenta la secuencia técnica real, pero **no** pretende que esas entregas hayan sido originalmente commits de Git. Las etiquetas públicas se añadirán a medida que avance la migración sanitizada del código.
-
-[English](version-history.md)
 
 ## Evolución general
 
@@ -167,4 +175,7 @@ La secuencia pública prevista es:
 
 ---
 
-[Volver al índice de documentación](README.es.md) · [Volver al README del proyecto](../README.es.md)
+<p align="center">
+  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+</p>

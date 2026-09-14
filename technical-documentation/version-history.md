@@ -1,8 +1,16 @@
-# Version history
+<h1 align="center">Version history</h1>
+
+<p align="center">
+  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical Docs"></a>
+</p>
+
+<p align="center">
+  <a href="version-history.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="version-history.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+</p>
 
 > This public history is reconstructed from archived development snapshots. It documents the real sequence of technical changes, but it does **not** pretend that those snapshots were originally created as Git commits. Public tags will be added as the sanitized code migration progresses.
-
-[Español](version-history.es.md)
 
 ## Evolution at a glance
 
@@ -167,4 +175,7 @@ The intended public sequence is:
 
 ---
 
-[Back to documentation index](README.md) · [Back to project README](../README.md)
+<p align="center">
+  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical Docs"></a>
+  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
+</p>
