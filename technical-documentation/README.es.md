@@ -3,6 +3,7 @@
 <p align="center">
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
   <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
 </p>
 
 <p align="center">
@@ -19,8 +20,8 @@ La documentación se está reconstruyendo a partir de entregas archivadas compre
 | Página | Propósito |
 |---|---|
 | <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución reconstruida del proyecto desde v0.1.0 hasta v0.3.4. |
-| <a href="../README.es.md#arquitectura"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Resumen actual de arquitectura. La siguiente página independiente estará dedicada a este tema. |
-| <a href="../README.es.md#procedencia-de-eventos"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo actual de procedencia de eventos. |
+| <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Arquitectura actual v0.3.4, rutas de procesamiento, mapa de implementación y fronteras de responsabilidad. |
+| <a href="../README.es.md#procedencia-de-eventos"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo actual de procedencia de eventos. La siguiente página independiente estará dedicada a este tema. |
 | <a href="../README.es.md#validación"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Resumen actual de validación. |
 | <a href="../README.es.md#manejo-de-datos"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Política actual de manejo de datos públicos. |
 
@@ -36,4 +37,4 @@ La documentación pública sigue las mismas reglas metodológicas que el analiza
 
 ---
 
-La siguiente página independiente que se desarrollará después del historial de versiones será **Arquitectura**.
+La siguiente página independiente de documentación después de **Arquitectura** será **Procedencia de eventos**.
