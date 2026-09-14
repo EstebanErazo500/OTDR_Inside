@@ -20,8 +20,8 @@ The documentation is being rebuilt from archived development snapshots ranging f
 | Page | Purpose |
 |---|---|
 | <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Reconstructed evolution of the project from v0.1.0 to v0.3.4. |
-| <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Current v0.3.4 system architecture, processing paths, implementation map and responsibility boundaries. |
-| <a href="../README.md#event-provenance"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Current event-provenance model. A dedicated page is planned next. |
+| <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Architectural evolution from v0.1.0 to v0.3.4, plus the current processing paths, implementation map and responsibility boundaries. |
+| <a href="../README.md#event-provenance"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Current event-provenance model. The next standalone page will be dedicated to this topic. |
 | <a href="../README.md#validation"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Current validation summary. |
 | <a href="../README.md#data-handling"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a> | Current public-data handling policy. |
 
@@ -37,4 +37,4 @@ Public documentation follows the same rules as the analyzer itself:
 
 ---
 
-The next standalone documentation page after **Architecture** is **Event provenance**.
+The next standalone documentation page after **Architecture** will be **Event provenance**.

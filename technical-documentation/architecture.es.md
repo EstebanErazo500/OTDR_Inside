@@ -1,4 +1,4 @@
-<h1 align="center">Arquitectura · v0.3.4</h1>
+<h1 align="center">Evolución de arquitectura · v0.1.0 → v0.3.4</h1>
 
 <p align="center">
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
@@ -14,7 +14,32 @@
 
 <p align="center"><strong>Primero leer los bytes. Interpretar únicamente cuando la evidencia lo permite.</strong></p>
 
-OTDR Inside está organizado como una cadena de análisis por capas, local y de solo lectura. La arquitectura separa deliberadamente **lectura estructural**, **interpretación específica de fabricante**, **reconstrucción de traza**, **análisis de eventos**, **procedencia** y **presentación**, de modo que un archivo estructuralmente legible nunca se confunda con uno semánticamente validado.
+OTDR Inside no llegó directamente a la arquitectura de v0.3.4. El sistema actual surgió conservando una frontera estructural SOR estable y añadiendo alrededor de ese núcleo semántica de fabricante, análisis de eventos, procedencia y una segunda ruta de entrada EI. Por eso esta página muestra tanto **cómo evolucionó la arquitectura** como **cómo está organizado el sistema vigente en v0.3.4**.
+
+## Evolución de la arquitectura
+
+<p align="center">
+  <img src="../assets/architecture/evolution-es-light.svg#gh-light-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo claro" width="100%">
+  <img src="../assets/architecture/evolution-es-dark.svg#gh-dark-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo oscuro" width="100%">
+</p>
+
+Las nueve entregas archivadas no representan nueve reescrituras arquitectónicas. Algunas versiones robustecieron la ejecución manteniendo deliberadamente intacto el núcleo de análisis. Las transiciones arquitectónicas relevantes son:
+
+| Versión | Estado arquitectónico | Qué cambió estructuralmente |
+|---|---|---|
+| **v0.1.0** | Rebanada vertical estable | Establece la cadena principal: lectura SOR segura → interpretación por perfiles → normalización → reconstrucción de traza → visor local. EXFO actúa como referencia validada y Ceyear permanece preliminar. |
+| **v0.1.1** | Misma arquitectura de análisis | Añade diagnóstico de arranque, comprobación de Python y puertos locales alternativos. El motor SOR, perfiles y ruta de traza no se rediseñan. |
+| **v0.1.2** | Misma arquitectura de análisis | Sustituye lanzadores de shell por una tarea de VS Code compatible con Smart App Control. Cambia el despliegue, no el flujo de datos principal. |
+| **v0.2.0** | Capa de evidencia semántica | Introduce soporte por capacidad, evidencia/confianza explícita y una separación más fuerte entre estructura cruda y semántica específica de fabricante. Leer estructura deja de equivaler a soporte semántico. |
+| **v0.3.0** | Rama de análisis de eventos | Añade candidatos calculados desde la curva como una nueva rama posterior a la reconstrucción, manteniéndolos separados de eventos almacenados en SOR. |
+| **v0.3.1** | Separación detección / evidencia / revisión | Añade una capa de evidencia independiente y estado explícito de revisión humana, evitando mezclar detección automática con validación. |
+| **v0.3.2** | Análisis híbrido contextual | Amplía el análisis con persistencia, polaridad, contexto de recuperación y lógica de región terminal, conservando candidatos suprimidos y sus motivos. |
+| **v0.3.3** | Arquitectura multifuente | Añade un lector EI defensivo y una segunda ruta de entrada. El emparejamiento EI/SOR pasa a basarse en contenido y metadatos, y los registros EI adquieren procedencia propia. |
+| **v0.3.4** | Arquitectura de referencia actual | Añade diagnóstico terminal D1 y localización multiescala alrededor del modelo consciente de procedencia sin reemplazar el escáner estructural estable. |
+
+Esta evolución importa porque muestra con la misma claridad qué permaneció estable y qué cambió. `scanner.py` y el perfil EXFO validado son idénticos byte a byte en las entregas archivadas desde v0.1.0 hasta v0.3.4; las versiones posteriores expanden interpretación y análisis alrededor de esa frontera en lugar de reescribirla repetidamente.
+
+## Arquitectura de referencia actual · v0.3.4
 
 El siguiente diagrama representa la arquitectura actual de **v0.3.4** reconstruida a partir de la implementación archivada. Esta es la arquitectura de referencia para la migración pública del código.
 

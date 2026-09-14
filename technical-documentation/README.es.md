@@ -20,7 +20,7 @@ La documentación se está reconstruyendo a partir de entregas archivadas compre
 | Página | Propósito |
 |---|---|
 | <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución reconstruida del proyecto desde v0.1.0 hasta v0.3.4. |
-| <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Arquitectura actual v0.3.4, rutas de procesamiento, mapa de implementación y fronteras de responsabilidad. |
+| <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución arquitectónica desde v0.1.0 hasta v0.3.4, además de rutas actuales, mapa de implementación y fronteras de responsabilidad. |
 | <a href="../README.es.md#procedencia-de-eventos"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo actual de procedencia de eventos. La siguiente página independiente estará dedicada a este tema. |
 | <a href="../README.es.md#validación"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Resumen actual de validación. |
 | <a href="../README.es.md#manejo-de-datos"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Política actual de manejo de datos públicos. |

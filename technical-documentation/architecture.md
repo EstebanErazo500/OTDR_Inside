@@ -1,4 +1,4 @@
-<h1 align="center">Architecture · v0.3.4</h1>
+<h1 align="center">Architecture evolution · v0.1.0 → v0.3.4</h1>
 
 <p align="center">
   <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
@@ -14,7 +14,32 @@
 
 <p align="center"><strong>Read bytes first. Interpret only when the evidence supports it.</strong></p>
 
-OTDR Inside is organized as a layered, local and read-only analysis pipeline. The architecture deliberately separates **structural parsing**, **vendor-aware interpretation**, **trace reconstruction**, **event analysis**, **provenance** and **presentation** so that a structurally readable file is never mistaken for a semantically validated one.
+OTDR Inside did not jump directly to the v0.3.4 architecture. The current system emerged by preserving a stable structural SOR boundary and adding vendor semantics, event analysis, provenance and a second EI input path around that core. This page therefore shows both **how the architecture evolved** and **how the current v0.3.4 system is organized**.
+
+## Architecture evolution
+
+<p align="center">
+  <img src="../assets/architecture/evolution-light.svg#gh-light-mode-only" alt="OTDR Inside architecture evolution in light mode" width="100%">
+  <img src="../assets/architecture/evolution-dark.svg#gh-dark-mode-only" alt="OTDR Inside architecture evolution in dark mode" width="100%">
+</p>
+
+The nine archived releases do not represent nine architectural rewrites. Some releases hardened runtime behavior while deliberately leaving the analysis core untouched. The meaningful architectural transitions are:
+
+| Version | Architectural state | What changed structurally |
+|---|---|---|
+| **v0.1.0** | Stable vertical slice | Established the primary chain: safe SOR scan → profile interpretation → normalization → trace reconstruction → local viewer. EXFO acted as the validated reference while Ceyear remained preliminary. |
+| **v0.1.1** | Same analysis architecture | Added startup diagnostics, Python checks and local-port fallback. The SOR engine, profiles and trace path were not redesigned. |
+| **v0.1.2** | Same analysis architecture | Replaced shell launchers with a VS Code task to coexist with Smart App Control. This changed deployment, not the core data flow. |
+| **v0.2.0** | Semantic-evidence layer | Introduced capability-level support, explicit evidence/confidence and a stronger separation between raw structure and vendor-specific semantics. Structural readability stopped being treated as semantic support. |
+| **v0.3.0** | Event-analysis branch | Added calculated curve candidates as a new branch downstream of trace reconstruction while keeping them separate from events stored in SOR. |
+| **v0.3.1** | Detection / evidence / review split | Added an independent evidence layer and explicit human-review state instead of collapsing detection and validation into one result. |
+| **v0.3.2** | Contextual hybrid analysis | Extended event analysis with persistence, polarity, recovery context and terminal-region logic while retaining suppressed candidates and reasons. |
+| **v0.3.3** | Multi-source architecture | Added a defensive EI reader and a second input path. EI/SOR pairing became content- and metadata-based, and EI records gained their own provenance. |
+| **v0.3.4** | Current reference architecture | Added terminal D1 diagnostics and multiscale localization around the existing provenance-aware model without replacing the stable structural scanner. |
+
+This evolution is important because it shows what remained stable as clearly as what changed. `scanner.py` and the validated EXFO profile are byte-identical across the archived snapshots from v0.1.0 through v0.3.4; later work expanded interpretation and analysis around that boundary instead of repeatedly rewriting it.
+
+## Current reference architecture · v0.3.4
 
 The diagram below represents the current **v0.3.4** architecture reconstructed from the archived implementation. It is the reference architecture for the public code migration.
 
