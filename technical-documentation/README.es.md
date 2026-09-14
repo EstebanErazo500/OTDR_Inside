@@ -13,14 +13,16 @@
 
 Este directorio contiene la documentación técnica pública de OTDR Inside.
 
-La documentación se está reconstruyendo a partir de entregas archivadas comprendidas entre **v0.1.0 y v0.3.4**. El objetivo es conservar la evolución real de ingeniería del proyecto, manteniendo fuera del repositorio público las trazas operativas, los corpus privados de validación, los identificadores internos y el material propietario.
+La documentación cubre actualmente las entregas archivadas reconstruidas desde **v0.1.0 hasta v0.3.4**. Ese rango corresponde al material que ya fue incorporado al repositorio público y no al final del proyecto. A medida que se integren versiones posteriores, las páginas de historial y arquitectura deben continuar hacia adelante sin reescribir las decisiones de ingeniería anteriores.
+
+El objetivo es conservar la evolución técnica real del proyecto, manteniendo fuera del repositorio público las trazas operativas, los corpus privados de validación, los identificadores internos y el material propietario.
 
 ## Mapa de documentación
 
 | Página | Propósito |
 |---|---|
-| <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución reconstruida del proyecto desde v0.1.0 hasta v0.3.4. |
-| <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución arquitectónica desde v0.1.0 hasta v0.3.4, además de rutas actuales, mapa de implementación y fronteras de responsabilidad. |
+| <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución reconstruida de las entregas archivadas actualmente documentadas, desde v0.1.0 hasta v0.3.4. |
+| <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución arquitectónica versión por versión y, después, una instantánea detallada de implementación de v0.3.4 sin presentarla como arquitectura final. |
 | <a href="../README.es.md#procedencia-de-eventos"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo actual de procedencia de eventos. La siguiente página independiente estará dedicada a este tema. |
 | <a href="../README.es.md#validación"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Resumen actual de validación. |
 | <a href="../README.es.md#manejo-de-datos"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Política actual de manejo de datos públicos. |
