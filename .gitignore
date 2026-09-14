@@ -1,0 +1,54 @@
+# OTDR operational measurements
+*.sor
+*.SOR
+*.ei
+*.EI
+*.otdr
+*.OTDR
+
+# Private corpora and validation evidence
+corpus/
+data/private/
+private/
+evidence/
+results/
+DOCUMENTACION/EVIDENCIAS_*/
+tests/fixtures/private/
+
+# Vendor software and packaged binaries
+vendor/
+*.exe
+*.dll
+*.msi
+*.zip
+*.rar
+*.7z
+
+# Local runtime files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+diagnostico_inicio.txt
+*.log
+
+# IDE / editor state
+.vscode/*
+!.vscode/tasks.json
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary and generated exports
+*.tmp
+*.bak
+*.swp
+exports/
+build/
+dist/
