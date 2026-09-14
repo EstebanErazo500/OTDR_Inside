@@ -18,6 +18,7 @@
   <a href="#alcance-actual"><img src="assets/nav/alcance.svg" alt="Alcance"></a>
   <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
   <a href="#hoja-de-ruta"><img src="assets/nav/hoja-ruta.svg" alt="Hoja de ruta"></a>
+  <a href="docs/README.es.md"><img src="assets/nav/documentacion.svg" alt="Documentación"></a>
 </p>
 
 <p align="center">
