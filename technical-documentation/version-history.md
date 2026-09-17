@@ -25,6 +25,7 @@
 | **v0.3.2** | Contextual hybrid detector | Persistence, polarity, recovery context and terminal-region logic added; suppressed candidates remain explainable in exported diagnostics. |
 | **v0.3.3** | EI/SOR paired analysis | Defensive `.EI` reading, strict EI/SOR pairing by complementary samples and acquisition metadata, and separate event provenance for EI information. |
 | **v0.3.4** | Terminal diagnostics and localization | Navigable D1 terminal region, experimental multiscale localization and regression focused on terminal behavior. |
+| **v0.3.5** | Evidence-backed non-reflective end candidates | A separate terminal-evidence stage can promote a supported noise transition to a reviewable calculated end candidate while unsupported cases remain diagnostic D regions. |
 
 ## Phase 1 — Stable structural baseline
 
@@ -68,7 +69,7 @@ Ceyear support moved from preliminary structural support to an empirically chara
 
 The archived release documents:
 
-- horizontal and vertical curve validation against OTDR_PC using controlled reference files;
+- horizontal and vertical curve validation against reference software using controlled files;
 - optional regressions over a larger private Ceyear corpus without packaging those traces with the code;
 - capability-level status instead of a single binary “supported / unsupported” label;
 - a distinction between nominal range and sample extent;
@@ -122,7 +123,7 @@ The hybrid detector expanded the baseline with contextual logic:
 
 The development comparison recorded in the archived release reports improved recovery of the available intermediate references, while explicitly noting that those references were **not blind evaluation data**. That limitation is preserved in the public history rather than converted into an accuracy claim.
 
-## Phase 4 — Paired formats and terminal diagnostics
+## Phase 4 — Paired formats and terminal reasoning
 
 ### v0.3.3
 
@@ -141,23 +142,42 @@ The Ceyear export signature was broadened from one exact file to the verified st
 
 ### v0.3.4
 
-The latest archived snapshot focuses on terminal behavior and localization diagnostics:
+This snapshot introduced a more explicit terminal diagnostic layer:
 
 - a visible and navigable **D1 terminal region** distinct from physical event candidates and EI comparison;
 - CSV/JSON exports aligned with the diagnostic and localization model;
-- a multiscale ramp-localization experiment that was evaluated without replacing the primary positions when it did not outperform the controlled comparison;
+- a multiscale ramp-localization experiment evaluated without replacing the primary positions when it did not outperform the controlled comparison;
 - dedicated regression around terminal behavior, determinism and display reduction.
 
 The localization code explicitly treats multiscale spread as **algorithm sensitivity, not a statistical confidence interval**.
 
+### v0.3.5
+
+v0.3.5 moves one step beyond showing a terminal transition only as a diagnostic marker. It adds a separate terminal-evidence stage that can produce a **possible non-reflective end** as a calculated candidate when several independent observations agree.
+
+The archived implementation requires, in combination:
+
+- a stable change in the local first-difference/noise behavior across three localization windows;
+- persistent elevated noise in the following region rather than a short burst;
+- a relative level decline beyond the preceding trend on multiple context scales;
+- absence of a previously selected reflective-end candidate.
+
+When those requirements are not all satisfied, the terminal region remains a **D diagnostic marker** instead of being promoted to an event candidate. When they are satisfied, the candidate is selectable, reviewable and exportable, but it still carries no invented event loss or reflectance and is not presented as a certified physical fiber end.
+
+The release also narrows automatic exclusions near a supported terminal transition by comparing nearby responses with local noise, while deliberately preserving the established supplemental-search domain so new terminal behavior cannot displace earlier proposals simply because of a proposal-count limit.
+
+Regression was expanded with positive and negative synthetic controls plus private field/reference material. The archived test run records **76 tests passing**. Comparisons against the private development corpus are treated as development evidence rather than blind validation or metrological calibration; newly surfaced terminal candidates outside the controlled references remain subject to manufacturer/reference review.
+
+A new `terminal.py` module holds the non-reflective terminal-evidence logic, leaving structural parsing, profile normalization and trace reconstruction unchanged.
+
 ## What remained stable
 
-Two important baseline components are byte-identical across every archived snapshot from **v0.1.0 through v0.3.4**:
+Two important baseline components are byte-identical across every archived snapshot from **v0.1.0 through v0.3.5**:
 
 - `scanner.py` — the structural SOR scanner;
 - `exfo_ftb7200_sor2.json` — the validated EXFO reference profile.
 
-That continuity is useful context for the public migration: later versions primarily add semantic interpretation, evidence, event analysis, EI support and viewer behavior on top of a stable structural core.
+`normalizer.py` and `trace.py` are also unchanged between v0.3.4 and v0.3.5. The 0.3.5 work is concentrated in terminal/event reasoning, evidence, presentation and regression rather than in the raw SOR boundary.
 
 ## Public migration policy
 
@@ -169,9 +189,11 @@ The Git history in this repository will be reconstructed from these archived sna
 4. public regression uses synthetic or explicitly sanitized fixtures;
 5. tags represent sanitized historical states, not fabricated original commit dates.
 
-The intended public sequence is:
+The intended public sequence currently documented is:
 
-`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4`
+`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5`
+
+This sequence is expected to continue as later development snapshots are incorporated.
 
 ---
 
