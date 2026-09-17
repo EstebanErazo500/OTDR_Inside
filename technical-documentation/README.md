@@ -4,6 +4,7 @@
   <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
   <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a>
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
 </p>
 
 <p align="center">
@@ -23,8 +24,8 @@ The goal is to preserve the real technical evolution of the project while keepin
 |---|---|
 | <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Reconstructed evolution of the archived releases currently documented, from v0.1.0 through v0.3.5. |
 | <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Version-by-version architectural evolution, followed by a detailed v0.3.5 implementation snapshot without treating it as a final architecture. |
-| <a href="../README.md#event-provenance"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Current event-provenance summary. A standalone page is planned next. |
-| <a href="../README.md#validation"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Current validation summary and public/private evidence boundary. |
+| <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Source-aware event model: SOR-stored, EI-imported, calculated and manually reviewed information, including the v0.3.5 terminal-evidence case. |
+| <a href="../README.md#validation"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Current validation summary and public/private evidence boundary. The next standalone page will be dedicated to this topic. |
 | <a href="../README.md#data-handling"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a> | Current public-data handling policy. |
 
 ## Publication principles
@@ -39,4 +40,4 @@ Public documentation follows the same rules as the analyzer itself:
 
 ---
 
-The next standalone documentation page after **Architecture** will be **Event provenance**.
+The next standalone documentation page after **Event provenance** will be **Validation**.

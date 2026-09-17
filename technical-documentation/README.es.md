@@ -4,6 +4,7 @@
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
   <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
 </p>
 
 <p align="center">
@@ -23,8 +24,8 @@ El objetivo es conservar la evolución técnica real del proyecto, manteniendo f
 |---|---|
 | <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución reconstruida de las entregas archivadas actualmente documentadas, desde v0.1.0 hasta v0.3.5. |
 | <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución arquitectónica versión por versión y, después, una instantánea detallada de implementación de v0.3.5 sin presentarla como arquitectura final. |
-| <a href="../README.es.md#procedencia-de-eventos"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Resumen actual del modelo de procedencia de eventos. La siguiente página independiente estará dedicada a este tema. |
-| <a href="../README.es.md#validación"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Resumen actual de validación y frontera entre evidencia pública y privada. |
+| <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de eventos consciente de la fuente: información almacenada en SOR, importada de EI, calculada y revisada manualmente, incluido el caso terminal de v0.3.5. |
+| <a href="../README.es.md#validación"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Resumen actual de validación y frontera entre evidencia pública y privada. La siguiente página independiente estará dedicada a este tema. |
 | <a href="../README.es.md#manejo-de-datos"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Política actual de manejo de datos públicos. |
 
 ## Principios de publicación
@@ -39,4 +40,4 @@ La documentación pública sigue las mismas reglas metodológicas que el analiza
 
 ---
 
-La siguiente página independiente de documentación después de **Arquitectura** será **Procedencia de eventos**.
+La siguiente página independiente de documentación después de **Procedencia de eventos** será **Validación**.
