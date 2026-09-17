@@ -13,7 +13,7 @@
 
 This directory contains the public technical documentation for OTDR Inside.
 
-The documentation currently covers archived development snapshots from **v0.1.0 through v0.3.4**. That range is the material already reconstructed for the public repository, not the endpoint of the project. As later releases are incorporated, the history and architecture pages should extend forward without rewriting the earlier engineering record.
+The documentation currently covers archived development snapshots from **v0.1.0 through v0.3.5**. That range is the material already reconstructed for the public repository, not the endpoint of the project. As later releases are incorporated, the history and architecture pages extend forward without rewriting the earlier engineering record.
 
 The goal is to preserve the real technical evolution of the project while keeping operational traces, private validation corpora, internal identifiers and proprietary material outside the public repository.
 
@@ -21,10 +21,10 @@ The goal is to preserve the real technical evolution of the project while keepin
 
 | Page | Purpose |
 |---|---|
-| <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Reconstructed evolution of the archived releases currently documented, from v0.1.0 through v0.3.4. |
-| <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Version-by-version architectural evolution, followed by a detailed v0.3.4 implementation snapshot without treating it as a final architecture. |
-| <a href="../README.md#event-provenance"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Current event-provenance model. The next standalone page will be dedicated to this topic. |
-| <a href="../README.md#validation"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Current validation summary. |
+| <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Reconstructed evolution of the archived releases currently documented, from v0.1.0 through v0.3.5. |
+| <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Version-by-version architectural evolution, followed by a detailed v0.3.5 implementation snapshot without treating it as a final architecture. |
+| <a href="../README.md#event-provenance"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Current event-provenance summary. A standalone page is planned next. |
+| <a href="../README.md#validation"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Current validation summary and public/private evidence boundary. |
 | <a href="../README.md#data-handling"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a> | Current public-data handling policy. |
 
 ## Publication principles
