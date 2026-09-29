@@ -5,6 +5,7 @@
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <img src="../assets/nav/procedencia-eventos-current.svg" alt="Procedencia de eventos · página actual">
+  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
 </p>
 
 <p align="center">
@@ -12,141 +13,149 @@
   <a href="event-provenance.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
-<p align="center"><strong>El origen forma parte de los datos. La confianza y la revisión son dimensiones diferentes.</strong></p>
+<p align="center"><strong>El origen forma parte de los datos. Evidencia, revisión y cercanía entre trazas son dimensiones diferentes.</strong></p>
 
-> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas reconstruidas hasta **v0.3.5**. Explica cómo OTDR Inside mantiene diferenciada la información almacenada, importada, calculada y revisada manualmente. Las versiones posteriores pueden ampliar el modelo, pero deben conservar el significado histórico de estas categorías.
+> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta **v0.4.1**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
 
-El análisis OTDR se vuelve ambiguo cuando valores que aparecen juntos en una interfaz se tratan como si provinieran de la misma fuente. OTDR Inside evita esa mezcla conservando **de dónde salió cada valor o evento** junto con el valor mismo.
+OTDR Inside conserva el origen de cada valor o evento en vez de aplanar todo lo que aparece en la misma interfaz dentro de una tabla indiferenciada.
 
 <p align="center">
-  <img src="../assets/provenance/model-es-light.svg#gh-light-mode-only" alt="Modelo de procedencia de eventos de OTDR Inside en modo claro" width="100%">
-  <img src="../assets/provenance/model-es-dark.svg#gh-dark-mode-only" alt="Modelo de procedencia de eventos de OTDR Inside en modo oscuro" width="100%">
+  <img src="../assets/provenance/model-es-light.svg#gh-light-mode-only" alt="Modelo de procedencia de OTDR Inside en modo claro" width="100%">
+  <img src="../assets/provenance/model-es-dark.svg#gh-dark-mode-only" alt="Modelo de procedencia de OTDR Inside en modo oscuro" width="100%">
 </p>
 
 ## Cuatro orígenes conceptuales
 
 | Origen | Qué significa | Qué no significa |
 |---|---|---|
-| **Almacenado en SOR** | El valor o evento está serializado en la estructura SOR original, por ejemplo una tabla `KeyEvents` cuando existe. | No se convierte automáticamente en verdad universal para cualquier fabricante o campo semántico. |
-| **Importado de EI** | El registro fue leído desde un diseño EI soportado. Cuando aparece como compañero verificado, las comprobaciones de pareja EI/SOR fueron superadas. | La información EI no sobrescribe al SOR ni se transforma silenciosamente en información almacenada en SOR. |
-| **Candidato calculado** | La cadena de análisis derivó una hipótesis desde la traza reconstruida y la evidencia que la rodea. | No fue serializado por el equipo solo porque aparezca junto a eventos almacenados. |
-| **Revisión manual** | Una persona añadió estado de revisión, comentarios o anotaciones durante la sesión de análisis. | La revisión humana no reescribe la medición original ni cambia el origen histórico del evento subyacente. |
+| **Almacenado en SOR** | Evento/valor serializado en el SOR, como `KeyEvents` cuando existe. | No es automáticamente verdad semántica universal para cualquier fabricante. |
+| **Importado de EI** | Registro leído de un diseño EI soportado. Una pareja verificada indica además que superó las comprobaciones EI/SOR. | El EI no sobrescribe al SOR ni se convierte en información almacenada en SOR. |
+| **Candidato calculado** | Hipótesis derivada de la traza reconstruida y su evidencia. | No fue serializada por el instrumento solo porque aparezca junto a registros almacenados. |
+| **Revisión manual** | Estado de revisión, comentario o anotación humana añadida en la sesión. | La revisión no reescribe la medición ni cambia el origen histórico del elemento. |
 
-El modelo no ordena estos orígenes de “mejor” a “peor”. Responden preguntas diferentes. La procedencia registra **fuente**; la evidencia, el soporte semántico y la revisión describen otras dimensiones.
+El modelo no ordena estos orígenes de mejor a peor. La procedencia responde **¿de dónde salió esto?**; evidencia, soporte semántico, revisión y comparación responden otras preguntas.
 
-## Procedencia, evidencia, revisión y confianza no son sinónimos
+## Procedencia, evidencia, revisión y comparación no son sinónimos
 
-OTDR Inside mantiene separados cuatro conceptos relacionados:
-
-| Dimensión | Pregunta que responde |
+| Dimensión | Pregunta |
 |---|---|
 | **Procedencia** | ¿De dónde provino esta información? |
-| **Evidencia** | ¿Qué mediciones, relaciones o contexto local respaldan la interpretación? |
-| **Estado de revisión** | ¿Una persona revisó el elemento y cuál fue su decisión? |
-| **Confianza / soporte semántico** | ¿Qué tan respaldado está el significado mostrado para este formato o perfil? |
+| **Evidencia** | ¿Qué mediciones o contexto respaldan la interpretación? |
+| **Estado de revisión** | ¿Qué decidió una persona al revisar? |
+| **Soporte semántico** | ¿Qué tan caracterizado está el significado mostrado para este formato/perfil? |
+| **Relación de comparación** | ¿Existe un evento visualmente próximo en otra traza seleccionada? |
 
-Un candidato calculado puede tener evidencia local fuerte y seguir siendo **calculado**. Un evento almacenado puede estar serializado en el archivo y aun requerir interpretación semántica específica del fabricante. Un candidato aceptado manualmente continúa siendo un candidato calculado con estado de revisión aceptado; la revisión no reescribe la procedencia.
+Un candidato calculado puede tener evidencia fuerte y seguir siendo calculado. Un evento almacenado puede requerir interpretación específica del fabricante. Un candidato aceptado manualmente sigue siendo calculado. Un evento cercano en otro archivo continúa perteneciendo a **ese otro archivo**.
 
 ## Ruta SOR · información almacenada y traza reconstruida
 
-La ruta SOR puede exponer dos clases de información al mismo tiempo:
+Un SOR puede contener estructura de eventos almacenados y muestras de traza al mismo tiempo.
 
-1. **Información de eventos almacenada**, cuando el archivo contiene realmente una estructura como `KeyEvents`.
-2. **Muestras de traza**, que pueden reconstruirse y analizarse independientemente de que exista una tabla de eventos.
+Si existe `KeyEvents`, esa tabla se representa como información almacenada en SOR. La traza puede reconstruirse y analizarse de forma independiente.
 
-Esta diferencia es especialmente importante para la familia Ceyear caracterizada. La ausencia de `KeyEvents` significa que **no se encontró una tabla KeyEvents almacenada en ese SOR**. No demuestra que la traza óptica carezca de eventos.
+Para la familia Ceyear caracterizada, ausencia de `KeyEvents` significa **no se encontró una tabla KeyEvents almacenada en ese SOR**. No demuestra ausencia de eventos ópticos.
 
-Por eso, el análisis calculado permanece después de la reconstrucción de traza y recibe su propia procedencia en lugar de insertarse dentro de la categoría de eventos almacenados.
+El análisis calculado queda por tanto después de la reconstrucción de traza y conserva procedencia calculada.
 
-## Ruta EI · información importada con estado de pareja explícito
+## Ruta EI · información importada y estado de pareja explícito
 
-Desde v0.3.3, `.EI` constituye una segunda ruta de entrada. La información EI conserva su propio origen tanto si el archivo se abre de forma independiente como si se utiliza como compañero verificado.
+Desde v0.3.3, EI es una segunda fuente.
 
-Para la familia EI/SOR caracterizada, la pareja no se acepta únicamente por semejanza del nombre. La implementación comprueba la relación observada entre muestras junto con metadatos de adquisición antes de considerar el EI como fuente compañera verificada.
+Un EI abierto de forma independiente conserva procedencia EI, pero no afirma un compañero SOR verificado. Una pareja exige la relación de muestras observada y metadatos de adquisición compatibles.
 
-Esa diferencia se conserva en el visor:
+Desde v0.4.0, la asociación se vuelve una acción explícita del espacio de trabajo: el usuario parte de una pestaña SOR y solicita **Asociar EI a este SOR**. Esto hace visible la relación y evita tratar la semejanza del nombre como prueba.
 
-- **EI abierto de forma independiente** — los registros pueden inspeccionarse como información importada de EI, mientras la sesión declara que no existe una pareja SOR verificada.
-- **Pareja EI/SOR verificada** — la información importada desde EI puede compararse con el SOR y con el análisis calculado, pero su origen continúa siendo EI.
+Verificar una pareja fortalece la relación entre archivos; no fusiona sus procedencias.
 
-La verificación de pareja fortalece la relación entre los archivos; no fusiona sus procedencias.
+## Candidatos calculados y evidencia terminal
 
-## Candidatos calculados · el análisis permanece visiblemente calculado
-
-La línea 0.3 incorpora hipótesis de evento derivadas de la curva reconstruida. La detección, el refinamiento contextual y el análisis de evidencia pueden fortalecer o suprimir una propuesta, pero ninguna de esas etapas la convierte en información almacenada por el equipo.
-
-El ciclo conceptual es:
+La ruta calculada evoluciona así:
 
 `traza → propuesta → análisis contextual → evidencia → candidato calculado → revisión humana opcional`
 
-Los candidatos suprimidos pueden conservar motivos diagnósticos y contexto de características, de forma que una decisión negativa siga siendo explicable en lugar de desaparecer silenciosamente.
+v0.3.5 añade una compuerta de evidencia terminal. Una transición diagnóstica puede convertirse en posible final no reflectivo cuando coincide la evidencia implementada. Si no, permanece como diagnóstico.
 
-## v0.3.5 · evidencia terminal sin inflar la procedencia
+v0.3.6 mejora consistencia entre formatos y localización de respuestas débiles sin crear una categoría de procedencia nueva.
 
-v0.3.5 añade una etapa separada de evidencia alrededor de la región terminal de diagnóstico. Una transición puede promoverse a **posible candidato de final no reflectivo** únicamente cuando coincide la evidencia terminal empleada por la implementación, incluida la conducta relevante del borde o transición, la caída relativa y el contexto de ruido posterior persistente.
+## Espacio de trabajo v0.4 · varios orígenes sin fusión
 
-Si esa evidencia no coincide, la región permanece como diagnóstico **D** en lugar de forzarse dentro de una etiqueta de evento.
+v0.4.0 introduce hasta ocho pestañas. Cada pestaña conserva:
 
-Lo más importante es que un resultado terminal promovido mantiene **procedencia calculada**. La evidencia adicional modifica el soporte de la hipótesis; no convierte esa hipótesis en un evento almacenado por el instrumento ni en un final físico de fibra certificado.
+- archivo fuente;
+- modelo de vista;
+- origen de eventos;
+- anotaciones;
+- revisión;
+- zoom y selección.
 
-El modelo documentado conserva entonces esta relación:
+El espacio de trabajo no es una medición gigante fusionada; es un contenedor de varios análisis.
 
-`diagnóstico terminal D → compuerta de evidencia → posible candidato de final no reflectivo (CALCULADO)`
+Un EI abierto como pestaña independiente es un análisis. Si ese EI se verifica después como compañero de un SOR, la pestaña SOR puede mostrar registros EI como fuente compañera verificada, pero ambas sesiones siguen siendo objetos separados.
 
-no:
+## Comparación v0.4.1 · cercanía es relación, no procedencia
 
-`diagnóstico terminal D → final de fibra certificado`
+El comparador crea una relación entre eventos existentes; **no** crea una nueva fuente.
 
-## Revisión humana · la evaluación se superpone al origen, no lo reemplaza
+v0.4.1 agrupa posiciones visualmente próximas entre cualquier par de archivos seleccionados. Cada elemento conserva:
 
-La revisión humana se separó explícitamente de la detección en v0.3.1. El estado de revisión puede registrar valores como `pending`, `accepted` o `rejected`, junto con comentarios e historial.
+- archivo fuente;
+- tipo de evento;
+- procedencia original;
+- estado propio de análisis/revisión.
 
-Esto permite combinaciones como:
+El umbral actual de 15 m es una ayuda de agrupamiento. No es:
 
-| Procedencia | Estado de revisión | Interpretación |
+- tolerancia metrológica;
+- prueba de identidad física;
+- prueba de que las trazas pertenezcan al mismo enlace;
+- nueva puntuación de confianza;
+- motivo para reescribir eventos.
+
+El agrupamiento es deliberadamente conservador y puede no ser óptimo cuando existen varios eventos cercanos.
+
+## La revisión humana se superpone al origen
+
+| Procedencia | Revisión | Significado |
 |---|---|---|
-| Candidato calculado | Pendiente | Propuesta algorítmica a la espera de evaluación humana. |
-| Candidato calculado | Aceptado | Propuesta algorítmica aceptada por una persona; sigue siendo calculada. |
-| Candidato calculado | Rechazado | La propuesta se conserva históricamente pero no fue aceptada por el revisor. |
-| Importado de EI | Revisado | Registro importado de EI con una evaluación humana adicional; el origen sigue siendo EI. |
-| Almacenado en SOR | Revisado | Información de fuente almacenada con contexto de revisión; el origen sigue siendo SOR. |
+| Candidato calculado | Pendiente | Propuesta algorítmica por revisar. |
+| Candidato calculado | Aceptado | Aceptado por una persona; el origen sigue siendo calculado. |
+| Candidato calculado | Rechazado | Se conserva históricamente pero no se acepta. |
+| Importado de EI | Revisado | Registro EI con contexto humano adicional. |
+| Almacenado en SOR | Revisado | Información SOR con contexto de revisión. |
 
-La capa de revisión es aditiva. Nunca modifica la medición fuente.
-
-## Cómo evolucionó el modelo de procedencia
+## Cómo evolucionó el modelo
 
 | Versión | Cambio relacionado con procedencia |
 |---|---|
-| **v0.1.0** | Los eventos EXFO almacenados y la información estructural/normalizada ya se distinguen de la representación cruda del archivo. |
-| **v0.3.0** | Los candidatos derivados de la curva pasan a ser una fuente calculada explícita, separada de los eventos almacenados. |
-| **v0.3.1** | Evidencia y revisión humana se convierten en capas independientes alrededor de los candidatos calculados. |
-| **v0.3.3** | EI aparece como segunda fuente importada con estado de pareja explícito. |
-| **v0.3.5** | La evidencia terminal puede respaldar un posible candidato de final no reflectivo sin dejar de mantenerlo dentro del origen calculado. |
+| **v0.1.0** | Eventos EXFO almacenados diferenciados de la representación cruda/normalizada. |
+| **v0.3.0** | Candidatos de curva como fuente calculada explícita. |
+| **v0.3.1** | Evidencia y revisión humana como capas separadas. |
+| **v0.3.3** | EI como segunda fuente importada con estado de pareja. |
+| **v0.3.5** | Evidencia terminal puede respaldar un candidato sin cambiar su origen calculado. |
+| **v0.3.6** | Mejora la consistencia EI/SOR sin añadir ni fusionar categorías. |
+| **v0.4.0** | Pestañas multiarchivo conservan procedencia/revisión por análisis; asociación EI explícita. |
+| **v0.4.1** | Agrupamiento de cercanía entre trazas como relación de presentación, sin tocar procedencia. |
 
 ## Contrato de presentación y exportación
 
-El visor y la migración pública deberían conservar varios invariantes:
+- el origen permanece visible cuando se muestran varias fuentes;
+- SOR, EI y calculado no se fusionan silenciosamente;
+- estado de pareja verificada y procedencia EI son conceptos distintos;
+- la revisión añade evaluación sin cambiar el origen;
+- la comparación añade relaciones sin cambiar el origen;
+- valores crudos y semántica no soportada se conservan cuando el modelo lo permite;
+- la evidencia terminal puede fortalecer una hipótesis calculada sin convertirla en afirmación física certificada.
 
-- el origen de un evento permanece visible cuando distintas fuentes se muestran juntas;
-- los registros almacenados y calculados no se fusionan silenciosamente dentro de una misma categoría semántica;
-- el estado de pareja EI se mantiene separado de la propia procedencia EI;
-- la revisión humana añade estado y comentario sin reescribir el origen de la fuente;
-- los valores crudos y la semántica no soportada permanecen disponibles cuando el modelo lo permite;
-- la evidencia terminal puede fortalecer una hipótesis calculada sin convertirla en una afirmación física certificada.
+## Qué no afirma la procedencia
 
-Estas reglas aplican tanto a la interfaz como a las exportaciones de análisis/eventos, de modo que la procedencia sobreviva más allá de la pantalla donde se inspeccionó inicialmente el evento.
+La procedencia no es una puntuación de verdad. Un valor almacenado no es automáticamente más correcto que cualquier cálculo; un EI importado no equivale a evento almacenado en SOR; aceptar manualmente no crea una nueva medición; y una cercanía entre trazas no demuestra identidad física.
 
-## Qué no afirma este modelo
-
-La procedencia no es una puntuación de verdad. Un valor almacenado no es automáticamente más correcto físicamente que cualquier resultado calculado; una revisión aceptada no es una nueva medición; un registro importado desde EI no equivale a un evento almacenado en SOR; y un candidato terminal de v0.3.5 no es una declaración calibrada del extremo físico de la fibra.
-
-El objetivo de la procedencia es más concreto y más útil: **hacer explícito el origen de cada dato para que la interpretación, validación y revisión posteriores no borren cómo fue obtenido.**
+Su objetivo es más concreto: **preservar suficiente contexto de fuente para que interpretación, validación, revisión y comparación posteriores no borren cómo se obtuvo un resultado.**
 
 ---
 
 <p align="center">
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
 </p>
-
-<p align="center"><sub>Siguiente página independiente de documentación: Validación.</sub></p>

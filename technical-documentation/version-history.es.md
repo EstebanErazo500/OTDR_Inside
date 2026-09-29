@@ -1,8 +1,12 @@
-<h1 align="center">Historial de versiones</h1>
+<h1 align="center">Historial de versiones · registro de ingeniería reconstruido</h1>
 
 <p align="center">
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones · página actual">
+  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
 </p>
 
 <p align="center">
@@ -10,194 +14,169 @@
   <a href="version-history.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
-> Este historial público se reconstruye a partir de entregas archivadas del desarrollo. Documenta la secuencia técnica real, pero **no** pretende que esas entregas hayan sido originalmente commits de Git. Las etiquetas públicas se añadirán a medida que avance la migración sanitizada del código.
+> Este historial público se reconstruye a partir de entregas archivadas del desarrollo. Documenta la secuencia técnica real, pero **no** pretende que esas entregas hayan sido originalmente commits de Git. Las etiquetas públicas se añadirán únicamente a medida que avance la migración sanitizada del código.
 
 ## Evolución general
 
 | Versión | Enfoque de ingeniería | Cambio principal |
 |---|---|---|
-| **v0.1.0** | Primera rebanada vertical | Lectura SOR segura, interpretación por perfiles, reconstrucción de traza, visor local, eventos EXFO almacenados, exportación JSON/CSV y pruebas automáticas. |
-| **v0.1.1** | Robustez de arranque en Windows | Diagnóstico de inicio, comprobación de versión de Python y selección automática de puertos alternativos. |
-| **v0.1.2** | Compatibilidad con seguridad de Windows | Se retiraron lanzadores de shell y el inicio pasó a una tarea de VS Code compatible con Smart App Control; el motor SOR y los perfiles permanecieron sin cambios. |
-| **v0.2.0** | Caracterización de curva Ceyear | Los ejes de la curva CE6422 se validaron contra software de referencia; se añadieron evidencia por capacidad y límites semánticos explícitos. |
-| **v0.3.0** | Candidatos de evento calculados | Se añadió detección experimental de eventos desde la curva Ceyear conservando la procedencia almacenado/calculado y las muestras serializadas crudas. |
-| **v0.3.1** | Evidencia y revisión humana | Ventanas de evidencia exportables, ruido/contexto local y flujo explícito de revisión pendiente/aceptado/descartado. |
-| **v0.3.2** | Detector híbrido contextual | Persistencia, polaridad, contexto de recuperación y lógica terminal; los candidatos suprimidos permanecen explicables en los diagnósticos exportados. |
-| **v0.3.3** | Análisis emparejado EI/SOR | Lectura defensiva de `.EI`, emparejamiento estricto por muestras complementarias y metadatos, y procedencia separada para información EI. |
-| **v0.3.4** | Diagnóstico terminal y localización | Región terminal D1 navegable, localización experimental multiescala y regresión específica del comportamiento terminal. |
-| **v0.3.5** | Finales no reflectivos con evidencia | Una etapa terminal independiente puede promover una transición de ruido suficientemente respaldada a candidato calculado y revisable; si falta evidencia, permanece como diagnóstico D. |
+| **v0.1.0** | Rebanada vertical funcional | Lectura SOR segura, interpretación por perfiles, reconstrucción de traza, visor local, eventos EXFO almacenados y exportación JSON/CSV. |
+| **v0.1.1** | Robustez de ejecución | Diagnóstico de inicio, comprobación de Python y puertos alternativos sin cambiar el núcleo de análisis. |
+| **v0.1.2** | Arranque compatible con seguridad | Se retiran lanzadores de shell y se adopta una tarea de VS Code compatible con Smart App Control. |
+| **v0.2.0** | Semántica Ceyear respaldada por evidencia | Caracterización de curva, soporte por capacidad y separación explícita crudo/normalizado. |
+| **v0.3.0** | Candidatos calculados | Eventos derivados de curva como fuente separada de los eventos almacenados. |
+| **v0.3.1** | Evidencia y revisión humana | Ventanas de evidencia independientes y estado pendiente/aceptado/rechazado. |
+| **v0.3.2** | Detector híbrido contextual | Persistencia, polaridad, recuperación y exclusiones explicables. |
+| **v0.3.3** | Análisis multifuente EI/SOR | Lectura EI defensiva, verificación de pareja por contenido y procedencia EI separada. |
+| **v0.3.4** | Diagnóstico terminal | Región terminal navegable y experimentos de localización multiescala. |
+| **v0.3.5** | Evidencia terminal | Posible final no reflectivo solo cuando coinciden varias condiciones de evidencia. |
+| **v0.3.6** | Consistencia EI/SOR | Consistencia numérica, corrección de propuestas duplicadas y localización a tres escalas para respuestas débiles. |
+| **v0.4.0** | Espacio de trabajo multiarchivo | Hasta ocho pestañas, asociación EI explícita, comparación 2–4, diagnóstico reorganizado y competencia terminal más estricta. |
+| **v0.4.1** | Corrección del comparador | Agrupamiento entre cualquier par, tramo común/completo y referencia visual robusta 5–50 m; detector idéntico a v0.4.0. |
 
-## Fase 1 — Base estructural estable
+## Fase 1 · base estructural estable
 
 ### v0.1.0
 
-La primera entrega archivada ya constituía una rebanada vertical completa y no un simple experimento de parser. Incluía:
+La primera entrega archivada ya era una rebanada vertical completa: apertura SOR de solo lectura, lectura estructural, selección de perfiles, EXFO como referencia validada, reconstrucción de traza, visor interactivo, eventos almacenados y exportación.
 
-- apertura local y de solo lectura de archivos `.SOR`;
-- inspección estructural mediante el mapa SOR y bloques nombrados;
-- selección explícita de perfiles según la evidencia disponible;
-- perfil EXFO FTB-7200D utilizado como referencia validada;
-- reconstrucción completa de la traza y visualización interactiva;
-- eventos EXFO almacenados superpuestos sobre la curva;
-- vistas de parámetros de adquisición, identificación, estructura y procedencia;
-- exportación JSON del análisis y CSV de eventos;
-- perfil preliminar Ceyear CE6422;
-- degradación controlada cuando no existe un perfil semántico validado.
+La decisión arquitectónica establecida aquí sobrevive en las versiones posteriores:
 
-El changelog archivado de v0.1.0 registra **23 pruebas automáticas aprobadas**.
+`SOR → escáner estructural → perfil/normalización → traza → visor`
+
+La entrega registra 23 pruebas automáticas aprobadas.
 
 ### v0.1.1
 
-El motor de análisis se mantuvo esencialmente igual. El desarrollo se desplazó hacia la robustez operativa en Windows:
-
-- diagnóstico de arranque;
-- comprobación explícita de Python 3.11+;
-- fallos visibles en lugar de cerrar la terminal inmediatamente;
-- prueba de puertos locales adicionales cuando el puerto predeterminado estaba ocupado.
+El núcleo de análisis se mantiene. El trabajo se concentra en diagnóstico de arranque, comprobación de Python, fallos visibles y selección de puertos locales alternativos.
 
 ### v0.1.2
 
-El siguiente cambio fue de despliegue, no de análisis. Se retiraron los lanzadores de shell y el inicio pasó a una tarea integrada de VS Code para coexistir con Windows Smart App Control sin pedir al usuario desactivar controles de seguridad.
+El cambio es de despliegue. Se retiran lanzadores de shell y el inicio pasa a una tarea de VS Code compatible con Smart App Control sin debilitar la seguridad del sistema.
 
-El changelog archivado indica explícitamente que el **motor SOR, los perfiles y las reglas de solo lectura permanecieron sin cambios**.
-
-## Fase 2 — La semántica de fabricante se vuelve explícita
+## Fase 2 · la semántica de fabricante se vuelve explícita
 
 ### v0.2.0
 
-El soporte Ceyear pasó de una compatibilidad estructural preliminar a un perfil de curva caracterizado empíricamente.
+Ceyear pasa de soporte estructural preliminar a un perfil de curva caracterizado empíricamente. Aparecen soporte por capacidad, evidencia/confianza en campos normalizados y una separación deliberada entre alcance nominal y extensión muestreada.
 
-La entrega archivada documenta:
+Aquí el proyecto formaliza la diferencia entre **leer bytes** y **afirmar significado**.
 
-- validación de los ejes horizontal y vertical frente a software de referencia mediante archivos controlados;
-- regresiones opcionales sobre un corpus privado Ceyear más amplio sin empaquetar esas trazas con el código;
-- estado por capacidad en lugar de una única etiqueta binaria “soportado / no soportado”;
-- separación entre alcance nominal y extensión de muestras;
-- reconocimiento explícito de que la información de eventos visible en el software de referencia no necesariamente estaba serializada como `KeyEvents` en los SOR observados;
-- nivel relativo recuperado para la traza, sin presentarlo como potencia óptica calibrada universalmente;
-- evidencia asociada a las capacidades normalizadas dentro del JSON exportado.
-
-Esta versión marca el punto donde **legibilidad estructural y certeza semántica pasan a ser conceptos deliberadamente separados en el modelo del producto**.
-
-## Fase 3 — Análisis de eventos con procedencia
+## Fase 3 · eventos calculados con evidencia y revisión
 
 ### v0.3.0
 
-La línea 0.3 comienza con análisis de eventos calculados sobre la familia de trazas Ceyear caracterizada.
-
-Entre los cambios principales están:
-
-- detector experimental de picos y transiciones persistentes de nivel;
-- distinción explícita entre la región serializada de muestras y la región útil para análisis;
-- candidatos calculados separados de los eventos almacenados en el SOR original;
-- selección de candidatos sincronizada con el visor;
-- anotaciones manuales con historial;
-- magnitudes diagnósticas relativas en lugar de valores físicos inventados;
-- servicio local restringido a `127.0.0.1`.
+La línea 0.3 introduce un detector experimental sobre la curva reconstruida. Los candidatos calculados quedan separados de los eventos almacenados en el SOR y las magnitudes diagnósticas siguen siendo relativas.
 
 ### v0.3.1
 
-En lugar de sustituir el detector base solo porque otros umbrales producían resultados distintos, v0.3.1 conservó el generador de 0.3.0 cuando las alternativas probadas no mejoraron las referencias disponibles.
+En vez de reemplazar el detector base solo porque otros umbrales producen resultados distintos, se conserva el generador y se añade una capa independiente de evidencia y un estado explícito de revisión humana.
 
-La versión añadió una **capa de evidencia**:
+Quedan separadas tres preguntas:
 
-- varios tamaños y posiciones de ventana;
-- medidas de ruido local;
-- contexto vecino y motivos;
-- ventanas anterior/posterior resaltadas en el visor;
-- estado de revisión humana separado (`pendiente`, `aceptado`, `descartado`) con comentario e historial;
-- exportación de evidencia y estado de revisión.
-
-Esta separación es importante: detección automática y validación humana se representan como información diferente.
+- qué propuso el detector;
+- qué evidencia rodea la propuesta;
+- qué decidió una persona.
 
 ### v0.3.2
 
-El detector híbrido amplió la base con lógica contextual:
+El detector se vuelve contextual: polaridad, persistencia, recuperación y lógica terminal/ruido. Los candidatos suprimidos conservan la regla y el contexto que explica la decisión.
 
-- polaridad del evento;
-- persistencia local;
-- contexto de recuperación;
-- región terminal/ruido separada;
-- número limitado de propuestas adicionales de cambio persistente;
-- candidatos rechazados o suprimidos conservados con la regla y el vector de características que explican la decisión.
+La comparación de desarrollo archivada muestra mejor recuperación de las referencias disponibles, manteniendo explícito que no eran datos ciegos de evaluación.
 
-La comparación de desarrollo registrada en la entrega archivada muestra una mejor recuperación de las referencias intermedias disponibles, pero declara expresamente que esas referencias **no eran datos ciegos de evaluación**. Esa limitación se conserva en el historial público y no se transforma en una afirmación de exactitud.
-
-## Fase 4 — Formatos emparejados y razonamiento terminal
+## Fase 4 · formatos emparejados y razonamiento terminal
 
 ### v0.3.3
 
-Esta versión introdujo lectura defensiva de `.EI` y análisis conjunto EI/SOR.
+Un lector `.EI` defensivo crea una segunda ruta de entrada. La pareja EI/SOR deja de depender del nombre y exige la relación de muestras esperada y metadatos compatibles para la familia caracterizada.
 
-Una pareja no se acepta únicamente por el nombre del archivo. La implementación archivada exige concordancia entre metadatos de adquisición y la relación complementaria esperada entre muestras para la familia de exportación Ceyear caracterizada.
-
-El modelo también separa el origen de los eventos en categorías distintas, entre ellas:
-
-- información almacenada en el SOR;
-- información importada desde una pareja EI verificada;
-- candidatos calculados desde la curva;
-- revisión o anotación manual.
-
-La firma de exportación Ceyear se amplió desde un archivo exacto hacia la familia estructural comprobada, manteniendo los valores crudos y la semántica no soportada sin inventar.
+Los registros EI adquieren procedencia propia.
 
 ### v0.3.4
 
-Esta entrega introdujo una capa de diagnóstico terminal más explícita:
-
-- **región terminal D1** visible y navegable, distinta de los candidatos físicos y de la comparación EI;
-- exportaciones CSV/JSON coherentes con el modelo de diagnóstico y localización;
-- experimento de localización de rampa multiescala evaluado sin reemplazar las posiciones principales cuando no superó la comparación controlada;
-- regresión dedicada al comportamiento terminal, determinismo y reducción gráfica.
-
-El código de localización distingue expresamente la dispersión multiescala como **sensibilidad del algoritmo, no como intervalo estadístico de confianza**.
+Se incorpora una región terminal de diagnóstico navegable y experimentos de localización multiescala. La dispersión multiescala se documenta como sensibilidad del algoritmo, no como intervalo de confianza.
 
 ### v0.3.5
 
-v0.3.5 avanza desde mostrar una transición terminal únicamente como marcador diagnóstico hacia una etapa separada de **evidencia de final no reflectivo**. Esa etapa puede producir un candidato calculado cuando varias observaciones independientes coinciden.
+El razonamiento terminal añade una etapa separada de evidencia. Una transición puede convertirse en **posible final no reflectivo** solo si coinciden las condiciones de borde/caída/ruido implementadas. Si no, continúa como diagnóstico.
 
-La implementación archivada exige, en conjunto:
+La procedencia no cambia: el resultado promovido sigue siendo calculado.
 
-- un cambio estable del comportamiento de primera diferencia/ruido a través de tres ventanas de localización;
-- ruido elevado y persistente en el tramo posterior, no una ráfaga breve;
-- un descenso relativo adicional respecto a la tendencia previa en varias escalas de contexto;
-- ausencia de un candidato de final reflectivo ya seleccionado.
+### v0.3.6
 
-Si no se cumplen todos los requisitos, la región terminal permanece como **marcador diagnóstico D** en lugar de promoverse a evento. Si se cumplen, el candidato puede seleccionarse, revisarse y exportarse, pero sigue sin inventar pérdida de evento o reflectancia y no se presenta como extremo físico certificado de la fibra.
+Esta versión estabiliza la línea 0.3 en lugar de introducir una nueva categoría de procedencia. Se concentra en:
 
-La versión también hace más localizada la exclusión automática en la vecindad terminal, comparando respuestas cercanas con el ruido local, y conserva deliberadamente el dominio de búsqueda suplementaria ya establecido para evitar que nuevas propuestas terminales desplacen candidatos anteriores solo por el límite de propuestas.
+- discretización consistente entre curvas EI y SOR equivalentes;
+- selección de propuestas duplicadas/suplementarias;
+- alternativa de tres escalas para respuestas débiles inconsistentes;
+- conservación del detector de final no reflectivo de v0.3.5.
 
-La regresión se amplió con controles sintéticos positivos y negativos además de material privado de campo y referencia. El registro archivado de la suite reporta **76 pruebas aprobadas**. Las comparaciones con el corpus privado de desarrollo se consideran evidencia de desarrollo, no validación ciega ni calibración metrológica; los nuevos finales candidatos fuera de las referencias controladas siguen requiriendo revisión frente a evidencia de fabricante o referencia.
+La validación archivada registra **80 pruebas de liberación**, 18 parejas EI/SOR controladas, 72/72 asociaciones de eventos posteriores al inicio e índices/clases coincidentes entre formatos. La diferencia media de posición SOR frente a EI cambia de forma marginal; por eso el beneficio documentado es **consistencia entre formatos y mejora puntual de localización**, no una afirmación global de exactitud.
 
-El nuevo módulo `terminal.py` concentra la lógica de evidencia para final no reflectivo, dejando sin cambios la lectura estructural, la normalización por perfiles y la reconstrucción de traza.
+En 27 SOR privados de campo, 22 conservaron índices/clases y 5 cambiaron. Esos cambios siguen requiriendo revisión porque no existe referencia EI independiente para cada traza de campo.
+
+## Fase 5 · espacio de trabajo y comparación multiarchivo
+
+### v0.4.0
+
+v0.4.0 cambia la forma de utilizar el analizador sin descartar el motor por archivo.
+
+Incorpora:
+
+- hasta **ocho pestañas independientes**;
+- zoom, evento seleccionado, anotaciones y revisión por pestaña;
+- asociación explícita **EI a este SOR**, con verificación por contenido/metadatos;
+- comparación de **dos a cuatro trazas**;
+- tabla de condiciones de adquisición, superposición de curvas, cercanía de eventos y CSV de comparación;
+- diagnóstico reorganizado en datos leídos, hallazgos accionables, advertencias y detalle técnico;
+- competencia terminal más estricta: una subida tardía solo se propone como final reflectivo si su respuesta local a dos escalas supera tres veces su ruido local.
+
+La validación de la entrega ejecutó el detector sobre 27 SOR privados de campo y 18 parejas EI/SOR controladas. Las 18 parejas mantuvieron 72/72 asociaciones sin candidatos calculados extra sin pareja. Frente a v0.3.6, solo una traza privada cambió de clase terminal con la nueva regla.
+
+El comparador 0.4.0 todavía tenía dos debilidades de presentación: buscaba cercanía respecto al primer archivo seleccionado y usaba la primera muestra dibujada como referencia vertical.
+
+### v0.4.1
+
+v0.4.1 corrige el comparador y, de manera deliberada, **no cambia el detector**.
+
+La comparación pasa a:
+
+- agrupar posiciones próximas entre **cualquier par** de archivos seleccionados;
+- mantener como máximo un evento por archivo en cada fila y conservar eventos sin pareja;
+- ofrecer vistas **Tramo común** y **Recorrido completo**;
+- usar como referencia visual la mediana del nivel recuperado entre **5 y 50 m**;
+- atenuar visualmente la región terminal de ruido solo para la gráfica comparativa.
+
+El umbral de 15 m sigue siendo una ayuda visual, no una tolerancia física ni prueba de identidad. El agrupamiento es codicioso y no afirma asociación física óptima.
+
+La validación archivada de v0.4.1 registra **54 pruebas Python aprobadas y 6 pruebas dependientes de corpus externo omitidas**, además de una prueba DOM/canvas simulada para la nueva lógica de comparación. En ese momento todavía quedaba pendiente una inspección visual final del comparador revisado en navegador Windows.
 
 ## Qué permaneció estable
 
-Dos componentes importantes de la base son idénticos byte a byte en todas las entregas archivadas desde **v0.1.0 hasta v0.3.5**:
+Dos componentes son **idénticos byte a byte en todas las entregas archivadas desde v0.1.0 hasta v0.4.1**:
 
 - `scanner.py` — escáner estructural SOR;
-- `exfo_ftb7200_sor2.json` — perfil EXFO utilizado como referencia validada.
+- `exfo_ftb7200_sor2.json` — perfil EXFO de referencia validada.
 
-`normalizer.py` y `trace.py` también permanecen sin cambios entre v0.3.4 y v0.3.5. El trabajo de 0.3.5 se concentra en razonamiento terminal/eventos, evidencia, presentación y regresión, no en la frontera SOR cruda.
+Esto demuestra que el proyecto creció añadiendo semántica, evidencia, EI, análisis de eventos/terminal y comportamiento de espacio de trabajo alrededor de un contrato estructural estable.
+
+Además, `events_hybrid.py` es idéntico entre v0.4.0 y v0.4.1: la corrección de 4.1 pertenece a la capa de espacio de trabajo/presentación, no al detector.
 
 ## Política de migración pública
 
-El historial Git de este repositorio se reconstruirá a partir de estas entregas archivadas bajo las siguientes restricciones:
-
 1. las mediciones operativas `.SOR`, `.EI` y `.otdr` nunca se incorporan a Git;
-2. rutas privadas, números de serie, nombres de corpus, hashes y rutas internas se eliminan o generalizan;
-3. no se redistribuyen programas propietarios de fabricantes, estándares licenciados ni manuales comerciales;
-4. la regresión pública utiliza fixtures sintéticos o explícitamente sanitizados;
-5. las etiquetas representan estados históricos sanitizados, no fechas de commit originales inventadas.
+2. identificadores privados de rutas/clientes, nombres de corpus, seriales, hashes y rutas internas se eliminan o generalizan;
+3. no se redistribuyen programas propietarios, estándares licenciados ni manuales comerciales;
+4. la regresión pública usa fixtures sintéticos o explícitamente anonimizados;
+5. las etiquetas representan estados históricos sanitizados, no fechas de commit inventadas.
 
-La secuencia pública actualmente documentada es:
+Secuencia pública prevista:
 
-`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5`
-
-Esta secuencia continuará a medida que se incorporen entregas posteriores.
+`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1`
 
 ---
 
 <p align="center">
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
 </p>

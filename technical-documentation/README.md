@@ -5,6 +5,7 @@
   <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a>
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
 </p>
 
 <p align="center">
@@ -14,30 +15,29 @@
 
 This directory contains the public technical documentation for OTDR Inside.
 
-The documentation currently covers archived development snapshots from **v0.1.0 through v0.3.5**. That range is the material already reconstructed for the public repository, not the endpoint of the project. As later releases are incorporated, the history and architecture pages extend forward without rewriting the earlier engineering record.
+The reconstructed record now covers archived snapshots from **v0.1.0 through v0.4.1**. That range is the material currently analyzed for the public repository, not the endpoint of the project. Later releases should extend the record without rewriting what earlier versions actually demonstrated.
 
-The goal is to preserve the real technical evolution of the project while keeping operational traces, private validation corpora, internal identifiers and proprietary material outside the public repository.
+The documentation preserves technical evolution while keeping operational traces, private corpora, route/customer identifiers, internal hashes and proprietary material outside the public repository.
 
 ## Documentation map
 
 | Page | Purpose |
 |---|---|
-| <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Reconstructed evolution of the archived releases currently documented, from v0.1.0 through v0.3.5. |
-| <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Version-by-version architectural evolution, followed by a detailed v0.3.5 implementation snapshot without treating it as a final architecture. |
-| <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Source-aware event model: SOR-stored, EI-imported, calculated and manually reviewed information, including the v0.3.5 terminal-evidence case. |
-| <a href="../README.md#validation"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Current validation summary and public/private evidence boundary. The next standalone page will be dedicated to this topic. |
-| <a href="../README.md#data-handling"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a> | Current public-data handling policy. |
+| <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Release-by-release engineering evolution from v0.1.0 through v0.4.1. |
+| <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Architectural evolution plus a detailed v0.4.1 implementation snapshot, including the multi-file workspace and comparator. |
+| <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Source-aware event model and how provenance survives EI/SOR pairing, tabs and cross-trace comparison. |
+| <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a> | Validation layers, release evidence, public/private boundaries and what the available data does not prove. |
+| <a href="../README.md#data-handling"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a> | Current public-data handling policy. A standalone page is planned next. |
 
 ## Publication principles
 
-Public documentation follows the same rules as the analyzer itself:
-
 - **structure is not semantics**;
 - **stored is not calculated**;
+- **proximity is not identity**;
 - **unknown is not corrupt**;
-- claims should remain tied to reproducible evidence;
-- operational measurements are not required to understand or test the public architecture.
+- claims stay tied to reproducible evidence and to the release that produced them;
+- operational measurements are not required in the public repository to explain the architecture.
 
 ---
 
-The next standalone documentation page after **Event provenance** will be **Validation**.
+The next standalone documentation page after **Validation** will be **Data handling**.

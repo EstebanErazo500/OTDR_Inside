@@ -5,6 +5,8 @@
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
   <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
   <img src="../assets/nav/arquitectura-current.svg" alt="Arquitectura · página actual">
+  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
 </p>
 
 <p align="center">
@@ -12,19 +14,11 @@
   <a href="architecture.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
-<p align="center"><strong>Primero leer los bytes. Interpretar únicamente cuando la evidencia lo permite.</strong></p>
+<p align="center"><strong>Primero leer los bytes. Interpretar solo cuando la evidencia lo permite. Comparar sin borrar las fronteras de origen.</strong></p>
 
-> **Alcance de esta página.** Este documento reconstruye la arquitectura representada por las entregas archivadas actualmente analizadas para el repositorio público, desde **v0.1.0 hasta v0.3.5**. Ese rango es un límite documental, no el final del proyecto. Las versiones posteriores deben ampliar esta historia sin convertir retroactivamente la última instantánea documentada en una arquitectura definitiva.
+> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta v0.4.1**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
 
-OTDR Inside se entiende mejor como una secuencia de decisiones de ingeniería que como un único diagrama terminado. El proyecto parte de una ruta SOR estructural estable y después incorpora semántica de fabricante, evidencia explícita, análisis de eventos desde la curva, revisión humana, EI como segunda fuente, diagnóstico terminal y finalmente una etapa independiente de evidencia terminal.
-
-La página se organiza en tres niveles:
-
-| Nivel | Qué responde |
-|---|---|
-| **Mapa de evolución** | Qué capacidades arquitectónicas aparecieron y en qué orden. |
-| **Notas versión por versión** | Qué cambió en cada entrega, qué se preservó y por qué fue relevante. |
-| **Instantánea detallada de implementación** | Cómo se relacionan los módulos presentes en v0.3.5. Es una instantánea detallada, no una afirmación de que v0.3.5 sea la versión final. |
+OTDR Inside evolucionó añadiendo capas alrededor de una frontera estable de datos crudos. Primero separó estructura SOR de semántica de fabricante; después incorporó eventos calculados, evidencia, EI como segunda fuente, razonamiento terminal y finalmente un espacio de trabajo multiarchivo que compara trazas sin fusionar su procedencia.
 
 ## Mapa de evolución
 
@@ -33,211 +27,166 @@ La página se organiza en tres niveles:
   <img src="../assets/architecture/evolution-es-dark.svg#gh-dark-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo oscuro" width="100%">
 </p>
 
-Las entregas archivadas no representan reescrituras sucesivas. Varias versiones conservan deliberadamente el núcleo de análisis mientras robustecen ejecución, interpretación o diagnóstico alrededor de él. La frontera estructural definida al comienzo del proyecto sigue actuando como ancla para las capas posteriores.
+## Desarrollo arquitectónico por versión
 
-## Desarrollo arquitectónico versión por versión
+### v0.1.0–v0.1.2 · columna estructural y envolvente de ejecución
 
-### v0.1.0 — Base estructural funcional
+v0.1.0 establece la ruta por archivo que se mantiene:
 
-**Qué introduce.** Apertura local y de solo lectura de `.SOR`, lectura estructural mediante el mapa SOR y bloques nombrados, interpretación por perfiles, normalización, reconstrucción de traza, visor interactivo, eventos EXFO almacenados y exportación JSON/CSV. EXFO funciona como perfil de referencia validado y Ceyear todavía permanece preliminar.
+`SOR → scanner → perfil/normalización → traza → visor`
 
-**Frontera arquitectónica.** Lectura estructural e interpretación semántica se separan desde el comienzo. El escáner establece qué existe físicamente; los perfiles y la normalización deciden qué puede interpretarse con evidencia.
+Lectura estructural e interpretación semántica son responsabilidades distintas desde el comienzo. v0.1.1 y v0.1.2 robustecen arranque y despliegue alrededor de ese motor sin rediseñar la ruta de medición.
 
-**Por qué importa.** Aquí nace la columna vertebral de larga duración: `SOR → scanner → perfil/normalización → traza → visor`.
+### v0.2.0 · la evidencia entra en la interpretación
 
-### v0.1.1 — Robustez de ejecución sin rediseñar el motor
+La semántica de curva Ceyear pasa a una capa de perfiles respaldada por evidencia. Los valores crudos permanecen junto a los normalizados, el soporte se expresa por capacidad y leer estructura deja de equivaler a soporte semántico.
 
-**Qué introduce.** Diagnóstico de arranque, comprobación explícita de Python, fallos visibles y puertos locales alternativos cuando el predeterminado no está disponible.
+### v0.3.0–v0.3.2 · el análisis de eventos aparece después de la traza
 
-**Qué preserva.** Escáner, perfiles, normalización y reconstrucción de traza permanecen esencialmente iguales.
+Los candidatos calculados se generan **después** de reconstruir la traza. Los eventos almacenados y los calculados no necesitan compartir categoría de origen.
 
-**Por qué importa.** Las preocupaciones de ejecución quedan alrededor del analizador y no contaminan la lógica de medición.
+v0.3.1 separa salida del detector, evidencia y revisión humana. v0.3.2 añade refinamiento contextual y conserva motivos de propuestas suprimidas.
 
-### v0.1.2 — Flujo de lanzamiento compatible con seguridad
+### v0.3.3 · segunda ruta de entrada
 
-**Qué introduce.** Se retiran los lanzadores de shell y el inicio pasa a una tarea integrada de VS Code compatible con Smart App Control sin pedir al usuario debilitar la seguridad del sistema.
+Un lector EI defensivo introduce una segunda fuente. El emparejamiento EI/SOR pasa a basarse en evidencia y la información EI obtiene su propia procedencia.
 
-**Qué preserva.** Motor SOR, perfiles y comportamiento de solo lectura permanecen sin cambios.
+### v0.3.4–v0.3.6 · razonamiento terminal y consistencia entre formatos
 
-**Por qué importa.** El despliegue evoluciona de forma independiente al parser y a la cadena semántica.
+v0.3.4 incorpora región terminal diagnóstica y experimentos de localización. v0.3.5 añade una compuerta de evidencia para un posible final no reflectivo. v0.3.6 se concentra en discretización consistente EI/SOR, selección de propuestas duplicadas y localización a tres escalas de respuestas débiles.
 
-### v0.2.0 — La evidencia pasa a formar parte de la interpretación
+Esta fase fortalece el análisis sin cambiar el scanner estructural ni las categorías básicas de procedencia.
 
-**Qué introduce.** El comportamiento de curva Ceyear se caracteriza frente a software de referencia con material controlado. El soporte pasa a expresarse por capacidad; evidencia y confianza acompañan a los campos interpretados; alcance nominal y extensión muestreada se separan; el nivel vertical recuperado permanece explícitamente relativo.
+### v0.4.0 · el espacio de trabajo se vuelve una capa arquitectónica
 
-**Qué preserva.** La legibilidad estructural sigue dependiendo de la misma frontera de datos crudos y la semántica de eventos no soportada no se inventa solo porque la curva pueda reconstruirse.
+El cambio principal de 0.4 no es otro parser: es un **espacio de trabajo alrededor de múltiples análisis independientes**.
 
-**Por qué importa.** La arquitectura formaliza la diferencia entre **leer bytes** y **afirmar significado**.
+v0.4.0 añade:
 
-### v0.3.0 — El análisis de eventos calculados aparece como rama independiente
+- hasta ocho pestañas por archivo;
+- zoom, selección, anotaciones y revisión aislados por pestaña;
+- asociación EI iniciada explícitamente desde una pestaña SOR;
+- comparación de dos a cuatro trazas;
+- CSV de comparación y condiciones de adquisición;
+- diagnóstico reorganizado;
+- una regla de competencia terminal más estricta en el detector.
 
-**Qué introduce.** Un detector sobre la curva propone picos y transiciones persistentes para la familia Ceyear caracterizada. Se distingue la región serializada de muestras de la región útil de análisis y los candidatos calculados permanecen separados de la información de eventos almacenada en el SOR.
+Cada archivo sigue pasando por el mismo motor por archivo. El espacio de trabajo conserva y presenta varios modelos; no los aplana dentro de una sola medición.
 
-**Qué preserva.** El análisis de eventos ocurre después de reconstruir la traza; parser y normalizador no fingen que los candidatos calculados fueron serializados por el equipo o software de fabricante.
+### v0.4.1 · se corrige la comparación sin cambiar el detector
 
-**Por qué importa.** La inferencia de eventos se convierte en una capa explícita con procedencia propia.
+v0.4.1 es deliberadamente un refinamiento del espacio de trabajo/presentación.
 
-### v0.3.1 — Detección, evidencia y revisión humana se separan
+El módulo `events_hybrid.py` es idéntico byte a byte a v0.4.0. Los cambios importantes aparecen en el front-end:
 
-**Qué introduce.** Ventanas independientes de evidencia, medidas de ruido/contexto y motivos explícitos, sin reemplazar el generador base solo porque otros umbrales produzcan salidas diferentes. La revisión humana recibe estados `pending / accepted / rejected`, comentarios e historial.
+- agrupamiento de cercanía entre cualquier par seleccionado, no solo respecto al primero;
+- vistas tramo común/recorrido completo para alcances distintos;
+- referencia vertical por mediana 5–50 m en lugar de la primera muestra;
+- atenuación del ruido terminal únicamente para el dibujo comparativo.
 
-**Qué preserva.** Generación automática y validación humana siguen siendo información distinta.
-
-**Por qué importa.** El modelo responde por separado: *¿qué propuso el detector?, ¿qué evidencia rodea la propuesta?, ¿qué decidió una persona?*
-
-### v0.3.2 — El análisis de eventos se vuelve contextual y explicable
-
-**Qué introduce.** El detector híbrido añade polaridad, persistencia, contexto de recuperación y lógica terminal/ruido. Puede considerar un número limitado de propuestas adicionales y conserva regla y vector de características de candidatos suprimidos.
-
-**Qué preserva.** La ruta base sigue siendo el fundamento determinista, mientras la capa contextual refina resultados sin borrarlos silenciosamente.
-
-**Por qué importa.** La explicabilidad entra al modelo incluso para decisiones negativas.
-
-### v0.3.3 — La arquitectura se vuelve multifuente
-
-**Qué introduce.** Un lector defensivo `.EI` crea una segunda ruta de entrada. El emparejamiento EI/SOR se acepta por contenido y metadatos, no por semejanza de nombres. La información EI recibe su propia procedencia junto con SOR almacenado, candidatos calculados y revisión manual.
-
-**Qué preserva.** Un EI puede inspeccionarse sin afirmar silenciosamente que existe una pareja SOR verificada y los registros EI no sobrescriben otros orígenes.
-
-**Por qué importa.** OTDR Inside pasa de una cadena centrada en un solo archivo a un modelo multifuente consciente de procedencia.
-
-### v0.3.4 — Se agregan diagnóstico terminal y localización
-
-**Qué introduce.** Región terminal D1 navegable, localización experimental multiescala, exportaciones alineadas y regresión dedicada al comportamiento terminal, determinismo y reducción de visualización.
-
-**Qué preserva.** La dispersión multiescala se trata como sensibilidad del algoritmo, no como incertidumbre estadística, y el estimador experimental no reemplaza automáticamente la posición principal.
-
-**Por qué importa.** El comportamiento terminal se vuelve una capa diagnóstica visible sin promoverse todavía, por defecto, a un final físico candidato.
-
-### v0.3.5 — La evidencia terminal se convierte en una etapa de decisión independiente
-
-**Qué introduce.** El nuevo módulo `terminal.py` evalúa si una transición gruesa de ruido ya detectada tiene suficiente apoyo para convertirse en **posible final no reflectivo**. La evaluación combina acuerdo del punto de cambio en tres ventanas, persistencia de ruido posterior y descenso relativo adicional respecto a la tendencia anterior. Si ya existe un final reflectivo seleccionado por las reglas previas, la vía no reflectiva no lo sustituye.
-
-**Qué preserva.** Si la evidencia no es completa, la región permanece como diagnóstico D. Si se promueve, el final sigue siendo calculado y revisable; no obtiene pérdida, reflectancia, ORL ni semántica de extremo físico certificado inventadas.
-
-**Guardia adicional.** Cuando un final no reflectivo sí tiene apoyo, los cambios débiles cercanos se comparan con el ruido preterminal local en vez de excluirse de forma indiscriminada. Al mismo tiempo se conserva el dominio de búsqueda suplementaria establecido para que nueva estructura terminal no desplace propuestas previas solo por un límite de cantidad.
-
-**Por qué importa.** La arquitectura distingue ahora **detección terminal**, **evidencia terminal** y **representación del evento terminal**. La promoción desde región diagnóstica a candidato queda auditada en lugar de depender de un efecto oculto de umbral.
+Esto demuestra una frontera útil: **la política de comparación puede evolucionar independientemente de la detección de eventos**.
 
 ## Hilo arquitectónico entre versiones
 
-| Aspecto | Estado inicial | Cómo se amplía |
+| Aspecto | Estado inicial | Expansión hasta v0.4.1 |
 |---|---|---|
-| **Estructura** | Lectura SOR segura en v0.1.0 | Permanece como frontera estable de datos crudos hasta v0.3.5. |
-| **Semántica** | Interpretación por perfiles | Incorpora evidencia por capacidad, confianza y estados no soportados explícitos en v0.2.0. |
-| **Eventos** | Eventos EXFO almacenados | Incorpora candidatos calculados, evidencia, refinamiento contextual, revisión y razonamiento terminal. |
-| **Fuentes** | Solo SOR | Añade lectura EI defensiva y emparejamiento EI/SOR basado en evidencia en v0.3.3. |
-| **Diagnóstico** | Visualización de traza y eventos | Añade razonamiento terminal en v0.3.4 y lógica de promoción respaldada por evidencia en v0.3.5. |
+| **Estructura** | Lectura SOR segura | Frontera estable de datos crudos en toda la secuencia archivada. |
+| **Semántica** | Interpretación por perfiles | Evidencia, estado por capacidad y semántica no soportada explícita. |
+| **Eventos** | Eventos EXFO almacenados | Candidatos calculados, evidencia, revisión y razonamiento terminal. |
+| **Fuentes** | Solo SOR | Lectura EI y pareja EI/SOR verificada. |
+| **Estado de sesión** | Un análisis activo | Hasta ocho pestañas independientes con estado propio. |
+| **Comparación** | Alternancia manual | Comparación 2–4 y agrupamiento visual entre cualquier par. |
+| **Diagnóstico** | Alertas/detalles básicos | Estado legible, hallazgos, advertencias y auditoría técnica. |
 
-Dos componentes de base son idénticos byte a byte desde v0.1.0 hasta v0.3.5: `scanner.py` y el perfil EXFO validado. `normalizer.py` y `trace.py` también permanecen sin cambios entre v0.3.4 y v0.3.5. La nueva entrega amplía el razonamiento terminal sin mover la frontera de datos crudos.
+Dos componentes permanecen idénticos byte a byte desde v0.1.0 hasta v0.4.1: `scanner.py` y el perfil EXFO validado. El sistema conserva por tanto un contrato estructural de larga duración mientras interpretación e interacción crecen alrededor.
 
-## Instantánea detallada de implementación · v0.3.5
+## Instantánea detallada de implementación · v0.4.1
 
-El resto de esta página utiliza **v0.3.5 como la entrega archivada más reciente actualmente analizada para el repositorio**. No es una versión final ni un punto de cierre. Cuando se integren versiones posteriores, esta instantánea puede avanzar sin reescribir el historial arquitectónico previo.
+El diagrama siguiente es una **instantánea de la última implementación archivada actualmente documentada**, no una arquitectura final.
 
 <p align="center">
-  <img src="../assets/architecture/system-es-light.svg#gh-light-mode-only" alt="Instantánea de implementación OTDR Inside v0.3.5 en modo claro" width="100%">
-  <img src="../assets/architecture/system-es-dark.svg#gh-dark-mode-only" alt="Instantánea de implementación OTDR Inside v0.3.5 en modo oscuro" width="100%">
+  <img src="../assets/architecture/system-es-light.svg#gh-light-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo claro" width="100%">
+  <img src="../assets/architecture/system-es-dark.svg#gh-dark-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo oscuro" width="100%">
 </p>
 
-## Vista general del sistema en esta instantánea
+## Modelo de procesamiento
 
-La implementación v0.3.5 tiene dos rutas de entrada relacionadas y una rama explícita de evidencia terminal:
+### 1. Ruta SOR por archivo
 
-- **Ruta SOR** — lectura estructural segura → interpretación por perfiles respaldados por evidencia → reconstrucción de traza → análisis de eventos calculados.
-- **Ruta EI** — lectura EI defensiva → verificación de contenido/metadatos cuando se suministra un SOR compañero.
-- **Rama de evidencia terminal** — parte de una transición terminal/ruido gruesa, evalúa apoyo independiente y produce un candidato no reflectivo calculado o conserva la región como diagnóstico D.
+1. `scanner.py` valida estructura y expone bloques crudos.
+2. `normalizer.py` y los perfiles añaden únicamente semántica soportada.
+3. `trace.py` reconstruye distancia y nivel relativo.
+4. `events_baseline.py`, `events_hybrid.py`, `event_evidence.py`, `terminal.py` y `localization.py` generan candidatos/diagnósticos conservando origen calculado.
+5. `viewer_model.py` construye el modelo por archivo.
 
-Las tres convergen en un **modelo consciente de procedencia**. SOR almacenado, EI verificado, candidatos calculados y revisión manual permanecen distinguibles.
+### 2. Ruta EI y asociación explícita
 
-La interfaz se sirve localmente y las mediciones originales no se reescriben.
+`ei_reader.py` y `ei_inspection.py` interpretan de forma defensiva la familia EI observada. Un EI puede abrirse en una pestaña independiente. Para usarlo como compañero, v0.4 exige iniciar la asociación desde una pestaña SOR y superar la verificación por contenido/metadatos.
 
-## Rutas de procesamiento
+Una pareja verificada cambia la relación entre archivos, no su procedencia.
 
-### Ruta SOR
+### 3. Espacio de trabajo multiarchivo
 
-1. **Lectura estructural** recorre mapa SOR, límites, revisiones y metadatos crudos conservando valores originales.
-2. **Perfil y normalización** aplican semántica específica de fabricante solo cuando la evidencia coincide con un perfil caracterizado.
-3. **Reconstrucción de traza** deriva distancia y nivel relativo manteniendo información cruda y límites de muestras.
-4. **Análisis de eventos** genera y refina contextualmente candidatos calculados por separado de eventos almacenados.
-5. **Evaluación terminal** examina una transición terminal con evidencia independiente de cambio, descenso y ruido posterior antes de promover un final no reflectivo.
+La capa v0.4 vive principalmente en `web/app.js`:
 
-### Ruta EI
+- hasta ocho análisis pueden coexistir;
+- cada pestaña conserva zoom, evento seleccionado, anotaciones y revisión;
+- cerrar una pestaña con cambios de sesión sin exportar exige confirmación;
+- un archivo rechazado no elimina los análisis que sí pudieron abrirse.
 
-1. **Lectura EI defensiva** valida el diseño observado y conserva regiones crudas antes de interpretar registros soportados.
-2. Un EI abierto de forma independiente no implica silenciosamente una pareja SOR verificada.
-3. **El emparejamiento EI/SOR se basa en contenido**, usando la relación de muestras caracterizada y metadatos de adquisición.
-4. Los registros EI conservan su origen y no sobrescriben información almacenada en SOR o calculada desde la curva.
+El espacio de trabajo guarda **varios modelos independientes**, no una traza fusionada.
 
-### Ruta de presentación
+### 4. Capa de comparación
 
-`viewer_model.py` combina lectura, normalización, traza, análisis de eventos, evidencia terminal y pareja EI opcional dentro del modelo local del visor. La capa web lo representa y produce JSON/CSV sin modificar la medición fuente.
+El comparador selecciona de dos a cuatro análisis abiertos.
+
+En v0.4.1:
+
+- agrupa posiciones próximas entre todos los archivos seleccionados;
+- conserva eventos sin pareja;
+- mantiene como máximo un evento de cada archivo en una fila;
+- ofrece tramo común y recorrido completo;
+- usa una mediana 5–50 m como referencia visual;
+- atenúa el ruido terminal solo en el dibujo.
+
+El comparador no reescribe los resultados por archivo. Construye una **vista de relación** entre resultados existentes.
 
 ## Mapa de implementación
 
 | Capa | Módulo(s) archivados | Responsabilidad | Frontera deliberada |
 |---|---|---|---|
-| **Aplicación local** | `visor_otdr.py`, `web/*` | Interfaz HTTP local, recepción de archivos, UI y descargas. | La medición fuente no se reescribe. |
-| **Resolución de recursos** | `resources.py` | Resuelve recursos del proyecto, web y perfiles independientemente del directorio de lanzamiento. | No interpreta semántica de medición. |
-| **Lectura estructural** | `scanner.py` | Recorre estructura SOR, valida límites y expone metadatos crudos. | Legibilidad estructural no equivale a certeza semántica de fabricante. |
-| **Interpretación por perfiles** | `normalizer.py`, `profiles/*.json`, `export_signature.py` | Selecciona perfiles caracterizados y registra valores normalizados con evidencia/confianza. | Los valores crudos permanecen disponibles y la semántica no soportada sigue explícita. |
-| **Reconstrucción de traza** | `trace.py` | Reconstruye distancia y nivel relativo; distingue muestras útiles del relleno serializado reconocido. | El nivel relativo no se presenta como potencia óptica calibrada universalmente. |
-| **Generación base de eventos** | `events_baseline.py` | Produce candidatos deterministas mediante estadística local robusta. | No infiere pérdida, ORL, reflectancia ni final físico certificados. |
-| **Análisis contextual** | `events_hybrid.py` | Añade polaridad, persistencia, recuperación, guardias de vecindad terminal y supresión explicable. | Los candidatos suprimidos permanecen trazables. |
-| **Evidencia general de eventos** | `event_evidence.py` | Adjunta contexto orientado a evidencia/revisión, incluida evidencia de candidatos terminales. | La evidencia no reescribe procedencia ni datos fuente. |
-| **Diagnóstico de localización** | `localization.py` | Evalúa posición local de escalón/rampa en varias escalas. | La dispersión multiescala es sensibilidad del algoritmo, no incertidumbre estadística. |
-| **Evidencia terminal** | `terminal.py` | Evalúa cambio de ruido en tres ventanas, ruido posterior persistente y descenso relativo antes de promover un final no reflectivo. | Un candidato respaldado sigue sin ser final físico certificado ni intervalo de incertidumbre calibrado. |
-| **Interpretación EI** | `ei_inspection.py`, `ei_reader.py` | Lee defensivamente el diseño EI observado e importa registros soportados. | Las variantes EI desconocidas se rechazan en vez de forzarse. |
-| **Modelo de aplicación** | `viewer_model.py` | Combina todas las fuentes, candidatos, evidencia, pareja EI opcional y estado de presentación. | La procedencia permanece explícita en todo el payload. |
+| **Servidor local** | `visor_otdr.py` | Interfaz HTTP, solicitudes de análisis y recursos estáticos. | Flujo local; no reescribe mediciones fuente. |
+| **Lectura estructural** | `scanner.py` | Recorre SOR, valida límites y expone metadatos crudos. | Legibilidad no implica certeza semántica. |
+| **Perfiles / normalización** | `normalizer.py`, `profiles/*`, `export_signature.py` | Aplica semántica caracterizada y conserva evidencia/confianza. | Los valores crudos permanecen. |
+| **Traza** | `trace.py`, `numerics.py` | Reconstrucción y políticas numéricas. | Nivel relativo ≠ potencia calibrada universal. |
+| **Eventos / terminal** | `events_baseline.py`, `events_hybrid.py`, `event_evidence.py`, `terminal.py`, `localization.py` | Genera y audita hipótesis calculadas. | No certifica pérdida, reflectancia, ORL ni final físico. |
+| **Interpretación EI** | `ei_reader.py`, `ei_inspection.py` | Lee el diseño EI observado e importa registros soportados. | Las variantes desconocidas no se fuerzan. |
+| **Modelo por archivo** | `viewer_model.py` | Combina estructura, semántica, traza, eventos y EI opcional. | La procedencia permanece explícita. |
+| **Espacio de trabajo** | `web/app.js`, `web/index.html`, `web/styles.css` | Pestañas, estado de sesión, cambio de archivo, comparación y exportaciones. | Los análisis coexisten sin fusionarse. |
+| **Comparador** | funciones v0.4.1 de `web/app.js` | Grupos de cercanía, tramo común/completo y referencia visual. | Cercanía es relación de presentación, no identidad física. |
 
-## La procedencia forma parte de la arquitectura
+## Invariantes arquitectónicos
 
-| Origen | Significado |
-|---|---|
-| **SOR almacenado** | Evento o valor serializado en la estructura SOR original, por ejemplo `KeyEvents` cuando existe. |
-| **EI importado** | Registro leído de un diseño EI soportado; si se muestra como compañero verificado, las comprobaciones de pareja ya se superaron. |
-| **Candidato calculado** | Hipótesis generada desde la curva reconstruida, incluido un final terminal no reflectivo suficientemente respaldado. |
-| **Revisión manual** | Anotación o estado de revisión creado durante la sesión; no modifica la medición. |
+- **Fuentes de solo lectura.**
+- **Estructura antes que semántica.**
+- **Crudo antes que normalizado.**
+- **Almacenado/importado/calculado permanecen separados.**
+- **Pareja EI/SOR por evidencia, no por nombre.**
+- **Estado aislado por archivo.**
+- **La comparación no modifica el análisis.**
+- **Cercanía no es identidad.** Los 15 m del comparador no son tolerancia metrológica.
+- **Normalización visual no es calibración.** Tramo común/completo y mediana 5–50 m cambian el dibujo, no la medición.
 
-Dos valores pueden aparecer juntos sin tener el mismo estatus de evidencia. Esa diferencia es intencional y se conserva en las exportaciones.
+## Qué no afirma esta arquitectura
 
-## Fronteras por fabricante en la instantánea documentada
+El espacio de trabajo v0.4.1 facilita inspección cruzada; no hace físicamente comparables archivos tomados bajo cualquier condición. Posiciones semejantes pueden aparecer en enlaces, longitudes de onda, pulsos o índices distintos sin corresponder al mismo elemento. El agrupamiento actual es codicioso y no se presenta como algoritmo óptimo de asociación física.
 
-| Ecosistema | Papel | Consecuencia arquitectónica |
-|---|---|---|
-| **EXFO FTB-7200D** | Línea base de referencia validada | Eventos almacenados y semántica SOR 2.00 caracterizada fluyen al modelo normalizado para el perfil validado. |
-| **Ceyear CE6422** | Línea activa de desarrollo caracterizada | Semántica de traza, candidatos calculados, evidencia terminal y relación EI/SOR usan comprobaciones explícitas de perfil/firma/procedencia. |
-| **Yokogawa AQ1000** | Alcance de investigación estructural | La legibilidad estructural no se promueve a perfil semántico sin evidencia suficiente. |
-
-<p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
-
-## Invariantes arquitectónicas
-
-- **Fuente de solo lectura.** El análisis no debe reescribir la medición original.
-- **Estructura antes que semántica.** El escáner establece qué existe antes de que un perfil asigne significado.
-- **Crudo antes que normalizado.** La interpretación añade una capa sin descartar la representación almacenada.
-- **Almacenado antes que calculado.** Los candidatos calculados nunca se presentan como eventos serializados.
-- **Desconocido antes que adivinado.** Las variantes no soportadas degradan explícitamente.
-- **Emparejamiento por evidencia.** EI/SOR se acepta por contenido y metadatos, no por semejanza de nombres.
-- **Diagnóstico antes que evento promovido.** Una transición terminal permanece diagnóstica hasta contar con evidencia independiente.
-- **Candidato antes que certificación.** Incluso un final no reflectivo respaldado sigue siendo candidato calculado.
-- **Análisis determinista.** La misma entrada soportada y parámetros deberían reproducir candidatos y diagnósticos.
-
-## Qué no afirma la arquitectura documentada
-
-La arquitectura documentada no implica compatibilidad universal SOR/EI ni certificación independiente Telcordia. Los candidatos calculados Ceyear no crean pérdidas, reflectancia u ORL certificados. La vía de final no reflectivo de v0.3.5 tampoco convierte el acuerdo algorítmico en tolerancia metrológica ni en prueba del extremo físico de la fibra. Los umbrales observados en interfaces de fabricante durante el desarrollo no se copian al detector mientras su semántica no esté demostrada.
-
-Esos límites forman parte de la arquitectura: versiones futuras pueden ampliar evidencia, pero las afirmaciones históricas permanecen ligadas a lo que cada entrega realmente demostró.
-
-## Dirección de diseño a lo largo de la secuencia
-
-La decisión recurrente es **extender interpretación alrededor de una frontera estable de datos crudos en lugar de acoplar cada regla específica de fabricante directamente al parser**. v0.3.5 mantiene esa dirección: la nueva lógica terminal aparece como una etapa independiente de evidencia, no como una reescritura del escáner estructural o de la reconstrucción de traza.
+La concordancia EI, la referencia EXFO y la evidencia terminal siguen siendo evidencia de ingeniería dentro de condiciones documentadas, no calibración universal ni certificación independiente de Telcordia.
 
 ---
 
 <p align="center">
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
 </p>
-
-<p align="center"><sub>Siguiente página independiente de documentación: Procedencia de eventos.</sub></p>
