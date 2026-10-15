@@ -16,7 +16,7 @@
 
 <p align="center"><strong>Read bytes first. Interpret only when evidence supports it. Compare without erasing source boundaries.</strong></p>
 
-> **Scope.** This page reconstructs the architecture represented by archived snapshots from **v0.1.0 through v0.4.1**. That range is a documentation boundary, not the final project architecture. Later releases should extend the timeline instead of making v0.4.1 look like an endpoint.
+> **Scope.** This page reconstructs the architecture represented by archived snapshots from **v0.1.0 through v0.4.2**. That range is a documentation boundary, not the final project architecture. Later releases should extend the timeline instead of making v0.4.1 look like an endpoint.
 
 OTDR Inside evolved by adding layers around a stable raw-data boundary. The project first separated SOR structure from vendor semantics; later versions added calculated events, evidence, EI as a second source, terminal reasoning and finally a multi-file workspace that compares traces without merging their origin.
 
@@ -86,6 +86,21 @@ The detector module `events_hybrid.py` is byte-identical to v0.4.0. The signific
 
 This makes a useful architectural point: **comparison policy can evolve independently from event detection**.
 
+### v0.4.2 · evidence audit and reversible localization
+
+The archived v0.4.2 documentation describes **successive changes under one release number**, not a new structural parser or a replacement of the multi-file architecture.
+
+The comparator gains visible stability/evidence grades and access to nearby suppressed candidates with their rules; suppressed entries remain outside matched-event counts. A ±10% perturbation of the minimum terminal-noise threshold is used to **warn** about potentially unstable non-reflective-end locations. This diagnostic does not redefine the baseline event list.
+
+A separately selectable `edge_precision.py` experiment can change calculated positions for supported classes while preserving the original positions, class, provenance and review history. The viewer defaults to the baseline method. EI-imported positions are not rewritten. Session and report payloads retain the method and associated comparisons.
+
+This is a **localization experiment**, not a new validated source or a universal improvement: retrospective agreement with EI worsens even though agreement with an EXFO study reference improves.
+
+<p align="center">
+  <img src="../assets/architecture/v042-light.svg#gh-light-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in light mode" width="100%">
+  <img src="../assets/architecture/v042-dark.svg#gh-dark-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in dark mode" width="100%">
+</p>
+
 ## Cross-version architectural thread
 
 | Concern | Early state | Expansion through v0.4.1 |
@@ -100,9 +115,9 @@ This makes a useful architectural point: **comparison policy can evolve independ
 
 Two baseline components are byte-identical across every archived snapshot from v0.1.0 through v0.4.1: `scanner.py` and the validated EXFO profile. The system therefore shows a long-lived structural contract while interpretation and interaction evolve around it.
 
-## Detailed implementation snapshot · v0.4.1
+## Implementation baseline · v0.4.1 (extended in v0.4.2)
 
-The diagram below is a **snapshot of the latest archived implementation currently documented**, not a final architecture.
+The diagram below documents the **v0.4.1 per-file and workspace baseline retained by the 0.4.2 line**. The 4.2 changes are shown separately above; this is not a final architecture.
 
 <p align="center">
   <img src="../assets/architecture/system-light.svg#gh-light-mode-only" alt="OTDR Inside v0.4.1 implementation snapshot in light mode" width="100%">
@@ -164,6 +179,7 @@ The comparator does not rewrite per-file results. It creates a **relationship vi
 | **Per-file view model** | `viewer_model.py` | Combine structure, semantics, trace, event sources and optional EI companion. | Provenance remains explicit. |
 | **Workspace** | `web/app.js`, `web/index.html`, `web/styles.css` | Tabs, session state, file switching, comparison UI and exports. | Multiple analyses coexist without being merged. |
 | **Comparator** | v0.4.1 functions in `web/app.js` | Proximity groups, common/full span and visual baseline. | Proximity is a display relation, not physical identity. |
+| **v0.4.2 evidence/localization** | `edge_precision.py` and documented UI/report changes | Suppressed-proposal explanations, terminal threshold sensitivity and optional class-aware position method. | Baseline detector and EI values are not silently overwritten. |
 
 ## Architectural invariants
 

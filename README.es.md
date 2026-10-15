@@ -80,7 +80,7 @@ Así, una conversión empírica, una escala de fabricante o una interpretación 
 
 <h2 id="capacidades-actuales" align="center">Capacidades actuales</h2>
 
-La línea archivada documentada hasta **v0.4.1** incluye:
+La línea archivada documentada hasta **v0.4.2** incluye:
 
 - inspección segura de estructura y metadatos SOR 2.00;
 - selección de perfiles caracterizados basada en evidencia;
@@ -93,10 +93,14 @@ La línea archivada documentada hasta **v0.4.1** incluye:
 - asociación EI iniciada explícitamente desde una pestaña SOR, no por semejanza del nombre;
 - comparación de **dos a cuatro trazas** con condiciones de adquisición, superposición, cercanía de eventos y exportación CSV;
 - en v0.4.1, comparación entre cualquier par seleccionado, vistas **tramo común / recorrido completo** y referencia gráfica por mediana entre 5 y 50 m;
+- en v0.4.2, auditoría de comparación con grados de evidencia y **candidatos excluidos cercanos**, sin contarlos como coincidencias;
+- avisos de sensibilidad terminal al variar ±10 % el umbral mínimo de ruido **sin modificar la decisión predeterminada del detector**;
+- **localizador experimental de borde por clase**, opcional y reversible, con posiciones base conservadas y método registrado en sesiones y exportaciones;
+- mejoras de informes/PDF y controles de sesión, manteniendo el tratamiento de solo lectura;
 - diagnóstico organizado en datos leídos, hallazgos accionables, advertencias y detalle metodológico;
 - exportaciones JSON/CSV sin modificar la medición original.
 
-<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.1</h2>
+<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.2</h2>
 
 | Ecosistema | Estado | Papel dentro del proyecto |
 |---|---|---|
@@ -115,7 +119,7 @@ El origen permanece como parte del modelo:
 - **Candidato calculado** — hipótesis derivadas de la curva, incluidos candidatos terminales;
 - **Revisión manual** — estado o anotación del usuario que no altera la medición fuente.
 
-El espacio de trabajo v0.4 añade otra regla: colocar varias trazas en una comparación **no crea una procedencia nueva**. v0.4.1 agrupa posiciones cercanas para revisión y conserva el archivo fuente y el origen de cada elemento.
+El espacio de trabajo v0.4 añade otra regla: colocar varias trazas en una comparación **no crea una procedencia nueva**. v0.4.1 agrupa posiciones cercanas para revisión y conserva el archivo fuente y el origen de cada elemento. v0.4.2 muestra propuestas excluidas cercanas y su motivo **sin presentarlas como coincidencias aceptadas**. Un desplazamiento experimental sigue siendo calculado y conserva posición base y método.
 
 En la familia Ceyear caracterizada, la ausencia de `KeyEvents` significa que **no se encontró una tabla almacenada en ese SOR**; no significa que la traza óptica carezca de eventos.
 
@@ -133,6 +137,8 @@ La validación se organiza por capas:
 
 Entre los hitos documentados están una validación de liberación de **80 pruebas en v0.3.6**, comprobaciones sobre **18 parejas EI/SOR controladas** con 72/72 asociaciones de eventos posteriores al inicio y, en v0.4.1, una suite estándar de **54 pruebas aprobadas con 6 pruebas de corpus externo omitidas**. Los conteos no se presentan como una puntuación comparable de calidad porque las suites y los datos requeridos cambiaron entre entregas.
 
+La revisión de presentación archivada de v0.4.2 registra **92 pruebas Python aprobadas con los corpus controlados/privados disponibles** y pruebas DOM simuladas. El localizador de borde por clase mejora la *concordancia retrospectiva* frente a la referencia EXFO del estudio, pero empeora frente a EI emparejado; por eso permanece **experimental y desactivado por defecto**, sin presentarse como mejora de exactitud física.
+
 La jerarquía de evidencia, la frontera público/privado y los límites metrológicos están descritos en <a href="technical-documentation/validation.es.md">Validación</a>.
 
 <h2 id="manejo-de-datos" align="center">Manejo de datos</h2>
@@ -147,6 +153,7 @@ Este repositorio no distribuye mediciones operativas reales `.sor`, `.ei` u `.ot
 - La interpretación específica de fabricante sigue basada en perfiles/firmas y no equivale a compatibilidad SOR universal.
 - El nivel vertical mostrado es relativo y no se presenta como potencia óptica calibrada universalmente.
 - La cercanía de eventos del comparador v0.4.1 es una **ayuda visual de agrupamiento**, no una tolerancia física ni prueba de identidad.
+- El localizador de borde por clase de v0.4.2 es opcional y reversible; no demuestra mejora de exactitud física. La sensibilidad al umbral terminal es un diagnóstico, no una incertidumbre calibrada.
 - Cambiar entre tramo común/recorrido completo y usar la mediana 5–50 m afecta solo la presentación comparativa; no modifica muestras, posiciones ni pérdidas.
 - Los resultados terminales siguen siendo hipótesis calculadas y no certifican extremo físico, pérdida de evento, reflectancia, ORL ni incertidumbre metrológica.
 - OTDR Inside no afirma certificación independiente de Telcordia SR-4731.

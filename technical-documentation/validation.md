@@ -15,7 +15,7 @@
 
 <p align="center"><strong>Validation is layered evidence, not a single accuracy score.</strong></p>
 
-> **Scope.** This page summarizes the validation model documented by archived releases through **v0.4.1**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
+> **Scope.** This page summarizes the validation model documented by archived releases through **v0.4.2**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
 
 <p align="center">
   <img src="../assets/validation/layers-light.svg#gh-light-mode-only" alt="OTDR Inside validation hierarchy in light mode" width="100%">
@@ -112,6 +112,31 @@ The archived validation records:
 - preservation of per-tab state and explicit EI association.
 
 At the time of the archived validation, a final visual inspection of the revised comparator in a real Windows browser was still pending. That pending check is part of the record rather than being silently converted into a completed validation claim.
+
+### v0.4.2 · visible evidence, experimental edges and reporting
+
+The v0.4.2 archive describes multiple revisions under the **same** version number.
+
+| Documented stage | Evidence |
+|---|---|
+| Initial comparison audit (29 September) | 55 internal tests passed; 6 external-corpus tests skipped. Comparison distinguishes visible from suppressed proposals, and terminal-threshold sensitivity uses ±10% of the minimum-noise threshold. |
+| Numerical edge experiment (1 October) | Class-aware method evaluated retrospectively against 18 EI/SOR controlled pairs and EXFO comparison material. Baseline positions remain reproducible and default. |
+| Final documented presentation revision (8 October) | **92 Python tests passed without skips with controlled/private corpora available**, plus simulated DOM and session tests. Example single-file and comparison PDFs were rendered and reviewed page-by-page. A live Windows-browser test was not performed in that environment. |
+
+**Contradictory reference agreement is preserved, not averaged away.**
+
+| Reference comparison (same 72 calculated events from 18 controlled EI/SOR pairs) | Baseline mean absolute difference | Experimental edge mean absolute difference |
+|---|---:|---:|
+| EXFO study comparison | **4.399 m** | **2.726 m** |
+| Paired EI measurement | **3.782 m** | **5.532 m** |
+
+The 18 pairs are repeated measurements from a controlled arrangement, **not 18 independent links**; the 72 event positions are not independent link samples. Moreover, the physical identity of the EXFO and Ceyear acquisition path has not been established. These numbers describe **retrospective software/reference concordance, not metrological error**.
+
+On 27 private field SOR traces, the baseline reproduces the preceding event set; the experimental method adjusted 87 of 189 visible calculated positions and kept the other 102. This preserves event IDs/classes and suppressed histories but **does not prove the adjusted positions physically better**. In an exploratory second-link comparison against SOR-stored records, mean absolute difference worsened from 1.233 m to 1.423 m. The class-aware method is therefore **experimental, optional, reversible and disabled by default**.
+
+Terminal minimum-noise threshold perturbation provides sensitivity warnings, **not confidence intervals** or physical-end verification. Nearby suppressed candidates may be shown as audit context but must not be counted as visible event matches.
+
+**Publication boundary.** Only these aggregate methodological results belong in the public documentation. Real traces, per-event records, corpus identifiers, serials, hashes, absolute paths and PDF reports containing operational metadata remain private. The 92-test result is reported from the archived v0.4.2 validation document, **not a public CI run** or a newly executed GitHub test suite.
 
 ## Why test counts are not a score
 

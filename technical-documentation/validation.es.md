@@ -15,7 +15,7 @@
 
 <p align="center"><strong>La validación es una jerarquía de evidencia, no una única puntuación de exactitud.</strong></p>
 
-> **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta **v0.4.1**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
+> **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta **v0.4.2**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
 
 <p align="center">
   <img src="../assets/validation/layers-es-light.svg#gh-light-mode-only" alt="Jerarquía de validación de OTDR Inside en modo claro" width="100%">
@@ -110,6 +110,31 @@ La validación archivada registra:
 - conservación del estado por pestaña y asociación EI explícita.
 
 En el momento de esa validación quedaba pendiente una inspección visual final del comparador revisado en un navegador Windows real. Esa comprobación pendiente se conserva como parte del registro.
+
+### v0.4.2 · evidencia visible, bordes experimentales e informes
+
+El archivo de validación de v0.4.2 documenta varias revisiones con **el mismo número de versión**.
+
+| Etapa documentada | Evidencia |
+|---|---|
+| Auditoría inicial del comparador (29 de septiembre) | 55 pruebas internas correctas; seis omitidas por corpus externo. Se distinguen propuestas visibles y excluidas, y la sensibilidad terminal varía ±10 % el umbral mínimo de ruido. |
+| Ensayo numérico de borde (1 de octubre) | Método por clase evaluado retrospectivamente frente a 18 parejas controladas EI/SOR y material de comparación EXFO. Las posiciones base permanecen reproducibles y predeterminadas. |
+| Revisión final de presentación documentada (8 de octubre) | **92 pruebas Python aprobadas sin omisiones con los corpus controlados/privados disponibles**, además de pruebas DOM/sesión simuladas. Se renderizaron y revisaron página por página informes PDF de una traza y una comparación. No se probó un navegador Windows real en ese entorno. |
+
+**Se conservan los resultados contradictorios en lugar de ocultarlos en un promedio.**
+
+| Referencia de concordancia (mismos 72 eventos calculados de 18 parejas controladas EI/SOR) | Diferencia absoluta media base | Diferencia absoluta media borde experimental |
+|---|---:|---:|
+| Comparación EXFO del estudio | **4,399 m** | **2,726 m** |
+| EI de la misma adquisición | **3,782 m** | **5,532 m** |
+
+Las 18 parejas son adquisiciones de un montaje controlado, **no 18 enlaces independientes**; los 72 eventos tampoco son 72 enlaces independientes. Además, no está confirmada la identidad física del trayecto medido por EXFO y Ceyear. Estas cifras describen **concordancia retrospectiva entre programas/referencias, no error metrológico**.
+
+Sobre 27 SOR privados de campo, la lectura base reproduce los eventos previos. El modo experimental ajustó 87 de 189 posiciones visibles calculadas y conservó 102. Mantiene los ID/clases y el historial de exclusión, pero **no demuestra que las posiciones ajustadas sean físicamente mejores**. En otro enlace, un contraste exploratorio con eventos almacenados en SOR empeora su diferencia absoluta media de 1,233 m a 1,423 m. El método de borde por clase sigue por tanto **experimental, opcional, reversible y desactivado por defecto**.
+
+Variar el umbral mínimo de ruido terminal permite advertir sensibilidad, **no calcular intervalos de confianza** ni verificar extremos físicos. Mostrar excluidos próximos sirve para auditoría; no se cuentan como parejas visibles.
+
+**Frontera de publicación.** Aquí solo se incluyen resultados metodológicos agregados. Permanecen privados trazas, datos por evento, identificadores del corpus, seriales, hashes, rutas absolutas e informes que revelen metadatos operativos. Las 92 pruebas proceden del documento de validación archivado, **no de CI público** ni de una nueva ejecución de tests en GitHub.
 
 ## Por qué el número de pruebas no es una puntuación
 

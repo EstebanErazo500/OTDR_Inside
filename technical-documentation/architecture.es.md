@@ -16,7 +16,7 @@
 
 <p align="center"><strong>Primero leer los bytes. Interpretar solo cuando la evidencia lo permite. Comparar sin borrar las fronteras de origen.</strong></p>
 
-> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta v0.4.1**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
+> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta v0.4.2**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
 
 OTDR Inside evolucionó añadiendo capas alrededor de una frontera estable de datos crudos. Primero separó estructura SOR de semántica de fabricante; después incorporó eventos calculados, evidencia, EI como segunda fuente, razonamiento terminal y finalmente un espacio de trabajo multiarchivo que compara trazas sin fusionar su procedencia.
 
@@ -86,6 +86,21 @@ El módulo `events_hybrid.py` es idéntico byte a byte a v0.4.0. Los cambios imp
 
 Esto demuestra una frontera útil: **la política de comparación puede evolucionar independientemente de la detección de eventos**.
 
+### v0.4.2 · auditoría de evidencia y localización reversible
+
+La documentación archivada de v0.4.2 describe **cambios sucesivos bajo un mismo número de entrega**; no aparece otro scanner estructural ni se sustituye el espacio de trabajo multiarchivo.
+
+El comparador incorpora grados de estabilidad/evidencia visibles y acceso a candidatos excluidos cercanos con sus reglas; los excluidos no cuentan como parejas aceptadas. Un ensayo de ±10 % del umbral mínimo de ruido terminal se usa para **advertir** sobre posibles finales no reflectivos inestables, sin redefinir la lista base de eventos.
+
+Un método experimental `edge_precision.py`, seleccionable por separado, puede desplazar posiciones calculadas de clases soportadas y conserva la posición original, clase, procedencia e historial de revisión. El visor abre en la lectura base. Las posiciones importadas de EI no se reescriben. Sesiones e informes conservan el método y las comparaciones.
+
+Esto es un **ensayo de localización**, no una nueva procedencia ni una mejora universal validada: empeora la concordancia retrospectiva frente a EI aunque mejore frente a la referencia EXFO utilizada en el estudio.
+
+<p align="center">
+  <img src="../assets/architecture/v042-es-light.svg#gh-light-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema claro" width="100%">
+  <img src="../assets/architecture/v042-es-dark.svg#gh-dark-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema oscuro" width="100%">
+</p>
+
 ## Hilo arquitectónico entre versiones
 
 | Aspecto | Estado inicial | Expansión hasta v0.4.1 |
@@ -98,11 +113,11 @@ Esto demuestra una frontera útil: **la política de comparación puede evolucio
 | **Comparación** | Alternancia manual | Comparación 2–4 y agrupamiento visual entre cualquier par. |
 | **Diagnóstico** | Alertas/detalles básicos | Estado legible, hallazgos, advertencias y auditoría técnica. |
 
-Dos componentes permanecen idénticos byte a byte desde v0.1.0 hasta v0.4.1: `scanner.py` y el perfil EXFO validado. El sistema conserva por tanto un contrato estructural de larga duración mientras interpretación e interacción crecen alrededor.
+Dos componentes permanecen idénticos byte a byte desde v0.1.0 hasta v0.4.2: `scanner.py` y el perfil EXFO validado. El sistema conserva por tanto un contrato estructural de larga duración mientras interpretación e interacción crecen alrededor.
 
-## Instantánea detallada de implementación · v0.4.1
+## Base de implementación · v0.4.1 (ampliada en v0.4.2)
 
-El diagrama siguiente es una **instantánea de la última implementación archivada actualmente documentada**, no una arquitectura final.
+El diagrama siguiente documenta la **base por archivo y espacio de trabajo de v0.4.1 conservada en la línea 4.2**. Las adiciones de 4.2 aparecen por separado arriba; no es una arquitectura final.
 
 <p align="center">
   <img src="../assets/architecture/system-es-light.svg#gh-light-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo claro" width="100%">
@@ -164,6 +179,7 @@ El comparador no reescribe los resultados por archivo. Construye una **vista de 
 | **Modelo por archivo** | `viewer_model.py` | Combina estructura, semántica, traza, eventos y EI opcional. | La procedencia permanece explícita. |
 | **Espacio de trabajo** | `web/app.js`, `web/index.html`, `web/styles.css` | Pestañas, estado de sesión, cambio de archivo, comparación y exportaciones. | Los análisis coexisten sin fusionarse. |
 | **Comparador** | funciones v0.4.1 de `web/app.js` | Grupos de cercanía, tramo común/completo y referencia visual. | Cercanía es relación de presentación, no identidad física. |
+| **Evidencia/localización v0.4.2** | `edge_precision.py` y cambios de interfaz/informes documentados | Excluidos explicados, sensibilidad terminal y método de posición opcional por clase. | No se sobrescriben silenciosamente el detector base ni los valores EI. |
 
 ## Invariantes arquitectónicos
 

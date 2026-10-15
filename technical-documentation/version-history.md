@@ -33,6 +33,7 @@
 | **v0.3.6** | EI/SOR consistency | Numerical/discretization consistency, duplicate-proposal correction and three-scale localization for weak responses. |
 | **v0.4.0** | Multi-file workspace | Up to eight tabs, explicit EI association, 2–4 trace comparison, organized diagnostics and stricter terminal competition. |
 | **v0.4.1** | Comparator correction | All-pairs proximity grouping, common/full span views and robust 5–50 m visual baseline; detector unchanged from v0.4.0. |
+| **v0.4.2** | Evidence and experimental localization | Suppressed-candidate audit, terminal sensitivity, optional class-aware edge locator and improved reporting. |
 
 ## Phase 1 · stable structural baseline
 
@@ -151,6 +152,16 @@ The 15 m proximity threshold remains a review aid, not a physical tolerance or p
 
 The archived v0.4.1 validation records **54 Python tests passing with 6 external-corpus tests skipped**, plus simulated DOM/canvas coverage of the corrected comparison behavior. At the time of that validation, a final visual inspection of the revised comparator in a Windows browser was still pending.
 
+### v0.4.2 · documented revisions of the same release
+
+**29 September — comparison audit.** Visible events gain evidence grades, and nearby suppressed proposals can be inspected with their exclusion rules. Suppressed items are not counted as event matches. A ±10% minimum-noise-threshold diagnostic flags unstable non-reflective-end positions; it does not alter the baseline detector's positions or classes.
+
+**1–8 October — optional class-aware edge localization.** An experimental method examines local transitions by event class, preserving baseline positions for comparison and reversal. It is **off by default**. On 72 events from 18 controlled EI/SOR pairs, retrospective mean absolute difference improves against the EXFO study reference (4.399 → 2.726 m) but worsens against acquisition-paired EI (3.782 → 5.532 m). These are concordance comparisons, not verified physical distance errors; the EXFO/Ceyear measurement identity is not established.
+
+**8 October — presentation refinement.** Sessions retain the chosen method and history; the local viewer gains consolidated session/report actions and revised vector PDF layout. The archived report records 92 Python tests passed with available corpora and simulated interface checks; a real Windows-browser inspection was not completed there.
+
+v0.4.2 is not presented as a final release or as a certified improvement in positioning. Its value is explicit diagnostic evidence, reversible experimentation and clearer reports.
+
 ## What remained stable
 
 Two baseline artifacts are **byte-identical across every archived snapshot from v0.1.0 through v0.4.1**:
@@ -174,7 +185,7 @@ The Git history reconstructed from these snapshots follows these rules:
 
 The intended public sequence is:
 
-`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1`
+`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1 → v0.4.2`
 
 ---
 

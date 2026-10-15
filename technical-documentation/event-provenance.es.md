@@ -15,7 +15,7 @@
 
 <p align="center"><strong>El origen forma parte de los datos. Evidencia, revisión y cercanía entre trazas son dimensiones diferentes.</strong></p>
 
-> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta **v0.4.1**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
+> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta **v0.4.2**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
 
 OTDR Inside conserva el origen de cada valor o evento en vez de aplanar todo lo que aparece en la misma interfaz dentro de una tabla indiferenciada.
 
@@ -113,6 +113,16 @@ El umbral actual de 15 m es una ayuda de agrupamiento. No es:
 
 El agrupamiento es deliberadamente conservador y puede no ser óptimo cuando existen varios eventos cercanos.
 
+## v0.4.2 · procedencia del método y auditoría de excluidos
+
+v0.4.2 hace más visible el **estado de evidencia de cada candidato** sin cambiar lo que significa procedencia. Un candidato visible puede aparecer como `stable` o `ambiguous`; una propuesta excluida cercana puede consultarse con posición y regla, pero **no** cuenta como pareja de evento visible.
+
+Un ensayo de ±10 % del umbral mínimo de ruido terminal informa sensibilidad de la decisión de posible final no reflectivo; no convierte un aviso diagnóstico en un intervalo de incertidumbre medido.
+
+El método opcional **borde por clase** añade una dimensión diferente: **método de localización**, no fuente de datos. Para un candidato calculado, el visor puede conservar posición base, posición experimental, decisión/motivo y método seleccionado. Al activar el experimento la procedencia sigue siendo **calculada**. Una posición importada de EI permanece **importada de EI** y no se sustituye por la posición experimental del detector.
+
+El método de sesión se registra para restauración e informes. Si cambiar una posición calculada previamente revisada exige nueva revisión, la decisión anterior permanece en el historial en vez de usarse como aprobación automática. La lectura base sigue predeterminada porque los contrastes retrospectivos no favorecen de manera uniforme el experimento.
+
 ## La revisión humana se superpone al origen
 
 | Procedencia | Revisión | Significado |
@@ -135,6 +145,7 @@ El agrupamiento es deliberadamente conservador y puede no ser óptimo cuando exi
 | **v0.3.6** | Mejora la consistencia EI/SOR sin añadir ni fusionar categorías. |
 | **v0.4.0** | Pestañas multiarchivo conservan procedencia/revisión por análisis; asociación EI explícita. |
 | **v0.4.1** | Agrupamiento de cercanía entre trazas como relación de presentación, sin tocar procedencia. |
+| **v0.4.2** | Grados de evidencia, auditoría de excluidos, sensibilidad terminal y método de localización opcional sin cambiar las fuentes SOR/EI/calculadas. |
 
 ## Contrato de presentación y exportación
 

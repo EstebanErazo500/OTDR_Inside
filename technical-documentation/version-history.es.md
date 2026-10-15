@@ -33,6 +33,7 @@
 | **v0.3.6** | Consistencia EI/SOR | Consistencia numérica, corrección de propuestas duplicadas y localización a tres escalas para respuestas débiles. |
 | **v0.4.0** | Espacio de trabajo multiarchivo | Hasta ocho pestañas, asociación EI explícita, comparación 2–4, diagnóstico reorganizado y competencia terminal más estricta. |
 | **v0.4.1** | Corrección del comparador | Agrupamiento entre cualquier par, tramo común/completo y referencia visual robusta 5–50 m; detector idéntico a v0.4.0. |
+| **v0.4.2** | Evidencia y localización experimental | Auditoría de excluidos, sensibilidad terminal, borde por clase opcional e informes mejorados. |
 
 ## Fase 1 · base estructural estable
 
@@ -151,6 +152,16 @@ El umbral de 15 m sigue siendo una ayuda visual, no una tolerancia física ni pr
 
 La validación archivada de v0.4.1 registra **54 pruebas Python aprobadas y 6 pruebas dependientes de corpus externo omitidas**, además de una prueba DOM/canvas simulada para la nueva lógica de comparación. En ese momento todavía quedaba pendiente una inspección visual final del comparador revisado en navegador Windows.
 
+### v0.4.2 · revisiones documentadas de una misma entrega
+
+**29 de septiembre — auditoría del comparador.** Los eventos visibles incorporan grado de evidencia y se pueden consultar candidatos excluidos cercanos con sus reglas. Los excluidos no cuentan como parejas de eventos. Un diagnóstico con ±10 % del umbral mínimo de ruido advierte de posibles finales no reflectivos inestables, sin cambiar clases ni posiciones del detector base.
+
+**1–8 de octubre — localización experimental por borde y clase.** Se introduce un método opcional que estudia transiciones locales según la clase del evento; mantiene las posiciones base y permite compararlas y restaurarlas. Está **desactivado por defecto**. Sobre 72 eventos de 18 parejas EI/SOR controladas, la diferencia absoluta media retrospectiva mejora frente a la referencia EXFO del estudio (4,399 → 2,726 m), pero empeora frente al EI de la misma adquisición (3,782 → 5,532 m). Son resultados de concordancia, no errores físicos de distancia; no está demostrada la identidad del montaje EXFO/Ceyear.
+
+**8 de octubre — refinamiento de presentación.** Las sesiones conservan método e historial; se reorganizan controles de sesión e informes y mejora el PDF vectorial. El informe archivado registra 92 pruebas Python aprobadas con los corpus disponibles y verificaciones de interfaz simulada. No se efectuó una inspección en navegador Windows real.
+
+v0.4.2 no se presenta como versión final ni como mejora certificada de posición. Su aporte es explicabilidad, ensayo reversible y mejor presentación de evidencia.
+
 ## Qué permaneció estable
 
 Dos componentes son **idénticos byte a byte en todas las entregas archivadas desde v0.1.0 hasta v0.4.1**:
@@ -172,7 +183,7 @@ Además, `events_hybrid.py` es idéntico entre v0.4.0 y v0.4.1: la corrección d
 
 Secuencia pública prevista:
 
-`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1`
+`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1 → v0.4.2`
 
 ---
 

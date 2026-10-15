@@ -15,7 +15,7 @@
 
 <p align="center"><strong>Origin is part of the data. Evidence, review and cross-trace proximity are different dimensions.</strong></p>
 
-> **Scope.** This page documents the provenance model represented by archived releases through **v0.4.1**. Later releases may add relationships or sources, but they should not retroactively change what these historical provenance categories mean.
+> **Scope.** This page documents the provenance model represented by archived releases through **v0.4.2**. Later releases may add relationships or sources, but they should not retroactively change what these historical provenance categories mean.
 
 OTDR Inside keeps the origin of a value or event visible instead of flattening everything shown in the same interface into one undifferentiated event table.
 
@@ -113,6 +113,16 @@ The current 15 m threshold is a display grouping aid. It is not:
 
 The grouping is intentionally conservative and may be non-optimal when several events are close together.
 
+## v0.4.2 · method provenance and excluded-candidate audit
+
+v0.4.2 makes **candidate status** more visible without changing what event provenance means. A visible candidate can be marked `stable` or `ambiguous`; a nearby suppressed proposal can be inspected with its position and suppression reason, but it is **not** counted as a matching visible event.
+
+A ±10% perturbation of the terminal minimum-noise threshold reports sensitivity of a possible non-reflective-end decision; it does not convert a diagnostic warning into a measured uncertainty interval.
+
+The optional **class-aware edge method** creates another dimension: **localization method**, not another data source. For a calculated candidate, the viewer can retain the baseline position, experimental position, decision/reason and selected method. Choosing the experiment leaves event provenance **calculated**. An imported EI position remains **EI imported** and is not replaced by the detector's experimental position.
+
+The method selected in a session is recorded for restoration and reporting. If changing a previously reviewed calculated position requires renewed review, the previous decision remains in the history rather than being silently reused as approval for the new position. The baseline reading stays the default because retrospective reference comparisons do not consistently favor the experiment.
+
 ## Human review overlays the source
 
 Human review remains additive.
@@ -137,6 +147,7 @@ Human review remains additive.
 | **v0.3.6** | EI/SOR consistency improves without adding or merging provenance categories. |
 | **v0.4.0** | Multi-file tabs preserve provenance and review state per analysis; EI association becomes explicit. |
 | **v0.4.1** | Cross-trace proximity grouping is added as a presentation relation while event provenance stays untouched. |
+| **v0.4.2** | Evidence grades, excluded-proposal audit, terminal sensitivity and an optional localization method are tracked without changing SOR/EI/calculated source categories. |
 
 ## Presentation and export contract
 
