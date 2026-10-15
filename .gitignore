@@ -52,3 +52,36 @@ Desktop.ini
 exports/
 build/
 dist/
+
+# Public repository currently documents the project but must NOT publish viewer source
+# This is defense-in-depth only; .gitignore is NOT a permission or confidentiality control
+src/
+tests/
+profiles/
+web/
+tools/
+scripts/
+otdr_inside/
+*.py
+*.js
+*.ts
+*.jsx
+*.tsx
+*.ipynb
+*.html
+*.css
+*.bat
+*.cmd
+*.ps1
+*.pyw
+*.spec
+
+# Exported reports and operational/session files
+*.pdf
+*.csv
+*.json
+*.jsonl
+*.xlsx
+*.xls
+*.pkl
+*.pickle

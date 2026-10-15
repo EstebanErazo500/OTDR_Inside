@@ -6,6 +6,7 @@
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
   <img src="../assets/nav/validacion-current.svg" alt="Validación · página actual">
+  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
@@ -40,13 +41,14 @@ Ninguna capa por sí sola convierte el proyecto en un estándar OTDR calibrado.
 
 | Tipo de evidencia | Repositorio público | Uso |
 |---|---|---|
-| Fixtures sintéticos o explícitamente anonimizados | **Aptos para publicación** | Parser, normalización, lógica determinista y CI/regresión pública. |
-| Mediciones operativas SOR/EI reales | **Privadas** | Regresión de ingeniería y comportamiento de campo. |
-| Nombres, hashes, rutas o seriales de corpus privados | **Privados** | Reproducibilidad dentro del entorno autorizado. |
-| Ejecutables/manuales de fabricante y estándares licenciados | **No se redistribuyen** | Referencia externa cuando su uso es legal y operativo. |
-| Resultados agregados de validación | **Documentables públicamente** | Explicar qué se comprobó sin exponer datos operativos. |
+| Diagramas conceptuales e ilustraciones sintéticas independientes | **Permitidos** | Explicar arquitectura, tipos de evento e interfaz sin revelar implementación. |
+| Capturas reales del visor | **Permitidas tras revisar cada imagen** | Demostrar una versión, retirando metadatos identificables y contenido de mediciones operativas. |
+| Métodos y resultados agregados de validación | **Documentables tras revisar** | Describir alcance, supuestos de referencia, límites y preguntas abiertas. |
+| Código fuente, pruebas internas, scripts, perfiles propietarios y construcción | **Sin autorización de publicación** | La implementación permanece fuera de GitHub aunque se renombre o anonimize. |
+| SOR/EI operativos, muestras, eventos, sesiones exportadas, curvas derivadas y datos de clientes | **Privados** | La validación de campo/referencia queda en el entorno autorizado. |
+| Ejecutables de fabricantes, manuales comerciales y normas licenciadas | **No se redistribuyen** | Citar o enlazar fuentes legítimamente disponibles cuando sirva. |
 
-La migración pública debe reproducir todo lo posible con datos sintéticos/anonimizados y mantener la regresión privada fuera de GitHub.
+Las cifras de pruebas documentadas provienen de informes de desarrollo archivados. **Con el alcance vigente no se prevé migrar código fuente ni crear una suite pública ejecutable en CI.** Véase la <a href="data-handling.es.md">política de manejo de datos y publicación</a>.
 
 ## Evidencia por versión
 
@@ -181,12 +183,12 @@ Un estudio metrológico requeriría al menos:
 
 Hasta entonces, las distancias deben describirse como **concordancia algoritmo/referencia bajo condiciones concretas**, no como exactitud universal del OTDR.
 
-## Reglas que deben sobrevivir a la migración pública
+## Reglas para documentar la validación públicamente
 
 - conservar crudo y normalizado por separado;
 - mantener procedencia almacenada/importada/calculada/manual;
-- mantener la regresión operacional privada fuera de GitHub;
-- usar fixtures públicos sintéticos/anonimizados;
+- mantener el código fuente, las pruebas internas y la regresión operacional fuera de GitHub;
+- emplear ilustraciones sintéticas independientes y capturas revisadas, sin subir fixtures de pruebas internos o adaptados;
 - indicar cuándo una prueba depende de corpus externo;
 - separar regresión automatizada de inspección manual de navegador;
 - separar cercanía visual de tolerancia física;
@@ -199,4 +201,4 @@ Hasta entonces, las distancias deben describirse como **concordancia algoritmo/r
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
 </p>
 
-<p align="center"><sub>Siguiente página independiente: Manejo de datos.</sub></p>
+<p align="center"><sub>Frontera de publicación: capturas y arquitectura permitidas tras revisión; código fuente de la aplicación excluido.</sub></p>

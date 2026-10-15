@@ -6,6 +6,7 @@
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
   <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
@@ -17,7 +18,7 @@ Este directorio contiene la documentación técnica pública de OTDR Inside.
 
 El registro reconstruido cubre actualmente las entregas archivadas desde **v0.1.0 hasta v0.4.2**. Ese rango corresponde al material analizado para el repositorio público y no al final del proyecto. Las versiones posteriores deben ampliar la historia sin reescribir lo que realmente demostró cada entrega anterior.
 
-La documentación conserva la evolución técnica manteniendo fuera del repositorio las trazas operativas, los corpus privados, identificadores de rutas/clientes, hashes internos y material propietario.
+La documentación conserva la evolución técnica. El alcance actual permite capturas revisadas del visor, arquitectura conceptual y diagramas generales/sintéticos independientes; **no permite el código fuente de la aplicación ni mediciones operativas privadas**.
 
 ## Mapa de documentación
 
@@ -27,7 +28,7 @@ La documentación conserva la evolución técnica manteniendo fuera del reposito
 | <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución arquitectónica con base detallada v0.4.1 y adiciones documentadas en 4.2 de evidencia, localización e informes. |
 | <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de eventos consciente de la fuente y conservación de procedencia en parejas EI/SOR, pestañas y comparación entre trazas. |
 | <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Capas de validación, evidencia por versión, frontera público/privado y límites de lo que los datos permiten afirmar. |
-| <a href="../README.es.md#manejo-de-datos"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Política actual de manejo de datos públicos. La siguiente página independiente estará dedicada a este tema. |
+| <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Frontera de permisos, revisión de capturas e ilustraciones sintéticas y restricciones de código fuente/mediciones. |
 
 ## Principios de publicación
 
@@ -40,4 +41,4 @@ La documentación conserva la evolución técnica manteniendo fuera del reposito
 
 ---
 
-La siguiente página independiente después de **Validación** será **Manejo de datos**.
+Próxima incorporación pública prevista: una **galería de capturas revisadas del visor**, acompañada de ilustraciones sintéticas independientes cuando sea necesario.

@@ -6,6 +6,7 @@
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
   <img src="../assets/nav/event-provenance-current.svg" alt="Event provenance · current page">
   <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
@@ -166,6 +167,8 @@ The public model should preserve these invariants:
 Provenance is not a truth score. A stored value is not automatically more physically correct than every calculated value; an EI import is not equivalent to a SOR-stored event; a human acceptance is not a new measurement; and a close event in another trace is not proof of physical identity.
 
 The purpose is narrower: **preserve enough source context that later interpretation, validation, review and comparison do not erase how a result was obtained.**
+
+This page documents concepts and archived behavior, not a source-code distribution or a public measurement dataset. Publication follows the <a href="data-handling.md">data handling policy</a>.
 
 ---
 

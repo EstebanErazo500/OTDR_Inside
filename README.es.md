@@ -64,6 +64,8 @@ Cinco distinciones guían la implementación:
 
 ### Normalización con procedencia
 
+*Esquema conceptual ilustrativo; no corresponde al código fuente de la aplicación:*
+
 ```python
 normalized_field = {
     "value": ...,
@@ -145,7 +147,13 @@ La jerarquía de evidencia, la frontera público/privado y los límites metroló
 
 OTDR Inside está diseñado como un flujo **local y de solo lectura**. Las mediciones fuente se procesan localmente y el visor no sobrescribe los originales.
 
-Este repositorio no distribuye mediciones operativas reales `.sor`, `.ei` u `.otdr`, identificadores de clientes o rutas, nombres o hashes de corpus privados, ejecutables propietarios, manuales comerciales, estándares licenciados ni evidencia derivada que exponga metadatos confidenciales. Los ejemplos y pruebas públicas deben usar datos sintéticos o explícitamente anonimizados.
+**Alcance permitido:** capturas revisadas del visor real, explicaciones de arquitectura de alto nivel e ilustraciones generales/completamente sintéticas. **No está autorizada la publicación del código fuente del visor**, incluso si se limpia o adapta, ni de sus pruebas/configuración interna, binarios o releases ejecutables. Cada captura debe revisarse para excluir metadatos operativos y contenido de trazas identificable.
+
+El repositorio no distribuye `.sor`, `.ei`, `.otdr` reales, exportaciones de medición/informes/sesiones, curvas privadas, identificadores de rutas/clientes, seriales, hashes, programas propietarios ni materiales licenciados. Toda ilustración sintética se etiqueta como tal y no constituye una medición de validación.
+
+<p align="center">
+  <a href="technical-documentation/data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Política completa de manejo de datos"></a>
+</p>
 
 <h2 id="limitaciones-conocidas" align="center">Limitaciones conocidas</h2>
 
@@ -164,7 +172,7 @@ Este repositorio no distribuye mediciones operativas reales `.sor`, `.ei` u `.ot
 - mejorar la asociación entre múltiples trazas más allá del agrupamiento visual actual sin convertirla en una afirmación de identidad;
 - ampliar formatos emparejados y fabricantes conservando controles de procedencia;
 - añadir procesamiento por lotes, detección de duplicados y revisión de anomalías;
-- publicar fixtures sintéticos/anonimizados y CI a medida que avance la migración del código;
+- crear una galería revisada de capturas del visor e ilustraciones de trazas sintéticas independientes, sin publicar código fuente;
 - construir una matriz de compatibilidad basada en evidencia reproducible.
 
 <h2 id="autor" align="center">Autor</h2>

@@ -6,6 +6,7 @@
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
   <img src="../assets/nav/validation-current.svg" alt="Validation · current page">
+  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
@@ -42,13 +43,14 @@ No single layer turns the project into a calibrated OTDR measurement standard.
 
 | Evidence type | Public repository | Purpose |
 |---|---|---|
-| Synthetic or explicitly sanitized fixtures | **Suitable for public use** | Parser, normalization, deterministic logic and CI/regression examples. |
-| Real operational SOR/EI measurements | **Private** | Engineering regression and field behavior. |
-| Private corpus filenames, hashes, routes or serials | **Private** | Reproducibility inside the authorized engineering environment only. |
-| Vendor executables/manuals/licensed standards | **Not redistributed** | External reference material where legally/operationally available. |
-| Aggregate validation results | **Publicly documentable** | Explain what was tested without exposing operational data. |
+| Conceptual diagrams and independently synthetic illustrations | **Allowed** | Explain architecture, event concepts and interface behavior without publishing the implementation. |
+| Screenshots of the real viewer | **Allowed after per-image review** | Demonstrate an actual version only after removing identifying metadata and operational measurement content. |
+| Aggregated validation methods and outcomes | **Documentable after review** | Describe tested scope, reference assumptions, limitations and unresolved questions. |
+| Source code, internal tests, scripts, proprietary profiles and build files | **Not authorized for publication** | The implementation stays outside GitHub even if renamed or sanitized. |
+| Operational SOR/EI, samples, events, session exports, derived traces and customer data | **Private** | Field/reference validation remains in the authorized work environment. |
+| Vendor executables, commercial manuals and licensed standards | **Not redistributed** | Cite or link lawfully available sources where helpful. |
 
-The public migration should reproduce as much behavior as possible with synthetic/sanitized data while keeping private regression available outside GitHub.
+The documented test counts are results from archived development reports. **No public source-code migration or runnable public CI suite is currently planned under this permission scope.** See the <a href="data-handling.md">data handling and publication policy</a>.
 
 ## Release evidence
 
@@ -185,12 +187,12 @@ A metrological study would require, at minimum:
 
 Until that exists, the project should describe distances as algorithm/reference **concordance** under specific conditions rather than universal OTDR accuracy.
 
-## Validation rules that should survive the public migration
+## Rules for public validation documentation
 
 - preserve raw and normalized values separately;
 - keep stored/imported/calculated/manual provenance explicit;
-- keep private operational regression outside GitHub;
-- use synthetic/sanitized public fixtures;
+- keep source code, private tests and operational regression outside GitHub;
+- use independently synthetic visuals and reviewed screenshots; do not upload private or adapted test fixtures;
 - document when a test depends on external corpora;
 - distinguish automated regression from browser/manual inspection;
 - distinguish visual proximity from physical tolerance;
@@ -203,4 +205,4 @@ Until that exists, the project should describe distances as algorithm/reference 
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
 </p>
 
-<p align="center"><sub>Next standalone documentation page: Data handling.</sub></p>
+<p align="center"><sub>Publication boundary: screenshots and conceptual material are allowed after review; application source code remains excluded.</sub></p>

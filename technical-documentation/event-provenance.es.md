@@ -6,6 +6,7 @@
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <img src="../assets/nav/procedencia-eventos-current.svg" alt="Procedencia de eventos · página actual">
   <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
@@ -162,6 +163,8 @@ El método de sesión se registra para restauración e informes. Si cambiar una 
 La procedencia no es una puntuación de verdad. Un valor almacenado no es automáticamente más correcto que cualquier cálculo; un EI importado no equivale a evento almacenado en SOR; aceptar manualmente no crea una nueva medición; y una cercanía entre trazas no demuestra identidad física.
 
 Su objetivo es más concreto: **preservar suficiente contexto de fuente para que interpretación, validación, revisión y comparación posteriores no borren cómo se obtuvo un resultado.**
+
+Esta página documenta conceptos y comportamiento histórico, no distribuye código ni un corpus público de mediciones. Su publicación se rige por la <a href="data-handling.es.md">política de manejo de datos</a>.
 
 ---
 

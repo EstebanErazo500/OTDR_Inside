@@ -64,6 +64,8 @@ Five distinctions guide the implementation:
 
 ### Provenance-aware normalization
 
+*Illustrative conceptual schema, not application source code:*
+
 ```python
 normalized_field = {
     "value": ...,
@@ -145,7 +147,13 @@ The full evidence hierarchy, public/private boundary and metrological limits are
 
 OTDR Inside is designed as a **local, read-only workflow**. Source measurements are processed locally and are not overwritten by the viewer.
 
-This repository does not distribute real operational `.sor`, `.ei` or `.otdr` measurements, customer or route identifiers, private corpus filenames or hashes, proprietary vendor executables, commercial manuals, licensed standards, or derived evidence that exposes confidential trace metadata. Public examples and tests should rely on synthetic or explicitly sanitized data.
+**Publication scope:** reviewed screenshots of the actual viewer, high-level architecture explanations and independently synthetic/generalized illustrations are permitted. **The viewer's source code is not authorized for publication**, including cleaned or adapted versions, internal tests, configurations, binaries or executable releases. A screenshot must be checked for operational metadata and identifiable trace content before publication.
+
+The repository does not distribute real `.sor`, `.ei`, `.otdr`, exported measurement/report/session data, private trace curves, route/customer identifiers, device serials, hashes, proprietary vendor software or licensed materials. Synthetic illustrations are labeled as such and are not validation measurements.
+
+<p align="center">
+  <a href="technical-documentation/data-handling.md"><img src="assets/nav/data-handling.svg" alt="Complete data handling policy"></a>
+</p>
 
 <h2 id="known-limitations" align="center">Known limitations</h2>
 
@@ -164,7 +172,7 @@ This repository does not distribute real operational `.sor`, `.ei` or `.otdr` me
 - strengthen multi-trace association beyond the current visual proximity grouping without turning it into an identity claim;
 - expand paired-format and vendor coverage while preserving provenance checks;
 - add batch processing, duplicate detection and anomaly review;
-- publish synthetic/sanitized regression fixtures and CI as the code migration progresses;
+- build a curated gallery of approved viewer screenshots and independently synthetic trace illustrations, without publishing source code;
 - build a compatibility matrix based on reproducible evidence.
 
 <h2 id="author" align="center">Author</h2>

@@ -7,6 +7,7 @@
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
   <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
@@ -14,7 +15,7 @@
   <a href="version-history.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
-> This public history is reconstructed from archived development snapshots. It documents the real sequence of technical changes, but it does **not** pretend those snapshots were originally Git commits. Public tags will be added only as the sanitized code migration progresses.
+> This public history is reconstructed from archived development snapshots. It documents the real sequence of technical changes, but it does **not** pretend those snapshots were originally Git commits. The timeline is documentary: no source-code tags or downloadable releases are planned under the current publication permission.
 
 ## Evolution at a glance
 
@@ -173,19 +174,13 @@ That continuity is important: the project grew by adding semantics, evidence, EI
 
 Another useful boundary appears in v0.4.1: `events_hybrid.py` is identical to v0.4.0. The comparison correction belongs to the workspace/presentation layer, not to the detector.
 
-## Public migration policy
+## Current public publication policy
 
-The Git history reconstructed from these snapshots follows these rules:
+The sequence above documents the **engineering releases**. It is not a promise of public source-code tags or installable GitHub Releases. The current authorization permits reviewed screenshots of the viewer, conceptual architecture, general/synthetic illustrations and public methodological summaries; it **does not authorize publishing the application source code**, even in sanitized or renamed form.
 
-1. operational `.SOR`, `.EI` and `.otdr` measurements are never committed;
-2. private route/customer identifiers, corpus filenames, serial numbers, hashes and internal paths are removed or generalized;
-3. proprietary vendor software, licensed standards and commercial manuals are not redistributed;
-4. public regression uses synthetic or explicitly sanitized fixtures;
-5. tags represent sanitized historical states, not fabricated original commit dates.
+Original measurements (`.SOR`, `.EI`, `.otdr`), derived operational curves, field reports, private filenames/hashes, internal paths and vendor packages remain outside GitHub. Public demonstrations must use independent synthetic examples or separately reviewed screenshots. Archived validation numbers are documented evidence, **not a runnable public test suite**.
 
-The intended public sequence is:
-
-`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1 → v0.4.2`
+If rights to distribute code change, the project would need a separate explicit authorization and a new publication review before any code, source tags, binaries or open-source license are added. Until then, the version sequence is represented by documentation, not public source snapshots. See the <a href="data-handling.md">data handling policy</a>.
 
 ---
 

@@ -7,6 +7,7 @@
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
   <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
@@ -14,7 +15,7 @@
   <a href="version-history.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
-> Este historial público se reconstruye a partir de entregas archivadas del desarrollo. Documenta la secuencia técnica real, pero **no** pretende que esas entregas hayan sido originalmente commits de Git. Las etiquetas públicas se añadirán únicamente a medida que avance la migración sanitizada del código.
+> Este historial público se reconstruye a partir de entregas archivadas del desarrollo. Documenta la secuencia técnica real, pero **no** pretende que esas entregas hayan sido originalmente commits de Git. La secuencia es documental: con el permiso vigente no se prevén etiquetas del código fuente ni entregas descargables.
 
 ## Evolución general
 
@@ -173,17 +174,13 @@ Esto demuestra que el proyecto creció añadiendo semántica, evidencia, EI, an�
 
 Además, `events_hybrid.py` es idéntico entre v0.4.0 y v0.4.1: la corrección de 4.1 pertenece a la capa de espacio de trabajo/presentación, no al detector.
 
-## Política de migración pública
+## Política vigente de publicación pública
 
-1. las mediciones operativas `.SOR`, `.EI` y `.otdr` nunca se incorporan a Git;
-2. identificadores privados de rutas/clientes, nombres de corpus, seriales, hashes y rutas internas se eliminan o generalizan;
-3. no se redistribuyen programas propietarios, estándares licenciados ni manuales comerciales;
-4. la regresión pública usa fixtures sintéticos o explícitamente anonimizados;
-5. las etiquetas representan estados históricos sanitizados, no fechas de commit inventadas.
+La secuencia anterior documenta **entregas de ingeniería**. No implica que existan tags públicos del código ni que puedan crearse GitHub Releases instalables. La autorización vigente permite capturas revisadas del visor, arquitectura conceptual, ilustraciones generales/sintéticas y resúmenes metodológicos; **no permite publicar el código fuente de la aplicación**, aunque esté anonimizado o renombrado.
 
-Secuencia pública prevista:
+Las mediciones originales (`.SOR`, `.EI`, `.otdr`), curvas operativas derivadas, informes de campo, nombres/hashes privados, rutas internas y programas de fabricante permanecen fuera de GitHub. Las demostraciones públicas requieren ejemplos sintéticos independientes o capturas revisadas. Las cifras de validación archivadas son evidencia documental, **no una suite pública ejecutable**.
 
-`v0.1.0 → v0.1.1 → v0.1.2 → v0.2.0 → v0.3.0 → v0.3.1 → v0.3.2 → v0.3.3 → v0.3.4 → v0.3.5 → v0.3.6 → v0.4.0 → v0.4.1 → v0.4.2`
+Si cambia el permiso para distribuir código, será necesaria una nueva autorización expresa y revisión de publicación antes de incorporar fuentes, tags de código, binarios o licencias de software libre. Mientras tanto, la evolución se representa mediante documentación, no snapshots públicos del código. Véase la <a href="data-handling.es.md">política de manejo de datos</a>.
 
 ---
 

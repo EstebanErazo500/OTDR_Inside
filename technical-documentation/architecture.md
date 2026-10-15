@@ -7,6 +7,7 @@
   <img src="../assets/nav/architecture-current.svg" alt="Architecture · current page">
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
   <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
@@ -198,6 +199,8 @@ The comparator does not rewrite per-file results. It creates a **relationship vi
 The v0.4.1 workspace makes cross-trace inspection easier; it does not make different files physically comparable under arbitrary acquisition conditions. Similar positions can occur in different links, wavelengths, pulses or group indices without representing the same element. The current proximity grouping is greedy and is not presented as an optimal event-association algorithm.
 
 Likewise, EI agreement, EXFO agreement and terminal evidence remain engineering evidence under the documented conditions, not universal calibration or independent Telcordia certification.
+
+This is a conceptual and historical architecture description. **Application source code and internal implementation files are not included in the public repository.** The <a href="data-handling.md">data handling policy</a> governs what may be demonstrated.
 
 ---
 

@@ -7,6 +7,7 @@
   <img src="../assets/nav/arquitectura-current.svg" alt="Arquitectura · página actual">
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
   <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
@@ -198,6 +199,8 @@ El comparador no reescribe los resultados por archivo. Construye una **vista de 
 El espacio de trabajo v0.4.1 facilita inspección cruzada; no hace físicamente comparables archivos tomados bajo cualquier condición. Posiciones semejantes pueden aparecer en enlaces, longitudes de onda, pulsos o índices distintos sin corresponder al mismo elemento. El agrupamiento actual es codicioso y no se presenta como algoritmo óptimo de asociación física.
 
 La concordancia EI, la referencia EXFO y la evidencia terminal siguen siendo evidencia de ingeniería dentro de condiciones documentadas, no calibración universal ni certificación independiente de Telcordia.
+
+Esta página explica la arquitectura conceptual e histórica. **El repositorio público no incluye código fuente ni archivos de implementación internos.** La <a href="data-handling.es.md">política de manejo de datos</a> define qué puede demostrarse.
 
 ---
 
