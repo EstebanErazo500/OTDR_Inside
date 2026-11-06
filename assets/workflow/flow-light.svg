@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 355" width="1600" height="355">
+<rect x="0" y="0" width="1600" height="355" rx="21" fill="#f3f5f7"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="45" y="44" font-size="13" font-weight="700" fill="#5c6b78" letter-spacing="1.6">OTDR INSIDE · DOCUMENTED v0.4.5 WALKTHROUGH</text>
+<text x="45" y="82" font-size="23" font-weight="700" fill="#202f3c">Five stages · origin and review at every decision</text><rect x="41" y="113" width="294" height="173" rx="15" fill="#e6eaee" stroke="#c4ccd3" stroke-width="1.25"/>
+  <rect x="59" y="131" width="5" height="29" rx="2.5" fill="#237b71"/>
+  <text x="75" y="152" font-size="13" font-weight="700" fill="#237b71">01 · OPEN</text>
+  <text x="61" y="196" font-size="19" font-weight="700" fill="#202f3c">SOR · EI · MSOR · SOZ</text>
+  <text x="61" y="233" font-size="14" fill="#5c6b78">Files and subtraces</text>
+  <text x="61" y="259" font-size="14" fill="#5c6b78">with known origin</text><path d="M340 202 H355" stroke="#c4ccd3" stroke-width="2.5" fill="none"/><path d="M355 202 l-7 -5 v10 z" fill="#316e9e"/><rect x="359" y="113" width="294" height="173" rx="15" fill="#e6eaee" stroke="#c4ccd3" stroke-width="1.25"/>
+  <rect x="377" y="131" width="5" height="29" rx="2.5" fill="#316e9e"/>
+  <text x="393" y="152" font-size="13" font-weight="700" fill="#316e9e">02 · INTERPRET</text>
+  <text x="379" y="196" font-size="19" font-weight="700" fill="#202f3c">Trace and events</text>
+  <text x="379" y="233" font-size="14" fill="#5c6b78">Native · EI · calculated</text>
+  <text x="379" y="259" font-size="14" fill="#5c6b78">data and evidence</text><path d="M658 202 H673" stroke="#c4ccd3" stroke-width="2.5" fill="none"/><path d="M673 202 l-7 -5 v10 z" fill="#316e9e"/><rect x="677" y="113" width="294" height="173" rx="15" fill="#e6eaee" stroke="#c4ccd3" stroke-width="1.25"/>
+  <rect x="695" y="131" width="5" height="29" rx="2.5" fill="#6a54a4"/>
+  <text x="711" y="152" font-size="13" font-weight="700" fill="#6a54a4">03 · REVIEW</text>
+  <text x="697" y="196" font-size="19" font-weight="700" fill="#202f3c">LSA + RF advisory</text>
+  <text x="697" y="233" font-size="14" fill="#5c6b78">Windows · disagreements</text>
+  <text x="697" y="259" font-size="14" fill="#5c6b78">human decisions</text><path d="M976 202 H991" stroke="#c4ccd3" stroke-width="2.5" fill="none"/><path d="M991 202 l-7 -5 v10 z" fill="#316e9e"/><rect x="995" y="113" width="294" height="173" rx="15" fill="#e6eaee" stroke="#c4ccd3" stroke-width="1.25"/>
+  <rect x="1013" y="131" width="5" height="29" rx="2.5" fill="#316e9e"/>
+  <text x="1029" y="152" font-size="13" font-weight="700" fill="#316e9e">04 · COMPARE</text>
+  <text x="1015" y="196" font-size="19" font-weight="700" fill="#202f3c">2–4 traces</text>
+  <text x="1015" y="233" font-size="14" fill="#5c6b78">References · IOR</text>
+  <text x="1015" y="259" font-size="14" fill="#5c6b78">position and separation</text><path d="M1294 202 H1309" stroke="#c4ccd3" stroke-width="2.5" fill="none"/><path d="M1309 202 l-7 -5 v10 z" fill="#316e9e"/><rect x="1313" y="113" width="294" height="173" rx="15" fill="#e6eaee" stroke="#c4ccd3" stroke-width="1.25"/>
+  <rect x="1331" y="131" width="5" height="29" rx="2.5" fill="#237b71"/>
+  <text x="1347" y="152" font-size="13" font-weight="700" fill="#237b71">05 · REPORT</text>
+  <text x="1333" y="196" font-size="19" font-weight="700" fill="#202f3c">Session + PDF/CSV</text>
+  <text x="1333" y="233" font-size="14" fill="#5c6b78">Method · provenance</text>
+  <text x="1333" y="259" font-size="14" fill="#5c6b78">warnings retained</text><rect x="170" y="307" width="1260" height="34" rx="9" fill="#e0e6eb" stroke="#c4ccd3"/>
+<text x="800" y="329" text-anchor="middle" font-size="13" font-weight="600" fill="#5c6b78">CONCEPTUAL DIAGRAM · NOT A SCREENSHOT OR FIELD MEASUREMENT</text></g></svg>

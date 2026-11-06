@@ -2,6 +2,7 @@
 
 <p align="center">
   <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="how-it-works.md"><img src="../assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
   <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a>
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
@@ -24,6 +25,7 @@ The documentation preserves technical evolution. The current publication scope a
 
 | Page | Purpose |
 |---|---|
+| <a href="how-it-works.md"><img src="../assets/nav/how-it-works.svg" alt="Guided walkthrough"></a> | Five-stage operator journey through characterized inputs, evidence, LSA/ML review, multi-trace comparisons and reports (documented v0.4.5); no public application code or screenshots. |
 | <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a> | Release-by-release engineering evolution from v0.1.0 through v0.4.5, including Yokogawa/JDSU/SOZ coverage, loss estimation and documented evidence limits. |
 | <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a> | Architectural evolution through the v0.4.1 workspace baseline, 4.2 audit and 4.3–4.5 vendor, AI and LSA additions. |
 | <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a> | Source-aware event model across SOR, EI, MSOR and SOZ, including RF advisory output, native loss and LSA estimates. |

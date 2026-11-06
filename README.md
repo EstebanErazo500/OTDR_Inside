@@ -18,6 +18,7 @@
   <a href="#current-scope"><img src="assets/nav/scope.svg" alt="Scope"></a>
   <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
   <a href="#roadmap"><img src="assets/nav/roadmap.svg" alt="Roadmap"></a>
+  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
   <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical Docs"></a>
 </p>
 
@@ -33,6 +34,18 @@
 OTDR files can be structurally readable while still containing vendor-specific semantics, rewritten metadata, ambiguous scales or different event representations. OTDR Inside addresses that problem by separating **structure**, **interpretation**, **calculation**, **evidence**, **provenance** and, from the 0.4 line, **comparison state**.
 
 The project is not designed to force every trace into a universal model. It exposes what was read, what was interpreted, how a result was derived, which source it belongs to and which claims remain unresolved.
+
+<h2 id="guided-walkthrough" align="center">Guided walkthrough</h2>
+
+**See the engineering workflow before reading the implementation history.** The [five-stage walkthrough](technical-documentation/how-it-works.md) follows the documented v0.4.5 operator journey:
+
+**Open a characterized SOR/EI/MSOR/SOZ → interpret source-aware traces and events → review LSA loss and Random Forest advice → compare traces and acquisition context → retain decisions in session/reports.**
+
+<p align="center">
+  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="How it works"></a>
+</p>
+
+The walkthrough includes an original conceptual flow diagram and practical Ceyear, Yokogawa and JDSU routes. **It is not a downloadable demo or screenshot gallery**; source code and operational measurements remain private.
 
 <h2 id="architecture" align="center">Architecture</h2>
 

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 355" width="1600" height="355">
+<rect x="0" y="0" width="1600" height="355" rx="21" fill="#151b22"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="45" y="44" font-size="13" font-weight="700" fill="#b6c0c9" letter-spacing="1.6">OTDR INSIDE · RECORRIDO DOCUMENTADO v0.4.5</text>
+<text x="45" y="82" font-size="23" font-weight="700" fill="#f1f4f6">Cinco etapas · procedencia y revisión en cada decisión</text><rect x="41" y="113" width="294" height="173" rx="15" fill="#262e38" stroke="#465663" stroke-width="1.25"/>
+  <rect x="59" y="131" width="5" height="29" rx="2.5" fill="#77d1c0"/>
+  <text x="75" y="152" font-size="13" font-weight="700" fill="#77d1c0">01 · ABRIR</text>
+  <text x="61" y="196" font-size="19" font-weight="700" fill="#f1f4f6">SOR · EI · MSOR · SOZ</text>
+  <text x="61" y="233" font-size="14" fill="#b6c0c9">Archivos y subtrazas</text>
+  <text x="61" y="259" font-size="14" fill="#b6c0c9">con origen conocido</text><path d="M340 202 H355" stroke="#465663" stroke-width="2.5" fill="none"/><path d="M355 202 l-7 -5 v10 z" fill="#83b8f2"/><rect x="359" y="113" width="294" height="173" rx="15" fill="#262e38" stroke="#465663" stroke-width="1.25"/>
+  <rect x="377" y="131" width="5" height="29" rx="2.5" fill="#83b8f2"/>
+  <text x="393" y="152" font-size="13" font-weight="700" fill="#83b8f2">02 · INTERPRETAR</text>
+  <text x="379" y="196" font-size="19" font-weight="700" fill="#f1f4f6">Curva y eventos</text>
+  <text x="379" y="233" font-size="14" fill="#b6c0c9">Nativo · EI · calculado</text>
+  <text x="379" y="259" font-size="14" fill="#b6c0c9">datos y evidencia</text><path d="M658 202 H673" stroke="#465663" stroke-width="2.5" fill="none"/><path d="M673 202 l-7 -5 v10 z" fill="#83b8f2"/><rect x="677" y="113" width="294" height="173" rx="15" fill="#262e38" stroke="#465663" stroke-width="1.25"/>
+  <rect x="695" y="131" width="5" height="29" rx="2.5" fill="#b49de8"/>
+  <text x="711" y="152" font-size="13" font-weight="700" fill="#b49de8">03 · REVISAR</text>
+  <text x="697" y="196" font-size="19" font-weight="700" fill="#f1f4f6">LSA + asesoría RF</text>
+  <text x="697" y="233" font-size="14" fill="#b6c0c9">Ventanas · discrepancias</text>
+  <text x="697" y="259" font-size="14" fill="#b6c0c9">decisiones humanas</text><path d="M976 202 H991" stroke="#465663" stroke-width="2.5" fill="none"/><path d="M991 202 l-7 -5 v10 z" fill="#83b8f2"/><rect x="995" y="113" width="294" height="173" rx="15" fill="#262e38" stroke="#465663" stroke-width="1.25"/>
+  <rect x="1013" y="131" width="5" height="29" rx="2.5" fill="#83b8f2"/>
+  <text x="1029" y="152" font-size="13" font-weight="700" fill="#83b8f2">04 · COMPARAR</text>
+  <text x="1015" y="196" font-size="19" font-weight="700" fill="#f1f4f6">2–4 trazas</text>
+  <text x="1015" y="233" font-size="14" fill="#b6c0c9">Referencias · IOR</text>
+  <text x="1015" y="259" font-size="14" fill="#b6c0c9">posiciones y separaciones</text><path d="M1294 202 H1309" stroke="#465663" stroke-width="2.5" fill="none"/><path d="M1309 202 l-7 -5 v10 z" fill="#83b8f2"/><rect x="1313" y="113" width="294" height="173" rx="15" fill="#262e38" stroke="#465663" stroke-width="1.25"/>
+  <rect x="1331" y="131" width="5" height="29" rx="2.5" fill="#77d1c0"/>
+  <text x="1347" y="152" font-size="13" font-weight="700" fill="#77d1c0">05 · INFORMAR</text>
+  <text x="1333" y="196" font-size="19" font-weight="700" fill="#f1f4f6">Sesión + PDF/CSV</text>
+  <text x="1333" y="233" font-size="14" fill="#b6c0c9">Método · procedencia</text>
+  <text x="1333" y="259" font-size="14" fill="#b6c0c9">advertencias conservadas</text><rect x="170" y="307" width="1260" height="34" rx="9" fill="#1d252e" stroke="#465663"/>
+<text x="800" y="329" text-anchor="middle" font-size="13" font-weight="600" fill="#b6c0c9">ESQUEMA CONCEPTUAL · NO ES UNA CAPTURA NI UNA MEDICIÓN DE CAMPO</text></g></svg>

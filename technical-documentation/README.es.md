@@ -2,6 +2,7 @@
 
 <p align="center">
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
   <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
@@ -24,6 +25,7 @@ La documentación conserva la evolución técnica. El alcance actual permite cap
 
 | Página | Propósito |
 |---|---|
+| <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a> | Flujo del operador en cinco etapas: entradas caracterizadas, evidencia, revisión LSA/IA, comparación e informes (v0.4.5); sin código público ni capturas inventadas. |
 | <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución de ingeniería hasta v0.4.5, incluidas Yokogawa/JDSU/SOZ, estimación de pérdidas y límites de la evidencia. |
 | <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución hasta la base multiarchivo 4.1, auditoría 4.2 y ampliaciones 4.3–4.5 de fabricantes, IA y LSA. |
 | <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de procedencia SOR, EI, MSOR y SOZ; asesoría RF y pérdida nativa frente a LSA separadas. |

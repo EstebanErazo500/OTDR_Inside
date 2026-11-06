@@ -18,6 +18,7 @@
   <a href="#alcance-actual"><img src="assets/nav/alcance.svg" alt="Alcance"></a>
   <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
   <a href="#hoja-de-ruta"><img src="assets/nav/hoja-ruta.svg" alt="Hoja de ruta"></a>
+  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
   <a href="technical-documentation/README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>
 
@@ -33,6 +34,18 @@
 Un archivo OTDR puede ser estructuralmente legible y, aun así, contener semántica específica del fabricante, metadatos reescritos, escalas ambiguas o distintas representaciones de eventos. OTDR Inside aborda ese problema separando **estructura**, **interpretación**, **cálculo**, **evidencia**, **procedencia** y, desde la línea 0.4, **estado de comparación**.
 
 El proyecto no intenta forzar todas las trazas dentro de un modelo universal. Expone qué se leyó, qué se interpretó, cómo se obtuvo un resultado, a qué fuente pertenece y qué afirmaciones siguen sin resolverse.
+
+<h2 id="recorrido-guiado" align="center">Recorrido guiado</h2>
+
+**Conoce el flujo de trabajo antes de entrar en la historia de implementación.** El [recorrido de cinco etapas](technical-documentation/how-it-works.es.md) explica el uso documentado en v0.4.5:
+
+**Abrir SOR/EI/MSOR/SOZ caracterizados → interpretar trazas y eventos con procedencia → revisar pérdida LSA y asesoría Random Forest → comparar mediciones y condiciones → conservar decisiones en sesiones/informes.**
+
+<p align="center">
+  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
+</p>
+
+Incluye un diagrama conceptual original y recorridos representativos de Ceyear, Yokogawa y JDSU. **No es una demostración descargable ni una galería de capturas**; el código y las mediciones operativas permanecen privados.
 
 <h2 id="arquitectura" align="center">Arquitectura</h2>
 
