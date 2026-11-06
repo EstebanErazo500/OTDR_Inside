@@ -16,7 +16,7 @@
 
 <p align="center"><strong>El origen forma parte de los datos. Evidencia, revisión y cercanía entre trazas son dimensiones diferentes.</strong></p>
 
-> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta **v0.4.2**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
+> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta **v0.4.5**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
 
 OTDR Inside conserva el origen de cada valor o evento en vez de aplanar todo lo que aparece en la misma interfaz dentro de una tabla indiferenciada.
 
@@ -124,6 +124,36 @@ El método opcional **borde por clase** añade una dimensión diferente: **méto
 
 El método de sesión se registra para restauración e informes. Si cambiar una posición calculada previamente revisada exige nueva revisión, la decisión anterior permanece en el historial en vez de usarse como aprobación automática. La lectura base sigue predeterminada porque los contrastes retrospectivos no favorecen de manera uniforme el experimento.
 
+## v0.4.3–v0.4.5 · identidad instrumental, subtrazas y evaluaciones separadas
+
+### v0.4.3 · identidad declarada frente a procedencia confirmada
+
+Los SOR Yokogawa pueden mostrar `KeyEvents` nativos interpretados para el perfil caracterizado. La **identidad declarada dentro del archivo** no equivale a la **procedencia confirmada externamente para un original concreto**. Confirmar un conjunto de archivos no autoriza a cambiar el proveedor original ni a inventar un modelo no declarado.
+
+El **Random Forest** morfológico produce una *clasificación orientativa de la forma de señal*. No inventa una quinta procedencia de eventos, no sobrescribe registros nativos ni entrega confianza calibrada.
+
+### v0.4.4 · contenedor fuente y subtraza por longitud de onda
+
+Un JDSU MSOR caracterizado puede tener más de una traza. Se conservan **identidad del contenedor**, **identidad de la subtraza**, posiciones y magnitudes nativas. Los metadatos TXT externos solo se asocian cuando se verifica su relación con el original; si no, las magnitudes no soportadas permanecen desconocidas.
+
+Las correspondencias entre archivos son **relaciones revisables** entre registros originales. Aceptar una pareja no cambia la fuente ni la medición física almacenada en ningún archivo.
+
+### v0.4.5 · copias SOZ, LSA local y separación IA/medición
+
+Los SOZ caracterizados incluyen trazas por longitud de onda. Vincular un SOR con un miembro de SOZ establece una **relación de misma adquisición**, no otra medición independiente. Se conserva archivo → contenedor → subtraza → evento nativo.
+
+Un evento puede mostrar tres evaluaciones paralelas:
+
+| Dimensión | Origen e interpretación |
+|---|---|
+| **Pérdida nativa** | Magnitud óptica almacenada por el instrumento bajo las reglas semánticas del perfil. |
+| **Pérdida LSA local estimada** | Calculada mediante ventanas anteriores/posteriores, con apoyo y sensibilidad de seis variantes; **no** sustituye la pérdida nativa. |
+| **Morfología RF / revisión** | Sugerencia de forma del modelo más alertas de ventanas/discrepancias; **no** equivale a medición instrumental, probabilidad calibrada ni verdad física. |
+
+En el comparador, la referencia se escoge para una **relación y presentación de coordenadas**. Reexpresar con un IOR de referencia válido no modifica el IOR, las posiciones ni los eventos originales. Si falta IOR, se indica que no se aplicó la conversión. Las separaciones entre eventos son relaciones derivadas cuyos intervalos comparten extremos, por lo que no son observaciones independientes.
+
+La consolidación del 5 de noviembre conserva estas dimensiones en sesiones/informes. El ensayo aislado de centrado vertical del 6 de noviembre se documenta aparte y no se atribuye al paquete original 4.5.
+
 ## La revisión humana se superpone al origen
 
 | Procedencia | Revisión | Significado |
@@ -147,6 +177,9 @@ El método de sesión se registra para restauración e informes. Si cambiar una 
 | **v0.4.0** | Pestañas multiarchivo conservan procedencia/revisión por análisis; asociación EI explícita. |
 | **v0.4.1** | Agrupamiento de cercanía entre trazas como relación de presentación, sin tocar procedencia. |
 | **v0.4.2** | Grados de evidencia, auditoría de excluidos, sensibilidad terminal y método de localización opcional sin cambiar las fuentes SOR/EI/calculadas. |
+| **v0.4.3** | Eventos Yokogawa, procedencia confirmada y asesoría morfológica separados de los datos nativos. |
+| **v0.4.4** | JDSU MSOR añade identidad del contenedor/subtraza por onda; una asociación revisada no cambia la fuente. |
+| **v0.4.5** | SOZ y copias de misma adquisición, pérdida LSA local y revisión RF separadas de eventos/pérdidas nativos. |
 
 ## Contrato de presentación y exportación
 

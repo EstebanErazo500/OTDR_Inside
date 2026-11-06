@@ -35,6 +35,9 @@
 | **v0.4.0** | Espacio de trabajo multiarchivo | Hasta ocho pestañas, asociación EI explícita, comparación 2–4, diagnóstico reorganizado y competencia terminal más estricta. |
 | **v0.4.1** | Corrección del comparador | Agrupamiento entre cualquier par, tramo común/completo y referencia visual robusta 5–50 m; detector idéntico a v0.4.0. |
 | **v0.4.2** | Evidencia y localización experimental | Auditoría de excluidos, sensibilidad terminal, borde por clase opcional e informes mejorados. |
+| **v0.4.3** | Yokogawa y asesoría morfológica | Interpretación de eventos SOR mediante perfil, procedencia confirmada separada de identificación declarada y revisión morfológica Random Forest. |
+| **v0.4.4** | JDSU MSOR y asociaciones revisables | Lector JDSU de dos longitudes de onda, eventos nativos con procedencia, comparación revisable y localización adaptativa evaluada. |
+| **v0.4.5** | SOZ, comparación y revisión contextual | SOZ multitraza, comparación consciente de fuentes, eje IOR seleccionable, separaciones entre eventos, pérdida local LSA y revisión RF/LSA. |
 
 ## Fase 1 · base estructural estable
 
@@ -162,6 +165,41 @@ La validación archivada de v0.4.1 registra **54 pruebas Python aprobadas y 6 pr
 **8 de octubre — refinamiento de presentación.** Las sesiones conservan método e historial; se reorganizan controles de sesión e informes y mejora el PDF vectorial. El informe archivado registra 92 pruebas Python aprobadas con los corpus disponibles y verificaciones de interfaz simulada. No se efectuó una inspección en navegador Windows real.
 
 v0.4.2 no se presenta como versión final ni como mejora certificada de posición. Su aporte es explicabilidad, ensayo reversible y mejor presentación de evidencia.
+
+## Fase 6 · nuevos formatos y revisión orientada a mediciones
+
+### v0.4.3 · perfil Yokogawa e identidad respaldada por evidencia
+
+La línea 4.3 amplía Yokogawa más allá de la lectura estructural: permite representar `KeyEvents` nativos con posiciones y magnitudes ópticas caracterizadas. También introduce una **asesoría de morfología Random Forest** sobre ventanas de señal cercanas a eventos; sugiere categorías de forma sin reescribir posiciones, pérdidas ni procedencia almacenadas. Sus puntuaciones **no son probabilidades calibradas ni certificación física**.
+
+La **revisión 1 del 15 de octubre** distingue 24 SOR que declaran explícitamente Yokogawa AQ1000 y otros 24 cuya procedencia confirmó el usuario del proyecto, pero cuyo modelo **no aparece declarado**. La atribución del segundo grupo solo corresponde a esos originales verificados; no se deduce de software genérico ni de nombres parecidos. La regresión archivada comprende **48 SOR y 125 registros nativos** con metadatos originales conservados. Esta revisión 4.3 todavía no incluye el lector JDSU MSOR.
+
+### v0.4.4 · JDSU MSOR y comparación verificable
+
+v0.4.4 introduce lectura defensiva de la familia **JDSU T-BERD 6000A / 8126 MSOR VSRE 2.10** observada. Un contenedor puede presentar dos trazas por longitud de onda, cada una con sus muestras, eventos nativos y procedencia; los campos no demostrados permanecen no disponibles. Las referencias TXT externas se aplican únicamente a originales verificados, no a cualquier archivo recibido.
+
+Amplía la comparación entre dispositivos con selección de referencia, **asociación uno a uno revisable**, eventos sin pareja, condiciones de adquisición, CSV/PDF y sesiones. Las propuestas de correspondencia dentro de **50 m** sirven para revisión humana: no son tolerancias instrumentales ni demuestran identidad física. Tampoco se agregan longitudes de onda distintas como si fueran una misma adquisición.
+
+La localización de borde adaptativo de 4.4 aparece expresamente **en evaluación**. En el contraste retrospectivo controlado mejoró la concordancia frente a EXFO y JDSU, pero empeoró frente a EI emparejado y retrocedió en 14 casos frente a EXFO. Estas diferencias se mantienen, sin llamar al experimento una calibración física.
+
+### v0.4.5 · espacio multiformato y pérdida local estimada
+
+La entrega archivada 4.5, consolidada el **5 de noviembre de 2026**, conserva el enfoque de posición de 4.4 y amplía las funciones analíticas y de presentación:
+
+- Admite **SOR, EI, MSOR y SOZ** para los diseños caracterizados. Un SOZ multitraza aparece en una pestaña de contenedor con selector de 1310/1550 nm; conserva muestras, eventos nativos y procedencia por subtraza.
+- Reconoce copias SOR/SOZ por datos de adquisición y muestras/eventos estándar, **sin contarlas como adquisiciones independientes**.
+- EXFO y Yokogawa son **referencias documentales del mismo nivel** en el montaje controlado; JDSU aporta corroboración adicional. Seleccionar una referencia define el eje de comparación, no declara infalible al instrumento.
+- Permite comparar ejes IOR originales o reexpresar condicionalmente con el IOR de referencia. Si un archivo no declara un índice válido, no se aplica la conversión silenciosamente. Esto no descubre el índice físico verdadero ni cambia los originales.
+- Añade **diferencias de separación entre eventos** además de diferencias de posición, indicando las dependencias entre intervalos.
+- Incorpora **LSA local** para estimar pérdidas en transiciones no reflectivas: seis combinaciones de ventanas anteriores/posteriores. La pérdida nativa, la LSA calculada, ventanas, sensibilidad y discrepancias permanecen separadas en visor, CSV/JSON y PDF.
+- Conserva los pesos del **Random Forest morfológico**. La revisión consultiva considera ventanas, forma y desacuerdos de signo; un puntaje alto no anula una ventana inestable ni modifica el dato nativo.
+- Las sesiones e informes conservan método, referencia/eje, identidad del contenedor y subtraza, revisión y contexto. La consolidación mejora presentación y un **registro orientado por IEC**, sin afirmar certificación normativa.
+
+**Evidencia archivada y límites.** Nueve SOZ proporcionaron 18 trazas por longitud de onda y 69 eventos nativos. En el corpus Ceyear controlado se obtuvieron 54 estimaciones locales de pérdida de empalme, **49 con apoyo y 5 para revisión**. La diferencia absoluta media retrospectiva con referencias EXFO agrupadas fue de **0,0087 dB a 1310 nm** y **0,0202 dB a 1550 nm**; con Yokogawa (zonas cubiertas de 5 y 8 km) fue **0,0025 dB** y **0,0064 dB**. Son comparaciones dependientes del mismo montaje, no incertidumbre calibrada ni demostración de generalización. Se preservan los datos nativos contradictorios.
+
+La revisión final archivada del 5 de noviembre registra **123 pruebas Python aprobadas con los datos disponibles** y comprobaciones DOM simuladas. La comprobación separada del paquete recién extraído pasó 25 pruebas dirigidas, verificó manifiesto y permitió renderizar informes de ejemplo. **No se verificó una ejecución real en Windows/navegador** en ese entorno. El selector RF alternativo de posición con doble referencia fue ensayado, pero **no se activó**: mejoró medias de posición y empeoró separaciones y determinados peores casos.
+
+**El trabajo del 6 de noviembre se documenta aparte como propuestas/experimentos aislados**, no funciones incorporadas a la entrega 4.5: parche del centrado vertical y aviso IOR, lectura directa EXFO `.stdr`, estudios de calidad/comparabilidad y futuras mejoras de asociación. El parche del comparador pasó regresiones aisladas, pero no se empaquetó en la entrega 4.5 original.
 
 ## Qué permaneció estable
 

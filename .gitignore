@@ -5,6 +5,14 @@
 *.EI
 *.otdr
 *.OTDR
+*.msor
+*.MSOR
+*.soz
+*.SOZ
+*.trc
+*.TRC
+*.stdr
+*.STDR
 
 # Private corpora and validation evidence
 corpus/
@@ -37,7 +45,6 @@ diagnostico_inicio.txt
 
 # IDE / editor state
 .vscode/*
-!.vscode/tasks.json
 .idea/
 
 # OS-generated files

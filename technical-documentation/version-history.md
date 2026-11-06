@@ -35,6 +35,9 @@
 | **v0.4.0** | Multi-file workspace | Up to eight tabs, explicit EI association, 2–4 trace comparison, organized diagnostics and stricter terminal competition. |
 | **v0.4.1** | Comparator correction | All-pairs proximity grouping, common/full span views and robust 5–50 m visual baseline; detector unchanged from v0.4.0. |
 | **v0.4.2** | Evidence and experimental localization | Suppressed-candidate audit, terminal sensitivity, optional class-aware edge locator and improved reporting. |
+| **v0.4.3** | Yokogawa and explainable morphology review | Profile-based SOR event interpretation, source-confirmed files kept distinct from instrument-declared metadata, and a Random Forest morphology advisory layer. |
+| **v0.4.4** | JDSU MSOR and revisable associations | JDSU two-wavelength container support, per-trace provenance, richer native events, comparison review and evaluated adaptive localization. |
+| **v0.4.5** | SOZ, comparative measurement and contextual review | Multitrace SOZ, source-aware comparisons, selectable IOR framing, event separations, local LSA loss estimates and RF/LSA review with retained provenance. |
 
 ## Phase 1 · stable structural baseline
 
@@ -162,6 +165,41 @@ The archived v0.4.1 validation records **54 Python tests passing with 6 external
 **8 October — presentation refinement.** Sessions retain the chosen method and history; the local viewer gains consolidated session/report actions and revised vector PDF layout. The archived report records 92 Python tests passed with available corpora and simulated interface checks; a real Windows-browser inspection was not completed there.
 
 v0.4.2 is not presented as a final release or as a certified improvement in positioning. Its value is explicit diagnostic evidence, reversible experimentation and clearer reports.
+
+## Phase 6 · more vendor formats and measurement-aware review
+
+### v0.4.3 · Yokogawa profile and evidence-based identity
+
+The 0.4.3 line extends Yokogawa SOR analysis beyond structural readability: characterized native `KeyEvents` can be shown with their recorded positions and available optical magnitudes. It also introduces a **Random Forest morphology advisory** over event-centered signal windows; the model suggests signal-shape categories without rewriting stored event positions, loss or provenance. Its scores are **not calibrated probabilities or physical validation**.
+
+The corrected **15 October revision 1** distinguishes two cases: 24 SOR files explicitly identify Yokogawa AQ1000 in their metadata; another 24 files from the same archived lot have their provenance confirmed by the project user but do **not** declare a model. Their manufacturer attribution is limited to those exact verified contents, not inferred from a generic software signature or filename. The archived regression accounts for **48 SOR files and 125 native event records**, maintaining original metadata. No JDSU MSOR reader was part of that 4.3 revision.
+
+### v0.4.4 · JDSU MSOR and accountable comparison
+
+v0.4.4 adds a defensive reader for the **observed JDSU T-BERD 6000A / 8126 MSOR VSRE 2.10** family. A container can expose two wavelength-specific traces, each with its own raw samples, native event table and source context; missing fields stay unavailable rather than being fabricated. External TXT references are tied to verified original data, not generalized to arbitrary incoming files.
+
+It expands cross-device comparison with reference selection, explicit **one-to-one correspondence review**, unmatched events, acquisition context, source-aware CSV/PDF and saved sessions. A proximity proposal as wide as **50 m** helps a human inspect potential pairs but is not an instrument tolerance or proof of physical identity. Comparing opposite wavelengths as if they were the same acquisition is not presented as a valid aggregate.
+
+The 4.4 adaptive edge option was explicitly **under evaluation**. In the documented controlled retrospective study, concordance improved against EXFO and JDSU, while it worsened against paired EI and regressed on 14 EXFO comparisons. These competing outcomes are preserved; the class-aware experiment is not treated as a physical accuracy certification.
+
+### v0.4.5 · multiformat workspace and locally estimated event loss
+
+The archived 0.4.5 release, consolidated **5 November 2026**, preserves the 4.4 positioning approach while extending the analysis and operator workflow:
+
+- **SOR, EI, MSOR and SOZ** are supported for the characterized layouts. A multitrace SOZ appears in one container tab with its 1310/1550-nm members selectable; native events, raw samples and trace-level provenance are preserved.
+- Matching SOR/SOZ copies are recognized by compatible acquisition information and standard samples/events, **not counted as independent acquisitions**.
+- EXFO and Yokogawa are used as **peer documentary references** for the controlled comparisons; JDSU supplies further corroboration. Selecting a reference controls a comparison coordinate choice and does not declare that instrument infallible.
+- The comparison can display original IOR axes or a conditional reference-IOR re-expression. If an input lacks valid IOR, conversion is not silently applied. This preserves source coordinates and does not discover a true physical group index.
+- **Inter-event separation differences** complement absolute position differences, with dependent intervals clearly described.
+- A **local least-squares approximation (LSA)** estimates loss near non-reflective steps from six before/after window combinations. Native loss, calculated LSA, supporting windows, window sensitivity and disagreements remain separately visible in UI, CSV/JSON and PDF.
+- The previously trained **Random Forest morphology model** remains unchanged. Its advisory review now uses local window evidence and sign/shape disagreements; a high model score never overrides an unstable window or a native field.
+- Sessions and reports preserve method selection, reference/axis decisions, trace/container identity, review and report context. The 5 November consolidation improves operator presentation and an IEC-oriented measurement **record**, without claiming IEC certification.
+
+**Archived evidence and limits.** Nine SOZ files yielded 18 wavelength traces and 69 stored native events. For the controlled Ceyear corpus, 54 local splice-loss estimates were produced, with **49 supported and 5 marked for review**. Compared retrospectively with grouped EXFO references, mean absolute LSA differences were **0.0087 dB at 1310 nm** and **0.0202 dB at 1550 nm**; the corresponding Yokogawa comparison (for the covered 5- and 8-km events) was **0.0025 dB** and **0.0064 dB**. These are dependent same-setup comparisons, not calibrated loss uncertainties or proof of generalization. Contradictory native readings stay visible rather than being averaged away.
+
+The final archived 5 November review reports **123 Python tests passing with its available data** and simulated DOM checks. The package's fresh-extraction check separately passed 25 targeted tests, validated its manifest and rendered example reports. A real Windows/browser run was **not verified** in that environment. The alternative two-reference RF position selector was tested but **not activated** because gains in average position concordance came with worse inter-event separations and some worst cases.
+
+**Work dated 6 November is tracked separately as proposals/isolated experiments**, not 4.5 shipped features: comparison vertical-centering and IOR-warning patch, direct EXFO `.stdr` ingestion, further RF/quality/comparability evaluation, and future event-association improvements. The standalone comparator patch passed isolated regressions but was not packaged into the original 4.5 delivery.
 
 ## What remained stable
 

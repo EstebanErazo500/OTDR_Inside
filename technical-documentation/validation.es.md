@@ -16,7 +16,7 @@
 
 <p align="center"><strong>La validación es una jerarquía de evidencia, no una única puntuación de exactitud.</strong></p>
 
-> **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta **v0.4.2**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
+> **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta **v0.4.5**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
 
 <p align="center">
   <img src="../assets/validation/layers-es-light.svg#gh-light-mode-only" alt="Jerarquía de validación de OTDR Inside en modo claro" width="100%">
@@ -137,6 +137,41 @@ Sobre 27 SOR privados de campo, la lectura base reproduce los eventos previos. E
 Variar el umbral mínimo de ruido terminal permite advertir sensibilidad, **no calcular intervalos de confianza** ni verificar extremos físicos. Mostrar excluidos próximos sirve para auditoría; no se cuentan como parejas visibles.
 
 **Frontera de publicación.** Aquí solo se incluyen resultados metodológicos agregados. Permanecen privados trazas, datos por evento, identificadores del corpus, seriales, hashes, rutas absolutas e informes que revelen metadatos operativos. Las 92 pruebas proceden del documento de validación archivado, **no de CI público** ni de una nueva ejecución de tests en GitHub.
+
+### v0.4.3 · caracterización Yokogawa y revisión morfológica
+
+La revisión corregida de 4.3 documenta **48 SOR originales del lote Yokogawa**: 24 declaran modelo en metadatos instrumentales y 24 tienen procedencia confirmada para esos archivos exactos, conservando fabricante/modelo originales. Se recuperaron los **125 registros nativos** (49 de una longitud de onda y 76 de la otra) en la comprobación archivada. Es cobertura del conjunto caracterizado, no compatibilidad Yokogawa universal ni exactitud calibrada de pérdidas.
+
+El asistente morfológico Random Forest orienta la revisión. No se demostró que su puntaje sea probabilidad calibrada ni que sus etiquetas representen una verdad física externa.
+
+### v0.4.4 · JDSU MSOR y compromiso del método de borde
+
+El material archivado de 4.4 verifica la lectura **JDSU MSOR 2.10 de dos ondas** observada, eventos nativos y referencias TXT asociadas únicamente a orígenes verificados. La comparación revisable propone parejas uno a uno y conserva eventos sin correspondencia; la búsqueda a 50 m es una **ayuda de revisión**, no una tolerancia metrológica.
+
+El método de borde adaptativo se estudió en **72 contrastes controlados de eventos**. La diferencia absoluta media *frente a referencias* cambió de **4,55 a 2,88 m** respecto a EXFO, de **4,54 a 3,88 m** respecto a JDSU y de **3,78 a 5,57 m** frente al EI de la misma adquisición; 14 comparaciones EXFO empeoraron. Las referencias corresponden a un montaje estudiado y las condiciones instrumentales/pulsos difieren. Estas cifras **no son errores físicos de distancia**; el deterioro en EI y algunos casos impide afirmar una mejora universal.
+
+### v0.4.5 · cobertura SOZ, pérdida LSA local y revisión contextual
+
+La consolidación del 5 de noviembre de v0.4.5 documenta estos resultados retrospectivos:
+
+| Categoría | Resultado archivado | Qué **no** demuestra |
+|---|---|---|
+| Contenedores Yokogawa SOZ | **9 archivos → 18 subtrazas por onda → 69 eventos nativos** conservados | Compatibilidad SOZ universal ni adquisiciones independientes para copias SOR. |
+| Pérdida de empalme LSA local | **54 estimaciones**, **49 con apoyo** y **5 para revisión** | Incertidumbre calibrada ni equivalencia general al algoritmo del instrumento. |
+| LSA frente a referencias EXFO agrupadas | Diferencia absoluta media **0,0087 dB (1310 nm)** y **0,0202 dB (1550 nm)** en tres regiones estudiadas | Exactitud independiente o enlaces estadísticamente independientes. |
+| LSA frente a referencias Yokogawa caracterizadas | Diferencia absoluta media **0,0025 dB (1310 nm)** y **0,0064 dB (1550 nm)** en las regiones cubiertas de 5/8 km | Tolerancia universal ni resolución de todos los valores nativos contradictorios. |
+| Regresión final del 5 de noviembre | **123 pruebas Python aprobadas** y recorridos DOM simulados con datos internos disponibles | Reproducibilidad de CI público, prueba en Windows o inspección visual real en navegador. |
+| Verificación del ZIP extraído | **25 pruebas dirigidas aprobadas**; manifiesto/CRC y PDF de ejemplo inspeccionados | Sustituir la suite completa o certificar la aplicación. |
+
+La consolidación conserva **86 trazas, 441 posiciones calculadas, 86 curvas y 245 estimaciones LSA** antes/después de reorganizar los informes; no cambió valores crudos ni los pesos del clasificador. Dieciocho pérdidas terminales almacenadas como cero se presentan **no aplicables** en la vista del operador, conservando el dato crudo. Es una interpretación de presentación, no eliminación de información.
+
+El Random Forest activo se combina con sensibilidad de ventanas y discrepancias entre LSA/nativo **para revisar**, no para corregir automáticamente. En un lote retrospectivo, **75** casos activaron revisión numérica y **167** activaron el flujo IA/contexto, incluidos 92 que no estaban ya señalados numéricamente. Son **conteos de flujo, no precisión ni sensibilidad del clasificador**.
+
+Se probó un selector alternativo de posiciones entrenado con dos referencias que mejoró algunas medias de diferencia de posición, pero empeoró separaciones frente a EXFO y ciertos peores casos. **No se activó** en el paquete.
+
+**Estado de investigaciones del 6 de noviembre (fuera del paquete 4.5).** Un parche separado de centrado/aviso IOR superó **124 pruebas Python** con corpus disponibles y JavaScript simulado, pero quedó como parche aislado y no sustituyó el ZIP original. La lectura directa `.stdr` solo se investigó. El ensayo RF frente a MLP/Extra Trees/HistGradientBoosting se ejecutó **fuera del visor** sin modificar el modelo activo. Se puede documentar como investigación, pero no como capacidades entregadas de 4.5.
+
+**Límite metrológico.** EXFO y Yokogawa son referencias documentales paritarias de este flujo controlado, no lecturas físicamente exactas por elección. JDSU aporta corroboración. Reexpresar al IOR de referencia es una transformación condicional, no la determinación del índice de grupo real ni calibración del equipo. Los campos orientados a IEC y las pruebas registradas no son certificados. Continúan pendientes una ejecución en Windows/navegador real y etiquetas físicas independientes de un enlace nuevo.
 
 ## Por qué el número de pruebas no es una puntuación
 

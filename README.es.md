@@ -50,7 +50,7 @@ La línea documentada separa el análisis por archivo del espacio de trabajo que
 | **Espacio de trabajo** | Mantiene hasta ocho análisis en pestañas independientes con zoom, selección, revisión y anotaciones propias. |
 | **Comparación** | Compara de dos a cuatro trazas como relación de presentación sin fusionar su procedencia ni afirmar identidad física. |
 
-La evolución completa y la instantánea detallada de v0.4.1 están en <a href="technical-documentation/architecture.es.md">Documentación técnica</a>.
+La evolución completa, la base multiarchivo de 4.1 y las ampliaciones 4.3–4.5 se describen en <a href="technical-documentation/architecture.es.md">Documentación técnica</a>.
 
 <h2 id="enfoque-de-ingeniería" align="center">Enfoque de ingeniería</h2>
 
@@ -82,7 +82,7 @@ Así, una conversión empírica, una escala de fabricante o una interpretación 
 
 <h2 id="capacidades-actuales" align="center">Capacidades actuales</h2>
 
-La línea archivada documentada hasta **v0.4.2** incluye:
+La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
 
 - inspección segura de estructura y metadatos SOR 2.00;
 - selección de perfiles caracterizados basada en evidencia;
@@ -99,16 +99,25 @@ La línea archivada documentada hasta **v0.4.2** incluye:
 - avisos de sensibilidad terminal al variar ±10 % el umbral mínimo de ruido **sin modificar la decisión predeterminada del detector**;
 - **localizador experimental de borde por clase**, opcional y reversible, con posiciones base conservadas y método registrado en sesiones y exportaciones;
 - mejoras de informes/PDF y controles de sesión, manteniendo el tratamiento de solo lectura;
+
+- v0.4.3 caracteriza los eventos nativos SOR de Yokogawa e incorpora asesoría morfológica mediante **Random Forest**, sin sobrescribir mediciones del equipo;
+- v0.4.4 añade contenedores **JDSU MSOR** de dos longitudes de onda y asociaciones uno a uno revisables entre dispositivos;
+- v0.4.5 incorpora **Yokogawa SOZ** multitraza, conservando muestras, eventos nativos e identidad por longitud de onda;
+- v0.4.5 compara **EXFO y Yokogawa como referencias documentales del mismo nivel**, con JDSU como corroboración adicional; seleccionar referencia no implica verdad física infalible;
+- ejes **IOR originales o reexpresados** con índice de referencia únicamente cuando se dispone de datos válidos, más diferencias de **separación entre eventos**;
+- estimaciones locales **LSA de pérdida** con seis combinaciones de ventanas anteriores/posteriores, separadas de la pérdida nativa del equipo;
+- revisión conjunta de **sugerencias morfológicas RF sin reentrenar**, sensibilidad de ventanas y discrepancias, con contexto guardado en sesión e informes/CSV/JSON;
 - diagnóstico organizado en datos leídos, hallazgos accionables, advertencias y detalle metodológico;
 - exportaciones JSON/CSV sin modificar la medición original.
 
-<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.2</h2>
+<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.5</h2>
 
 | Ecosistema | Estado | Papel dentro del proyecto |
 |---|---|---|
 | **EXFO** | **Referencia validada** | Lectura SOR 2.00, parámetros normalizados, eventos almacenados y visualización para el perfil de referencia caracterizado. |
 | **Ceyear CE6422** | **Desarrollo activo** | Interpretación de traza, candidatos calculados, emparejamiento EI/SOR verificado para el diseño observado, diagnóstico terminal y comparación multiarchivo. |
-| **Yokogawa AQ1000** | **Estructural** | Estructura caracterizada; la normalización semántica específica del fabricante sigue pendiente. |
+| **Yokogawa (SOR / SOZ caracterizados)** | **Soporte de eventos nativos caracterizados** | Escalas observadas de SOR y subtrazas multionda SOZ; se separa procedencia confirmada de identidad declarada. Contraste nativo y metrológico limitado. |
+| **JDSU T-BERD 6000A / 8126 MSOR** | **Contenedor caracterizado** | MSOR 2.10 observado con dos ondas, eventos nativos y referencias específicas verificadas; unidades y variantes desconocidas siguen sin soporte. |
 
 <p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
 
@@ -124,6 +133,9 @@ El origen permanece como parte del modelo:
 El espacio de trabajo v0.4 añade otra regla: colocar varias trazas en una comparación **no crea una procedencia nueva**. v0.4.1 agrupa posiciones cercanas para revisión y conserva el archivo fuente y el origen de cada elemento. v0.4.2 muestra propuestas excluidas cercanas y su motivo **sin presentarlas como coincidencias aceptadas**. Un desplazamiento experimental sigue siendo calculado y conserva posición base y método.
 
 En la familia Ceyear caracterizada, la ausencia de `KeyEvents` significa que **no se encontró una tabla almacenada en ese SOR**; no significa que la traza óptica carezca de eventos.
+
+Desde v0.4.3 un **clasificador morfológico** puede proponer una *evaluación de la forma de señal*. Es una recomendación, **no una quinta procedencia de eventos, una probabilidad calibrada ni un reemplazo de eventos o pérdidas nativos**. En v0.4.5 la pérdida LSA estimada tampoco se confunde con la pérdida almacenada. Las copias SOZ/SOR de una adquisición se relacionan sin contarlas como mediciones independientes.
+
 
 <h2 id="validación" align="center">Validación</h2>
 
@@ -141,6 +153,8 @@ Entre los hitos documentados están una validación de liberación de **80 prueb
 
 La revisión de presentación archivada de v0.4.2 registra **92 pruebas Python aprobadas con los corpus controlados/privados disponibles** y pruebas DOM simuladas. El localizador de borde por clase mejora la *concordancia retrospectiva* frente a la referencia EXFO del estudio, pero empeora frente a EI emparejado; por eso permanece **experimental y desactivado por defecto**, sin presentarse como mejora de exactitud física.
 
+La consolidación archivada de v0.4.5 registra **123 pruebas Python aprobadas** con los corpus de desarrollo disponibles; nueve contenedores SOZ aportaron 18 trazas y 69 eventos almacenados. De 54 estimaciones LSA de pérdida de empalme Ceyear, **49 tuvieron apoyo y 5 quedaron para revisión**. Son comparaciones retrospectivas dependientes, no incertidumbres calibradas ni exactitud física independiente. El parche del comparador y los estudios de IA del 6 de noviembre se registran aparte, **no como funciones empaquetadas en v0.4.5**.
+
 La jerarquía de evidencia, la frontera público/privado y los límites metrológicos están descritos en <a href="technical-documentation/validation.es.md">Validación</a>.
 
 <h2 id="manejo-de-datos" align="center">Manejo de datos</h2>
@@ -149,7 +163,7 @@ OTDR Inside está diseñado como un flujo **local y de solo lectura**. Las medic
 
 **Alcance permitido:** capturas revisadas del visor real, explicaciones de arquitectura de alto nivel e ilustraciones generales/completamente sintéticas. **No está autorizada la publicación del código fuente del visor**, incluso si se limpia o adapta, ni de sus pruebas/configuración interna, binarios o releases ejecutables. Cada captura debe revisarse para excluir metadatos operativos y contenido de trazas identificable.
 
-El repositorio no distribuye `.sor`, `.ei`, `.otdr` reales, exportaciones de medición/informes/sesiones, curvas privadas, identificadores de rutas/clientes, seriales, hashes, programas propietarios ni materiales licenciados. Toda ilustración sintética se etiqueta como tal y no constituye una medición de validación.
+El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.otdr` reales, exportaciones de medición/informes/sesiones, curvas privadas, identificadores de rutas/clientes, seriales, hashes, programas propietarios ni materiales licenciados. Toda ilustración sintética se etiqueta como tal y no constituye una medición de validación.
 
 <p align="center">
   <a href="technical-documentation/data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Política completa de manejo de datos"></a>
@@ -157,7 +171,9 @@ El repositorio no distribuye `.sor`, `.ei`, `.otdr` reales, exportaciones de med
 
 <h2 id="limitaciones-conocidas" align="center">Limitaciones conocidas</h2>
 
-- El soporte `.EI` se limita al diseño Ceyear observado y caracterizado; no es compatibilidad EI universal. `.otdr` no forma parte del flujo normal.
+- El soporte `.EI`, `.MSOR` y `.SOZ` se limita a diseños caracterizados; no equivale a compatibilidad universal. La lectura directa EXFO `.stdr` y otras variantes siguen fuera de la entrega empaquetada v0.4.5. `.otdr` no es el flujo normal.
+- Los puntajes RF son sugerencias morfológicas, no probabilidades calibradas ni etiquetas físicas; el modelo no sobrescribe valores nativos. La variación entre ventanas LSA no es incertidumbre calibrada de pérdida.
+- El parche de centrado/aviso IOR del 6 de noviembre y otros estudios son propuestas o ensayos separados, **no incluidos en la entrega del 5 de noviembre**.
 - La interpretación específica de fabricante sigue basada en perfiles/firmas y no equivale a compatibilidad SOR universal.
 - El nivel vertical mostrado es relativo y no se presenta como potencia óptica calibrada universalmente.
 - La cercanía de eventos del comparador v0.4.1 es una **ayuda visual de agrupamiento**, no una tolerancia física ni prueba de identidad.
@@ -171,7 +187,10 @@ El repositorio no distribuye `.sor`, `.ei`, `.otdr` reales, exportaciones de med
 - validar clases de evento y terminal con referencias independientes adicionales y adquisiciones repetidas;
 - mejorar la asociación entre múltiples trazas más allá del agrupamiento visual actual sin convertirla en una afirmación de identidad;
 - ampliar formatos emparejados y fabricantes conservando controles de procedencia;
-- añadir procesamiento por lotes, detección de duplicados y revisión de anomalías;
+- validar la lectura directa EXFO `.stdr` con un original permitido antes de afirmar compatibilidad;
+- estudiar la calidad de adquisición y elegibilidad de comparación con reglas explicables, sin reescribir automáticamente datos nativos;
+- contrastar el parche aislado de centrado y revisión en un navegador Windows real;
+- añadir lotes, revisión de anomalías y etiquetas independientes de enlaces nuevos;
 - crear una galería revisada de capturas del visor e ilustraciones de trazas sintéticas independientes, sin publicar código fuente;
 - construir una matriz de compatibilidad basada en evidencia reproducible.
 

@@ -50,7 +50,7 @@ The current documented line keeps per-file analysis separate from the workspace 
 | **Workspace** | Keeps up to eight analyses in independent tabs with per-file zoom, selection, review and annotations. |
 | **Comparison** | Compares two to four traces as a presentation relation without merging their provenance or claiming physical identity. |
 
-The version-by-version architecture and the detailed v0.4.1 snapshot are documented in <a href="technical-documentation/architecture.md">Technical documentation</a>.
+The version-by-version architecture, the 0.4.1 workspace baseline and the documented 0.4.3–4.5 extensions are explained in <a href="technical-documentation/architecture.md">Technical documentation</a>.
 
 <h2 id="engineering-approach" align="center">Engineering approach</h2>
 
@@ -82,7 +82,7 @@ An empirical conversion, vendor-specific scale or inferred meaning therefore rem
 
 <h2 id="current-capabilities" align="center">Current capabilities</h2>
 
-The archived development line documented through **v0.4.2** includes:
+The development sequence documented from **v0.1.0 through v0.4.5** includes:
 
 - safe inspection of SOR 2.00 structure and metadata;
 - evidence-based selection of characterized vendor profiles;
@@ -99,16 +99,25 @@ The archived development line documented through **v0.4.2** includes:
 - v0.4.2 terminal sensitivity warnings from a ±10% diagnostic perturbation of the minimum-noise threshold, **without changing the default detector decision**;
 - an **optional, reversible, class-aware experimental edge locator** alongside the unchanged baseline positions, with method/version recorded in sessions and exports;
 - revised local reports/PDF layouts and session controls, while preserving read-only source handling;
+
+- v0.4.3 characterized Yokogawa SOR native events and introduced an advisory **Random Forest morphology review**, without rewriting the instrument's measurements;
+- v0.4.4 added the characterized **JDSU MSOR** dual-wavelength container and revisable, one-to-one cross-device event associations;
+- v0.4.5 added **Yokogawa SOZ** multi-trace containers, preserving each wavelength's own samples, native event table and source identity;
+- v0.4.5 compares **EXFO and Yokogawa as peer documentary references**, with JDSU as additional corroboration; reference selection does not make either instrument a physical ground truth;
+- configurable original/reference-**IOR axes** (applied only where valid), and differences in **inter-event separation** alongside absolute-position comparison;
+- local **LSA loss estimates** with six alternative before/after window combinations, separately presented from the instrument's native loss;
+- joint review of **unchanged RF morphology suggestions**, window sensitivity and disagreements, with versioned session and PDF/CSV/JSON context;
 - organized diagnostics that separate readable data, actionable findings, warnings and methodological detail;
 - JSON/CSV exports without modifying the original measurement.
 
-<h2 id="current-scope" align="center">Current scope · documented through v0.4.2</h2>
+<h2 id="current-scope" align="center">Current scope · documented through v0.4.5</h2>
 
 | Ecosystem | Status | Role in the project |
 |---|---|---|
 | **EXFO** | **Validated reference** | SOR 2.00 parsing, normalized parameters, stored events and trace visualization for the characterized reference profile. |
 | **Ceyear CE6422** | **Active development** | Characterized trace interpretation, calculated candidates, verified EI/SOR pairing for the observed layout, terminal diagnostics and multi-file comparison. |
-| **Yokogawa AQ1000** | **Structural** | File structure characterized; vendor-specific semantic normalization remains pending. |
+| **Yokogawa (characterized SOR / SOZ)** | **Characterized native-event support** | Observed SOR event scales and SOZ multi-wavelength members; source-confirmed SOR origins remain distinguishable from instrument-declared identity. Native-reader and metrological confirmation remain bounded. |
+| **JDSU T-BERD 6000A / 8126 MSOR** | **Characterized container support** | Observed MSOR 2.10, two wavelengths, native events and verified source-specific reference fields; unknown formats or units remain unsupported. |
 
 <p align="center"><strong>structurally readable → profile identified → semantically characterized → empirically validated</strong></p>
 
@@ -124,6 +133,9 @@ Event origin is preserved as part of the model rather than flattened into one ta
 The v0.4 workspace adds another rule: placing several traces in one comparison does **not** create a new event origin. v0.4.1 groups nearby positions for review while retaining the source file and provenance of every item. v0.4.2 surfaces nearby excluded proposals and their suppression reasons **without presenting them as accepted matches**. A changed experimental position remains calculated, with the baseline and method recorded.
 
 For the characterized Ceyear family, absence of `KeyEvents` means **no stored event table was found in that SOR**; it does not mean the optical trace contains no events.
+
+From v0.4.3 onward, a **morphology classifier** can propose a *signal-shape assessment*. This is an advisory result, **not a fifth source of events, calibrated probability or replacement for native event/loss values**. In v0.4.5, estimated LSA loss is also distinct from any instrument-stored loss. SOZ/SOR copies of the same acquisition are linked without counting them as independent measurements.
+
 
 <h2 id="validation" align="center">Validation</h2>
 
@@ -141,6 +153,8 @@ Important documented milestones include an archived **80-test release validation
 
 The archived v0.4.2 presentation revision reports **92 Python tests passed with the available controlled/private corpora** and simulated DOM tests. The optional class-aware edge method improved *retrospective concordance* against an EXFO study reference but worsened agreement with paired EI; therefore it remains **experimental and off by default**, not a validated accuracy correction.
 
+The archived v0.4.5 consolidation records **123 Python tests passing** with available development corpora; nine characterized SOZ containers exposed 18 wavelength traces and 69 stored events. A controlled set of 54 Ceyear splice-loss LSA estimates contained **49 supported and 5 requiring review**. These are retrospective, dependent comparisons—not calibrated uncertainties or independent physical accuracy. The 6 November comparator patch and further AI studies are tracked as separate research, **not features shipped in the packaged v0.4.5**.
+
 The full evidence hierarchy, public/private boundary and metrological limits are described in <a href="technical-documentation/validation.md">Validation</a>.
 
 <h2 id="data-handling" align="center">Data handling</h2>
@@ -149,7 +163,7 @@ OTDR Inside is designed as a **local, read-only workflow**. Source measurements 
 
 **Publication scope:** reviewed screenshots of the actual viewer, high-level architecture explanations and independently synthetic/generalized illustrations are permitted. **The viewer's source code is not authorized for publication**, including cleaned or adapted versions, internal tests, configurations, binaries or executable releases. A screenshot must be checked for operational metadata and identifiable trace content before publication.
 
-The repository does not distribute real `.sor`, `.ei`, `.otdr`, exported measurement/report/session data, private trace curves, route/customer identifiers, device serials, hashes, proprietary vendor software or licensed materials. Synthetic illustrations are labeled as such and are not validation measurements.
+The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.otdr`, exported measurement/report/session data, private trace curves, route/customer identifiers, device serials, hashes, proprietary vendor software or licensed materials. Synthetic illustrations are labeled as such and are not validation measurements.
 
 <p align="center">
   <a href="technical-documentation/data-handling.md"><img src="assets/nav/data-handling.svg" alt="Complete data handling policy"></a>
@@ -157,7 +171,9 @@ The repository does not distribute real `.sor`, `.ei`, `.otdr`, exported measure
 
 <h2 id="known-limitations" align="center">Known limitations</h2>
 
-- `.EI` support is limited to the observed and characterized Ceyear layout; it is not universal EI compatibility. `.otdr` is not part of the normal processing path.
+- `.EI`, `.MSOR` and `.SOZ` support is limited to characterized vendor layouts; this is not universal format compatibility. Direct EXFO `.stdr` ingestion and other vendor variants remain outside the packaged v0.4.5. `.otdr` is not the normal processing path.
+- RF scores describe morphological suggestions, not calibrated probabilities or physical labels; the model does not overwrite native values. LSA window sensitivity is not calibrated loss uncertainty.
+- The 6 November auto-centering/IOR-warning patch and other studies are proposals/isolated experiments, **not incorporated into the 5 November release**.
 - Vendor-specific interpretation remains profile/signature based and should not be read as universal SOR compatibility.
 - The displayed vertical trace level is relative and is not presented as universally calibrated optical power.
 - Event proximity in the v0.4.1 comparator is a **visual grouping aid**, not a physical tolerance or proof that two traces contain the same event.
@@ -171,7 +187,10 @@ The repository does not distribute real `.sor`, `.ei`, `.otdr`, exported measure
 - validate event and terminal classes against additional independent references and repeated acquisitions;
 - strengthen multi-trace association beyond the current visual proximity grouping without turning it into an identity claim;
 - expand paired-format and vendor coverage while preserving provenance checks;
-- add batch processing, duplicate detection and anomaly review;
+- validate direct EXFO `.stdr` decoding using an authentic permitted sample before claiming support;
+- study contextual acquisition-quality and comparison-eligibility checks without automatically rewriting instrument data;
+- evaluate the isolated comparator-centering patch and review controls in a real Windows browser;
+- add batch processing, anomaly review and independent labels across new links;
 - build a curated gallery of approved viewer screenshots and independently synthetic trace illustrations, without publishing source code;
 - build a compatibility matrix based on reproducible evidence.
 

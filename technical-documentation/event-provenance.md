@@ -16,7 +16,7 @@
 
 <p align="center"><strong>Origin is part of the data. Evidence, review and cross-trace proximity are different dimensions.</strong></p>
 
-> **Scope.** This page documents the provenance model represented by archived releases through **v0.4.2**. Later releases may add relationships or sources, but they should not retroactively change what these historical provenance categories mean.
+> **Scope.** This page documents the provenance model represented by archived releases through **v0.4.5**. Later releases may add relationships or sources, but they should not retroactively change what these historical provenance categories mean.
 
 OTDR Inside keeps the origin of a value or event visible instead of flattening everything shown in the same interface into one undifferentiated event table.
 
@@ -124,6 +124,36 @@ The optional **class-aware edge method** creates another dimension: **localizati
 
 The method selected in a session is recorded for restoration and reporting. If changing a previously reviewed calculated position requires renewed review, the previous decision remains in the history rather than being silently reused as approval for the new position. The baseline reading stays the default because retrospective reference comparisons do not consistently favor the experiment.
 
+## v0.4.3–v0.4.5 · instrument identity, subtraces and separate assessments
+
+### v0.4.3 · declared identity versus confirmed provenance
+
+For Yokogawa SOR files, a native `KeyEvents` table can now be interpreted for the characterized profile. **Instrument identity declared in the file** is not the same thing as **provenance independently confirmed for a specific source file**. Confirming a set of originals does not license changing its original vendor field or assigning a model name the file does not declare.
+
+The morphological **Random Forest** produces an *advisory classification of signal shape*. It does not invent a fifth origin of an optical event, overwrite a native event, or confer calibrated confidence.
+
+### v0.4.4 · source container and wavelength member
+
+A characterized JDSU MSOR may contain more than one wavelength trace. Preserve **container identity**, **subtrace identity**, native positions and optical fields separately. Reference TXT metadata are associated only where their source relationship is verified; otherwise unsupported measurements remain unknown.
+
+Cross-file event matching creates **reviewable relationships** among original records. Confirming a match does not change the source or physical measurement stored in either input.
+
+### v0.4.5 · SOZ copies, local LSA and AI/measurement separation
+
+A characterized SOZ also contains wavelength-specific traces. Matching a SOR copy to a SOZ member provides a **same-acquisition relation**, not another independent measurement. Source file → container → subtrace → stored event remains traceable.
+
+An event may now display three parallel assessments:
+
+| Dimension | Origin and interpretation |
+|---|---|
+| **Native loss** | Instrument-stored optical quantity, subject to the profile's documented semantics. |
+| **Local LSA estimated loss** | Calculated from before/after windows, with six-window support and sensitivity; **not** a replacement for native loss. |
+| **RF morphology / review** | A model's signal-shape suggestion plus contextual window/disagreement flags; **not** an instrument measurement, calibrated probability or physical ground truth. |
+
+In the comparator, a reference is chosen for a **relation and coordinate display**. Re-expressing a distance using a valid reference IOR does not change the original IOR, position or measured event. If IOR is missing, the requested conversion remains unapplied and is explicitly reported. Inter-event separations are derived relationships whose intervals share endpoints and cannot be counted as independent observations.
+
+A 5 November consolidation preserved these distinctions in session/report metadata. The 6 November unmerged vertical-centering experiment is documented separately, rather than assigned to the packaged 4.5.
+
 ## Human review overlays the source
 
 Human review remains additive.
@@ -149,6 +179,9 @@ Human review remains additive.
 | **v0.4.0** | Multi-file tabs preserve provenance and review state per analysis; EI association becomes explicit. |
 | **v0.4.1** | Cross-trace proximity grouping is added as a presentation relation while event provenance stays untouched. |
 | **v0.4.2** | Evidence grades, excluded-proposal audit, terminal sensitivity and an optional localization method are tracked without changing SOR/EI/calculated source categories. |
+| **v0.4.3** | Yokogawa event profiles and morphology advice distinguish native data, externally confirmed source identity, and classifier output. |
+| **v0.4.4** | JDSU MSOR adds provenance of container and wavelength-specific subtrace; reviewed event correspondence never changes source. |
+| **v0.4.5** | Yokogawa SOZ and same-acquisition SOR copies, local LSA loss and RF review stay separate from native events and losses. |
 
 ## Presentation and export contract
 

@@ -46,6 +46,6 @@
 </g>
 
 <text x="700" y="463" text-anchor="middle" fill="#798EA5" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="650" letter-spacing="1.5">STRUCTURE  ·  TRACE  ·  PROVENANCE  ·  COMPARISON</text>
-<text x="92" y="42" fill="#64788E" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">SOR · EI / v0.4.x</text>
+<text x="92" y="42" fill="#64788E" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">SOR · EI · MSOR · SOZ / v0.4.5</text>
 <text x="1308" y="42" text-anchor="end" fill="#64788E" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">LOCAL · READ-ONLY · MULTI-FILE</text>
 </svg>

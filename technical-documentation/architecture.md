@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Read bytes first. Interpret only when evidence supports it. Compare without erasing source boundaries.</strong></p>
 
-> **Scope.** This page reconstructs the architecture represented by archived snapshots from **v0.1.0 through v0.4.2**. That range is a documentation boundary, not the final project architecture. Later releases should extend the timeline instead of making v0.4.1 look like an endpoint.
+> **Scope.** This page reconstructs the architecture represented by archived snapshots from **v0.1.0 through v0.4.5**. That range is a documentation boundary, not the final project architecture. Later releases should extend the timeline instead of making v0.4.1 look like an endpoint.
 
 OTDR Inside evolved by adding layers around a stable raw-data boundary. The project first separated SOR structure from vendor semantics; later versions added calculated events, evidence, EI as a second source, terminal reasoning and finally a multi-file workspace that compares traces without merging their origin.
 
@@ -102,23 +102,52 @@ This is a **localization experiment**, not a new validated source or a universal
   <img src="../assets/architecture/v042-dark.svg#gh-dark-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in dark mode" width="100%">
 </p>
 
+### v0.4.3 · native-event profiles and morphology advisory
+
+Yokogawa gains characterized **native SOR event semantics**, instead of remaining structural-only. Instrument-declared identity stays separate from user-confirmed provenance for files whose metadata does not name the instrument/model. The confirmation is content-specific and does not rewrite the original manufacturer field.
+
+A **Random Forest morphological review layer** is added alongside the event model. It describes patterns around candidate or native events; it does **not** replace event origin, instrument-stored positions, reflectance or loss. A classifier score is not calibrated probability or physical ground truth.
+
+### v0.4.4 · JDSU MSOR multi-wavelength container
+
+The observed JDSU MSOR 2.10 family adds **container → subtrace** relationships: one file can hold two wavelength-specific measurement records. Each subtrace preserves its samples, native events, markers and provenance. Where a native field lacks demonstrated semantics, the model keeps its raw value or marks the derived value unavailable; verified TXT references are not extended to arbitrary files.
+
+Cross-vendor comparison adds **revisable one-to-one event matching** and reference selection. A proximity proposal is a review candidate, not certified event identity. The adaptive Ceyear edge localization is kept explicitly as a method under evaluation because different reference sources disagree.
+
+### v0.4.5 · SOZ, native-versus-estimated loss, and comparison context
+
+The v0.4.5 consolidation adds a second multi-trace family, **Yokogawa SOZ**, with wavelength selection inside a container tab. SOR extracts associated with SOZ remain traceable to the same acquisition and must not inflate the independent sample count.
+
+The comparison layer now records **reference selection, original/conditional common-IOR axes, absolute event positions and inter-event separations**. If an IOR is missing, requested re-expression is not silently applied. Reference choice does not change the original measurement or establish true physical IOR.
+
+For suitable non-reflective events, the per-file analysis adds a **local LSA loss estimate** from before/after signal windows. Its value, six alternative window results and sensitivity/review indicators are stored separately from **native loss** and from the Random Forest **morphology suggestion**. These three quantities have different sources and uncertainty limitations.
+
+Sessions/reports preserve container/subtrace identity, calculation method, comparison decisions, and review context. The report's IEC-oriented field inventory is documentation support, **not a calibration certificate**.
+
+<p align="center">
+  <img src="../assets/architecture/v045-light.svg#gh-light-mode-only" alt="Documented v0.4.3 to v0.4.5 architectural extensions, light theme" width="100%">
+  <img src="../assets/architecture/v045-dark.svg#gh-dark-mode-only" alt="Documented v0.4.3 to v0.4.5 architectural extensions, dark theme" width="100%">
+</p>
+
+**After the 5 November package:** the isolated 6 November vertical-centering and IOR-notice patch, direct EXFO `.stdr` investigation and further AI/comparability proposals are research or unmerged work, not part of the shipped 4.5 package.
+
 ## Cross-version architectural thread
 
 | Concern | Early state | Expansion through v0.4.1 |
 |---|---|---|
 | **Structure** | Safe SOR scanning | Stable raw-data boundary across all archived releases. |
 | **Semantics** | Profile interpretation | Evidence, capability status and explicit unsupported states. |
-| **Events** | Stored EXFO events | Calculated candidates, evidence, review and terminal reasoning. |
-| **Sources** | SOR only | EI reading and verified EI/SOR pairing. |
+| **Events** | Stored EXFO events | Calculated candidates, morphology advice, evidence, review and terminal reasoning; native event origins unchanged. |
+| **Sources** | SOR only | EI, MSOR and SOZ characterized source/container paths with verified pair/copy relationships. |
 | **Session state** | One active analysis | Up to eight independent tabs with per-file state. |
 | **Comparison** | Manual alternation | 2–4 trace comparison with all-pairs visual proximity grouping. |
 | **Diagnostics** | Basic alerts/details | Readable status, findings/actions, warnings and technical audit detail. |
 
 Two baseline components are byte-identical across every archived snapshot from v0.1.0 through v0.4.1: `scanner.py` and the validated EXFO profile. The system therefore shows a long-lived structural contract while interpretation and interaction evolve around it.
 
-## Implementation baseline · v0.4.1 (extended in v0.4.2)
+## Implementation baseline · v0.4.1 (expanded through v0.4.5)
 
-The diagram below documents the **v0.4.1 per-file and workspace baseline retained by the 0.4.2 line**. The 4.2 changes are shown separately above; this is not a final architecture.
+The diagram below is the **v0.4.1 per-file/workspace baseline**. Changes from 4.2 and 4.3–4.5 are represented in their separate diagrams and text above; no part is described as the final architecture.
 
 <p align="center">
   <img src="../assets/architecture/system-light.svg#gh-light-mode-only" alt="OTDR Inside v0.4.1 implementation snapshot in light mode" width="100%">
@@ -181,6 +210,16 @@ The comparator does not rewrite per-file results. It creates a **relationship vi
 | **Workspace** | `web/app.js`, `web/index.html`, `web/styles.css` | Tabs, session state, file switching, comparison UI and exports. | Multiple analyses coexist without being merged. |
 | **Comparator** | v0.4.1 functions in `web/app.js` | Proximity groups, common/full span and visual baseline. | Proximity is a display relation, not physical identity. |
 | **v0.4.2 evidence/localization** | `edge_precision.py` and documented UI/report changes | Suppressed-proposal explanations, terminal threshold sensitivity and optional class-aware position method. | Baseline detector and EI values are not silently overwritten. |
+
+### Additions to the v0.4.5 conceptual map
+
+| New responsibility | Characterized route | Boundary |
+|---|---|---|
+| **Yokogawa source/profile identification** | SOR native events; explicit versus externally confirmed provenance | Confirmation identifies specific files, not all files with similar fields. |
+| **JDSU MSOR / Yokogawa SOZ** | Container → wavelength-specific subtrace → per-file analysis | One container or duplicate SOR/SOZ extraction is not multiple independent acquisitions. |
+| **Morphology advice** | Event-centered samples → RF class suggestion → reviewer context | A model score is not calibrated probability, native event type or verified physical event. |
+| **Local LSA loss** | Per-event before/after windows → local estimate + six-window sensitivity | Estimated and instrument-stored loss remain separate; sensitivity is not calibration uncertainty. |
+| **Comparison / report context** | Peer reference, conditional IOR, absolute positions and inter-event separations | Re-expression does not rewrite source axes or certify measurement accuracy. |
 
 ## Architectural invariants
 

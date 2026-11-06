@@ -16,7 +16,7 @@
 
 <p align="center"><strong>Validation is layered evidence, not a single accuracy score.</strong></p>
 
-> **Scope.** This page summarizes the validation model documented by archived releases through **v0.4.2**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
+> **Scope.** This page summarizes the validation model documented by archived releases through **v0.4.5**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
 
 <p align="center">
   <img src="../assets/validation/layers-light.svg#gh-light-mode-only" alt="OTDR Inside validation hierarchy in light mode" width="100%">
@@ -139,6 +139,41 @@ On 27 private field SOR traces, the baseline reproduces the preceding event set;
 Terminal minimum-noise threshold perturbation provides sensitivity warnings, **not confidence intervals** or physical-end verification. Nearby suppressed candidates may be shown as audit context but must not be counted as visible event matches.
 
 **Publication boundary.** Only these aggregate methodological results belong in the public documentation. Real traces, per-event records, corpus identifiers, serials, hashes, absolute paths and PDF reports containing operational metadata remain private. The 92-test result is reported from the archived v0.4.2 validation document, **not a public CI run** or a newly executed GitHub test suite.
+
+### v0.4.3 · Yokogawa source characterization and morphology review
+
+The corrected 4.3 release documents **48 original Yokogawa-lot SOR files**: 24 identify the model in instrument metadata, 24 have source provenance confirmed for those exact files while their original manufacturer/model fields remain unchanged. All **125 stored event records** (49 at one wavelength, 76 at the other) were recovered in the archived verification. This is source-specific coverage, not a blanket claim of universal Yokogawa interoperability or certified event-loss accuracy.
+
+The Random Forest morphology assistant is an advisory classifier. The archive does not establish a calibrated probability interpretation for its scores or external physical-truth accuracy.
+
+### v0.4.4 · JDSU MSOR and edge-method tradeoffs
+
+The archived 4.4 material exercises the **observed JDSU dual-wavelength MSOR 2.10** reading, recorded native events and source-constrained TXT references. The revised comparison proposes one-to-one associations and retains unmatched events; the 50 m search range is a **review aid**, not a calibration tolerance.
+
+The evaluated adaptive edge method was tested on **72 controlled event comparisons**. Its mean absolute *reference disagreement* changed **4.55 → 2.88 m** versus EXFO, **4.54 → 3.88 m** versus JDSU and **3.78 → 5.57 m** versus acquisition-paired EI; 14 EXFO comparisons worsened. References share a studied arrangement, with different instrument/pulse settings. These are **not physical distance errors**, and the worsening EI/individual cases prevents a universal accuracy claim.
+
+### v0.4.5 · SOZ coverage, local LSA loss and contextual review
+
+The 5 November consolidated v0.4.5 release documents the following retrospective checks:
+
+| Category | Archived result | What it does **not** establish |
+|---|---|---|
+| Yokogawa SOZ containers | **9 files → 18 wavelength traces → 69 stored events** preserved | Universal SOZ support or independent acquisitions for duplicate SOR copies. |
+| Local LSA splice-loss estimation | **54 estimates**, with **49 supported** and **5 flagged for review** | Calibrated loss uncertainty, universal equivalence to the native instrument algorithm. |
+| LSA vs grouped EXFO references | Mean absolute difference **0.0087 dB (1310 nm)** and **0.0202 dB (1550 nm)** for the studied three splice zones | Independent accuracy or statistically independent links. |
+| LSA vs characterized Yokogawa references | Mean absolute difference **0.0025 dB (1310 nm)** and **0.0064 dB (1550 nm)** for covered 5/8-km zones | A universal loss tolerance or resolution of all contradictory stored values. |
+| Final 5 November regression | **123 Python tests passed**, plus simulated DOM paths with available internal data | Public CI reproducibility, Windows execution or real-browser visual verification. |
+| Extracted-package check | **25 targeted tests passed**; manifest/CRC and example PDF rendering inspected | Replacement for the broader suite, or a certification test. |
+
+The consolidation preserves **86 traces, 441 calculated positions, 86 curves and 245 local LSA estimates** before/after the operator-report revisions; source values and active morphology weights were unchanged. Eighteen raw terminal zero-loss values were rendered as **not applicable** in the operator view while retaining their original raw records. This is a presentation/semantics decision, not deletion of the original data.
+
+An active Random Forest morphology model is combined with window stability and native-versus-LSA discrepancies **for review**, not automatic corrections. In one retrospective batch, **75** items triggered numerical window review and **167** triggered the joint model/context review, including 92 not already flagged numerically. These are **workflow counts, not precision or recall**.
+
+The archived alternative reference-trained position selector improved some mean absolute position differences but worsened EXFO inter-event separation agreement and certain worst-case events. It was **not activated** in the packaged viewer.
+
+**Status of 6 November investigations (outside the packaged 4.5).** A separate comparator-centering/IOR-warning patch passed **124 Python tests** with available corpora and simulated JavaScript, but it remained a separate patch, not an update to the original package; direct `.stdr` support was only investigated. The contemporaneous RF-versus-MLP/Extra Trees/HistGradientBoosting study was conducted **outside the viewer** and did not change its active model. These results may be documented as research, but not called deployed 4.5 capabilities.
+
+**Metrological limit.** EXFO and Yokogawa can be treated as peer documentary comparison references in this controlled workflow; selecting one does not make its reading physically exact. JDSU is additional contextual corroboration. Re-expressing an axis to a reference IOR is a conditional coordinate transformation, not determination of the true group index or instrument calibration. IEC-oriented record fields and archived test counts are not certificates. A real Windows/browser run and independent new-link physical labels remain to be demonstrated.
 
 ## Why test counts are not a score
 

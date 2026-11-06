@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Primero leer los bytes. Interpretar solo cuando la evidencia lo permite. Comparar sin borrar las fronteras de origen.</strong></p>
 
-> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta v0.4.2**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
+> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta v0.4.5**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
 
 OTDR Inside evolucionó añadiendo capas alrededor de una frontera estable de datos crudos. Primero separó estructura SOR de semántica de fabricante; después incorporó eventos calculados, evidencia, EI como segunda fuente, razonamiento terminal y finalmente un espacio de trabajo multiarchivo que compara trazas sin fusionar su procedencia.
 
@@ -102,23 +102,52 @@ Esto es un **ensayo de localización**, no una nueva procedencia ni una mejora u
   <img src="../assets/architecture/v042-es-dark.svg#gh-dark-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema oscuro" width="100%">
 </p>
 
+### v0.4.3 · perfiles de eventos nativos y asesoría morfológica
+
+Yokogawa pasa a tener **semántica caracterizada de eventos SOR nativos**, en lugar de quedar solo en lectura estructural. La identidad declarada por el instrumento se separa de la procedencia confirmada por el usuario cuando los metadatos no declaran fabricante/modelo. Esa confirmación aplica a contenidos específicos sin reemplazar el campo original de proveedor.
+
+Se añade una capa de **revisión morfológica Random Forest** junto al modelo de eventos. Describe la forma de la señal cerca de registros o candidatos; **no** reemplaza origen, posiciones, reflectancia o pérdidas almacenadas. Su puntaje no es probabilidad calibrada ni verdad física.
+
+### v0.4.4 · contenedor JDSU MSOR de dos longitudes de onda
+
+La familia JDSU MSOR 2.10 observada incorpora relaciones **contenedor → subtraza**: un archivo puede guardar dos mediciones por longitud de onda. Cada subtraza conserva muestras, eventos nativos, marcadores y procedencia. Si una magnitud no tiene semántica demostrada se conserva en crudo o se señala no disponible; una referencia TXT verificada no se extrapola a cualquier archivo.
+
+La comparación entre proveedores añade **asociación uno a uno revisable** y selección de referencia. La cercanía propone revisión, no identidad certificada. El borde adaptativo Ceyear sigue claramente en evaluación porque las distintas fuentes de referencia no concuerdan uniformemente.
+
+### v0.4.5 · SOZ, pérdida nativa/estimada y contexto comparativo
+
+La consolidación de v0.4.5 introduce otra familia multitraza, **Yokogawa SOZ**, con selección de onda dentro de una pestaña de contenedor. Las copias SOR vinculadas al SOZ siguen perteneciendo a la misma adquisición y no pueden aumentar artificialmente el tamaño de muestra independiente.
+
+La comparación registra **referencia seleccionada, ejes originales o IOR común condicional, posiciones absolutas y separaciones entre eventos**. Si falta un IOR válido, no se aplica de manera silenciosa el reescalado solicitado. Elegir una referencia no cambia las mediciones originales ni establece el índice físico verdadero.
+
+El análisis por archivo incorpora una **pérdida local estimada LSA** para eventos no reflectivos aptos, con ajustes antes/después de la respuesta. Su valor, seis resultados alternativos de ventanas e indicadores de sensibilidad/revisión se conservan separados de la **pérdida nativa** y de la **sugerencia morfológica Random Forest**. Son tres tipos de información con procedencia y límites distintos.
+
+Sesiones e informes conservan identidad de contenedor/subtraza, método de cálculo, decisiones de comparación y contexto de revisión. El registro de campos orientado por IEC **no** es un certificado de calibración.
+
+<p align="center">
+  <img src="../assets/architecture/v045-es-light.svg#gh-light-mode-only" alt="Ampliaciones arquitectónicas documentadas de v0.4.3 a v0.4.5, tema claro" width="100%">
+  <img src="../assets/architecture/v045-es-dark.svg#gh-dark-mode-only" alt="Ampliaciones arquitectónicas documentadas de v0.4.3 a v0.4.5, tema oscuro" width="100%">
+</p>
+
+**Después del paquete del 5 de noviembre:** el parche aislado de centrado/aviso IOR, la investigación de lectura EXFO `.stdr` y nuevas propuestas de IA/comparabilidad del 6 de noviembre siguen como investigación o cambios no integrados, no funciones empaquetadas en 4.5.
+
 ## Hilo arquitectónico entre versiones
 
 | Aspecto | Estado inicial | Expansión hasta v0.4.1 |
 |---|---|---|
 | **Estructura** | Lectura SOR segura | Frontera estable de datos crudos en toda la secuencia archivada. |
 | **Semántica** | Interpretación por perfiles | Evidencia, estado por capacidad y semántica no soportada explícita. |
-| **Eventos** | Eventos EXFO almacenados | Candidatos calculados, evidencia, revisión y razonamiento terminal. |
-| **Fuentes** | Solo SOR | Lectura EI y pareja EI/SOR verificada. |
+| **Eventos** | Eventos EXFO almacenados | Candidatos, IA morfológica consultiva, evidencia, revisión y lógica terminal; origen nativo conservado. |
+| **Fuentes** | Solo SOR | Rutas caracterizadas EI, MSOR y SOZ con parejas/copias verificadas. |
 | **Estado de sesión** | Un análisis activo | Hasta ocho pestañas independientes con estado propio. |
 | **Comparación** | Alternancia manual | Comparación 2–4 y agrupamiento visual entre cualquier par. |
 | **Diagnóstico** | Alertas/detalles básicos | Estado legible, hallazgos, advertencias y auditoría técnica. |
 
 Dos componentes permanecen idénticos byte a byte desde v0.1.0 hasta v0.4.2: `scanner.py` y el perfil EXFO validado. El sistema conserva por tanto un contrato estructural de larga duración mientras interpretación e interacción crecen alrededor.
 
-## Base de implementación · v0.4.1 (ampliada en v0.4.2)
+## Base de implementación · v0.4.1 (ampliada hasta v0.4.5)
 
-El diagrama siguiente documenta la **base por archivo y espacio de trabajo de v0.4.1 conservada en la línea 4.2**. Las adiciones de 4.2 aparecen por separado arriba; no es una arquitectura final.
+El diagrama siguiente es la **base por archivo y espacio de trabajo de v0.4.1**. Las ampliaciones 4.2 y 4.3–4.5 se describen en sus respectivos diagramas y apartados anteriores; no se presenta como arquitectura final.
 
 <p align="center">
   <img src="../assets/architecture/system-es-light.svg#gh-light-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo claro" width="100%">
@@ -181,6 +210,16 @@ El comparador no reescribe los resultados por archivo. Construye una **vista de 
 | **Espacio de trabajo** | `web/app.js`, `web/index.html`, `web/styles.css` | Pestañas, estado de sesión, cambio de archivo, comparación y exportaciones. | Los análisis coexisten sin fusionarse. |
 | **Comparador** | funciones v0.4.1 de `web/app.js` | Grupos de cercanía, tramo común/completo y referencia visual. | Cercanía es relación de presentación, no identidad física. |
 | **Evidencia/localización v0.4.2** | `edge_precision.py` y cambios de interfaz/informes documentados | Excluidos explicados, sensibilidad terminal y método de posición opcional por clase. | No se sobrescriben silenciosamente el detector base ni los valores EI. |
+
+### Incorporaciones al mapa conceptual hasta v0.4.5
+
+| Nueva responsabilidad | Ruta caracterizada | Frontera |
+|---|---|---|
+| **Identificación Yokogawa por perfil/procedencia** | Eventos SOR; identidad declarada o procedencia confirmada | La confirmación aplica a archivos concretos, no a todos los semejantes. |
+| **JDSU MSOR / Yokogawa SOZ** | Contenedor → subtraza por onda → análisis individual | Un contenedor o copia SOR/SOZ no equivale a varias adquisiciones independientes. |
+| **Asesoría morfológica** | Muestras cercanas al evento → sugerencia RF → revisión | El puntaje no es probabilidad calibrada, tipo nativo ni evento físico confirmado. |
+| **Pérdida LSA local** | Ventanas anteriores/posteriores → estimación + sensibilidad de seis ventanas | Pérdida estimada y nativa separadas; sensibilidad no es incertidumbre calibrada. |
+| **Contexto de comparación/informe** | Referencia paritaria, IOR condicional, posiciones y separaciones | Reexpresar no reescribe ejes nativos ni certifica exactitud. |
 
 ## Invariantes arquitectónicos
 

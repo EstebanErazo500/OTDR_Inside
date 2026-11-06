@@ -37,7 +37,7 @@ This policy applies to the public GitHub repository and its entire history, incl
 | Viewer screenshots | **Allowed after per-image review** | Remove or replace all operational names, metadata, paths, identifiers, private annotations and sensitive trace content. Permission to show the UI does not clear everything visible inside it. |
 | Generic diagrams and entirely synthetic trace illustrations | **Publish** | Create independently for demonstration; label them as illustrative/synthetic and never describe them as validated field measurements. |
 | Aggregated validation results | **Publish after review** | State sample size, conditions, references, omissions and limits; do not expose per-file identifiers, fingerprints, locations or sensitive measurements. |
-| Real SOR, EI, OTDR, CSV/JSON exports, sessions, reports and derived curves | **Do not publish** | These can reproduce operational measurements or reveal identifiable metadata even when filenames are removed. |
+| Real SOR, EI, MSOR, SOZ, TRC, STDR, OTDR, CSV/JSON exports, sessions, reports and derived curves | **Do not publish** | These can reproduce operational measurements or reveal identifiable metadata even when filenames are removed. |
 | Original or adapted application source code, tests, build scripts, profiles and internal configurations | **Do not publish** | No current authorization to distribute the implementation. A cleaned or renamed source file is still source code. |
 | Vendor software, DLL/EXE packages, proprietary manuals and licensed standards | **Do not redistribute** | Describe publicly available concepts only; link to legitimate vendor sources if appropriate. |
 | Customer, route, team and device identifiers; serials; private filenames/hashes; absolute paths | **Do not publish** | These may also appear in tooltips, print views, exports, hidden SVG text, image metadata and Git history. |
@@ -60,7 +60,7 @@ Label synthetic images clearly: *“Illustrative synthetic trace — not field d
 
 ### 3. Architecture and validation summaries
 
-Conceptual layers such as SOR/EI ingestion, profile-aware interpretation, trace analysis, provenance, workspace and comparison can be shown. Internal formulas, proprietary rules, implementation listings or complete module source are not necessary for explaining the design.
+Conceptual layers such as SOR/EI/MSOR/SOZ ingestion, profile-aware interpretation, trace analysis, provenance, workspace and comparison can be shown. Internal formulas, proprietary rules, implementation listings or complete module source are not necessary for explaining the design.
 
 Validation can be summarized in aggregate with the test conditions and caveats attached. For example, agreement with a vendor file or another viewer must not be renamed “physical distance accuracy” without an independent traceable reference.
 
