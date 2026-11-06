@@ -13,12 +13,15 @@
 
 <p align="center">
   <a href="#descripción-general"><img src="assets/nav/descripcion.svg" alt="Descripción"></a>
+  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
+  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
   <a href="#arquitectura"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="#capacidades-actuales"><img src="assets/nav/capacidades.svg" alt="Capacidades"></a>
+</p>
+<p align="center">
   <a href="#alcance-actual"><img src="assets/nav/alcance.svg" alt="Alcance"></a>
   <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
   <a href="#hoja-de-ruta"><img src="assets/nav/hoja-ruta.svg" alt="Hoja de ruta"></a>
-  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
   <a href="technical-documentation/README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>
 
@@ -37,7 +40,7 @@ El proyecto no intenta forzar todas las trazas dentro de un modelo universal. Ex
 
 <h2 id="recorrido-guiado" align="center">Recorrido guiado</h2>
 
-**Conoce el flujo de trabajo antes de entrar en la historia de implementación.** El [recorrido de cinco etapas](technical-documentation/how-it-works.es.md) explica el uso documentado en v0.4.5:
+**Conoce el flujo de trabajo antes de entrar en la historia de implementación.** Este recorrido de cinco etapas explica el uso documentado en v0.4.5:
 
 **Abrir SOR/EI/MSOR/SOZ caracterizados → interpretar trazas y eventos con procedencia → revisar pérdida LSA y asesoría Random Forest → comparar mediciones y condiciones → conservar decisiones en sesiones/informes.**
 
@@ -133,6 +136,14 @@ La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
 | **JDSU T-BERD 6000A / 8126 MSOR** | **Contenedor caracterizado** | MSOR 2.10 observado con dos ondas, eventos nativos y referencias específicas verificadas; unidades y variantes desconocidas siguen sin soporte. |
 
 <p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
+
+<h2 id="matriz-de-compatibilidad" align="center">Matriz de compatibilidad</h2>
+
+Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no tienen el mismo nivel de respaldo**. La matriz específica documenta EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ y JDSU MSOR, con precondiciones, variantes no demostradas y límites por capacidad.
+
+<p align="center">
+  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Abrir matriz de compatibilidad"></a>
+</p>
 
 <h2 id="procedencia-de-eventos" align="center">Procedencia de eventos</h2>
 

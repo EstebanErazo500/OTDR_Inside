@@ -3,6 +3,7 @@
 <p align="center">
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
   <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
   <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
@@ -33,6 +34,12 @@ El análisis parte de archivos cuya procedencia de adquisición sea conocida. La
 | **Ceyear CE6422 SOR + EI** | Abrir el SOR y asociar su EI cuando la comprobación de contenido y adquisición sea satisfactoria. | No relacionar archivos solo por nombres parecidos. |
 | **Yokogawa SOR / SOZ** | Revisar eventos SOR o elegir subtraza de 1310/1550 nm dentro del contenedor SOZ. | La identidad declarada dentro del archivo puede diferir de una procedencia confirmada externamente. |
 | **JDSU MSOR** | Abrir un contenedor caracterizado y examinar cada longitud de onda con sus eventos. | El soporte documentado corresponde al diseño MSOR observado, no a todas las variantes. |
+
+Para consultar las capacidades, condiciones y límites exactos por fabricante, utiliza la matriz específica. Reconocer una extensión no demuestra compatibilidad semántica completa.
+
+<p align="center">
+  <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+</p>
 
 Antes de comparar mediciones, conviene revisar **longitud de onda, anchura de pulso, alcance, índice de grupo (IOR), origen de distancia y relación entre adquisiciones**. Un SOZ y su extracción SOR pueden representar la *misma* adquisición, no dos repeticiones.
 

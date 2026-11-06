@@ -13,12 +13,15 @@
 
 <p align="center">
   <a href="#overview"><img src="assets/nav/overview.svg" alt="Overview"></a>
+  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
+  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
   <a href="#architecture"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="#current-capabilities"><img src="assets/nav/capabilities.svg" alt="Capabilities"></a>
+</p>
+<p align="center">
   <a href="#current-scope"><img src="assets/nav/scope.svg" alt="Scope"></a>
   <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
   <a href="#roadmap"><img src="assets/nav/roadmap.svg" alt="Roadmap"></a>
-  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
   <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical Docs"></a>
 </p>
 
@@ -37,7 +40,7 @@ The project is not designed to force every trace into a universal model. It expo
 
 <h2 id="guided-walkthrough" align="center">Guided walkthrough</h2>
 
-**See the engineering workflow before reading the implementation history.** The [five-stage walkthrough](technical-documentation/how-it-works.md) follows the documented v0.4.5 operator journey:
+**See the engineering workflow before reading the implementation history.** This five-stage operator journey covers the documented v0.4.5 workflow:
 
 **Open a characterized SOR/EI/MSOR/SOZ → interpret source-aware traces and events → review LSA loss and Random Forest advice → compare traces and acquisition context → retain decisions in session/reports.**
 
@@ -133,6 +136,14 @@ The development sequence documented from **v0.1.0 through v0.4.5** includes:
 | **JDSU T-BERD 6000A / 8126 MSOR** | **Characterized container support** | Observed MSOR 2.10, two wavelengths, native events and verified source-specific reference fields; unknown formats or units remain unsupported. |
 
 <p align="center"><strong>structurally readable → profile identified → semantically characterized → empirically validated</strong></p>
+
+<h2 id="compatibility-matrix" align="center">Compatibility matrix</h2>
+
+Format recognition, native-event support, calculated analysis and vendor-specific optical semantics have **different levels of evidence**. The dedicated matrix documents characterized EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ and JDSU MSOR paths, including unsupported variants and required preconditions.
+
+<p align="center">
+  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Open compatibility matrix"></a>
+</p>
 
 <h2 id="event-provenance" align="center">Event provenance</h2>
 

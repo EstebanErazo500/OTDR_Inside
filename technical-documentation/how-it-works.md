@@ -3,6 +3,7 @@
 <p align="center">
   <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
   <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="compatibility-matrix.md"><img src="../assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
   <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
   <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
@@ -33,6 +34,12 @@ Start from files with known acquisition provenance. Compatibility is limited to 
 | **Ceyear CE6422 SOR + EI** | Open SOR, then attach its EI only if acquisition and content verification succeed. | Never infer an EI/SOR pair from similar filenames alone. |
 | **Yokogawa SOR / SOZ** | Inspect SOR events or select a 1310/1550-nm subtrace in a SOZ container. | Instrument-declared identity can differ from externally confirmed source provenance. |
 | **JDSU MSOR** | Open a characterized container and inspect each wavelength with its native events. | The observed MSOR layout is not universal JDSU format support. |
+
+For supported layouts, feature conditions and limits per vendor, use the dedicated matrix below. A recognized extension alone does not prove full semantic compatibility.
+
+<p align="center">
+  <a href="compatibility-matrix.md"><img src="../assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+</p>
 
 Before comparing, check **wavelength, pulse width, range, group index (IOR), distance origin and acquisition relationship**. A SOZ and its SOR extract may describe the *same* acquisition, not independent repetitions.
 
