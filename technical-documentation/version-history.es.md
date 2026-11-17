@@ -154,7 +154,7 @@ La comparación pasa a:
 
 El umbral de 15 m sigue siendo una ayuda visual, no una tolerancia física ni prueba de identidad. El agrupamiento es codicioso y no afirma asociación física óptima.
 
-La validación archivada de v0.4.1 registra **54 pruebas Python aprobadas y 6 pruebas dependientes de corpus externo omitidas**, además de una prueba DOM/canvas simulada para la nueva lógica de comparación. En ese momento todavía quedaba pendiente una inspección visual final del comparador revisado en navegador Windows.
+La validación archivada de v0.4.1 registra un conteo archivado de 54 aprobadas y 6 omitidas; una ejecución estándar previa contabilizó **54 descubiertas: 48 aprobadas y 6 omitidas**, además de una prueba DOM/canvas simulada para la nueva lógica de comparación. En ese momento todavía quedaba pendiente una inspección visual final del comparador revisado en navegador Windows.
 
 ### v0.4.2 · revisiones documentadas de una misma entrega
 

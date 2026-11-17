@@ -1,28 +1,33 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero-light.svg">
-    <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/otdr-hero.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/otdr-hero-light.svg">
+    <img src="assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
   </picture>
 </p>
 
 <p align="center">
-  <strong>Análisis OTDR multiarchivo con evidencia y procedencia explícitas.</strong><br>
-  Lectura SOR segura, interpretación por fabricante, análisis emparejado EI/SOR, reconstrucción de trazas y comparación sin perder el origen de los datos.
+  <strong>Prototipo de ingeniería para el análisis OTDR multiformato y multifabricante.</strong><br>
+  Caracterización de datos binarios · procesamiento de señales · IA consultiva · comparación con procedencia.
 </p>
 
 <p align="center">
   <a href="#descripción-general"><img src="assets/nav/descripcion.svg" alt="Descripción"></a>
-  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
-  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
+  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a>
   <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
-  <a href="#arquitectura"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+</p>
+<p align="center">
   <a href="#capacidades-actuales"><img src="assets/nav/capacidades.svg" alt="Capacidades"></a>
+  <a href="#contribuciones"><img src="assets/nav/contribuciones.svg" alt="Contribuciones"></a>
+  <a href="#arquitectura"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
 </p>
 <p align="center">
   <a href="#alcance-actual"><img src="assets/nav/alcance.svg" alt="Alcance"></a>
-  <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
   <a href="#hoja-de-ruta"><img src="assets/nav/hoja-ruta.svg" alt="Hoja de ruta"></a>
+  <a href="technical-documentation/version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial"></a>
+  <a href="technical-documentation/data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
   <a href="technical-documentation/README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>
 
@@ -39,6 +44,80 @@ Un archivo OTDR puede ser estructuralmente legible y, aun así, contener semánt
 
 El proyecto no intenta forzar todas las trazas dentro de un modelo universal. Expone qué se leyó, qué se interpretó, cómo se obtuvo un resultado, a qué fuente pertenece y qué afirmaciones siguen sin resolverse.
 
+### El proyecto de un vistazo
+
+| Dimensión | Alcance documentado |
+|---|---|
+| Fabricantes caracterizados | EXFO, Ceyear, Yokogawa y JDSU |
+| Familias de formatos | SOR · EI · MSOR · SOZ |
+| Evolución | v0.1.0 a v0.4.5 (consolidación del 5 de noviembre de 2026) |
+| Regresión archivada v0.4.5 | 123 pruebas Python aprobadas con los datos internos disponibles |
+
+**Portafolio técnico, no distribución de software.** La documentación describe el desarrollo, sus resultados y límites. Las cifras de validación son archivadas, no CI público ni certificación. El código del visor y las mediciones operativas permanecen privados. Las ilustraciones son conceptuales o sintéticas; todavía no se incluyen capturas del visor real.
+
+<h2 id="capacidades-actuales" align="center">Capacidades actuales</h2>
+
+| Capacidad | Qué aporta |
+|---|---|
+| Lectura multiformato | Recuperación de estructura, parámetros, trazas y eventos nativos en diseños caracterizados. |
+| Procesamiento de señales | Candidatos calculados, evidencia terminal y estimación local de pérdidas LSA para transiciones aptas. |
+| Inteligencia artificial consultiva | Random Forest morfológico y revisión contextual, sin reemplazar mediciones instrumentales. |
+| Comparación instrumental | Pestañas independientes, comparación de trazas, correspondencias revisables, IOR condicional y separaciones. |
+| Trazabilidad | Conservación de datos originales, procedencia, incertidumbres de interpretación y decisiones de revisión. |
+| Informes técnicos | Exportaciones y reportes locales con el contexto de análisis y comparación. |
+
+<details>
+<summary>Detalle histórico de capacidades por versión</summary>
+
+La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
+
+- inspección segura de estructura y metadatos SOR 2.00;
+- selección de perfiles caracterizados basada en evidencia;
+- reconstrucción de trazas desde las muestras almacenadas;
+- lectura defensiva de `.EI` para el diseño CE6422 caracterizado y emparejamiento EI/SOR basado en evidencia;
+- separación explícita entre eventos almacenados en SOR, registros importados de EI, candidatos calculados y revisión manual;
+- análisis contextual de eventos, exclusiones explicables y evidencia terminal;
+- estabilización v0.3.6 de curvas EI/SOR equivalentes y localización de respuestas débiles;
+- hasta **ocho archivos abiertos en pestañas independientes** desde v0.4.0;
+- asociación EI iniciada explícitamente desde una pestaña SOR, no por semejanza del nombre;
+- comparación de **dos a cuatro trazas** con condiciones de adquisición, superposición, cercanía de eventos y exportación CSV;
+- en v0.4.1, comparación entre cualquier par seleccionado, vistas **tramo común / recorrido completo** y referencia gráfica por mediana entre 5 y 50 m;
+- en v0.4.2, auditoría de comparación con grados de evidencia y **candidatos excluidos cercanos**, sin contarlos como coincidencias;
+- avisos de sensibilidad terminal al variar ±10 % el umbral mínimo de ruido **sin modificar la decisión predeterminada del detector**;
+- **localizador experimental de borde por clase**, opcional y reversible, con posiciones base conservadas y método registrado en sesiones y exportaciones;
+- mejoras de informes/PDF y controles de sesión, manteniendo el tratamiento de solo lectura;
+
+- v0.4.3 caracteriza los eventos nativos SOR de Yokogawa e incorpora asesoría morfológica mediante **Random Forest**, sin sobrescribir mediciones del equipo;
+- v0.4.4 añade contenedores **JDSU MSOR** de dos longitudes de onda y asociaciones uno a uno revisables entre dispositivos;
+- v0.4.5 incorpora **Yokogawa SOZ** multitraza, conservando muestras, eventos nativos e identidad por longitud de onda;
+- v0.4.5 compara **EXFO y Yokogawa como referencias documentales del mismo nivel**, con JDSU como corroboración adicional; seleccionar referencia no implica verdad física infalible;
+- ejes **IOR originales o reexpresados** con índice de referencia únicamente cuando se dispone de datos válidos, más diferencias de **separación entre eventos**;
+- estimaciones locales **LSA de pérdida** con seis combinaciones de ventanas anteriores/posteriores, separadas de la pérdida nativa del equipo;
+- revisión conjunta de **sugerencias morfológicas RF sin reentrenar**, sensibilidad de ventanas y discrepancias, con contexto guardado en sesión e informes/CSV/JSON;
+- diagnóstico organizado en datos leídos, hallazgos accionables, advertencias y detalle metodológico;
+- exportaciones JSON/CSV sin modificar la medición original.
+
+</details>
+
+<p align="center">
+  <a href="technical-documentation/version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+</p>
+
+<h2 id="contribuciones" align="center">Contribuciones de ingeniería</h2>
+
+El desarrollo reúne competencias de ingeniería mecatrónica, software aplicado y análisis experimental. La siguiente tabla vincula contribuciones documentadas con la evidencia pública correspondiente, sin revelar la implementación propietaria.
+
+| Área | Contribución técnica | Evidencia |
+|---|---|---|
+| **Caracterización de formatos binarios** | Análisis de estructuras y semántica por fabricante; separación entre identificación declarada y confirmada. | <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a> |
+| **Arquitectura de software** | Separación de lectura, interpretación por perfiles, análisis individual, espacio multiarchivo y comparación. | <a href="technical-documentation/architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a> |
+| **Procesamiento de señales** | Evaluación de candidatos y transiciones, localización experimental y pérdidas locales LSA. | <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> |
+| **Aprendizaje automático** | Evaluación y uso consultivo de Random Forest morfológico; revisión contextual y límites del puntaje. | <a href="technical-documentation/event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia"></a> |
+| **Instrumentación y metrología** | Análisis de comparabilidad, IOR, referencias y diferencias de posición/separación; preservación de datos nativos. | <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> |
+| **Validación experimental** | Pruebas controladas, regresión por versión y evaluación de compromisos entre referencias. | <a href="technical-documentation/validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a> |
+| **Visualización e interacción** | Organización de trazas, diagnóstico, revisión, comparación e informes técnicos. | <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido"></a> |
+
 <h2 id="recorrido-guiado" align="center">Recorrido guiado</h2>
 
 **Conoce el flujo de trabajo antes de entrar en la historia de implementación.** Este recorrido de cinco etapas explica el uso documentado en v0.4.5:
@@ -50,6 +129,33 @@ El proyecto no intenta forzar todas las trazas dentro de un modelo universal. Ex
 </p>
 
 Incluye un diagrama conceptual original y recorridos representativos de Ceyear, Yokogawa y JDSU. **No es una demostración descargable ni una galería de capturas**; el código y las mediciones operativas permanecen privados.
+
+<h2 id="matriz-de-compatibilidad" align="center">Matriz de compatibilidad</h2>
+
+Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no tienen el mismo nivel de respaldo**. La matriz específica documenta EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ y JDSU MSOR, con precondiciones, variantes no demostradas y límites por capacidad.
+
+<p align="center">
+  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Abrir matriz de compatibilidad"></a>
+</p>
+
+<h2 id="casos-de-estudio" align="center">Casos de estudio</h2>
+
+Dos decisiones de ingeniería explicadas con ejemplos sintéticos y evidencia archivada: diferencias de posición entre instrumentos y discrepancias entre pérdidas nativas y LSA. Incluye el estado documental de las investigaciones.
+
+<p align="center">
+  <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
+</p>
+
+<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.5</h2>
+
+| Ecosistema | Estado | Papel dentro del proyecto |
+|---|---|---|
+| **EXFO** | **Perfil de referencia caracterizado** | Lectura SOR 2.00, parámetros normalizados, eventos almacenados y visualización para el perfil de referencia caracterizado. |
+| **Ceyear CE6422** | **Desarrollo activo** | Interpretación de traza, candidatos calculados, emparejamiento EI/SOR verificado para el diseño observado, diagnóstico terminal y comparación multiarchivo. |
+| **Yokogawa (SOR / SOZ caracterizados)** | **Soporte de eventos nativos caracterizados** | Escalas observadas de SOR y subtrazas multionda SOZ; se separa procedencia confirmada de identidad declarada. Contraste nativo y metrológico limitado. |
+| **JDSU T-BERD 6000A / 8126 MSOR** | **Contenedor caracterizado** | MSOR 2.10 observado con dos ondas, eventos nativos y referencias específicas verificadas; unidades y variantes desconocidas siguen sin soporte. |
+
+<p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
 
 <h2 id="arquitectura" align="center">Arquitectura</h2>
 
@@ -83,76 +189,13 @@ Cinco distinciones guían la implementación:
 
 *Esquema conceptual ilustrativo; no corresponde al código fuente de la aplicación:*
 
-```python
-normalized_field = {
-    "value": ...,
-    "raw_value": ...,
-    "unit": ...,
-    "source": ...,
-    "rule_id": ...,
-    "confidence": ...,
-    "evidence": ...,
-}
-```
+| Dimensión conceptual | Información conservada |
+|---|---|
+| Valor | Valor interpretado, valor crudo y unidad |
+| Procedencia | Fuente y criterio aplicado |
+| Respaldo | Confianza de interpretación y evidencia |
 
 Así, una conversión empírica, una escala de fabricante o una interpretación inferida siguen diferenciadas de un valor almacenado explícitamente.
-
-<h2 id="capacidades-actuales" align="center">Capacidades actuales</h2>
-
-La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
-
-- inspección segura de estructura y metadatos SOR 2.00;
-- selección de perfiles caracterizados basada en evidencia;
-- reconstrucción de trazas desde las muestras almacenadas;
-- lectura defensiva de `.EI` para el diseño CE6422 caracterizado y emparejamiento EI/SOR basado en evidencia;
-- separación explícita entre eventos almacenados en SOR, registros importados de EI, candidatos calculados y revisión manual;
-- análisis contextual de eventos, exclusiones explicables y evidencia terminal;
-- estabilización v0.3.6 de curvas EI/SOR equivalentes y localización de respuestas débiles;
-- hasta **ocho archivos abiertos en pestañas independientes** desde v0.4.0;
-- asociación EI iniciada explícitamente desde una pestaña SOR, no por semejanza del nombre;
-- comparación de **dos a cuatro trazas** con condiciones de adquisición, superposición, cercanía de eventos y exportación CSV;
-- en v0.4.1, comparación entre cualquier par seleccionado, vistas **tramo común / recorrido completo** y referencia gráfica por mediana entre 5 y 50 m;
-- en v0.4.2, auditoría de comparación con grados de evidencia y **candidatos excluidos cercanos**, sin contarlos como coincidencias;
-- avisos de sensibilidad terminal al variar ±10 % el umbral mínimo de ruido **sin modificar la decisión predeterminada del detector**;
-- **localizador experimental de borde por clase**, opcional y reversible, con posiciones base conservadas y método registrado en sesiones y exportaciones;
-- mejoras de informes/PDF y controles de sesión, manteniendo el tratamiento de solo lectura;
-
-- v0.4.3 caracteriza los eventos nativos SOR de Yokogawa e incorpora asesoría morfológica mediante **Random Forest**, sin sobrescribir mediciones del equipo;
-- v0.4.4 añade contenedores **JDSU MSOR** de dos longitudes de onda y asociaciones uno a uno revisables entre dispositivos;
-- v0.4.5 incorpora **Yokogawa SOZ** multitraza, conservando muestras, eventos nativos e identidad por longitud de onda;
-- v0.4.5 compara **EXFO y Yokogawa como referencias documentales del mismo nivel**, con JDSU como corroboración adicional; seleccionar referencia no implica verdad física infalible;
-- ejes **IOR originales o reexpresados** con índice de referencia únicamente cuando se dispone de datos válidos, más diferencias de **separación entre eventos**;
-- estimaciones locales **LSA de pérdida** con seis combinaciones de ventanas anteriores/posteriores, separadas de la pérdida nativa del equipo;
-- revisión conjunta de **sugerencias morfológicas RF sin reentrenar**, sensibilidad de ventanas y discrepancias, con contexto guardado en sesión e informes/CSV/JSON;
-- diagnóstico organizado en datos leídos, hallazgos accionables, advertencias y detalle metodológico;
-- exportaciones JSON/CSV sin modificar la medición original.
-
-<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.5</h2>
-
-| Ecosistema | Estado | Papel dentro del proyecto |
-|---|---|---|
-| **EXFO** | **Referencia validada** | Lectura SOR 2.00, parámetros normalizados, eventos almacenados y visualización para el perfil de referencia caracterizado. |
-| **Ceyear CE6422** | **Desarrollo activo** | Interpretación de traza, candidatos calculados, emparejamiento EI/SOR verificado para el diseño observado, diagnóstico terminal y comparación multiarchivo. |
-| **Yokogawa (SOR / SOZ caracterizados)** | **Soporte de eventos nativos caracterizados** | Escalas observadas de SOR y subtrazas multionda SOZ; se separa procedencia confirmada de identidad declarada. Contraste nativo y metrológico limitado. |
-| **JDSU T-BERD 6000A / 8126 MSOR** | **Contenedor caracterizado** | MSOR 2.10 observado con dos ondas, eventos nativos y referencias específicas verificadas; unidades y variantes desconocidas siguen sin soporte. |
-
-<p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
-
-<h2 id="casos-de-estudio" align="center">Casos de estudio</h2>
-
-Dos decisiones de ingeniería explicadas con ejemplos sintéticos y evidencia archivada: diferencias de posición entre instrumentos y discrepancias entre pérdidas nativas y LSA. Incluye el estado documental de las investigaciones.
-
-<p align="center">
-  <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
-</p>
-
-<h2 id="matriz-de-compatibilidad" align="center">Matriz de compatibilidad</h2>
-
-Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no tienen el mismo nivel de respaldo**. La matriz específica documenta EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ y JDSU MSOR, con precondiciones, variantes no demostradas y límites por capacidad.
-
-<p align="center">
-  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Abrir matriz de compatibilidad"></a>
-</p>
 
 <h2 id="procedencia-de-eventos" align="center">Procedencia de eventos</h2>
 
@@ -169,7 +212,6 @@ En la familia Ceyear caracterizada, la ausencia de `KeyEvents` significa que **n
 
 Desde v0.4.3 un **clasificador morfológico** puede proponer una *evaluación de la forma de señal*. Es una recomendación, **no una quinta procedencia de eventos, una probabilidad calibrada ni un reemplazo de eventos o pérdidas nativos**. En v0.4.5 la pérdida LSA estimada tampoco se confunde con la pérdida almacenada. Las copias SOZ/SOR de una adquisición se relacionan sin contarlas como mediciones independientes.
 
-
 <h2 id="validación" align="center">Validación</h2>
 
 La validación se organiza por capas:
@@ -182,7 +224,7 @@ La validación se organiza por capas:
 6. regresión de espacio de trabajo, servidor y DOM/canvas simulado;
 7. comprobaciones manuales del visor y exportaciones.
 
-Entre los hitos documentados están una validación de liberación de **80 pruebas en v0.3.6**, comprobaciones sobre **18 parejas EI/SOR controladas** con 72/72 asociaciones de eventos posteriores al inicio y, en v0.4.1, una suite estándar de **54 pruebas aprobadas con 6 pruebas de corpus externo omitidas**. Los conteos no se presentan como una puntuación comparable de calidad porque las suites y los datos requeridos cambiaron entre entregas.
+Entre los hitos documentados están una validación de liberación de **80 pruebas en v0.3.6**, comprobaciones sobre **18 parejas EI/SOR controladas** con 72/72 asociaciones de eventos posteriores al inicio y, en v0.4.1, una ejecución estándar previa con **54 pruebas descubiertas: 48 aprobadas y 6 omitidas por corpus externo**. Los conteos no se presentan como una puntuación comparable de calidad porque las suites y los datos requeridos cambiaron entre entregas.
 
 La revisión de presentación archivada de v0.4.2 registra **92 pruebas Python aprobadas con los corpus controlados/privados disponibles** y pruebas DOM simuladas. El localizador de borde por clase mejora la *concordancia retrospectiva* frente a la referencia EXFO del estudio, pero empeora frente a EI emparejado; por eso permanece **experimental y desactivado por defecto**, sin presentarse como mejora de exactitud física.
 
@@ -210,6 +252,7 @@ El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.
 - La interpretación específica de fabricante sigue basada en perfiles/firmas y no equivale a compatibilidad SOR universal.
 - El nivel vertical mostrado es relativo y no se presenta como potencia óptica calibrada universalmente.
 - La cercanía de eventos del comparador v0.4.1 es una **ayuda visual de agrupamiento**, no una tolerancia física ni prueba de identidad.
+- En la línea v0.4.4 se documenta una búsqueda posterior de correspondencias revisables de hasta 50 m, distinta del agrupamiento visual de v0.4.1; ninguna es tolerancia física.
 - El localizador de borde por clase de v0.4.2 es opcional y reversible; no demuestra mejora de exactitud física. La sensibilidad al umbral terminal es un diagnóstico, no una incertidumbre calibrada.
 - Cambiar entre tramo común/recorrido completo y usar la mediana 5–50 m afecta solo la presentación comparativa; no modifica muestras, posiciones ni pérdidas.
 - Los resultados terminales siguen siendo hipótesis calculadas y no certifican extremo físico, pérdida de evento, reflectancia, ORL ni incertidumbre metrológica.

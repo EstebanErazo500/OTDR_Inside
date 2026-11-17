@@ -27,7 +27,7 @@
 <text x="700" y="151" text-anchor="middle" fill="#152334" font-size="68" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="750" letter-spacing="-1">OTDR Inside</text>
 <text x="700" y="191" text-anchor="middle" fill="#5F7185" font-size="22" font-family="Inter,Segoe UI,Arial,sans-serif">Evidence-aware multi-file OTDR analysis</text>
 
-<text x="92" y="242" fill="#7A8D9E" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">RELATIVE LEVEL</text>
+<text x="92" y="242" fill="#7A8D9E" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">ILLUSTRATIVE TRACE · RELATIVE LEVEL</text>
 <text x="1308" y="242" text-anchor="end" fill="#7A8D9E" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">DISTANCE →</text>
 
 <path d="M92 364 L118 302 L137 350 L197 354 L258 358 L315 361 L372 364 L430 367 L479 369 L520 344 L540 370 L600 373 L662 376 L718 379 L776 382 L831 384 L882 387 L923 373 L944 389 L1003 391 L1053 394 L1094 396 L1134 318 L1155 402 L1214 407 L1260 409 L1308 411 L1308 438 L92 438 Z" fill="url(#fade)"/>

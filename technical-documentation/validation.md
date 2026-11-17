@@ -105,8 +105,7 @@ v0.4.1 intentionally keeps the detector from v0.4.0 and validates the corrected 
 
 The archived validation records:
 
-- **54 Python tests passed**;
-- **6 external-corpus tests skipped** in standard discovery;
+- the archived report describes 54 passed and 6 skipped; a prior standard-suite run of the package counted **54 discovered: 48 passed and 6 skipped**. The latter count is distinguished from the original report wording;
 - simulated production JavaScript with DOM/canvas coverage;
 - all-pairs event grouping for the tested comparison;
 - common-span/full-span switching;
@@ -190,7 +189,7 @@ Therefore, **80 vs. 54 does not mean one version is “more validated” than th
 
 The v0.4.1 comparator adds useful inspection tools, but its rules are intentionally non-metrological.
 
-### 15 m proximity threshold
+### 15 m proximity threshold · v0.4.1
 
 The 15 m grouping threshold is a visual review aid. It is not:
 
@@ -199,6 +198,8 @@ The 15 m grouping threshold is a visual review aid. It is not:
 - a claim of link identity;
 - a confidence interval;
 - an accuracy specification.
+
+The later v0.4.4 reviewable correspondence search of up to 50 m differs from that earlier grouping rule. Neither is a physical tolerance.
 
 ### All-pairs grouping
 

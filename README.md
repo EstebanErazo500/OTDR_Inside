@@ -1,29 +1,34 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero-light.svg">
-    <img src="https://raw.githubusercontent.com/EstebanErazo500/OTDR_Inside/main/assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/otdr-hero.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/otdr-hero-light.svg">
+    <img src="assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
   </picture>
 </p>
 
 <p align="center">
-  <strong>Evidence-aware, multi-file analysis of OTDR measurements.</strong><br>
-  Safe SOR parsing, vendor-aware interpretation, paired EI/SOR analysis, trace reconstruction and comparative review without losing data provenance.
+  <strong>Engineering prototype for multi-format, multi-vendor OTDR analysis.</strong><br>
+  Binary-format characterization · signal processing · ML advisory · provenance-aware comparison.
 </p>
 
 <p align="center">
   <a href="#overview"><img src="assets/nav/overview.svg" alt="Overview"></a>
-  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
-  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="How it works"></a>
+  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility"></a>
   <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
-  <a href="#architecture"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+</p>
+<p align="center">
   <a href="#current-capabilities"><img src="assets/nav/capabilities.svg" alt="Capabilities"></a>
+  <a href="#contributions"><img src="assets/nav/contributions.svg" alt="Contributions"></a>
+  <a href="#architecture"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
 </p>
 <p align="center">
   <a href="#current-scope"><img src="assets/nav/scope.svg" alt="Scope"></a>
-  <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
   <a href="#roadmap"><img src="assets/nav/roadmap.svg" alt="Roadmap"></a>
-  <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical Docs"></a>
+  <a href="technical-documentation/version-history.md"><img src="assets/nav/version-history.svg" alt="Version history"></a>
+  <a href="technical-documentation/data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
 </p>
 
 <p align="center">
@@ -39,6 +44,80 @@ OTDR files can be structurally readable while still containing vendor-specific s
 
 The project is not designed to force every trace into a universal model. It exposes what was read, what was interpreted, how a result was derived, which source it belongs to and which claims remain unresolved.
 
+### Project at a glance
+
+| Dimension | Documented scope |
+|---|---|
+| Characterized vendors | EXFO, Ceyear, Yokogawa and JDSU |
+| Format families | SOR · EI · MSOR · SOZ |
+| Evolution | v0.1.0 to v0.4.5 (consolidated 5 November 2026) |
+| Archived v0.4.5 regression | 123 Python tests passed with available internal data |
+
+**Technical portfolio, not a software distribution.** This repository documents development, results and limits. Validation figures are archived evidence, not public CI or certification. Viewer source code and operational measurements remain private. Illustrations are conceptual or synthetic; actual viewer screenshots are not yet included.
+
+<h2 id="current-capabilities" align="center">Current capabilities</h2>
+
+| Capability | Engineering value |
+|---|---|
+| Multi-format reading | Recover structure, parameters, traces and native events in characterized layouts. |
+| Signal processing | Calculated candidates, terminal evidence and local LSA loss estimates for eligible transitions. |
+| Advisory machine learning | Random Forest morphology and contextual review without replacing instrument measurements. |
+| Instrument comparison | Independent tabs, trace comparison, reviewable associations, conditional IOR and event separations. |
+| Traceability | Preserve original values, provenance, interpretation limits and review decisions. |
+| Technical reporting | Local exports and reports with analysis and comparison context. |
+
+<details>
+<summary>Detailed capability history by version</summary>
+
+The development sequence documented from **v0.1.0 through v0.4.5** includes:
+
+- safe inspection of SOR 2.00 structure and metadata;
+- evidence-based selection of characterized vendor profiles;
+- trace reconstruction from stored samples;
+- defensive `.EI` reading for the characterized CE6422 layout and evidence-based EI/SOR pairing;
+- explicit separation of SOR-stored events, EI-imported records, calculated candidates and manual review;
+- contextual event analysis, explainable suppression and terminal evidence;
+- a v0.3.6 consistency pass for equivalent EI/SOR curves and weak-response localization;
+- up to **eight files open in independent tabs** from v0.4.0;
+- explicit EI association initiated from a SOR tab instead of filename-based pairing;
+- comparison of **two to four traces** with acquisition conditions, curve overlay, event proximity and CSV export;
+- v0.4.1 comparison across any selected pair, with **common-span / full-span** views and a 5–50 m median drawing baseline;
+- v0.4.2 comparison audit showing event-evidence grades and nearby **suppressed candidates** without counting them as matches;
+- v0.4.2 terminal sensitivity warnings from a ±10% diagnostic perturbation of the minimum-noise threshold, **without changing the default detector decision**;
+- an **optional, reversible, class-aware experimental edge locator** alongside the unchanged baseline positions, with method/version recorded in sessions and exports;
+- revised local reports/PDF layouts and session controls, while preserving read-only source handling;
+
+- v0.4.3 characterized Yokogawa SOR native events and introduced an advisory **Random Forest morphology review**, without rewriting the instrument's measurements;
+- v0.4.4 added the characterized **JDSU MSOR** dual-wavelength container and revisable, one-to-one cross-device event associations;
+- v0.4.5 added **Yokogawa SOZ** multi-trace containers, preserving each wavelength's own samples, native event table and source identity;
+- v0.4.5 compares **EXFO and Yokogawa as peer documentary references**, with JDSU as additional corroboration; reference selection does not make either instrument a physical ground truth;
+- configurable original/reference-**IOR axes** (applied only where valid), and differences in **inter-event separation** alongside absolute-position comparison;
+- local **LSA loss estimates** with six alternative before/after window combinations, separately presented from the instrument's native loss;
+- joint review of **unchanged RF morphology suggestions**, window sensitivity and disagreements, with versioned session and PDF/CSV/JSON context;
+- organized diagnostics that separate readable data, actionable findings, warnings and methodological detail;
+- JSON/CSV exports without modifying the original measurement.
+
+</details>
+
+<p align="center">
+  <a href="technical-documentation/version-history.md"><img src="assets/nav/version-history.svg" alt="Version history"></a>
+  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+</p>
+
+<h2 id="contributions" align="center">Engineering contributions</h2>
+
+The development combines mechatronics, applied software and experimental analysis. The table links documented engineering contributions to public evidence without disclosing the proprietary implementation.
+
+| Area | Technical contribution | Evidence |
+|---|---|---|
+| **Binary-format characterization** | Structure and vendor-semantics analysis; separation of declared and confirmed source identity. | <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility"></a> |
+| **Software architecture** | Separation of ingestion, profile-based interpretation, per-file analysis, workspace and comparison. | <a href="technical-documentation/architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a> |
+| **Signal processing** | Candidate and transition evaluation, experimental localization and local LSA loss estimation. | <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a> |
+| **Machine learning** | Morphological Random Forest evaluation and advisory use; contextual review and score limits. | <a href="technical-documentation/event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Provenance"></a> |
+| **Instrumentation and metrology** | Comparability, IOR, reference and position/separation analysis while retaining native readings. | <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a> |
+| **Experimental validation** | Controlled tests, versioned regression and evaluation of tradeoffs among references. | <a href="technical-documentation/validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a> |
+| **Visualization and interaction** | Trace organization, diagnostics, review, comparison and technical reports. | <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Walkthrough"></a> |
+
 <h2 id="guided-walkthrough" align="center">Guided walkthrough</h2>
 
 **See the engineering workflow before reading the implementation history.** This five-stage operator journey covers the documented v0.4.5 workflow:
@@ -50,6 +129,33 @@ The project is not designed to force every trace into a universal model. It expo
 </p>
 
 The walkthrough includes an original conceptual flow diagram and practical Ceyear, Yokogawa and JDSU routes. **It is not a downloadable demo or screenshot gallery**; source code and operational measurements remain private.
+
+<h2 id="compatibility-matrix" align="center">Compatibility matrix</h2>
+
+Format recognition, native-event support, calculated analysis and vendor-specific optical semantics have **different levels of evidence**. The dedicated matrix documents characterized EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ and JDSU MSOR paths, including unsupported variants and required preconditions.
+
+<p align="center">
+  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Open compatibility matrix"></a>
+</p>
+
+<h2 id="case-studies" align="center">Case studies</h2>
+
+Two engineering decisions explained using synthetic examples and archived evidence: position disagreements between instruments and native-versus-LSA loss. Includes documented research status.
+
+<p align="center">
+  <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
+</p>
+
+<h2 id="current-scope" align="center">Current scope · documented through v0.4.5</h2>
+
+| Ecosystem | Status | Role in the project |
+|---|---|---|
+| **EXFO** | **Characterized reference profile** | SOR 2.00 parsing, normalized parameters, stored events and trace visualization for the characterized reference profile. |
+| **Ceyear CE6422** | **Active development** | Characterized trace interpretation, calculated candidates, verified EI/SOR pairing for the observed layout, terminal diagnostics and multi-file comparison. |
+| **Yokogawa (characterized SOR / SOZ)** | **Characterized native-event support** | Observed SOR event scales and SOZ multi-wavelength members; source-confirmed SOR origins remain distinguishable from instrument-declared identity. Native-reader and metrological confirmation remain bounded. |
+| **JDSU T-BERD 6000A / 8126 MSOR** | **Characterized container support** | Observed MSOR 2.10, two wavelengths, native events and verified source-specific reference fields; unknown formats or units remain unsupported. |
+
+<p align="center"><strong>structurally readable → profile identified → semantically characterized → empirically validated</strong></p>
 
 <h2 id="architecture" align="center">Architecture</h2>
 
@@ -83,76 +189,13 @@ Five distinctions guide the implementation:
 
 *Illustrative conceptual schema, not application source code:*
 
-```python
-normalized_field = {
-    "value": ...,
-    "raw_value": ...,
-    "unit": ...,
-    "source": ...,
-    "rule_id": ...,
-    "confidence": ...,
-    "evidence": ...,
-}
-```
+| Conceptual dimension | Information retained |
+|---|---|
+| Value | Interpreted value, raw value and unit |
+| Provenance | Source and applied rule |
+| Support | Interpretation confidence and evidence |
 
 An empirical conversion, vendor-specific scale or inferred meaning therefore remains distinguishable from a value explicitly stored in the source.
-
-<h2 id="current-capabilities" align="center">Current capabilities</h2>
-
-The development sequence documented from **v0.1.0 through v0.4.5** includes:
-
-- safe inspection of SOR 2.00 structure and metadata;
-- evidence-based selection of characterized vendor profiles;
-- trace reconstruction from stored samples;
-- defensive `.EI` reading for the characterized CE6422 layout and evidence-based EI/SOR pairing;
-- explicit separation of SOR-stored events, EI-imported records, calculated candidates and manual review;
-- contextual event analysis, explainable suppression and terminal evidence;
-- a v0.3.6 consistency pass for equivalent EI/SOR curves and weak-response localization;
-- up to **eight files open in independent tabs** from v0.4.0;
-- explicit EI association initiated from a SOR tab instead of filename-based pairing;
-- comparison of **two to four traces** with acquisition conditions, curve overlay, event proximity and CSV export;
-- v0.4.1 comparison across any selected pair, with **common-span / full-span** views and a 5–50 m median drawing baseline;
-- v0.4.2 comparison audit showing event-evidence grades and nearby **suppressed candidates** without counting them as matches;
-- v0.4.2 terminal sensitivity warnings from a ±10% diagnostic perturbation of the minimum-noise threshold, **without changing the default detector decision**;
-- an **optional, reversible, class-aware experimental edge locator** alongside the unchanged baseline positions, with method/version recorded in sessions and exports;
-- revised local reports/PDF layouts and session controls, while preserving read-only source handling;
-
-- v0.4.3 characterized Yokogawa SOR native events and introduced an advisory **Random Forest morphology review**, without rewriting the instrument's measurements;
-- v0.4.4 added the characterized **JDSU MSOR** dual-wavelength container and revisable, one-to-one cross-device event associations;
-- v0.4.5 added **Yokogawa SOZ** multi-trace containers, preserving each wavelength's own samples, native event table and source identity;
-- v0.4.5 compares **EXFO and Yokogawa as peer documentary references**, with JDSU as additional corroboration; reference selection does not make either instrument a physical ground truth;
-- configurable original/reference-**IOR axes** (applied only where valid), and differences in **inter-event separation** alongside absolute-position comparison;
-- local **LSA loss estimates** with six alternative before/after window combinations, separately presented from the instrument's native loss;
-- joint review of **unchanged RF morphology suggestions**, window sensitivity and disagreements, with versioned session and PDF/CSV/JSON context;
-- organized diagnostics that separate readable data, actionable findings, warnings and methodological detail;
-- JSON/CSV exports without modifying the original measurement.
-
-<h2 id="current-scope" align="center">Current scope · documented through v0.4.5</h2>
-
-| Ecosystem | Status | Role in the project |
-|---|---|---|
-| **EXFO** | **Validated reference** | SOR 2.00 parsing, normalized parameters, stored events and trace visualization for the characterized reference profile. |
-| **Ceyear CE6422** | **Active development** | Characterized trace interpretation, calculated candidates, verified EI/SOR pairing for the observed layout, terminal diagnostics and multi-file comparison. |
-| **Yokogawa (characterized SOR / SOZ)** | **Characterized native-event support** | Observed SOR event scales and SOZ multi-wavelength members; source-confirmed SOR origins remain distinguishable from instrument-declared identity. Native-reader and metrological confirmation remain bounded. |
-| **JDSU T-BERD 6000A / 8126 MSOR** | **Characterized container support** | Observed MSOR 2.10, two wavelengths, native events and verified source-specific reference fields; unknown formats or units remain unsupported. |
-
-<p align="center"><strong>structurally readable → profile identified → semantically characterized → empirically validated</strong></p>
-
-<h2 id="case-studies" align="center">Case studies</h2>
-
-Two engineering decisions explained using synthetic examples and archived evidence: position disagreements between instruments and native-versus-LSA loss. Includes documented research status.
-
-<p align="center">
-  <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
-</p>
-
-<h2 id="compatibility-matrix" align="center">Compatibility matrix</h2>
-
-Format recognition, native-event support, calculated analysis and vendor-specific optical semantics have **different levels of evidence**. The dedicated matrix documents characterized EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ and JDSU MSOR paths, including unsupported variants and required preconditions.
-
-<p align="center">
-  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Open compatibility matrix"></a>
-</p>
 
 <h2 id="event-provenance" align="center">Event provenance</h2>
 
@@ -169,7 +212,6 @@ For the characterized Ceyear family, absence of `KeyEvents` means **no stored ev
 
 From v0.4.3 onward, a **morphology classifier** can propose a *signal-shape assessment*. This is an advisory result, **not a fifth source of events, calibrated probability or replacement for native event/loss values**. In v0.4.5, estimated LSA loss is also distinct from any instrument-stored loss. SOZ/SOR copies of the same acquisition are linked without counting them as independent measurements.
 
-
 <h2 id="validation" align="center">Validation</h2>
 
 Validation is layered rather than reduced to one pass/fail criterion:
@@ -182,7 +224,7 @@ Validation is layered rather than reduced to one pass/fail criterion:
 6. workspace, server and simulated DOM/canvas regression;
 7. manual viewer and export checks.
 
-Important documented milestones include an archived **80-test release validation in v0.3.6**, verification over **18 controlled EI/SOR pairs** with 72/72 post-start event associations, and the v0.4.1 standard Python suite with **54 tests passing and 6 external-corpus tests skipped**. Counts are not treated as directly comparable quality scores because the suites and required data changed between releases.
+Important documented milestones include an archived **80-test release validation in v0.3.6**, verification over **18 controlled EI/SOR pairs** with 72/72 post-start event associations, and a prior standard-suite run with **54 tests discovered: 48 passed and 6 external-corpus tests skipped**. Counts are not treated as directly comparable quality scores because the suites and required data changed between releases.
 
 The archived v0.4.2 presentation revision reports **92 Python tests passed with the available controlled/private corpora** and simulated DOM tests. The optional class-aware edge method improved *retrospective concordance* against an EXFO study reference but worsened agreement with paired EI; therefore it remains **experimental and off by default**, not a validated accuracy correction.
 
@@ -210,6 +252,7 @@ The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, 
 - Vendor-specific interpretation remains profile/signature based and should not be read as universal SOR compatibility.
 - The displayed vertical trace level is relative and is not presented as universally calibrated optical power.
 - Event proximity in the v0.4.1 comparator is a **visual grouping aid**, not a physical tolerance or proof that two traces contain the same event.
+- The later v0.4.4 reviewable correspondence search of up to 50 m differs from the v0.4.1 visual grouping rule; neither is a physical tolerance.
 - The v0.4.2 class-aware edge locator is optional, reversible and not a demonstrated physical-accuracy improvement. Terminal-threshold sensitivity is a diagnostic warning, not uncertainty calibration.
 - Common/full-span switching and the 5–50 m median baseline affect comparison presentation only; they do not modify samples, event positions or losses.
 - Terminal results remain calculated hypotheses and do not certify physical fiber endpoints, event loss, reflectance, ORL or metrological uncertainty.

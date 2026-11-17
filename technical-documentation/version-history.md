@@ -154,7 +154,7 @@ The new comparison behavior:
 
 The 15 m proximity threshold remains a review aid, not a physical tolerance or proof of event identity. The grouping is greedy and intentionally does not claim optimal physical association.
 
-The archived v0.4.1 validation records **54 Python tests passing with 6 external-corpus tests skipped**, plus simulated DOM/canvas coverage of the corrected comparison behavior. At the time of that validation, a final visual inspection of the revised comparator in a Windows browser was still pending.
+The archived v0.4.1 validation records a reported count of 54 passed and 6 skipped; a prior standard-suite run counted **54 discovered: 48 passed and 6 skipped**, plus simulated DOM/canvas coverage of the corrected comparison behavior. At the time of that validation, a final visual inspection of the revised comparator in a Windows browser was still pending.
 
 ### v0.4.2 · documented revisions of the same release
 

@@ -103,8 +103,7 @@ v0.4.1 conserva el detector de v0.4.0 y valida la capa de comparación corregida
 
 La validación archivada registra:
 
-- **54 pruebas Python aprobadas**;
-- **6 pruebas de corpus externo omitidas** en el descubrimiento estándar;
+- el informe archivado describe 54 pruebas aprobadas y 6 omitidas; una ejecución estándar previa del paquete contabilizó **54 descubiertas: 48 aprobadas y 6 omitidas**. Se distingue ese recuento de la redacción original del informe;
 - JavaScript de producción con DOM/canvas simulado;
 - agrupamiento entre todos los pares en el caso probado;
 - cambio entre tramo común y recorrido completo;
@@ -186,7 +185,7 @@ Por tanto, **80 frente a 54 no significa que una versión esté “más validada
 
 ## Límites específicos del comparador
 
-### Umbral de cercanía de 15 m
+### Umbral de cercanía de 15 m · v0.4.1
 
 Es una ayuda visual. No es:
 
@@ -195,6 +194,8 @@ Es una ayuda visual. No es:
 - prueba de identidad de enlace;
 - intervalo de confianza;
 - especificación de exactitud.
+
+En v0.4.4 se documenta una búsqueda de correspondencias revisables de hasta 50 m, distinta de aquella regla histórica. Ninguna establece tolerancia física.
 
 ### Agrupamiento entre todos los pares
 

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 355" width="1600" height="355">
-<rect x="0" y="0" width="1600" height="355" rx="21" fill="#f3f5f7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1648 355" width="1648" height="355">
+<rect x="0" y="0" width="1648" height="355" rx="21" fill="#f3f5f7"/>
 <g font-family="Segoe UI,Arial,sans-serif">
 <text x="45" y="44" font-size="13" font-weight="700" fill="#5c6b78" letter-spacing="1.6">OTDR INSIDE · DOCUMENTED v0.4.5 WALKTHROUGH</text>
 <text x="45" y="82" font-size="23" font-weight="700" fill="#202f3c">Five stages · origin and review at every decision</text><rect x="41" y="113" width="294" height="173" rx="15" fill="#e6eaee" stroke="#c4ccd3" stroke-width="1.25"/>
@@ -27,5 +27,5 @@
   <text x="1347" y="152" font-size="13" font-weight="700" fill="#237b71">05 · REPORT</text>
   <text x="1333" y="196" font-size="19" font-weight="700" fill="#202f3c">Session + PDF/CSV</text>
   <text x="1333" y="233" font-size="14" fill="#5c6b78">Method · provenance</text>
-  <text x="1333" y="259" font-size="14" fill="#5c6b78">warnings retained</text><rect x="170" y="307" width="1260" height="34" rx="9" fill="#e0e6eb" stroke="#c4ccd3"/>
-<text x="800" y="329" text-anchor="middle" font-size="13" font-weight="600" fill="#5c6b78">CONCEPTUAL DIAGRAM · NOT A SCREENSHOT OR FIELD MEASUREMENT</text></g></svg>
+  <text x="1333" y="259" font-size="14" fill="#5c6b78">warnings retained</text><rect x="194" y="307" width="1260" height="34" rx="9" fill="#e0e6eb" stroke="#c4ccd3"/>
+<text x="824" y="329" text-anchor="middle" font-size="13" font-weight="600" fill="#5c6b78">CONCEPTUAL DIAGRAM · NOT A SCREENSHOT OR FIELD MEASUREMENT</text></g></svg>
