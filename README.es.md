@@ -15,6 +15,7 @@
   <a href="#descripción-general"><img src="assets/nav/descripcion.svg" alt="Descripción"></a>
   <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
   <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
   <a href="#arquitectura"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="#capacidades-actuales"><img src="assets/nav/capacidades.svg" alt="Capacidades"></a>
 </p>
@@ -137,6 +138,14 @@ La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
 
 <p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
 
+<h2 id="casos-de-estudio" align="center">Casos de estudio</h2>
+
+Dos decisiones de ingeniería explicadas con ejemplos sintéticos y evidencia archivada: diferencias de posición entre instrumentos y discrepancias entre pérdidas nativas y LSA. Incluye el estado documental de las investigaciones.
+
+<p align="center">
+  <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
+</p>
+
 <h2 id="matriz-de-compatibilidad" align="center">Matriz de compatibilidad</h2>
 
 Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no tienen el mismo nivel de respaldo**. La matriz específica documenta EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ y JDSU MSOR, con precondiciones, variantes no demostradas y límites por capacidad.
@@ -215,8 +224,7 @@ El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.
 - estudiar la calidad de adquisición y elegibilidad de comparación con reglas explicables, sin reescribir automáticamente datos nativos;
 - contrastar el parche aislado de centrado y revisión en un navegador Windows real;
 - añadir lotes, revisión de anomalías y etiquetas independientes de enlaces nuevos;
-- crear una galería revisada de capturas del visor e ilustraciones de trazas sintéticas independientes, sin publicar código fuente;
-- construir una matriz de compatibilidad basada en evidencia reproducible.
+- crear una galería revisada de capturas del visor e ilustraciones de trazas sintéticas independientes, sin publicar código fuente.
 
 <h2 id="autor" align="center">Autor</h2>
 

@@ -15,6 +15,7 @@
   <a href="#overview"><img src="assets/nav/overview.svg" alt="Overview"></a>
   <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
   <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+  <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
   <a href="#architecture"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
   <a href="#current-capabilities"><img src="assets/nav/capabilities.svg" alt="Capabilities"></a>
 </p>
@@ -137,6 +138,14 @@ The development sequence documented from **v0.1.0 through v0.4.5** includes:
 
 <p align="center"><strong>structurally readable → profile identified → semantically characterized → empirically validated</strong></p>
 
+<h2 id="case-studies" align="center">Case studies</h2>
+
+Two engineering decisions explained using synthetic examples and archived evidence: position disagreements between instruments and native-versus-LSA loss. Includes documented research status.
+
+<p align="center">
+  <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
+</p>
+
 <h2 id="compatibility-matrix" align="center">Compatibility matrix</h2>
 
 Format recognition, native-event support, calculated analysis and vendor-specific optical semantics have **different levels of evidence**. The dedicated matrix documents characterized EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ and JDSU MSOR paths, including unsupported variants and required preconditions.
@@ -215,8 +224,7 @@ The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, 
 - study contextual acquisition-quality and comparison-eligibility checks without automatically rewriting instrument data;
 - evaluate the isolated comparator-centering patch and review controls in a real Windows browser;
 - add batch processing, anomaly review and independent labels across new links;
-- build a curated gallery of approved viewer screenshots and independently synthetic trace illustrations, without publishing source code;
-- build a compatibility matrix based on reproducible evidence.
+- build a curated gallery of approved viewer screenshots and independently synthetic trace illustrations, without publishing source code.
 
 <h2 id="author" align="center">Author</h2>
 

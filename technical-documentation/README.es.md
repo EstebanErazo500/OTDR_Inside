@@ -4,6 +4,7 @@
   <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
   <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
   <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="case-studies.es.md"><img src="../assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
   <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
   <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
   <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
@@ -28,6 +29,7 @@ La documentación conserva la evolución técnica. El alcance actual permite cap
 |---|---|
 | <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a> | Flujo del operador en cinco etapas: entradas caracterizadas, evidencia, revisión LSA/IA, comparación e informes (v0.4.5); sin código público ni capturas inventadas. |
 | <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a> | Alcance por fabricante y formato de EXFO, Ceyear, Yokogawa y JDSU, estados por capacidad, evidencia, precondiciones y variantes no demostradas. |
+| <a href="case-studies.es.md"><img src="../assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> | Concordancia de posiciones y pérdida LSA con ejemplos sintéticos, evidencia archivada y estado de desarrollo. |
 | <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución de ingeniería hasta v0.4.5, incluidas Yokogawa/JDSU/SOZ, estimación de pérdidas y límites de la evidencia. |
 | <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución hasta la base multiarchivo 4.1, auditoría 4.2 y ampliaciones 4.3–4.5 de fabricantes, IA y LSA. |
 | <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de procedencia SOR, EI, MSOR y SOZ; asesoría RF y pérdida nativa frente a LSA separadas. |
