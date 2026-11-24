@@ -1,18 +1,18 @@
 <h1 align="center">Compatibility matrix · OTDR Inside</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical documentation"></a>
-  <a href="how-it-works.md"><img src="../assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
-  <img src="../assets/nav/compatibility-current.svg" alt="Compatibility matrix · current page">
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
+  <img src="assets/nav/compatibility-current.svg" alt="Compatibility matrix · current page">
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
-  <a href="compatibility-matrix.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="compatibility-matrix.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="compatibility-matrix.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Opening a file does not mean that every event, optical quantity or comparison has been validated.</strong></p>
@@ -20,8 +20,8 @@
 > **Documentation cutoff: v0.4.5, consolidated on 5 November 2026.** This matrix summarizes capabilities recorded in archived development packages and reports. It is **not** a newly executed test, Telcordia/IEC conformity certification or blanket support promise for all equipment from a vendor. Source code and raw verification corpora remain private under the [data handling policy](data-handling.md).
 
 <p align="center">
-  <img src="../assets/compatibility/coverage-light.svg#gh-light-mode-only" alt="Conceptual source routes for SOR, EI, MSOR and SOZ, light theme" width="100%">
-  <img src="../assets/compatibility/coverage-dark.svg#gh-dark-mode-only" alt="Conceptual source routes for SOR, EI, MSOR and SOZ, dark theme" width="100%">
+  <img src="assets/compatibility/coverage-light.svg#gh-light-mode-only" alt="Conceptual source routes for SOR, EI, MSOR and SOZ, light theme" width="100%">
+  <img src="assets/compatibility/coverage-dark.svg#gh-dark-mode-only" alt="Conceptual source routes for SOR, EI, MSOR and SOZ, dark theme" width="100%">
 </p>
 
 ## Status terminology
@@ -116,7 +116,7 @@ This is an **engineering evidence-based coverage matrix**, not a commercial list
 ---
 
 <p align="center">
-  <a href="how-it-works.md"><img src="../assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
 </p>

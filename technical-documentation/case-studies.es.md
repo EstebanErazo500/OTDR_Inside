@@ -1,24 +1,24 @@
 <h1 align="center">Casos de estudio · Decisiones de ingeniería</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
-  <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Compatibilidad"></a>
-  <img src="../assets/nav/casos-estudio-current.svg" alt="Casos de estudio">
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a>
+  <img src="assets/nav/casos-estudio-current.svg" alt="Casos de estudio">
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
 </p>
 
 <p align="center">
-  <a href="case-studies.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="case-studies.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="case-studies.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="case-studies.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 > **Alcance:** v0.4.5 consolidada el 5 de noviembre de 2026. Estos casos conectan los resultados retrospectivos ya documentados en Validación con ejemplos didácticos inventados. No son nuevas pruebas del visor, capturas, trazas operativas ni registros individuales.
 
 <p align="center">
-  <img src="../assets/case-studies/examples-es-light.svg#gh-light-mode-only" width="100%" alt="Dos ejemplos sintéticos">
-  <img src="../assets/case-studies/examples-es-dark.svg#gh-dark-mode-only" width="100%" alt="Dos ejemplos sintéticos">
+  <img src="assets/case-studies/examples-es-light.svg#gh-light-mode-only" width="100%" alt="Dos ejemplos sintéticos">
+  <img src="assets/case-studies/examples-es-dark.svg#gh-dark-mode-only" width="100%" alt="Dos ejemplos sintéticos">
 </p>
 
 ## Caso A · ¿Por qué discrepan las posiciones de eventos?
@@ -113,5 +113,5 @@ El corte no implica haber inspeccionado versiones posteriores. Los resultados ar
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>

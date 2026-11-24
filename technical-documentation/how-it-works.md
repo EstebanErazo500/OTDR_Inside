@@ -1,18 +1,18 @@
 <h1 align="center">How OTDR Inside works · Guided walkthrough</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical documentation"></a>
-  <a href="compatibility-matrix.md"><img src="../assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
-  <a href="how-it-works.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="how-it-works.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="how-it-works.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>From an OTDR file to a reviewable interpretation without losing data origins.</strong></p>
@@ -20,8 +20,8 @@
 > **Evidence scope.** This walkthrough explains the behavior documented for **v0.4.5, consolidated on 5 November 2026**. It is not an installation tutorial: the viewer's source code and executable are not publicly distributed. Exact UI control names may vary across revisions, and this page uses named controls only where the record identifies them. The illustrations are **original conceptual diagrams**, not application screenshots or field measurements.
 
 <p align="center">
-  <img src="../assets/workflow/flow-light.svg#gh-light-mode-only" alt="Conceptual five-stage OTDR Inside walkthrough, light theme" width="100%">
-  <img src="../assets/workflow/flow-dark.svg#gh-dark-mode-only" alt="Conceptual five-stage OTDR Inside walkthrough, dark theme" width="100%">
+  <img src="assets/workflow/flow-light.svg#gh-light-mode-only" alt="Conceptual five-stage OTDR Inside walkthrough, light theme" width="100%">
+  <img src="assets/workflow/flow-dark.svg#gh-dark-mode-only" alt="Conceptual five-stage OTDR Inside walkthrough, dark theme" width="100%">
 </p>
 
 ## Before you begin · sources and acquisition conditions
@@ -38,7 +38,7 @@ Start from files with known acquisition provenance. Compatibility is limited to 
 For supported layouts, feature conditions and limits per vendor, use the dedicated matrix below. A recognized extension alone does not prove full semantic compatibility.
 
 <p align="center">
-  <a href="compatibility-matrix.md"><img src="../assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+  <a href="compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
 </p>
 
 Before comparing, check **wavelength, pulse width, range, group index (IOR), distance origin and acquisition relationship**. A SOZ and its SOR extract may describe the *same* acquisition, not independent repetitions.
@@ -120,7 +120,7 @@ This page is **not a test session executed today**. It summarizes workflows and 
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>

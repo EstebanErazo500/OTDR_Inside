@@ -1,18 +1,18 @@
 <h1 align="center">Architecture evolution · documented snapshots</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a>
-  <img src="../assets/nav/architecture-current.svg" alt="Architecture · current page">
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="version-history.md"><img src="assets/nav/version-history.svg" alt="Version history"></a>
+  <img src="assets/nav/architecture-current.svg" alt="Architecture · current page">
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
-  <a href="architecture.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="architecture.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="architecture.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Read bytes first. Interpret only when evidence supports it. Compare without erasing source boundaries.</strong></p>
@@ -24,8 +24,8 @@ OTDR Inside evolved by adding layers around a stable raw-data boundary. The proj
 ## Evolution map
 
 <p align="center">
-  <img src="../assets/architecture/evolution-light.svg#gh-light-mode-only" alt="OTDR Inside architecture evolution in light mode" width="100%">
-  <img src="../assets/architecture/evolution-dark.svg#gh-dark-mode-only" alt="OTDR Inside architecture evolution in dark mode" width="100%">
+  <img src="assets/architecture/evolution-light.svg#gh-light-mode-only" alt="OTDR Inside architecture evolution in light mode" width="100%">
+  <img src="assets/architecture/evolution-dark.svg#gh-dark-mode-only" alt="OTDR Inside architecture evolution in dark mode" width="100%">
 </p>
 
 ## Architectural development by release
@@ -98,8 +98,8 @@ A separately selectable `edge_precision.py` experiment can change calculated pos
 This is a **localization experiment**, not a new validated source or a universal improvement: retrospective agreement with EI worsens even though agreement with an EXFO study reference improves.
 
 <p align="center">
-  <img src="../assets/architecture/v042-light.svg#gh-light-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in light mode" width="100%">
-  <img src="../assets/architecture/v042-dark.svg#gh-dark-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in dark mode" width="100%">
+  <img src="assets/architecture/v042-light.svg#gh-light-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in light mode" width="100%">
+  <img src="assets/architecture/v042-dark.svg#gh-dark-mode-only" alt="Documented v0.4.2 analysis, evidence and experimental localization in dark mode" width="100%">
 </p>
 
 ### v0.4.3 · native-event profiles and morphology advisory
@@ -125,8 +125,8 @@ For suitable non-reflective events, the per-file analysis adds a **local LSA los
 Sessions/reports preserve container/subtrace identity, calculation method, comparison decisions, and review context. The report's IEC-oriented field inventory is documentation support, **not a calibration certificate**.
 
 <p align="center">
-  <img src="../assets/architecture/v045-light.svg#gh-light-mode-only" alt="Documented v0.4.3 to v0.4.5 architectural extensions, light theme" width="100%">
-  <img src="../assets/architecture/v045-dark.svg#gh-dark-mode-only" alt="Documented v0.4.3 to v0.4.5 architectural extensions, dark theme" width="100%">
+  <img src="assets/architecture/v045-light.svg#gh-light-mode-only" alt="Documented v0.4.3 to v0.4.5 architectural extensions, light theme" width="100%">
+  <img src="assets/architecture/v045-dark.svg#gh-dark-mode-only" alt="Documented v0.4.3 to v0.4.5 architectural extensions, dark theme" width="100%">
 </p>
 
 **After the 5 November package:** the isolated 6 November vertical-centering and IOR-notice patch, direct EXFO `.stdr` investigation and further AI/comparability proposals are research or unmerged work, not part of the shipped 4.5 package.
@@ -150,8 +150,8 @@ Two baseline components are byte-identical across every archived snapshot from v
 The diagram below is the **v0.4.1 per-file/workspace baseline**. Changes from 4.2 and 4.3–4.5 are represented in their separate diagrams and text above; no part is described as the final architecture.
 
 <p align="center">
-  <img src="../assets/architecture/system-light.svg#gh-light-mode-only" alt="OTDR Inside v0.4.1 implementation snapshot in light mode" width="100%">
-  <img src="../assets/architecture/system-dark.svg#gh-dark-mode-only" alt="OTDR Inside v0.4.1 implementation snapshot in dark mode" width="100%">
+  <img src="assets/architecture/system-light.svg#gh-light-mode-only" alt="OTDR Inside v0.4.1 implementation snapshot in light mode" width="100%">
+  <img src="assets/architecture/system-dark.svg#gh-dark-mode-only" alt="OTDR Inside v0.4.1 implementation snapshot in dark mode" width="100%">
 </p>
 
 ## Processing model
@@ -244,7 +244,7 @@ This is a conceptual and historical architecture description. **Application sour
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
 </p>

@@ -1,17 +1,17 @@
 <h1 align="center">Event provenance · documented model</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <img src="../assets/nav/event-provenance-current.svg" alt="Event provenance · current page">
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <img src="assets/nav/event-provenance-current.svg" alt="Event provenance · current page">
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
-  <a href="event-provenance.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="event-provenance.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Origin is part of the data. Evidence, review and cross-trace proximity are different dimensions.</strong></p>
@@ -21,8 +21,8 @@
 OTDR Inside keeps the origin of a value or event visible instead of flattening everything shown in the same interface into one undifferentiated event table.
 
 <p align="center">
-  <img src="../assets/provenance/model-light.svg#gh-light-mode-only" alt="OTDR Inside event provenance model in light mode" width="100%">
-  <img src="../assets/provenance/model-dark.svg#gh-dark-mode-only" alt="OTDR Inside event provenance model in dark mode" width="100%">
+  <img src="assets/provenance/model-light.svg#gh-light-mode-only" alt="OTDR Inside event provenance model in light mode" width="100%">
+  <img src="assets/provenance/model-dark.svg#gh-dark-mode-only" alt="OTDR Inside event provenance model in dark mode" width="100%">
 </p>
 
 ## Four conceptual origins
@@ -206,7 +206,7 @@ This page documents concepts and archived behavior, not a source-code distributi
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
 </p>

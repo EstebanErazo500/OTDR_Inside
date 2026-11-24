@@ -1,18 +1,18 @@
 <h1 align="center">Historial de versiones · registro de ingeniería reconstruido</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones · página actual">
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <img src="assets/nav/historial-versiones.svg" alt="Historial de versiones · página actual">
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="version-history.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="version-history.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="version-history.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="version-history.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 > Este historial público se reconstruye a partir de entregas archivadas del desarrollo. Documenta la secuencia técnica real, pero **no** pretende que esas entregas hayan sido originalmente commits de Git. La secuencia es documental: con el permiso vigente no se prevén etiquetas del código fuente ni entregas descargables.
@@ -223,6 +223,6 @@ Si cambia el permiso para distribuir código, será necesaria una nueva autoriza
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
 </p>

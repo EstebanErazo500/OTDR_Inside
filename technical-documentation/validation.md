@@ -1,17 +1,17 @@
 <h1 align="center">Validation · evidence hierarchy and documented limits</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
-  <img src="../assets/nav/validation-current.svg" alt="Validation · current page">
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <img src="assets/nav/validation-current.svg" alt="Validation · current page">
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
-  <a href="validation.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="validation.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="validation.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="validation.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Validation is layered evidence, not a single accuracy score.</strong></p>
@@ -19,8 +19,8 @@
 > **Scope.** This page summarizes the validation model documented by archived releases through **v0.4.5**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
 
 <p align="center">
-  <img src="../assets/validation/layers-light.svg#gh-light-mode-only" alt="OTDR Inside validation hierarchy in light mode" width="100%">
-  <img src="../assets/validation/layers-dark.svg#gh-dark-mode-only" alt="OTDR Inside validation hierarchy in dark mode" width="100%">
+  <img src="assets/validation/layers-light.svg#gh-light-mode-only" alt="OTDR Inside validation hierarchy in light mode" width="100%">
+  <img src="assets/validation/layers-dark.svg#gh-dark-mode-only" alt="OTDR Inside validation hierarchy in dark mode" width="100%">
 </p>
 
 ## Validation layers
@@ -237,8 +237,8 @@ Until that exists, the project should describe distances as algorithm/reference 
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
 </p>
 
 <p align="center"><sub>Publication boundary: screenshots and conceptual material are allowed after review; application source code remains excluded.</sub></p>

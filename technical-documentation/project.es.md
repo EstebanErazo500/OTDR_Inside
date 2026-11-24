@@ -10,15 +10,15 @@
 
 <p align="center">
   <a href="#descripción-general"><img src="assets/nav/descripcion.svg" alt="Descripción"></a>
-  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
-  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a>
-  <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
-  <a href="technical-documentation/README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a>
+  <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>
 
 <p align="center">
-  <a href="README.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
-  <a href="README.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="../README.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="project.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 ---
@@ -85,8 +85,8 @@ La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
 </details>
 
 <p align="center">
-  <a href="technical-documentation/version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
-  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
 </p>
 
 <h2 id="contribuciones" align="center">Contribuciones de ingeniería</h2>
@@ -95,13 +95,13 @@ El desarrollo reúne competencias de ingeniería mecatrónica, software aplicado
 
 | Área | Contribución técnica | Evidencia |
 |---|---|---|
-| **Caracterización de formatos binarios** | Análisis de estructuras y semántica por fabricante; separación entre identificación declarada y confirmada. | <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a> |
-| **Arquitectura de software** | Separación de lectura, interpretación por perfiles, análisis individual, espacio multiarchivo y comparación. | <a href="technical-documentation/architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a> |
-| **Procesamiento de señales** | Evaluación de candidatos y transiciones, localización experimental y pérdidas locales LSA. | <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> |
-| **Aprendizaje automático** | Evaluación y uso consultivo de Random Forest morfológico; revisión contextual y límites del puntaje. | <a href="technical-documentation/event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia"></a> |
-| **Instrumentación y metrología** | Análisis de comparabilidad, IOR, referencias y diferencias de posición/separación; preservación de datos nativos. | <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> |
-| **Validación experimental** | Pruebas controladas, regresión por versión y evaluación de compromisos entre referencias. | <a href="technical-documentation/validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a> |
-| **Visualización e interacción** | Organización de trazas, diagnóstico, revisión, comparación e informes técnicos. | <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido"></a> |
+| **Caracterización de formatos binarios** | Análisis de estructuras y semántica por fabricante; separación entre identificación declarada y confirmada. | <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a> |
+| **Arquitectura de software** | Separación de lectura, interpretación por perfiles, análisis individual, espacio multiarchivo y comparación. | <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a> |
+| **Procesamiento de señales** | Evaluación de candidatos y transiciones, localización experimental y pérdidas locales LSA. | <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> |
+| **Aprendizaje automático** | Evaluación y uso consultivo de Random Forest morfológico; revisión contextual y límites del puntaje. | <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia"></a> |
+| **Instrumentación y metrología** | Análisis de comparabilidad, IOR, referencias y diferencias de posición/separación; preservación de datos nativos. | <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> |
+| **Validación experimental** | Pruebas controladas, regresión por versión y evaluación de compromisos entre referencias. | <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a> |
+| **Visualización e interacción** | Organización de trazas, diagnóstico, revisión, comparación e informes técnicos. | <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido"></a> |
 
 <h2 id="recorrido-guiado" align="center">Recorrido guiado</h2>
 
@@ -110,7 +110,7 @@ El desarrollo reúne competencias de ingeniería mecatrónica, software aplicado
 **Abrir SOR/EI/MSOR/SOZ caracterizados → interpretar trazas y eventos con procedencia → revisar pérdida LSA y asesoría Random Forest → comparar mediciones y condiciones → conservar decisiones en sesiones/informes.**
 
 <p align="center">
-  <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
 </p>
 
 Incluye un diagrama conceptual original y recorridos representativos de Ceyear, Yokogawa y JDSU. **No es una demostración descargable ni una galería de capturas**; el código y las mediciones operativas permanecen privados.
@@ -120,7 +120,7 @@ Incluye un diagrama conceptual original y recorridos representativos de Ceyear, 
 Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no tienen el mismo nivel de respaldo**. La matriz específica documenta EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ y JDSU MSOR, con precondiciones, variantes no demostradas y límites por capacidad.
 
 <p align="center">
-  <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Abrir matriz de compatibilidad"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Abrir matriz de compatibilidad"></a>
 </p>
 
 <h2 id="casos-de-estudio" align="center">Casos de estudio</h2>
@@ -128,7 +128,7 @@ Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no t
 Dos decisiones de ingeniería explicadas con ejemplos sintéticos y evidencia archivada: diferencias de posición entre instrumentos y discrepancias entre pérdidas nativas y LSA. Incluye el estado documental de las investigaciones.
 
 <p align="center">
-  <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
+  <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
 </p>
 
 <h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.5</h2>
@@ -158,7 +158,7 @@ La línea documentada separa el análisis por archivo del espacio de trabajo que
 | **Espacio de trabajo** | Mantiene hasta ocho análisis en pestañas independientes con zoom, selección, revisión y anotaciones propias. |
 | **Comparación** | Compara de dos a cuatro trazas como relación de presentación sin fusionar su procedencia ni afirmar identidad física. |
 
-La evolución completa, la base multiarchivo de 4.1 y las ampliaciones 4.3–4.5 se describen en <a href="technical-documentation/architecture.es.md">Documentación técnica</a>.
+La evolución completa, la base multiarchivo de 4.1 y las ampliaciones 4.3–4.5 se describen en <a href="architecture.es.md">Documentación técnica</a>.
 
 <h2 id="enfoque-de-ingeniería" align="center">Enfoque de ingeniería</h2>
 
@@ -215,7 +215,7 @@ La revisión de presentación archivada de v0.4.2 registra **92 pruebas Python a
 
 La consolidación archivada de v0.4.5 registra **123 pruebas Python aprobadas** con los corpus de desarrollo disponibles; nueve contenedores SOZ aportaron 18 trazas y 69 eventos almacenados. De 54 estimaciones LSA de pérdida de empalme Ceyear, **49 tuvieron apoyo y 5 quedaron para revisión**. Son comparaciones retrospectivas dependientes, no incertidumbres calibradas ni exactitud física independiente. El parche del comparador y los estudios de IA del 6 de noviembre se registran aparte, **no como funciones empaquetadas en v0.4.5**.
 
-La jerarquía de evidencia, la frontera público/privado y los límites metrológicos están descritos en <a href="technical-documentation/validation.es.md">Validación</a>.
+La jerarquía de evidencia, la frontera público/privado y los límites metrológicos están descritos en <a href="validation.es.md">Validación</a>.
 
 <h2 id="manejo-de-datos" align="center">Manejo de datos</h2>
 
@@ -226,7 +226,7 @@ OTDR Inside está diseñado como un flujo **local y de solo lectura**. Las medic
 El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.otdr` reales, exportaciones de medición/informes/sesiones, curvas privadas, identificadores de rutas/clientes, seriales, hashes, programas propietarios ni materiales licenciados. Toda ilustración sintética se etiqueta como tal y no constituye una medición de validación.
 
 <p align="center">
-  <a href="technical-documentation/data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Política completa de manejo de datos"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Política completa de manejo de datos"></a>
 </p>
 
 <h2 id="limitaciones-conocidas" align="center">Limitaciones conocidas</h2>

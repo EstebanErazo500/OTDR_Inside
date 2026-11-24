@@ -1,17 +1,17 @@
 <h1 align="center">Procedencia de eventos · modelo documentado</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <img src="../assets/nav/procedencia-eventos-current.svg" alt="Procedencia de eventos · página actual">
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <img src="assets/nav/procedencia-eventos-current.svg" alt="Procedencia de eventos · página actual">
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="event-provenance.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="event-provenance.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>El origen forma parte de los datos. Evidencia, revisión y cercanía entre trazas son dimensiones diferentes.</strong></p>
@@ -21,8 +21,8 @@
 OTDR Inside conserva el origen de cada valor o evento en vez de aplanar todo lo que aparece en la misma interfaz dentro de una tabla indiferenciada.
 
 <p align="center">
-  <img src="../assets/provenance/model-es-light.svg#gh-light-mode-only" alt="Modelo de procedencia de OTDR Inside en modo claro" width="100%">
-  <img src="../assets/provenance/model-es-dark.svg#gh-dark-mode-only" alt="Modelo de procedencia de OTDR Inside en modo oscuro" width="100%">
+  <img src="assets/provenance/model-es-light.svg#gh-light-mode-only" alt="Modelo de procedencia de OTDR Inside en modo claro" width="100%">
+  <img src="assets/provenance/model-es-dark.svg#gh-dark-mode-only" alt="Modelo de procedencia de OTDR Inside en modo oscuro" width="100%">
 </p>
 
 ## Cuatro orígenes conceptuales
@@ -202,7 +202,7 @@ Esta página documenta conceptos y comportamiento histórico, no distribuye cód
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
 </p>

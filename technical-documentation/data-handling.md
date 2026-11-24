@@ -1,18 +1,18 @@
 <h1 align="center">Data handling · publication boundaries</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="version-history.md"><img src="../assets/nav/version-history.svg" alt="Version history"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <img src="../assets/nav/data-handling-current.svg" alt="Data handling · current page">
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="version-history.md"><img src="assets/nav/version-history.svg" alt="Version history"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <img src="assets/nav/data-handling-current.svg" alt="Data handling · current page">
 </p>
 
 <p align="center">
-  <a href="data-handling.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="data-handling.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Explain the engineering. Demonstrate the interface. Protect the source code and operational measurements.</strong></p>
@@ -24,8 +24,8 @@ OTDR Inside is documented publicly as an engineering and research portfolio. **T
 This policy applies to the public GitHub repository and its entire history, including branches, pull requests, attachments, tags, release assets and automated artifacts. Additional publication rights must be confirmed before the boundary changes.
 
 <p align="center">
-  <img src="../assets/data-handling/boundary-light.svg#gh-light-mode-only" alt="Public material separated from review-required and excluded project material, light theme" width="100%">
-  <img src="../assets/data-handling/boundary-dark.svg#gh-dark-mode-only" alt="Public material separated from review-required and excluded project material, dark theme" width="100%">
+  <img src="assets/data-handling/boundary-light.svg#gh-light-mode-only" alt="Public material separated from review-required and excluded project material, light theme" width="100%">
+  <img src="assets/data-handling/boundary-dark.svg#gh-dark-mode-only" alt="Public material separated from review-required and excluded project material, dark theme" width="100%">
 </p>
 
 ## Classification matrix
@@ -94,6 +94,6 @@ If information is published accidentally, stop further sharing, remove direct pu
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
 </p>

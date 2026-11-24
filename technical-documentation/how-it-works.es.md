@@ -1,18 +1,18 @@
 <h1 align="center">Cómo funciona OTDR Inside · Recorrido guiado</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="how-it-works.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="how-it-works.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="how-it-works.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>De un archivo OTDR a una interpretación revisable, sin borrar el origen de los datos.</strong></p>
@@ -20,8 +20,8 @@
 > **Alcance verificable.** Este recorrido explica el comportamiento documentado de la entrega **v0.4.5 consolidada el 5 de noviembre de 2026**. No es un tutorial de instalación: el código fuente y el ejecutable del visor no se distribuyen públicamente. Los nombres de controles exactos pueden variar entre revisiones; solo se menciona un control textual cuando el historial lo identifica. Las ilustraciones de esta página son **diagramas originales del flujo**, no capturas del programa ni mediciones de campo.
 
 <p align="center">
-  <img src="../assets/workflow/flow-es-light.svg#gh-light-mode-only" alt="Esquema conceptual en cinco etapas de OTDR Inside, modo claro" width="100%">
-  <img src="../assets/workflow/flow-es-dark.svg#gh-dark-mode-only" alt="Esquema conceptual en cinco etapas de OTDR Inside, modo oscuro" width="100%">
+  <img src="assets/workflow/flow-es-light.svg#gh-light-mode-only" alt="Esquema conceptual en cinco etapas de OTDR Inside, modo claro" width="100%">
+  <img src="assets/workflow/flow-es-dark.svg#gh-dark-mode-only" alt="Esquema conceptual en cinco etapas de OTDR Inside, modo oscuro" width="100%">
 </p>
 
 ## Antes de comenzar · archivos y condiciones
@@ -38,7 +38,7 @@ El análisis parte de archivos cuya procedencia de adquisición sea conocida. La
 Para consultar las capacidades, condiciones y límites exactos por fabricante, utiliza la matriz específica. Reconocer una extensión no demuestra compatibilidad semántica completa.
 
 <p align="center">
-  <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
 </p>
 
 Antes de comparar mediciones, conviene revisar **longitud de onda, anchura de pulso, alcance, índice de grupo (IOR), origen de distancia y relación entre adquisiciones**. Un SOZ y su extracción SOR pueden representar la *misma* adquisición, no dos repeticiones.
@@ -120,7 +120,7 @@ Las **capturas reales** del visor aún no están incluidas: deben obtenerse de u
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>

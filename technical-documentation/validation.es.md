@@ -1,17 +1,17 @@
 <h1 align="center">Validación · jerarquía de evidencia y límites documentados</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <img src="../assets/nav/validacion-current.svg" alt="Validación · página actual">
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <img src="assets/nav/validacion-current.svg" alt="Validación · página actual">
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="validation.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="validation.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="validation.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="validation.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>La validación es una jerarquía de evidencia, no una única puntuación de exactitud.</strong></p>
@@ -19,8 +19,8 @@
 > **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta **v0.4.5**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
 
 <p align="center">
-  <img src="../assets/validation/layers-es-light.svg#gh-light-mode-only" alt="Jerarquía de validación de OTDR Inside en modo claro" width="100%">
-  <img src="../assets/validation/layers-es-dark.svg#gh-dark-mode-only" alt="Jerarquía de validación de OTDR Inside en modo oscuro" width="100%">
+  <img src="assets/validation/layers-es-light.svg#gh-light-mode-only" alt="Jerarquía de validación de OTDR Inside en modo claro" width="100%">
+  <img src="assets/validation/layers-es-dark.svg#gh-dark-mode-only" alt="Jerarquía de validación de OTDR Inside en modo oscuro" width="100%">
 </p>
 
 ## Capas de validación
@@ -233,8 +233,8 @@ Hasta entonces, las distancias deben describirse como **concordancia algoritmo/r
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
 </p>
 
 <p align="center"><sub>Frontera de publicación: capturas y arquitectura permitidas tras revisión; código fuente de la aplicación excluido.</sub></p>

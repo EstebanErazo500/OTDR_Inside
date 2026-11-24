@@ -1,24 +1,24 @@
 <h1 align="center">Case studies · Engineering decisions</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical documentation"></a>
-  <a href="how-it-works.md"><img src="../assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
-  <a href="compatibility-matrix.md"><img src="../assets/nav/compatibility.svg" alt="Compatibility"></a>
-  <img src="../assets/nav/case-studies-current.svg" alt="Case studies">
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Guided walkthrough"></a>
+  <a href="compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility"></a>
+  <img src="assets/nav/case-studies-current.svg" alt="Case studies">
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
 </p>
 
 <p align="center">
-  <a href="case-studies.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="case-studies.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="case-studies.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="case-studies.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 > **Scope:** v0.4.5 consolidated on 5 November 2026. These studies connect retrospective findings already documented in Validation with invented teaching examples. They are not new viewer tests, screenshots, operational traces or individual records.
 
 <p align="center">
-  <img src="../assets/case-studies/examples-light.svg#gh-light-mode-only" width="100%" alt="Two synthetic examples">
-  <img src="../assets/case-studies/examples-dark.svg#gh-dark-mode-only" width="100%" alt="Two synthetic examples">
+  <img src="assets/case-studies/examples-light.svg#gh-light-mode-only" width="100%" alt="Two synthetic examples">
+  <img src="assets/case-studies/examples-dark.svg#gh-dark-mode-only" width="100%" alt="Two synthetic examples">
 </p>
 
 ## Case A · Why do event positions disagree?
@@ -113,5 +113,5 @@ This cutoff does not claim inspection of later releases. See [Validation](valida
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
 </p>

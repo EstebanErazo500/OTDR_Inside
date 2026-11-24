@@ -1,18 +1,18 @@
 <h1 align="center">Evolución de arquitectura · entregas documentadas</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
-  <img src="../assets/nav/arquitectura-current.svg" alt="Arquitectura · página actual">
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <img src="assets/nav/arquitectura-current.svg" alt="Arquitectura · página actual">
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="architecture.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="architecture.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="architecture.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Primero leer los bytes. Interpretar solo cuando la evidencia lo permite. Comparar sin borrar las fronteras de origen.</strong></p>
@@ -24,8 +24,8 @@ OTDR Inside evolucionó añadiendo capas alrededor de una frontera estable de da
 ## Mapa de evolución
 
 <p align="center">
-  <img src="../assets/architecture/evolution-es-light.svg#gh-light-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo claro" width="100%">
-  <img src="../assets/architecture/evolution-es-dark.svg#gh-dark-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo oscuro" width="100%">
+  <img src="assets/architecture/evolution-es-light.svg#gh-light-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo claro" width="100%">
+  <img src="assets/architecture/evolution-es-dark.svg#gh-dark-mode-only" alt="Evolución de arquitectura de OTDR Inside en modo oscuro" width="100%">
 </p>
 
 ## Desarrollo arquitectónico por versión
@@ -98,8 +98,8 @@ Un método experimental `edge_precision.py`, seleccionable por separado, puede d
 Esto es un **ensayo de localización**, no una nueva procedencia ni una mejora universal validada: empeora la concordancia retrospectiva frente a EI aunque mejore frente a la referencia EXFO utilizada en el estudio.
 
 <p align="center">
-  <img src="../assets/architecture/v042-es-light.svg#gh-light-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema claro" width="100%">
-  <img src="../assets/architecture/v042-es-dark.svg#gh-dark-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema oscuro" width="100%">
+  <img src="assets/architecture/v042-es-light.svg#gh-light-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema claro" width="100%">
+  <img src="assets/architecture/v042-es-dark.svg#gh-dark-mode-only" alt="Análisis, evidencia y localización experimental documentados en v0.4.2, tema oscuro" width="100%">
 </p>
 
 ### v0.4.3 · perfiles de eventos nativos y asesoría morfológica
@@ -125,8 +125,8 @@ El análisis por archivo incorpora una **pérdida local estimada LSA** para even
 Sesiones e informes conservan identidad de contenedor/subtraza, método de cálculo, decisiones de comparación y contexto de revisión. El registro de campos orientado por IEC **no** es un certificado de calibración.
 
 <p align="center">
-  <img src="../assets/architecture/v045-es-light.svg#gh-light-mode-only" alt="Ampliaciones arquitectónicas documentadas de v0.4.3 a v0.4.5, tema claro" width="100%">
-  <img src="../assets/architecture/v045-es-dark.svg#gh-dark-mode-only" alt="Ampliaciones arquitectónicas documentadas de v0.4.3 a v0.4.5, tema oscuro" width="100%">
+  <img src="assets/architecture/v045-es-light.svg#gh-light-mode-only" alt="Ampliaciones arquitectónicas documentadas de v0.4.3 a v0.4.5, tema claro" width="100%">
+  <img src="assets/architecture/v045-es-dark.svg#gh-dark-mode-only" alt="Ampliaciones arquitectónicas documentadas de v0.4.3 a v0.4.5, tema oscuro" width="100%">
 </p>
 
 **Después del paquete del 5 de noviembre:** el parche aislado de centrado/aviso IOR, la investigación de lectura EXFO `.stdr` y nuevas propuestas de IA/comparabilidad del 6 de noviembre siguen como investigación o cambios no integrados, no funciones empaquetadas en 4.5.
@@ -150,8 +150,8 @@ Dos componentes permanecen idénticos byte a byte desde v0.1.0 hasta v0.4.2: `sc
 El diagrama siguiente es la **base por archivo y espacio de trabajo de v0.4.1**. Las ampliaciones 4.2 y 4.3–4.5 se describen en sus respectivos diagramas y apartados anteriores; no se presenta como arquitectura final.
 
 <p align="center">
-  <img src="../assets/architecture/system-es-light.svg#gh-light-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo claro" width="100%">
-  <img src="../assets/architecture/system-es-dark.svg#gh-dark-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo oscuro" width="100%">
+  <img src="assets/architecture/system-es-light.svg#gh-light-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo claro" width="100%">
+  <img src="assets/architecture/system-es-dark.svg#gh-dark-mode-only" alt="Instantánea de implementación OTDR Inside v0.4.1 en modo oscuro" width="100%">
 </p>
 
 ## Modelo de procesamiento
@@ -244,7 +244,7 @@ Esta página explica la arquitectura conceptual e histórica. **El repositorio p
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
 </p>

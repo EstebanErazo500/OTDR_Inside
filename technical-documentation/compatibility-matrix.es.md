@@ -1,18 +1,18 @@
 <h1 align="center">Matriz de compatibilidad · OTDR Inside</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
-  <img src="../assets/nav/compatibilidad-current.svg" alt="Matriz de compatibilidad · página actual">
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
+  <img src="assets/nav/compatibilidad-current.svg" alt="Matriz de compatibilidad · página actual">
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="compatibility-matrix.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="compatibility-matrix.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="compatibility-matrix.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Que un archivo se abra no implica que sus eventos, magnitudes y comparaciones estén validados.</strong></p>
@@ -20,8 +20,8 @@
 > **Corte documental: v0.4.5, consolidada el 5 de noviembre de 2026.** Esta matriz resume el comportamiento consignado en las entregas e informes archivados; **no** constituye una ejecución nueva del software, una certificación de conformidad con Telcordia/IEC ni una garantía para todos los equipos de una marca. Las pruebas originales y el código fuente no se publican por las restricciones de [Manejo de datos](data-handling.es.md).
 
 <p align="center">
-  <img src="../assets/compatibility/coverage-es-light.svg#gh-light-mode-only" alt="Esquema conceptual de las rutas SOR, EI, MSOR y SOZ, tema claro" width="100%">
-  <img src="../assets/compatibility/coverage-es-dark.svg#gh-dark-mode-only" alt="Esquema conceptual de las rutas SOR, EI, MSOR y SOZ, tema oscuro" width="100%">
+  <img src="assets/compatibility/coverage-es-light.svg#gh-light-mode-only" alt="Esquema conceptual de las rutas SOR, EI, MSOR y SOZ, tema claro" width="100%">
+  <img src="assets/compatibility/coverage-es-dark.svg#gh-dark-mode-only" alt="Esquema conceptual de las rutas SOR, EI, MSOR y SOZ, tema oscuro" width="100%">
 </p>
 
 ## Cómo leer el estado
@@ -116,7 +116,7 @@ Esta página es una **matriz de cobertura respaldada por evidencia de desarrollo
 ---
 
 <p align="center">
-  <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>

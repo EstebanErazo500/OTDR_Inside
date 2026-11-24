@@ -1,20 +1,20 @@
 <h1 align="center">OTDR Inside · Documentación técnica</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
-  <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
-  <a href="case-studies.es.md"><img src="../assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
-  <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a>
+  <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a>
+  <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
+  <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
 </p>
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="README.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="README.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="README.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 Este directorio contiene la documentación técnica pública de OTDR Inside.
@@ -27,14 +27,14 @@ La documentación conserva la evolución técnica. El alcance actual permite cap
 
 | Página | Propósito |
 |---|---|
-| <a href="how-it-works.es.md"><img src="../assets/nav/como-funciona.svg" alt="Recorrido guiado"></a> | Flujo del operador en cinco etapas: entradas caracterizadas, evidencia, revisión LSA/IA, comparación e informes (v0.4.5); sin código público ni capturas inventadas. |
-| <a href="compatibility-matrix.es.md"><img src="../assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a> | Alcance por fabricante y formato de EXFO, Ceyear, Yokogawa y JDSU, estados por capacidad, evidencia, precondiciones y variantes no demostradas. |
-| <a href="case-studies.es.md"><img src="../assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> | Concordancia de posiciones y pérdida LSA con ejemplos sintéticos, evidencia archivada y estado de desarrollo. |
-| <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución de ingeniería hasta v0.4.5, incluidas Yokogawa/JDSU/SOZ, estimación de pérdidas y límites de la evidencia. |
-| <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución hasta la base multiarchivo 4.1, auditoría 4.2 y ampliaciones 4.3–4.5 de fabricantes, IA y LSA. |
-| <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de procedencia SOR, EI, MSOR y SOZ; asesoría RF y pérdida nativa frente a LSA separadas. |
-| <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a> | Validación hasta v0.4.5, discrepancias de referencias, pruebas archivadas y límites IA/LSA. |
-| <a href="data-handling.es.md"><img src="../assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Frontera de permisos, revisión de capturas e ilustraciones sintéticas y restricciones de código fuente/mediciones. |
+| <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a> | Flujo del operador en cinco etapas: entradas caracterizadas, evidencia, revisión LSA/IA, comparación e informes (v0.4.5); sin código público ni capturas inventadas. |
+| <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a> | Alcance por fabricante y formato de EXFO, Ceyear, Yokogawa y JDSU, estados por capacidad, evidencia, precondiciones y variantes no demostradas. |
+| <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> | Concordancia de posiciones y pérdida LSA con ejemplos sintéticos, evidencia archivada y estado de desarrollo. |
+| <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución de ingeniería hasta v0.4.5, incluidas Yokogawa/JDSU/SOZ, estimación de pérdidas y límites de la evidencia. |
+| <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución hasta la base multiarchivo 4.1, auditoría 4.2 y ampliaciones 4.3–4.5 de fabricantes, IA y LSA. |
+| <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de procedencia SOR, EI, MSOR y SOZ; asesoría RF y pérdida nativa frente a LSA separadas. |
+| <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a> | Validación hasta v0.4.5, discrepancias de referencias, pruebas archivadas y límites IA/LSA. |
+| <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Frontera de permisos, revisión de capturas e ilustraciones sintéticas y restricciones de código fuente/mediciones. |
 
 ## Principios de publicación
 

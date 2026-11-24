@@ -1,18 +1,18 @@
 <h1 align="center">Manejo de datos · límites de publicación</h1>
 
 <p align="center">
-  <a href="../README.es.md"><img src="../assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="version-history.es.md"><img src="../assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
-  <a href="architecture.es.md"><img src="../assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="event-provenance.es.md"><img src="../assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
-  <img src="../assets/nav/manejo-datos-current.svg" alt="Manejo de datos · página actual">
+  <a href="project.es.md"><img src="assets/nav/inicio-proyecto.svg" alt="Inicio del proyecto"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a>
+  <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
+  <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
+  <img src="assets/nav/manejo-datos-current.svg" alt="Manejo de datos · página actual">
 </p>
 
 <p align="center">
-  <a href="data-handling.md"><img src="../assets/nav/lang-en.svg" alt="English"></a>
-  <a href="data-handling.es.md"><img src="../assets/nav/lang-es-selected.svg" alt="Español"></a>
+  <a href="data-handling.md"><img src="assets/nav/lang-en.svg" alt="English"></a>
+  <a href="data-handling.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
 <p align="center"><strong>Explicar la ingeniería. Mostrar la interfaz. Proteger el código fuente y las mediciones operativas.</strong></p>
@@ -24,8 +24,8 @@ OTDR Inside se documenta públicamente como portafolio de ingeniería e investig
 Esta política aplica al repositorio y a todo su historial: ramas, solicitudes de cambio, adjuntos, etiquetas, releases y artefactos automatizados. Cualquier ampliación de permisos deberá confirmarse por separado.
 
 <p align="center">
-  <img src="../assets/data-handling/boundary-es-light.svg#gh-light-mode-only" alt="Frontera entre materiales públicos, sujetos a revisión y excluidos, tema claro" width="100%">
-  <img src="../assets/data-handling/boundary-es-dark.svg#gh-dark-mode-only" alt="Frontera entre materiales públicos, sujetos a revisión y excluidos, tema oscuro" width="100%">
+  <img src="assets/data-handling/boundary-es-light.svg#gh-light-mode-only" alt="Frontera entre materiales públicos, sujetos a revisión y excluidos, tema claro" width="100%">
+  <img src="assets/data-handling/boundary-es-dark.svg#gh-dark-mode-only" alt="Frontera entre materiales públicos, sujetos a revisión y excluidos, tema oscuro" width="100%">
 </p>
 
 ## Matriz de clasificación
@@ -94,6 +94,6 @@ Si se publica información por error, suspender nuevas divulgaciones, retirar el
 ---
 
 <p align="center">
-  <a href="README.es.md"><img src="../assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
-  <a href="validation.es.md"><img src="../assets/nav/validacion.svg" alt="Validación"></a>
+  <a href="README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
+  <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a>
 </p>

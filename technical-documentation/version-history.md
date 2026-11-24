@@ -1,18 +1,18 @@
 <h1 align="center">Version history · reconstructed engineering record</h1>
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/nav/project-home.svg" alt="Project home"></a>
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <img src="../assets/nav/version-history.svg" alt="Version history · current page">
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="event-provenance.md"><img src="../assets/nav/event-provenance.svg" alt="Event provenance"></a>
-  <a href="validation.md"><img src="../assets/nav/validation.svg" alt="Validation"></a>
-  <a href="data-handling.md"><img src="../assets/nav/data-handling.svg" alt="Data handling"></a>
+  <a href="../README.md"><img src="assets/nav/project-home.svg" alt="Project home"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <img src="assets/nav/version-history.svg" alt="Version history · current page">
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Event provenance"></a>
+  <a href="validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a>
+  <a href="data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
 </p>
 
 <p align="center">
-  <a href="version-history.md"><img src="../assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="version-history.es.md"><img src="../assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="version-history.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="version-history.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 > This public history is reconstructed from archived development snapshots. It documents the real sequence of technical changes, but it does **not** pretend those snapshots were originally Git commits. The timeline is documentary: no source-code tags or downloadable releases are planned under the current publication permission.
@@ -223,6 +223,6 @@ If rights to distribute code change, the project would need a separate explicit 
 ---
 
 <p align="center">
-  <a href="README.md"><img src="../assets/nav/technical-docs.svg" alt="Technical docs"></a>
-  <a href="architecture.md"><img src="../assets/nav/architecture.svg" alt="Architecture"></a>
+  <a href="README.md"><img src="assets/nav/technical-docs.svg" alt="Technical docs"></a>
+  <a href="architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
 </p>

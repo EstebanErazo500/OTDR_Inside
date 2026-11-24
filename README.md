@@ -1,24 +1,24 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/otdr-hero.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/otdr-hero-light.svg">
-    <img src="assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="technical-documentation/assets/otdr-hero.svg">
+    <source media="(prefers-color-scheme: light)" srcset="technical-documentation/assets/otdr-hero-light.svg">
+    <img src="technical-documentation/assets/otdr-hero-light.svg" alt="OTDR Inside" width="100%">
   </picture>
 </p>
 
 <p align="center"><strong>Engineering prototype for optical fiber analysis.</strong></p>
 
 <p align="center">
-  <a href="#overview"><img src="assets/nav/overview.svg" alt="Overview"></a>
-  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="How it works"></a>
-  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility"></a>
-  <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
-  <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
+  <a href="#overview"><img src="technical-documentation/assets/nav/overview.svg" alt="Overview"></a>
+  <a href="technical-documentation/how-it-works.md"><img src="technical-documentation/assets/nav/how-it-works.svg" alt="How it works"></a>
+  <a href="technical-documentation/compatibility-matrix.md"><img src="technical-documentation/assets/nav/compatibility.svg" alt="Compatibility"></a>
+  <a href="technical-documentation/case-studies.md"><img src="technical-documentation/assets/nav/case-studies.svg" alt="Case studies"></a>
+  <a href="technical-documentation/README.md"><img src="technical-documentation/assets/nav/technical-docs.svg" alt="Technical documentation"></a>
 </p>
 
 <p align="center">
-  <a href="README.md"><img src="assets/nav/lang-en-selected.svg" alt="English"></a>
-  <a href="README.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
+  <a href="README.md"><img src="technical-documentation/assets/nav/lang-en-selected.svg" alt="English"></a>
+  <a href="technical-documentation/project.es.md"><img src="technical-documentation/assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
 ---
@@ -85,8 +85,8 @@ The development sequence documented from **v0.1.0 through v0.4.5** includes:
 </details>
 
 <p align="center">
-  <a href="technical-documentation/version-history.md"><img src="assets/nav/version-history.svg" alt="Version history"></a>
-  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
+  <a href="technical-documentation/version-history.md"><img src="technical-documentation/assets/nav/version-history.svg" alt="Version history"></a>
+  <a href="technical-documentation/compatibility-matrix.md"><img src="technical-documentation/assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
 </p>
 
 <h2 id="contributions" align="center">Engineering contributions</h2>
@@ -95,13 +95,13 @@ The development combines mechatronics, applied software and experimental analysi
 
 | Area | Technical contribution | Evidence |
 |---|---|---|
-| **Binary-format characterization** | Structure and vendor-semantics analysis; separation of declared and confirmed source identity. | <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility"></a> |
-| **Software architecture** | Separation of ingestion, profile-based interpretation, per-file analysis, workspace and comparison. | <a href="technical-documentation/architecture.md"><img src="assets/nav/architecture.svg" alt="Architecture"></a> |
-| **Signal processing** | Candidate and transition evaluation, experimental localization and local LSA loss estimation. | <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a> |
-| **Machine learning** | Morphological Random Forest evaluation and advisory use; contextual review and score limits. | <a href="technical-documentation/event-provenance.md"><img src="assets/nav/event-provenance.svg" alt="Provenance"></a> |
-| **Instrumentation and metrology** | Comparability, IOR, reference and position/separation analysis while retaining native readings. | <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a> |
-| **Experimental validation** | Controlled tests, versioned regression and evaluation of tradeoffs among references. | <a href="technical-documentation/validation.md"><img src="assets/nav/validation.svg" alt="Validation"></a> |
-| **Visualization and interaction** | Trace organization, diagnostics, review, comparison and technical reports. | <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="Walkthrough"></a> |
+| **Binary-format characterization** | Structure and vendor-semantics analysis; separation of declared and confirmed source identity. | <a href="technical-documentation/compatibility-matrix.md"><img src="technical-documentation/assets/nav/compatibility.svg" alt="Compatibility"></a> |
+| **Software architecture** | Separation of ingestion, profile-based interpretation, per-file analysis, workspace and comparison. | <a href="technical-documentation/architecture.md"><img src="technical-documentation/assets/nav/architecture.svg" alt="Architecture"></a> |
+| **Signal processing** | Candidate and transition evaluation, experimental localization and local LSA loss estimation. | <a href="technical-documentation/case-studies.md"><img src="technical-documentation/assets/nav/case-studies.svg" alt="Case studies"></a> |
+| **Machine learning** | Morphological Random Forest evaluation and advisory use; contextual review and score limits. | <a href="technical-documentation/event-provenance.md"><img src="technical-documentation/assets/nav/event-provenance.svg" alt="Provenance"></a> |
+| **Instrumentation and metrology** | Comparability, IOR, reference and position/separation analysis while retaining native readings. | <a href="technical-documentation/case-studies.md"><img src="technical-documentation/assets/nav/case-studies.svg" alt="Case studies"></a> |
+| **Experimental validation** | Controlled tests, versioned regression and evaluation of tradeoffs among references. | <a href="technical-documentation/validation.md"><img src="technical-documentation/assets/nav/validation.svg" alt="Validation"></a> |
+| **Visualization and interaction** | Trace organization, diagnostics, review, comparison and technical reports. | <a href="technical-documentation/how-it-works.md"><img src="technical-documentation/assets/nav/how-it-works.svg" alt="Walkthrough"></a> |
 
 <h2 id="guided-walkthrough" align="center">Guided walkthrough</h2>
 
@@ -110,7 +110,7 @@ The development combines mechatronics, applied software and experimental analysi
 **Open a characterized SOR/EI/MSOR/SOZ → interpret source-aware traces and events → review LSA loss and Random Forest advice → compare traces and acquisition context → retain decisions in session/reports.**
 
 <p align="center">
-  <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="How it works"></a>
+  <a href="technical-documentation/how-it-works.md"><img src="technical-documentation/assets/nav/how-it-works.svg" alt="How it works"></a>
 </p>
 
 The walkthrough includes an original conceptual flow diagram and practical Ceyear, Yokogawa and JDSU routes. **It is not a downloadable demo or screenshot gallery**; source code and operational measurements remain private.
@@ -120,7 +120,7 @@ The walkthrough includes an original conceptual flow diagram and practical Ceyea
 Format recognition, native-event support, calculated analysis and vendor-specific optical semantics have **different levels of evidence**. The dedicated matrix documents characterized EXFO SOR, Ceyear SOR/EI, Yokogawa SOR/SOZ and JDSU MSOR paths, including unsupported variants and required preconditions.
 
 <p align="center">
-  <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Open compatibility matrix"></a>
+  <a href="technical-documentation/compatibility-matrix.md"><img src="technical-documentation/assets/nav/compatibility.svg" alt="Open compatibility matrix"></a>
 </p>
 
 <h2 id="case-studies" align="center">Case studies</h2>
@@ -128,7 +128,7 @@ Format recognition, native-event support, calculated analysis and vendor-specifi
 Two engineering decisions explained using synthetic examples and archived evidence: position disagreements between instruments and native-versus-LSA loss. Includes documented research status.
 
 <p align="center">
-  <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
+  <a href="technical-documentation/case-studies.md"><img src="technical-documentation/assets/nav/case-studies.svg" alt="Case studies"></a>
 </p>
 
 <h2 id="current-scope" align="center">Current scope · documented through v0.4.5</h2>
@@ -145,7 +145,7 @@ Two engineering decisions explained using synthetic examples and archived eviden
 <h2 id="architecture" align="center">Architecture</h2>
 
 <p align="center">
-  <img src="assets/architecture-v2.svg" alt="OTDR Inside analysis and comparison pipeline" width="96%">
+  <img src="technical-documentation/assets/architecture-v2.svg" alt="OTDR Inside analysis and comparison pipeline" width="96%">
 </p>
 
 The current documented line keeps per-file analysis separate from the workspace that presents and compares results:
@@ -226,7 +226,7 @@ OTDR Inside is designed as a **local, read-only workflow**. Source measurements 
 The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.otdr`, exported measurement/report/session data, private trace curves, route/customer identifiers, device serials, hashes, proprietary vendor software or licensed materials. Synthetic illustrations are labeled as such and are not validation measurements.
 
 <p align="center">
-  <a href="technical-documentation/data-handling.md"><img src="assets/nav/data-handling.svg" alt="Complete data handling policy"></a>
+  <a href="technical-documentation/data-handling.md"><img src="technical-documentation/assets/nav/data-handling.svg" alt="Complete data handling policy"></a>
 </p>
 
 <h2 id="known-limitations" align="center">Known limitations</h2>
@@ -259,5 +259,5 @@ The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, 
 <p align="center">
   <strong>Esteban Erazo</strong><br>
   Mechatronics Engineering · Universidad Nacional de Colombia<br><br>
-  <a href="https://github.com/EstebanErazo500"><img src="assets/nav/profile.svg" alt="@EstebanErazo500"></a>
+  <a href="https://github.com/EstebanErazo500"><img src="technical-documentation/assets/nav/profile.svg" alt="@EstebanErazo500"></a>
 </p>
