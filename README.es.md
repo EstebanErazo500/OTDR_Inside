@@ -6,28 +6,13 @@
   </picture>
 </p>
 
-<p align="center">
-  <strong>Prototipo de ingeniería para el análisis OTDR multiformato y multifabricante.</strong><br>
-  Caracterización de datos binarios · procesamiento de señales · IA consultiva · comparación con procedencia.
-</p>
+<p align="center"><strong>Prototipo de ingeniería para el análisis de fibra óptica.</strong></p>
 
 <p align="center">
   <a href="#descripción-general"><img src="assets/nav/descripcion.svg" alt="Descripción"></a>
   <a href="technical-documentation/how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
   <a href="technical-documentation/compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Compatibilidad"></a>
   <a href="technical-documentation/case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
-</p>
-<p align="center">
-  <a href="#capacidades-actuales"><img src="assets/nav/capacidades.svg" alt="Capacidades"></a>
-  <a href="#contribuciones"><img src="assets/nav/contribuciones.svg" alt="Contribuciones"></a>
-  <a href="#arquitectura"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a>
-  <a href="#validación"><img src="assets/nav/validacion.svg" alt="Validación"></a>
-</p>
-<p align="center">
-  <a href="#alcance-actual"><img src="assets/nav/alcance.svg" alt="Alcance"></a>
-  <a href="#hoja-de-ruta"><img src="assets/nav/hoja-ruta.svg" alt="Hoja de ruta"></a>
-  <a href="technical-documentation/version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial"></a>
-  <a href="technical-documentation/data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a>
   <a href="technical-documentation/README.es.md"><img src="assets/nav/documentacion-tecnica.svg" alt="Documentación técnica"></a>
 </p>
 

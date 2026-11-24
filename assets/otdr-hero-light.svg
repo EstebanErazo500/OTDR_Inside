@@ -1,6 +1,6 @@
-<svg width="1400" height="500" viewBox="0 0 1400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="400" viewBox="0 0 1400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="500" gradientUnits="userSpaceOnUse">
+  <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="400" gradientUnits="userSpaceOnUse">
     <stop stop-color="#F8FBFD"/>
     <stop offset="0.55" stop-color="#F4F8FC"/>
     <stop offset="1" stop-color="#F7F5FC"/>
@@ -16,17 +16,17 @@
   </linearGradient>
 </defs>
 
-<rect x="0.5" y="0.5" width="1399" height="499" rx="25.5" fill="url(#bg)" stroke="#D9E3EB"/>
+<rect x="0.5" y="0.5" width="1399" height="399" rx="25.5" fill="url(#bg)" stroke="#D9E3EB"/>
 
 <g opacity="0.17" stroke="#91A4B5" stroke-width="1">
-  <path d="M70 74H1330"/><path d="M70 124H1330"/><path d="M70 174H1330"/><path d="M70 224H1330"/><path d="M70 274H1330"/><path d="M70 324H1330"/><path d="M70 374H1330"/><path d="M70 424H1330"/>
-  <path d="M100 52V448"/><path d="M260 52V448"/><path d="M420 52V448"/><path d="M580 52V448"/><path d="M740 52V448"/><path d="M900 52V448"/><path d="M1060 52V448"/><path d="M1220 52V448"/>
+  <path d="M70 74H1330"/><path d="M70 124H1330"/><path d="M70 174H1330"/><path d="M70 224H1330"/><path d="M70 274H1330"/><path d="M70 324H1330"/><path d="M70 374H1330"/>
+  <path d="M100 52V378"/><path d="M260 52V378"/><path d="M420 52V378"/><path d="M580 52V378"/><path d="M740 52V378"/><path d="M900 52V378"/><path d="M1060 52V378"/><path d="M1220 52V378"/>
 </g>
 
-<text x="700" y="78" text-anchor="middle" fill="#718397" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600" letter-spacing="3">OPTICAL TIME-DOMAIN REFLECTOMETRY</text>
-<text x="700" y="151" text-anchor="middle" fill="#152334" font-size="68" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="750" letter-spacing="-1">OTDR Inside</text>
-<text x="700" y="191" text-anchor="middle" fill="#5F7185" font-size="22" font-family="Inter,Segoe UI,Arial,sans-serif">Evidence-aware multi-file OTDR analysis</text>
+<text x="700" y="102" text-anchor="middle" fill="#152334" font-size="68" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="750" letter-spacing="-1">OTDR Inside</text>
+<text x="700" y="140" text-anchor="middle" fill="#5F7185" font-size="22" font-family="Inter,Segoe UI,Arial,sans-serif">Evidence-aware multi-file OTDR analysis</text>
 
+<g transform="translate(0 -65)">
 <text x="92" y="242" fill="#7A8D9E" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">ILLUSTRATIVE TRACE · RELATIVE LEVEL</text>
 <text x="1308" y="242" text-anchor="end" fill="#7A8D9E" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">DISTANCE →</text>
 
@@ -40,8 +40,8 @@
   <g><circle cx="923" cy="373" r="5" fill="#4D68B8"/><path d="M923 365V338" stroke="#4D68B8" stroke-dasharray="3 4"/><text x="923" y="329" text-anchor="middle" fill="#4D68B8">E3</text></g>
   <g><circle cx="1134" cy="318" r="5" fill="#6752B6"/><path d="M1134 310V283" stroke="#6752B6" stroke-dasharray="3 4"/><text x="1134" y="274" text-anchor="middle" fill="#6752B6">E4</text></g>
 </g>
+</g>
 
-<text x="700" y="463" text-anchor="middle" fill="#60758A" font-size="12" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="650" letter-spacing="1.5">STRUCTURE  ·  TRACE  ·  PROVENANCE  ·  COMPARISON</text>
-<text x="92" y="42" fill="#728599" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">SOR · EI · MSOR · SOZ / v0.4.5</text>
-<text x="1308" y="42" text-anchor="end" fill="#728599" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">LOCAL · READ-ONLY · MULTI-FILE</text>
+<text x="92" y="32" fill="#728599" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">SOR · EI · MSOR · SOZ / v0.4.5</text>
+<text x="1308" y="32" text-anchor="end" fill="#728599" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">LOCAL · READ-ONLY · MULTI-FILE</text>
 </svg>

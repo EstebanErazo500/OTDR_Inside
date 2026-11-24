@@ -6,28 +6,13 @@
   </picture>
 </p>
 
-<p align="center">
-  <strong>Engineering prototype for multi-format, multi-vendor OTDR analysis.</strong><br>
-  Binary-format characterization · signal processing · ML advisory · provenance-aware comparison.
-</p>
+<p align="center"><strong>Engineering prototype for optical fiber analysis.</strong></p>
 
 <p align="center">
   <a href="#overview"><img src="assets/nav/overview.svg" alt="Overview"></a>
   <a href="technical-documentation/how-it-works.md"><img src="assets/nav/how-it-works.svg" alt="How it works"></a>
   <a href="technical-documentation/compatibility-matrix.md"><img src="assets/nav/compatibility.svg" alt="Compatibility"></a>
   <a href="technical-documentation/case-studies.md"><img src="assets/nav/case-studies.svg" alt="Case studies"></a>
-</p>
-<p align="center">
-  <a href="#current-capabilities"><img src="assets/nav/capabilities.svg" alt="Capabilities"></a>
-  <a href="#contributions"><img src="assets/nav/contributions.svg" alt="Contributions"></a>
-  <a href="#architecture"><img src="assets/nav/architecture.svg" alt="Architecture"></a>
-  <a href="#validation"><img src="assets/nav/validation.svg" alt="Validation"></a>
-</p>
-<p align="center">
-  <a href="#current-scope"><img src="assets/nav/scope.svg" alt="Scope"></a>
-  <a href="#roadmap"><img src="assets/nav/roadmap.svg" alt="Roadmap"></a>
-  <a href="technical-documentation/version-history.md"><img src="assets/nav/version-history.svg" alt="Version history"></a>
-  <a href="technical-documentation/data-handling.md"><img src="assets/nav/data-handling.svg" alt="Data handling"></a>
   <a href="technical-documentation/README.md"><img src="assets/nav/technical-docs.svg" alt="Technical documentation"></a>
 </p>
 
