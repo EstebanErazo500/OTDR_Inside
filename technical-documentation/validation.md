@@ -16,7 +16,7 @@
 
 <p align="center"><strong>Validation is layered evidence, not a single accuracy score.</strong></p>
 
-> **Scope.** This page summarizes the validation model documented by archived releases through **v0.4.5**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
+> **Scope.** This page summarizes the validation model documented by archived releases through the **v0.4.7 review candidate**. Operational traces and private corpora remain outside the public repository, so this page reports methods and aggregate results without publishing route names, customer identifiers, private filenames or hashes.
 
 <p align="center">
   <img src="assets/validation/layers-light.svg#gh-light-mode-only" alt="OTDR Inside validation hierarchy in light mode" width="100%">
@@ -173,6 +173,16 @@ The archived alternative reference-trained position selector improved some mean 
 **Status of 6 November investigations (outside the packaged 4.5).** A separate comparator-centering/IOR-warning patch passed **124 Python tests** with available corpora and simulated JavaScript, but it remained a separate patch, not an update to the original package; direct `.stdr` support was only investigated. The contemporaneous RF-versus-MLP/Extra Trees/HistGradientBoosting study was conducted **outside the viewer** and did not change its active model. These results may be documented as research, but not called deployed 4.5 capabilities.
 
 **Metrological limit.** EXFO and Yokogawa can be treated as peer documentary comparison references in this controlled workflow; selecting one does not make its reading physically exact. JDSU is additional contextual corroboration. Re-expressing an axis to a reference IOR is a conditional coordinate transformation, not determination of the true group index or instrument calibration. IEC-oriented record fields and archived test counts are not certificates. A real Windows/browser run and independent new-link physical labels remain to be demonstrated.
+
+### v0.4.6 · reader regression and comparison review
+
+The archived 10 November validation checks TRC samples and native events against independent extraction, preserves prior reader/detector/morphology results, and evaluates matching under controlled and perturbed inputs. The archived simulations found incorrect matches as well as successful associations; abstention and review remain necessary. The 13 and 17 November revisions compare SOR 1.00/AppReg data and NOVKER records, including corruption rejection and preservation of missing values. NOVKER optical semantics remain provisional. iOLM comparison against SOR and PDF references includes a same-name but incompatible source pair; it was excluded rather than merged. Bounded losses are not exact losses.
+
+### v0.4.7 review candidate · experimental position coverage
+
+The archived position study uses a known montage and documentary references, not an independent new-link ground truth. Results differ by reference and event class; the later JDSU MSOR and direct EI checks include events without a position proposal and preserve original events and morphology. The candidate reports eligibility and coverage explicitly. An alternative coordinate is not automatically better and the RF/Sugeno output is not calibrated uncertainty.
+
+The candidate record describes HTTP and production-JavaScript tests in a simulated DOM, not a real Windows acceptance run. The 4.6 revisions likewise report simulated interface checks and reader/report cross-checks. This repository update did not rerun those suites. The final executable, its later report/metric changes and user acceptance require separate evidence. No new private corpus totals or numerical results are published in this update.
 
 ## Why test counts are not a score
 

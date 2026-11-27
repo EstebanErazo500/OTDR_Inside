@@ -33,10 +33,12 @@ The project is not designed to force every trace into a universal model. It expo
 
 | Dimension | Documented scope |
 |---|---|
-| Characterized vendors | EXFO, Ceyear, Yokogawa and JDSU |
-| Format families | SOR · EI · MSOR · SOZ |
-| Evolution | v0.1.0 to v0.4.5 (consolidated 5 November 2026) |
-| Archived v0.4.5 regression | 123 Python tests passed with available internal data |
+| Vendor coverage | EXFO, Ceyear, Yokogawa, JDSU; NOVKER partial; F2H structural recognition |
+| Characterized input families | SOR (1.00/2.00) · EI · MSOR · SOZ · TRC · iOLM |
+| Evolution | v0.1.0 to v0.4.7 review candidate (19 November 2026) |
+| Evidence | Historical regression, reader cross-checks and experimental position review; see Validation |
+
+Documented through the **v0.4.7 review candidate (19 November 2026)**. The later standalone Windows build and its final adjustments are not yet independently inspected here.
 
 **Technical portfolio, not a software distribution.** This repository documents development, results and limits. Validation figures are archived evidence, not public CI or certification. Viewer source code and operational measurements remain private. Illustrations are conceptual or synthetic; actual viewer screenshots are not yet included.
 
@@ -51,10 +53,12 @@ The project is not designed to force every trace into a universal model. It expo
 | Traceability | Preserve original values, provenance, interpretation limits and review decisions. |
 | Technical reporting | Local exports and reports with analysis and comparison context. |
 
+**v0.4.6–0.4.7:** expanded readers (TRC, SOR 1.00, iOLM, NOVKER and F2H recognition), a prioritized review queue, optional position proposals (base, edge, RF and Sugeno), editable measurement records, and comparison eligibility by distance, loss and reflectance. Experimental proposals do not replace native values.
+
 <details>
 <summary>Detailed capability history by version</summary>
 
-The development sequence documented from **v0.1.0 through v0.4.5** includes:
+The development sequence documented from **v0.1.0 through the v0.4.7 review candidate** includes:
 
 - safe inspection of SOR 2.00 structure and metadata;
 - evidence-based selection of characterized vendor profiles;
@@ -89,6 +93,8 @@ The development sequence documented from **v0.1.0 through v0.4.5** includes:
   <a href="technical-documentation/compatibility-matrix.md"><img src="technical-documentation/assets/nav/compatibility.svg" alt="Compatibility matrix"></a>
 </p>
 
+
+
 <h2 id="contributions" align="center">Engineering contributions</h2>
 
 The development combines mechatronics, applied software and experimental analysis. The table links documented engineering contributions to public evidence without disclosing the proprietary implementation.
@@ -105,9 +111,9 @@ The development combines mechatronics, applied software and experimental analysi
 
 <h2 id="guided-walkthrough" align="center">Guided walkthrough</h2>
 
-**See the engineering workflow before reading the implementation history.** This five-stage operator journey covers the documented v0.4.5 workflow:
+**See the engineering workflow before reading the implementation history.** This five-stage operator journey covers the documented v0.4.7 candidate workflow:
 
-**Open a characterized SOR/EI/MSOR/SOZ → interpret source-aware traces and events → review LSA loss and Random Forest advice → compare traces and acquisition context → retain decisions in session/reports.**
+**Open a characterized SOR/EI/MSOR/SOZ/TRC/iOLM → interpret source-aware traces and events → review LSA loss and Random Forest advice → compare traces and acquisition context → retain decisions in session/reports.**
 
 <p align="center">
   <a href="technical-documentation/how-it-works.md"><img src="technical-documentation/assets/nav/how-it-works.svg" alt="How it works"></a>
@@ -125,13 +131,13 @@ Format recognition, native-event support, calculated analysis and vendor-specifi
 
 <h2 id="case-studies" align="center">Case studies</h2>
 
-Two engineering decisions explained using synthetic examples and archived evidence: position disagreements between instruments and native-versus-LSA loss. Includes documented research status.
+Four engineering cases use synthetic examples and archived evidence: event-position disagreements, native-versus-LSA loss, legacy/multi-pulse readers and advisory localization with abstention.
 
 <p align="center">
   <a href="technical-documentation/case-studies.md"><img src="technical-documentation/assets/nav/case-studies.svg" alt="Case studies"></a>
 </p>
 
-<h2 id="current-scope" align="center">Current scope · documented through v0.4.5</h2>
+<h2 id="current-scope" align="center">Current scope · v0.4.7 review candidate</h2>
 
 | Ecosystem | Status | Role in the project |
 |---|---|---|
@@ -139,6 +145,8 @@ Two engineering decisions explained using synthetic examples and archived eviden
 | **Ceyear CE6422** | **Active development** | Characterized trace interpretation, calculated candidates, verified EI/SOR pairing for the observed layout, terminal diagnostics and multi-file comparison. |
 | **Yokogawa (characterized SOR / SOZ)** | **Characterized native-event support** | Observed SOR event scales and SOZ multi-wavelength members; source-confirmed SOR origins remain distinguishable from instrument-declared identity. Native-reader and metrological confirmation remain bounded. |
 | **JDSU T-BERD 6000A / 8126 MSOR** | **Characterized container support** | Observed MSOR 2.10, two wavelengths, native events and verified source-specific reference fields; unknown formats or units remain unsupported. |
+| **EXFO legacy and proprietary layouts** | Characterized observed layouts | TRC AppReg, SOR 1.00 and iOLM; native/curve axes and multi-pulse fields remain distinct. |
+| **NOVKER NK6000 / F2H** | Partial / structural | NOVKER curve/events with provisional loss; F2H recognition without complete optical semantics. |
 
 <p align="center"><strong>structurally readable → profile identified → semantically characterized → empirically validated</strong></p>
 
@@ -158,7 +166,7 @@ The current documented line keeps per-file analysis separate from the workspace 
 | **Workspace** | Keeps up to eight analyses in independent tabs with per-file zoom, selection, review and annotations. |
 | **Comparison** | Compares two to four traces as a presentation relation without merging their provenance or claiming physical identity. |
 
-The version-by-version architecture, the 0.4.1 workspace baseline and the documented 0.4.3–4.5 extensions are explained in <a href="technical-documentation/architecture.md">Technical documentation</a>.
+The version-by-version architecture, the 0.4.1 workspace baseline and the documented 0.4.3–4.7 extensions are explained in <a href="technical-documentation/architecture.md">Technical documentation</a>.
 
 <h2 id="engineering-approach" align="center">Engineering approach</h2>
 
@@ -217,13 +225,15 @@ The archived v0.4.5 consolidation records **123 Python tests passing** with avai
 
 The full evidence hierarchy, public/private boundary and metrological limits are described in <a href="technical-documentation/validation.md">Validation</a>.
 
+The 0.4.6 reader revisions and 0.4.7 candidate add structural/semantic cross-checks, simulated UI regression and position-pilot coverage. Cross-reference agreement and retained native fields are evidence of behavior, not calibration. A standalone Windows build is reported separately; its final acceptance and exact changes are not audited here.
+
 <h2 id="data-handling" align="center">Data handling</h2>
 
 OTDR Inside is designed as a **local, read-only workflow**. Source measurements are processed locally and are not overwritten by the viewer.
 
 **Publication scope:** reviewed screenshots of the actual viewer, high-level architecture explanations and independently synthetic/generalized illustrations are permitted. **The viewer's source code is not authorized for publication**, including cleaned or adapted versions, internal tests, configurations, binaries or executable releases. A screenshot must be checked for operational metadata and identifiable trace content before publication.
 
-The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.otdr`, exported measurement/report/session data, private trace curves, route/customer identifiers, device serials, hashes, proprietary vendor software or licensed materials. Synthetic illustrations are labeled as such and are not validation measurements.
+The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.iolm`, `.sor.txt`, `.otdr`, exported measurement/report/session data, private trace curves, route/customer identifiers, device serials, hashes, proprietary vendor software or licensed materials. Synthetic illustrations are labeled as such and are not validation measurements.
 
 <p align="center">
   <a href="technical-documentation/data-handling.md"><img src="technical-documentation/assets/nav/data-handling.svg" alt="Complete data handling policy"></a>
@@ -231,9 +241,9 @@ The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, 
 
 <h2 id="known-limitations" align="center">Known limitations</h2>
 
-- `.EI`, `.MSOR` and `.SOZ` support is limited to characterized vendor layouts; this is not universal format compatibility. Direct EXFO `.stdr` ingestion and other vendor variants remain outside the packaged v0.4.5. `.otdr` is not the normal processing path.
+- `.EI`, `.MSOR` and `.SOZ` support is limited to characterized vendor layouts; this is not universal format compatibility. TRC and iOLM support is layout-specific; direct `.stdr` ingestion remains unverified in the candidate. `.otdr` is not the normal processing path.
 - RF scores describe morphological suggestions, not calibrated probabilities or physical labels; the model does not overwrite native values. LSA window sensitivity is not calibrated loss uncertainty.
-- The 6 November auto-centering/IOR-warning patch and other studies are proposals/isolated experiments, **not incorporated into the 5 November release**.
+- The 6 November comparator experiment was incorporated in the later 4.6 line in revised form; the position pilot in 4.7 remains advisory.
 - Vendor-specific interpretation remains profile/signature based and should not be read as universal SOR compatibility.
 - The displayed vertical trace level is relative and is not presented as universally calibrated optical power.
 - Event proximity in the v0.4.1 comparator is a **visual grouping aid**, not a physical tolerance or proof that two traces contain the same event.
@@ -250,7 +260,7 @@ The repository does not distribute real `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, 
 - expand paired-format and vendor coverage while preserving provenance checks;
 - validate direct EXFO `.stdr` decoding using an authentic permitted sample before claiming support;
 - study contextual acquisition-quality and comparison-eligibility checks without automatically rewriting instrument data;
-- evaluate the isolated comparator-centering patch and review controls in a real Windows browser;
+- verify the final standalone Windows build and approved screenshots;
 - add batch processing, anomaly review and independent labels across new links;
 - build a curated gallery of approved viewer screenshots and independently synthetic trace illustrations, without publishing source code.
 

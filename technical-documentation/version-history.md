@@ -38,6 +38,8 @@
 | **v0.4.3** | Yokogawa and explainable morphology review | Profile-based SOR event interpretation, source-confirmed files kept distinct from instrument-declared metadata, and a Random Forest morphology advisory layer. |
 | **v0.4.4** | JDSU MSOR and revisable associations | JDSU two-wavelength container support, per-trace provenance, richer native events, comparison review and evaluated adaptive localization. |
 | **v0.4.5** | SOZ, comparative measurement and contextual review | Multitrace SOZ, source-aware comparisons, selectable IOR framing, event separations, local LSA loss estimates and RF/LSA review with retained provenance. |
+| **v0.4.6** | Reader coverage and review workflow | EXFO TRC, legacy SOR, NOVKER, iOLM and structural F2H recognition; prioritized review and conditional comparisons. |
+| **v0.4.7 candidate** | Experimental position and measurement context | Position proposals with abstention; editable measurement record; comparison eligibility by magnitude. |
 
 ## Phase 1 · stable structural baseline
 
@@ -200,6 +202,22 @@ The archived 0.4.5 release, consolidated **5 November 2026**, preserves the 4.4 
 The final archived 5 November review reports **123 Python tests passing with its available data** and simulated DOM checks. The package's fresh-extraction check separately passed 25 targeted tests, validated its manifest and rendered example reports. A real Windows/browser run was **not verified** in that environment. The alternative two-reference RF position selector was tested but **not activated** because gains in average position concordance came with worse inter-event separations and some worst cases.
 
 **Work dated 6 November is tracked separately as proposals/isolated experiments**, not 4.5 shipped features: comparison vertical-centering and IOR-warning patch, direct EXFO `.stdr` ingestion, further RF/quality/comparability evaluation, and future event-association improvements. The standalone comparator patch passed isolated regressions but was not packaged into the original 4.5 delivery.
+
+## Phase 7 · expanded readers and accountable position review
+
+### v0.4.6 · 10 November 2026
+
+Direct reading of the observed EXFO TRC AppReg layout adds wavelength-specific native events and traces. Session restoration verifies source identity. Diagnostics distinguish reading, axis, morphology and injection; the review queue adds reasons, priority, assignee, labels and history. Optional vertical centering is display-only. Order-preserving association proposals abstain when ambiguous, retain manual pairs and warn about incompatible acquisition conditions. The existing detector and morphology RF are retained.
+
+### v0.4.6 · revisions of 13 and 17 November
+
+The observed legacy EXFO SOR 1.00/AppReg layouts are interpreted separately from 2.00; the exact .sor.txt suffix is supported for recognized binary input. Native shifted/negative coordinates remain separate from the curve origin. Missing or ambiguous magnitudes are not fabricated. F2H recognition remains structural. NOVKER NK6000 adds curve and event reading with provisional loss conversion; unconfirmed fields are excluded from exact loss statistics. EXFO iOLM adds three wavelength report traces, native multi-pulse elements, grouped components and sections. Bounds and missing values survive; single-pulse ML/LSA are not applied to iOLM.
+
+### v0.4.7 · review candidate, 19 November
+
+The position pilot compares baseline, edge and RF regression proposals with an advisory Sugeno selection that can abstain. Its scope includes recognized EXFO SOR 2.00, Yokogawa SOR/SOZ, Ceyear SOR/direct EI and the studied JDSU MSOR. Native events, preferred verified EI and the morphology RF remain separate. The interface distinguishes not run, outside scope, not evaluable and no proposal. Editable per-trace measurement records retain original fields and source identity. Distance, loss and reflectance eligibility are assessed separately; the report and JSON retain provenance and experimental context.
+
+The candidate is distinct from the later Windows build. Final packaging, later metric/report adjustments and acceptance require inspection of the final delivery. The 6 November experiment remains historical; the revised comparator is part of 4.6. No physical accuracy or universal compatibility is claimed.
 
 ## What remained stable
 

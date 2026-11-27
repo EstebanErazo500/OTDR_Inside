@@ -14,7 +14,7 @@
   <a href="case-studies.es.md"><img src="assets/nav/lang-es.svg" alt="Español"></a>
 </p>
 
-> **Scope:** v0.4.5 consolidated on 5 November 2026. These studies connect retrospective findings already documented in Validation with invented teaching examples. They are not new viewer tests, screenshots, operational traces or individual records.
+> **Scope:** through the v0.4.7 review candidate of 19 November 2026. These studies connect retrospective findings already documented in Validation with invented teaching examples. They are not new viewer tests, screenshots, operational traces or individual records.
 
 <p align="center">
   <img src="assets/case-studies/examples-light.svg#gh-light-mode-only" width="100%" alt="Two synthetic examples">
@@ -98,6 +98,14 @@ Coverage differs and records depend on the studied setup. These are not calibrat
 
 **Conclusion:** retaining native loss, LSA, local evidence and review separately makes discrepancies auditable without automatic corrections based on RF scores.
 
+## Case C · Legacy formats and non-equivalent measurements
+
+A synthetically illustrated legacy SOR may place a launch connector at a negative native coordinate while the plotted curve starts at zero. Preserve both axes rather than silently shifting the native table. In iOLM, a report trace may accompany a consolidated multi-pulse event table; a grouped element is not another independent event. For example, a hypothetical loss reported as > 5 dB is a lower bound, not an exact 5 dB observation. The observed legacy and iOLM reader revisions retain these distinctions. NOVKER's provisional fields remain explicitly tentative. Same-name files that disagree in samples or acquisition cannot be merged.
+
+## Case D · Why a position model should be able to abstain
+
+Suppose an eligible event has three illustrative coordinates, 1000, 1002 and 1004 m. These are fictional proposals, not measured results. If the local curve does not support a unique association or proposals conflict with neighboring events, the appropriate decision may be no proposal, not automatic averaging. The 4.7 candidate compares baseline, edge and RF position with a Sugeno advisory decision. This is distinct from morphology classification. Archived cross-reference studies showed reference-dependent outcomes, and not all eligible events had a proposal. Retain native coordinates and the reason for abstention; verify physical accuracy independently.
+
 ## Development status
 
 | State at documentation cutoff | Items |
@@ -105,10 +113,11 @@ Coverage differs and records depend on the studied setup. These are not calibrat
 | Included in 4.5 | Characterized SOR/EI/MSOR/SOZ, reviewable matching, conditional IOR, separations, local LSA, contextual RF advice and reports. |
 | Experimental in 4.x | Alternative localization with reference-dependent results. |
 | Evaluated but not activated | Two-reference position selector and external model studies. |
-| Separate 6 November experiment | Vertical-centering/IOR-warning patch, not packaged in 4.5. |
-| Pending in reviewed record | Direct STDR ingestion, independent new-link references and real Windows/browser verification. |
+| Included in 4.6 | Revised centering, review queue, conditional matching and expanded readers. |
+| Review candidate 4.7 | Optional position pilot, magnitude-specific eligibility and editable measurement context. |
+| Pending in reviewed record | Direct STDR ingestion, independent new-link references and inspection of final Windows build. |
 
-This cutoff does not claim inspection of later releases. See [Validation](validation.md) and [Version history](version-history.md) for archived results and [Data handling](data-handling.md) for publication boundaries.
+The 19 November candidate cutoff does not claim inspection of the final Windows release. See [Validation](validation.md) and [Version history](version-history.md) for archived results and [Data handling](data-handling.md) for publication boundaries.
 
 ---
 

@@ -16,7 +16,7 @@
 
 <p align="center"><strong>El origen forma parte de los datos. Evidencia, revisión y cercanía entre trazas son dimensiones diferentes.</strong></p>
 
-> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta **v0.4.5**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
+> **Alcance.** Esta página documenta el modelo de procedencia representado por las entregas archivadas hasta la **candidata v0.4.7**. Las versiones posteriores pueden añadir relaciones o fuentes, pero no deberían cambiar retroactivamente el significado histórico de estas categorías.
 
 OTDR Inside conserva el origen de cada valor o evento en vez de aplanar todo lo que aparece en la misma interfaz dentro de una tabla indiferenciada.
 
@@ -154,6 +154,12 @@ En el comparador, la referencia se escoge para una **relación y presentación d
 
 La consolidación del 5 de noviembre conserva estas dimensiones en sesiones/informes. El ensayo aislado de centrado vertical del 6 de noviembre se documenta aparte y no se atribuye al paquete original 4.5.
 
+## v0.4.6–0.4.7 · coordenadas múltiples e interpretación condicionada
+
+SOR antiguo conserva posiciones desde el origen de curva, posiciones nativas desplazadas y campos originales separados. TRC e iOLM mantienen identidad de fuente/subtraza; pérdidas multipulso, componentes agrupados y secciones de iOLM no equivalen a estimaciones de pulso único ni eventos discretos independientes. Las magnitudes acotadas mantienen su desigualdad; la pérdida NOVKER provisional no es un valor exacto normalizado. Reconocer F2H no establece semántica óptica.
+
+RF de posición y Sugeno son capas experimentales, no nuevas procedencias nativas. El piloto puede estar no ejecutado, fuera de alcance, no evaluable o sin propuesta. Las posiciones EI Ceyear verificadas permanecen preferentes cuando existen. Una ficha de medición introducida por el usuario se identifica como contexto, no como metadato instrumental; se conserva identidad de fuente y subtraza. La comparabilidad se evalúa separadamente por distancia, pérdida y reflectancia. Un IOR supuesto para dimensionar ventanas EI no es un índice verificado para escalar distancias.
+
 ## La revisión humana se superpone al origen
 
 | Procedencia | Revisión | Significado |
@@ -180,6 +186,8 @@ La consolidación del 5 de noviembre conserva estas dimensiones en sesiones/info
 | **v0.4.3** | Eventos Yokogawa, procedencia confirmada y asesoría morfológica separados de los datos nativos. |
 | **v0.4.4** | JDSU MSOR añade identidad del contenedor/subtraza por onda; una asociación revisada no cambia la fuente. |
 | **v0.4.5** | SOZ y copias de misma adquisición, pérdida LSA local y revisión RF separadas de eventos/pérdidas nativos. |
+| **v0.4.6** | Ejes nativo/de curva, contenedores, límites y campos provisionales separados. |
+| **v0.4.7 candidata** | Propuestas de posición, abstención, ficha de medición y comparabilidad por magnitud separadas de registros nativos. |
 
 ## Contrato de presentación y exportación
 

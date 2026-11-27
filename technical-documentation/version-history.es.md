@@ -38,6 +38,8 @@
 | **v0.4.3** | Yokogawa y asesoría morfológica | Interpretación de eventos SOR mediante perfil, procedencia confirmada separada de identificación declarada y revisión morfológica Random Forest. |
 | **v0.4.4** | JDSU MSOR y asociaciones revisables | Lector JDSU de dos longitudes de onda, eventos nativos con procedencia, comparación revisable y localización adaptativa evaluada. |
 | **v0.4.5** | SOZ, comparación y revisión contextual | SOZ multitraza, comparación consciente de fuentes, eje IOR seleccionable, separaciones entre eventos, pérdida local LSA y revisión RF/LSA. |
+| **v0.4.6** | Lectores y flujo de revisión | EXFO TRC, SOR antiguo, NOVKER, iOLM y F2H estructural; revisión priorizada y comparación condicionada. |
+| **v0.4.7 candidata** | Localización experimental y contexto de medición | Propuestas con abstención, ficha de medición editable y comparabilidad por magnitud. |
 
 ## Fase 1 · base estructural estable
 
@@ -200,6 +202,22 @@ La entrega archivada 4.5, consolidada el **5 de noviembre de 2026**, conserva el
 La revisión final archivada del 5 de noviembre registra **123 pruebas Python aprobadas con los datos disponibles** y comprobaciones DOM simuladas. La comprobación separada del paquete recién extraído pasó 25 pruebas dirigidas, verificó manifiesto y permitió renderizar informes de ejemplo. **No se verificó una ejecución real en Windows/navegador** en ese entorno. El selector RF alternativo de posición con doble referencia fue ensayado, pero **no se activó**: mejoró medias de posición y empeoró separaciones y determinados peores casos.
 
 **El trabajo del 6 de noviembre se documenta aparte como propuestas/experimentos aislados**, no funciones incorporadas a la entrega 4.5: parche del centrado vertical y aviso IOR, lectura directa EXFO `.stdr`, estudios de calidad/comparabilidad y futuras mejoras de asociación. El parche del comparador pasó regresiones aisladas, pero no se empaquetó en la entrega 4.5 original.
+
+## Fase 7 · ampliación de lectores y revisión de posiciones
+
+### v0.4.6 · 10 de noviembre de 2026
+
+La lectura directa del diseño EXFO TRC AppReg observado incorpora trazas y eventos nativos por longitud de onda. Las sesiones verifican la identidad de las fuentes. El diagnóstico distingue lectura, eje, morfología e inyección; la bandeja de revisión añade motivos, prioridad, responsable, etiqueta e historial. El centrado vertical optativo es exclusivamente visual. Las asociaciones propuestas por orden se abstienen ante ambigüedad, conservan las parejas manuales y advierten sobre condiciones distintas. Se mantienen el detector y el RF morfológico.
+
+### v0.4.6 · revisiones del 13 y 17 de noviembre
+
+Los diseños antiguos EXFO SOR 1.00/AppReg observados se interpretan por separado de 2.00; se acepta el sufijo exacto .sor.txt para entradas binarias reconocidas. Las posiciones nativas desplazadas/negativas se conservan separadas del origen de curva; no se inventan magnitudes ambiguas o ausentes. F2H permanece en reconocimiento estructural. NOVKER NK6000 añade lectura de curva y eventos con conversión provisional de pérdidas, excluida de estadísticas exactas. EXFO iOLM incorpora tres ondas de reporte, elementos nativos multipulso, grupos y secciones. Se conservan límites y ausencias; no se aplica LSA ni IA de posición de pulso único a iOLM.
+
+### v0.4.7 · candidata para revisión, 19 de noviembre
+
+El piloto de posición compara propuestas base, borde y regresión Random Forest, con selección Sugeno consultiva que puede abstenerse. El alcance incluye EXFO SOR 2.00 reconocido, Yokogawa SOR/SOZ, Ceyear SOR/EI directo y JDSU MSOR estudiado. Los eventos nativos, el EI verificado preferente y el RF morfológico permanecen separados. Se distingue no ejecutado, fuera de alcance, no evaluable y sin propuesta. La ficha editable por traza conserva metadatos originales e identidad de fuente. Se evalúa por separado la comparabilidad de distancia, pérdida y reflectancia; el informe y JSON preservan procedencia y contexto experimental.
+
+La candidata se distingue de la compilación independiente posterior de Windows. El empaquetado definitivo, los ajustes posteriores de magnitudes e informes y la aceptación requieren inspeccionar esa entrega. El ensayo del 6 de noviembre permanece como antecedente; el comparador revisado forma parte de 4.6. No se afirma exactitud física ni compatibilidad universal.
 
 ## Qué permaneció estable
 

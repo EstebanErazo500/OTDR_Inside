@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Que un archivo se abra no implica que sus eventos, magnitudes y comparaciones estén validados.</strong></p>
 
-> **Corte documental: v0.4.5, consolidada el 5 de noviembre de 2026.** Esta matriz resume el comportamiento consignado en las entregas e informes archivados; **no** constituye una ejecución nueva del software, una certificación de conformidad con Telcordia/IEC ni una garantía para todos los equipos de una marca. Las pruebas originales y el código fuente no se publican por las restricciones de [Manejo de datos](data-handling.es.md).
+> **Corte documental: candidata v0.4.7, 19 de noviembre de 2026.** Esta matriz resume el comportamiento consignado en las entregas e informes archivados; **no** constituye una ejecución nueva del software, una certificación de conformidad con Telcordia/IEC ni una garantía para todos los equipos de una marca. Las pruebas originales y el código fuente no se publican por las restricciones de [Manejo de datos](data-handling.es.md).
 
 <p align="center">
   <img src="assets/compatibility/coverage-es-light.svg#gh-light-mode-only" alt="Esquema conceptual de las rutas SOR, EI, MSOR y SOZ, tema claro" width="100%">
@@ -32,13 +32,13 @@
 | **Condicionado** | La función está documentada para perfiles, clases de evento o relaciones entre archivos específicos y requiere verificar precondiciones. |
 | **Solo estructural** | Se puede inspeccionar estructura recuperable sin atribuir automáticamente significados ópticos a todos los campos. |
 | **No demostrado** | No hay evidencia suficiente en el registro disponible para afirmar esa capacidad; **no** significa que sea técnicamente imposible. |
-| **Investigación / no incorporado** | Hay propuestas o pruebas aisladas, pero no forman parte de la entrega empaquetada v0.4.5. |
+| **Investigación / no incorporado** | Hay propuestas o pruebas aisladas, pero no forman parte de la candidata aquí documentada. |
 
 Los estados se aplican **por capacidad**, no a una marca completa. También es distinto identificar el modelo dentro del archivo, atribuir su procedencia por evidencia externa y conocer qué software exportó el contenedor.
 
 ## 1. Matriz por fabricante y formato
 
-| Ecosistema y formato | Cobertura documentada hasta 4.5 | Eventos y resultados | Alcance / límite decisivo | Desde |
+| Ecosistema y formato | Cobertura documentada hasta candidata 4.7 | Eventos y resultados | Alcance / límite decisivo | Desde |
 |---|---|---|---|---|
 | **EXFO · SOR 2.00** | **Caracterizado:** perfil de referencia FTB-7200, lectura estructural, parámetros normalizados y reconstrucción de curva. | **Caracterizado:** eventos `KeyEvents` cuando existen; posición y magnitudes conforme a los campos admitidos por el perfil. | Es una **referencia documental** del estudio, no un patrón físico infalible ni soporte para todos los EXFO. | 0.1.0 |
 | **Ceyear CE6422 · SOR** | **Caracterizado:** curva y parámetros del diseño observado; análisis de candidatos y evidencia terminal. | **Condicionado:** eventos calculados, propuestas suprimidas, revisión RF y LSA local para transiciones aptas. Un SOR sin `KeyEvents` no contiene por ello una tabla de eventos nativos verificable. | El detector no recupera por definición posiciones/pérdidas certificadas. LSA/RF no sustituyen valores instrumentales. | 0.2.0 / 0.3.x / 0.4.5 |
@@ -47,13 +47,18 @@ Los estados se aplican **por capacidad**, no a una marca completa. También es d
 | **Yokogawa · SOR con procedencia confirmada externamente** | **Caracterizado en originales concretos:** interpretación del lote cuya fuente fue confirmada, aunque el archivo no declare modelo. | **Caracterizado en ese conjunto:** registros nativos recuperados con los campos originales preservados. | La confirmación **no** debe grabarse como identidad declarada en el archivo ni generalizarse por firma de software. | 0.4.3 |
 | **Yokogawa · SOZ** | **Caracterizado:** contenedor multitraza observado, con miembros de 1310 y 1550 nm, muestras y metadatos por subtraza. | **Caracterizado:** tablas nativas por miembro; **condicionado:** vinculación de extracción SOR de la misma adquisición. | Un SOZ y su copia SOR **no** cuentan como dos adquisiciones independientes. Otras variantes SOZ permanecen no demostradas. | 0.4.5 |
 | **JDSU T-BERD 6000A / 8126 · MSOR** | **Caracterizado:** contenedor observado **VSRE 2.10**, con dos longitudes de onda, muestras y contexto por subtraza. | **Caracterizado donde existe evidencia:** eventos nativos y campos reconocidos; **condicionado:** asociación de TXT externo verificado. | No extrapolar semántica, unidades ni compatibilidad a otros MSOR/JDSU. Los campos desconocidos siguen desconocidos. | 0.4.4 |
+| **EXFO · TRC AppReg** | Diseño observado caracterizado, curva y eventos por onda. | Registros nativos; asesoría morfológica en subtrazas compatibles. | No todas las variantes TRC; selector de posición no activo. | 0.4.6 |
+| **EXFO · SOR 1.00 / .sor.txt** | Diseños observados FTB-7323B/AppReg caracterizados. | Coordenadas nativas desplazadas/negativas, origen de curva y registros crudos separados. | Resúmenes/campos no demostrados no disponibles; sin IA de posición/LSA. | Revisiones 0.4.6 |
+| **EXFO · iOLM** | Diseño observado CFB/NRBF caracterizado, tres ondas de reporte. | Elementos nativos multipulso, grupos, secciones y límites. | Sin LSA de pulso único ni piloto de posición; pérdidas acotadas no exactas. | Revisión 0.4.6 |
+| **NOVKER NK6000 · SOR** | Curva y KeyEvents condicionados al diseño observado. | Pérdida provisional separada de valores normalizados. | Reflectancia, atenuación, ORL y promedio pendientes de contraste nativo; sin IA. | Revisión 0.4.6 |
+| **F2H** | Reconocimiento estructural de entradas observadas. | Sin semántica óptica general caracterizada. | Sin IA de posición; identificar no equivale a soporte integral. | Revisión 0.4.6 |
 | **SOR de otros perfiles no caracterizados** | **Solo estructural, si el lector acepta el diseño:** inspección de bloques SOR reconocibles. | **No demostrado** para escalas, eventos y magnitudes específicas del fabricante. | Que el archivo se abra **no** implica interpretación óptica correcta; no se declara soporte universal SOR. | Variable |
 
 **Nota de procedencia Yokogawa:** el registro 4.3 separa **24 SOR con identificación declarada** de **24 SOR con procedencia confirmada únicamente para esos originales**. El conjunto archivado recoge 48 archivos y 125 registros nativos; esos totales no constituyen una afirmación sobre archivos futuros de la marca.
 
 ## 2. Capacidades transversales y condiciones
 
-| Capacidad | Situación hasta v0.4.5 | Condición de uso / interpretación |
+| Capacidad | Situación hasta candidata v0.4.7 | Condición de uso / interpretación |
 |---|---|---|
 | **Lectura estructural y curva** | Caracterizada para los perfiles indicados. | Revisión/organización de bloques, muestras, unidades y eje según el diseño observado. |
 | **Eventos nativos y magnitudes almacenadas** | Caracterizada **solo donde existen tablas/campos interpretados**. | Mantener posición, clase, fuente y valor crudo; no calcular valores faltantes como si fueran nativos. |
@@ -68,6 +73,9 @@ Los estados se aplican **por capacidad**, no a una marca completa. También es d
 | **Pérdida de evento nativa** | Disponible donde el formato/perfil tiene semántica interpretada. | Mantenerla distinta de cualquier estimación y no asumir algoritmos idénticos entre marcas. |
 | **Pérdida local LSA** | **Condicionada:** transiciones no reflectivas aptas; seis combinaciones de ventanas. | Registrar estimación, apoyo, sensibilidad y discrepancia con dato nativo; **no** es incertidumbre calibrada. |
 | **Random Forest morfológico** | **Asesoría contextual**, no medición instrumental. | Los pesos documentados se conservan en 4.5; puntaje no es probabilidad calibrada y no modifica eventos/pérdidas nativos. |
+| **Piloto experimental de posición** | Condicionado a EXFO SOR 2.00, Yokogawa SOR/SOZ, Ceyear SOR/EI y JDSU MSOR estudiado. | Cambios no reflectivos aptos; base, borde, RF, Sugeno o abstención; marcadores nativos conservados. |
+| **Bandeja y ficha de medición** | Motivos, prioridad, anotaciones y contexto editable por traza. | Metadatos originales conservados e identidad verificada al restaurar. |
+| **Comparabilidad por magnitud** | Distancia, pérdida y reflectancia evaluadas por separado. | Límites, signo no verificado y ORL no se presentan como reflectancia exacta comparable. |
 | **Sesiones e informes** | Documentados: decisiones, método, contenedor/subtraza, referencia/eje; PDF, CSV/JSON según flujo. | Salidas locales; no se publican informes ni exportaciones operativas reales. |
 
 ## 3. Qué evidencia respalda esta matriz
@@ -101,11 +109,13 @@ Para profundizar, consultar [Validación](validation.es.md), [Historial de versi
 
 | Elemento | Estado documentado |
 |---|---|
-| **EXFO `.stdr` directo** | Investigación del 6 de noviembre; **no incorporado** a la entrega 4.5. |
-| **TRC y variantes EI/MSOR/SOZ no caracterizadas** | **Soporte no demostrado** en el flujo normal v0.4.5. |
-| **Parche de centrado vertical / aviso IOR del 6 de noviembre** | Ensayo aislado; **no incluido** en el ZIP 4.5 original. |
-| **Modelos de IA adicionales y selector RF alternativo de posiciones** | Evaluación externa o retrospectiva; no reemplazan el Random Forest activo ni las reglas de posición entregadas. |
+| **EXFO `.stdr` directo** | Investigación del 6 de noviembre; no demostrado en la candidata 4.7. |
+| **Variantes TRC, iOLM, EI, MSOR y SOZ no caracterizadas** | No se afirma soporte universal; únicamente diseños observados. |
+| **Ensayo del comparador del 6 de noviembre** | Antecedente de 4.5; centrado y avisos revisados se incorporan en 4.6. |
+| **Otros modelos experimentales** | Estudios separados; el piloto de posición 4.7 es optativo y no sustituye valores nativos. |
 | **Compatibilidad universal, calibración y certificación Telcordia/IEC** | **No declaradas**. Faltan evidencias independientes y alcance normativo suficiente. |
+
+Corte documental: **candidata v0.4.7 del 19 de noviembre de 2026**. La aplicación independiente para Windows y sus ajustes definitivos posteriores aún no se han inspeccionado aquí. Véase [Validación](validation.es.md) para la regresión de lectores 4.6 y los límites del piloto 4.7.
 
 ## Política de actualización
 

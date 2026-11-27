@@ -37,7 +37,7 @@ Esta política aplica al repositorio y a todo su historial: ramas, solicitudes d
 | Capturas del visor | **Permitidas tras revisar cada imagen** | Eliminar o sustituir nombres, metadatos, rutas, identificadores, anotaciones privadas y contenido sensible de la traza. Permitir la interfaz no implica autorizar todo lo que pueda verse dentro de ella. |
 | Gráficos generales y trazas completamente sintéticas | **Publicar** | Crear ejemplos de manera independiente; identificarlos como ilustrativos/sintéticos, nunca como mediciones de campo validadas. |
 | Resultados agregados de validación | **Publicar tras revisar** | Indicar tamaño de muestra, condiciones, referencias, omisiones y límites; excluir identidades de archivos, huellas, ubicaciones y magnitudes sensibles. |
-| SOR, EI, MSOR, SOZ, TRC, STDR, OTDR, exportaciones CSV/JSON, sesiones, informes y curvas derivadas reales | **No publicar** | Pueden reconstruir mediciones operativas o exponer metadatos identificables aunque cambie el nombre del archivo. |
+| SOR, EI, MSOR, SOZ, TRC, iOLM, SOR.TXT, STDR, OTDR, exportaciones CSV/JSON, sesiones, informes y curvas derivadas reales | **No publicar** | Pueden reconstruir mediciones operativas o exponer metadatos identificables aunque cambie el nombre del archivo. |
 | Código fuente original o adaptado, pruebas, scripts de construcción, perfiles y configuración interna | **No publicar** | No existe autorización vigente para distribuir la implementación. Cambiar nombres o limpiar rutas no convierte el código en publicable. |
 | Software de fabricantes, ejecutables, DLL, manuales propietarios y normas licenciadas | **No redistribuir** | Describir conceptos públicos y enlazar fuentes legítimas cuando corresponda. |
 | Clientes, rutas, personal, equipos, seriales, nombres/hashes privados y rutas absolutas | **No publicar** | También pueden estar en tooltips, vistas de impresión, exportaciones, textos ocultos SVG, metadatos e historial de Git. |
@@ -63,6 +63,8 @@ Identificar las ilustraciones con una nota equivalente a: *«Traza sintética il
 Pueden mostrarse capas conceptuales de lectura SOR/EI/MSOR/SOZ, interpretación por perfiles, análisis de trazas, procedencia, espacio de trabajo y comparación. No hace falta publicar fórmulas internas, reglas propietarias, listados de implementación ni módulos fuente completos para explicar el diseño.
 
 La validación puede presentarse mediante resultados agregados y sus limitaciones. Por ejemplo, la concordancia con un archivo de fabricante u otro visor **no** debe llamarse «exactitud física de distancia» sin referencia independiente trazable.
+
+En 4.6–4.7 también se excluyen originales iOLM y SOR/TXT antiguos, adquisiciones internas de los contenedores, pesos entrenados de morfología/posición, JSON experimentales, fichas de medición e identificadores de certificados. Las capturas del piloto, bandeja y ficha deben usar información de demostración permitida. Las nuevas cifras agregadas requieren revisión expresa de publicación; no se incorporan umbrales privados, identificadores de corpus ni artefactos detallados de modelos.
 
 ## Revisión previa a publicar
 

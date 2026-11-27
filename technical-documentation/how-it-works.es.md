@@ -17,7 +17,7 @@
 
 <p align="center"><strong>De un archivo OTDR a una interpretación revisable, sin borrar el origen de los datos.</strong></p>
 
-> **Alcance verificable.** Este recorrido explica el comportamiento documentado de la entrega **v0.4.5 consolidada el 5 de noviembre de 2026**. No es un tutorial de instalación: el código fuente y el ejecutable del visor no se distribuyen públicamente. Los nombres de controles exactos pueden variar entre revisiones; solo se menciona un control textual cuando el historial lo identifica. Las ilustraciones de esta página son **diagramas originales del flujo**, no capturas del programa ni mediciones de campo.
+> **Alcance verificable.** Este recorrido explica el comportamiento documentado de la entrega **candidata v0.4.7 del 19 de noviembre de 2026**. No es un tutorial de instalación: el código fuente y el ejecutable del visor no se distribuyen públicamente. Los nombres de controles exactos pueden variar entre revisiones; solo se menciona un control textual cuando el historial lo identifica. Las ilustraciones de esta página son **diagramas originales del flujo**, no capturas del programa ni mediciones de campo.
 
 <p align="center">
   <img src="assets/workflow/flow-es-light.svg#gh-light-mode-only" alt="Esquema conceptual en cinco etapas de OTDR Inside, modo claro" width="100%">
@@ -34,6 +34,8 @@ El análisis parte de archivos cuya procedencia de adquisición sea conocida. La
 | **Ceyear CE6422 SOR + EI** | Abrir el SOR y asociar su EI cuando la comprobación de contenido y adquisición sea satisfactoria. | No relacionar archivos solo por nombres parecidos. |
 | **Yokogawa SOR / SOZ** | Revisar eventos SOR o elegir subtraza de 1310/1550 nm dentro del contenedor SOZ. | La identidad declarada dentro del archivo puede diferir de una procedencia confirmada externamente. |
 | **JDSU MSOR** | Abrir un contenedor caracterizado y examinar cada longitud de onda con sus eventos. | El soporte documentado corresponde al diseño MSOR observado, no a todas las variantes. |
+| **EXFO TRC / SOR antiguo / iOLM** | Revisar el diseño reconocido, posiciones nativas frente a curva y elegir onda cuando corresponda. | iOLM es multipulso: no se aplica LSA/IA de posición de pulso único. |
+| **NOVKER / F2H** | Inspeccionar información recuperable y límites del perfil. | Pérdida NOVKER provisional; F2H estructural. |
 
 Para consultar las capacidades, condiciones y límites exactos por fabricante, utiliza la matriz específica. Reconocer una extensión no demuestra compatibilidad semántica completa.
 
@@ -83,6 +85,8 @@ La curva muestra un **nivel relativo**, no potencia óptica universalmente calib
 
 **Decisión técnica.** Mantener el resultado con procedencia y advertencias; solicitar revisión cuando las ventanas, el registro nativo y la asesoría de IA no coinciden.
 
+**Bandeja y piloto de posición (4.6–4.7).** Revisar motivos de lectura, eje, morfología e inyección, y añadir contexto. En perfiles compatibles de la candidata, abrir Eventos → Piloto experimental → Calcular propuestas. Base, borde y RF se muestran por separado; Sugeno puede abstenerse. La falta de propuesta no borra eventos nativos. Conservar coordenadas experimentales en JSON de análisis; no tratarlas como marcadores principales.
+
 ## 4. Comparar trazas entre formatos o equipos
 
 **Acción del operador.** Seleccionar entre **dos y cuatro trazas** ya abiertas y examinar primero si su comparación tiene sentido: onda, pulso, IOR, origen, alcance y si corresponden al mismo enlace o adquisición.
@@ -93,6 +97,8 @@ La curva muestra un **nivel relativo**, no potencia óptica universalmente calib
 
 **Qué no debe hacerse.** Contar SOR/SOZ del mismo registro como adquisiciones independientes; mezclar ondas diferentes como si las condiciones fueran equivalentes; aplicar una conversión IOR si falta un valor válido; interpretar una menor diferencia de posiciones como exactitud física demostrada.
 
+**Comparabilidad por magnitud (4.7).** Revisar distancia, pérdida y reflectancia por separado. El centrado es visual optativo; si falta IOR no convertir al eje común. Límites, pérdidas provisionales y signos no verificados no son magnitudes exactas comparables. Se conservan las asociaciones manuales y se permite abstención ante ambigüedad.
+
 ## 5. Conservar la sesión y generar el informe
 
 **Acción del operador.** Registrar las decisiones de revisión y el contexto de comparación. Cuando corresponde, generar los formatos de salida documentados (informes PDF y exportaciones CSV/JSON) y conservar el estado de la sesión.
@@ -100,6 +106,8 @@ La curva muestra un **nivel relativo**, no potencia óptica universalmente calib
 **Qué debería poder auditarse.** Versión y método empleado, fuente/contenedor/subtraza, condiciones de adquisición, referencia/eje elegidos, datos nativos separados de valores calculados, advertencias, propuestas de correspondencia y evaluación humana. El archivo de medición original no se sobrescribe.
 
 **Límite.** Los campos de informe orientados por IEC son apoyo documental, **no** certificación IEC. Ningún informe con mediciones operativas está autorizado para este repositorio público.
+
+En Diagnóstico → Ficha de medición, registrar extremo, temperatura, longitud de lanzamiento, conector/adaptador y alcance del certificado cuando corresponda. El contexto editable se conserva por original/subtraza, sin reemplazar metadatos nativos ni verificar el certificado. Restaurar sesiones con originales y volver a ejecutar las propuestas optativas si se necesitan.
 
 ## Tres recorridos representativos
 
@@ -115,7 +123,7 @@ Este recorrido **no es una sesión de prueba ejecutada ahora**. Resume operacion
 
 Las **capturas reales** del visor aún no están incluidas: deben obtenerse de una sesión autorizada, revisarse y publicarse por separado de acuerdo con [Manejo de datos](data-handling.es.md). No se reemplazan por imágenes externas que aparenten ser pantallas de OTDR Inside.
 
-**Fuera de la entrega empaquetada v0.4.5:** el parche aislado de centrado vertical/avisos IOR del 6 de noviembre, la lectura directa EXFO `.stdr` en investigación y los ensayos de modelos adicionales. No deben aparecer en una demostración como funciones ya entregadas.
+Corte documental: **candidata v0.4.7 del 19 de noviembre de 2026**. La aplicación independiente para Windows y sus ajustes definitivos posteriores aún no se han inspeccionado aquí. Se documenta el comparador revisado 4.6; la lectura directa STDR y la entrega Windows posterior siguen sin verificarse aquí.
 
 ---
 

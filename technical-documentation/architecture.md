@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Read bytes first. Interpret only when evidence supports it. Compare without erasing source boundaries.</strong></p>
 
-> **Scope.** This page reconstructs the architecture represented by archived snapshots from **v0.1.0 through v0.4.5**. That range is a documentation boundary, not the final project architecture. Later releases should extend the timeline instead of making v0.4.1 look like an endpoint.
+> **Scope.** This page reconstructs the architecture represented by archived snapshots from **v0.1.0 through the v0.4.7 review candidate**. That range is a documentation boundary, not the final project architecture. Later releases should extend the timeline instead of making v0.4.1 look like an endpoint.
 
 OTDR Inside evolved by adding layers around a stable raw-data boundary. The project first separated SOR structure from vendor semantics; later versions added calculated events, evidence, EI as a second source, terminal reasoning and finally a multi-file workspace that compares traces without merging their origin.
 
@@ -131,6 +131,16 @@ Sessions/reports preserve container/subtrace identity, calculation method, compa
 
 **After the 5 November package:** the isolated 6 November vertical-centering and IOR-notice patch, direct EXFO `.stdr` investigation and further AI/comparability proposals are research or unmerged work, not part of the shipped 4.5 package.
 
+### v0.4.6 · reader strategies and review queue
+
+Separate reader strategies handle observed TRC, SOR 1.00, NOVKER and iOLM layouts while F2H remains structural. Container/member identity and native-versus-curve coordinates remain explicit. iOLM report traces are not single-pulse acquisitions: native consolidated elements, sections, groups and bounded quantities are preserved separately. The review queue combines diagnostic reasons and user annotations without changing original measurements. Comparator proposals are ordered, reviewable and may abstain.
+
+### v0.4.7 candidate · advisory localization and comparison context
+
+The existing morphology classifier remains a separate service of interpretation. A parallel experimental branch produces baseline, edge and RF position proposals and a Sugeno suggestion or abstention. These do not move primary markers or substitute stored events. Measurement records are attached per original and subtrace, preserving original metadata. A magnitude-specific comparison layer separately assesses distance, loss and reflectance eligibility and forwards provenance, coverage and warnings to local exports. See [Compatibility](compatibility-matrix.md) for exact scope and [Validation](validation.md) for evidence limits.
+
+Documented through the **v0.4.7 review candidate (19 November 2026)**. The later standalone Windows build and its final adjustments are not yet independently inspected here.
+
 ## Cross-version architectural thread
 
 | Concern | Early state | Expansion through v0.4.1 |
@@ -145,7 +155,7 @@ Sessions/reports preserve container/subtrace identity, calculation method, compa
 
 Two baseline components are byte-identical across every archived snapshot from v0.1.0 through v0.4.1: `scanner.py` and the validated EXFO profile. The system therefore shows a long-lived structural contract while interpretation and interaction evolve around it.
 
-## Implementation baseline · v0.4.1 (expanded through v0.4.5)
+## Implementation baseline · v0.4.1 (historical baseline; later extensions below)
 
 The diagram below is the **v0.4.1 per-file/workspace baseline**. Changes from 4.2 and 4.3–4.5 are represented in their separate diagrams and text above; no part is described as the final architecture.
 

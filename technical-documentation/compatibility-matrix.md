@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Opening a file does not mean that every event, optical quantity or comparison has been validated.</strong></p>
 
-> **Documentation cutoff: v0.4.5, consolidated on 5 November 2026.** This matrix summarizes capabilities recorded in archived development packages and reports. It is **not** a newly executed test, Telcordia/IEC conformity certification or blanket support promise for all equipment from a vendor. Source code and raw verification corpora remain private under the [data handling policy](data-handling.md).
+> **Documentation cutoff: v0.4.7 review candidate, 19 November 2026.** This matrix summarizes capabilities recorded in archived development packages and reports. It is **not** a newly executed test, Telcordia/IEC conformity certification or blanket support promise for all equipment from a vendor. Source code and raw verification corpora remain private under the [data handling policy](data-handling.md).
 
 <p align="center">
   <img src="assets/compatibility/coverage-light.svg#gh-light-mode-only" alt="Conceptual source routes for SOR, EI, MSOR and SOZ, light theme" width="100%">
@@ -32,13 +32,13 @@
 | **Conditional** | The function is supported only for specific profiles, event classes or verified relationships and requires stated preconditions. |
 | **Structural only** | Recoverable structure may be inspected without assigning optical meaning to every field. |
 | **Not demonstrated** | The available record does not justify claiming this capability; this does **not** mean it is impossible. |
-| **Research / not packaged** | Experimental or proposed work is not part of the original packaged v0.4.5 delivery. |
+| **Research / not packaged** | Experimental or proposed work is not part of the candidate documented here. |
 
 Statuses apply **per capability**, not to an entire brand. Equipment identity declared in a file, evidence-backed source attribution and the software that exported it are distinct concepts.
 
 ## 1. Vendor and format matrix
 
-| Ecosystem and format | Documented coverage through 4.5 | Events and computed results | Key boundary | Since |
+| Ecosystem and format | Documented coverage through 4.7 candidate | Events and computed results | Key boundary | Since |
 |---|---|---|---|---|
 | **EXFO · SOR 2.00** | **Characterized:** FTB-7200 reference profile, structural parsing, normalized parameters and trace reconstruction. | **Characterized:** `KeyEvents` when present; positions and fields supported by the profile. | **Documentary reference**, not an infallible physical ground truth or all-EXFO compatibility. | 0.1.0 |
 | **Ceyear CE6422 · SOR** | **Characterized:** trace and parameters for the observed layout, event hypotheses and terminal evidence. | **Conditional:** calculated events, suppressed proposals, RF review and local LSA for eligible transitions. A SOR lacking `KeyEvents` has no verified stored-event table. | Detector results do not automatically certify physical positions/losses. LSA/RF cannot overwrite native readings. | 0.2.0 / 0.3.x / 0.4.5 |
@@ -47,13 +47,18 @@ Statuses apply **per capability**, not to an entire brand. Equipment identity de
 | **Yokogawa · SOR with externally confirmed provenance** | **Characterized for specific originals:** source attribution confirmed for that set although their metadata do not declare the model. | **Characterized in that set:** native records recovered without rewriting original fields. | Confirmation must not be presented as instrument-declared metadata or generalized from software signatures. | 0.4.3 |
 | **Yokogawa · SOZ** | **Characterized:** observed multitrace container with 1310/1550-nm members, samples and per-subtrace metadata. | **Characterized:** native event records per member; **conditional:** same-acquisition SOR extract association. | A SOZ and its SOR copy are **not independent acquisitions**; other SOZ variants remain unproven. | 0.4.5 |
 | **JDSU T-BERD 6000A / 8126 · MSOR** | **Characterized:** observed **VSRE 2.10** two-wavelength container, sample data and member context. | **Characterized where evidence supports:** native events and recognized fields; **conditional:** verified source-specific external TXT pairing. | Do not extend units, field semantics or compatibility to unobserved JDSU/MSOR layouts. | 0.4.4 |
+| **EXFO · TRC AppReg** | Characterized observed layout, trace and native events per wavelength. | Native records; morphology advisory in compatible subtraces. | Not all TRC variants; position selector not enabled. | 0.4.6 |
+| **EXFO · SOR 1.00 / .sor.txt** | Characterized observed FTB-7323B/AppReg variants. | Native shifted/negative coordinates, curve origin and raw event fields separate. | Unsupported summaries/fields remain unavailable; no position ML/LSA. | 0.4.6 revisions |
+| **EXFO · iOLM** | Characterized observed CFB/NRBF layout, three report wavelengths. | Native multi-pulse elements, groups, sections and limits. | No single-pulse LSA or position pilot; bounded losses not exact. | 0.4.6 revision |
+| **NOVKER NK6000 · SOR** | Conditional curve and KeyEvents interpretation. | Provisional loss separate from normalized values. | Reflectance, attenuation, ORL and averaging await native contrast; no ML. | 0.4.6 revision |
+| **F2H** | Structural recognition of observed inputs. | No characterized general optical semantics. | No position ML; identification does not establish full support. | 0.4.6 revision |
 | **Uncharacterized vendor SOR** | **Structural only, if accepted by the reader:** inspect recognizable SOR blocks. | **Not demonstrated** for vendor-specific event scales and optical magnitudes. | Opening a file does **not** establish correct optical interpretation or universal SOR coverage. | Varies |
 
 **Yokogawa identity note:** the v0.4.3 archive distinguishes **24 files with declared identity** and **24 whose source was confirmed only for those originals**. The aggregate verification covers 48 files and 125 native records. These figures do not predict future support for all Yokogawa files.
 
 ## 2. Cross-format capabilities and prerequisites
 
-| Capability | Documented state through v0.4.5 | Preconditions and interpretation |
+| Capability | Documented state through v0.4.7 candidate | Preconditions and interpretation |
 |---|---|---|
 | **Structure and trace reconstruction** | Characterized for the listed profiles. | Block/sample layout, units and distance axis must match the observed design. |
 | **Native events and stored optical fields** | Characterized **where a supported event table/field exists**. | Preserve positions, classes, raw values and source; do not fabricate unavailable stored values. |
@@ -68,6 +73,9 @@ Statuses apply **per capability**, not to an entire brand. Equipment identity de
 | **Instrument-native event loss** | Available only where the profile supports that field's semantics. | Keep native loss distinct from estimates; vendors need not share algorithms. |
 | **Local LSA event loss** | **Conditional:** eligible non-reflective changes and six before/after window variants. | Store estimates, support, sensitivity and disagreements, not calibrated uncertainty. |
 | **Random Forest morphology** | **Contextual advisory**, not an instrument reading. | Active weights unchanged in v0.4.5; scores are not calibrated probabilities and do not rewrite native data. |
+| **Experimental position pilot** | Conditional on recognized EXFO SOR 2.00, Yokogawa SOR/SOZ, Ceyear SOR/EI and studied JDSU MSOR. | Only eligible non-reflective changes; base, edge, RF, Sugeno or abstention; native markers retained. |
+| **Review queue and measurement record** | Review reasons, priority and annotations; per-trace editable context. | Original metadata retained and session identity verified. |
+| **Comparison by magnitude** | Distance, loss and reflectance evaluated separately. | Bounds, unverified sign and ORL not treated as exact comparable reflectance. |
 | **Sessions and reports** | Documented with method, source/container/member, reference/axis and review; PDF/CSV/JSON according to workflow. | Local outputs; operational reports and exports are not public data. |
 
 ## 3. Evidence behind the matrix
@@ -101,11 +109,13 @@ For further detail, see [Validation](validation.md), [Version history](version-h
 
 | Item | Documented status |
 |---|---|
-| **Direct EXFO `.stdr`** | Research as of 6 November; **not packaged** in v0.4.5. |
-| **TRC and uncharacterized EI/MSOR/SOZ variants** | **Support not demonstrated** in the normal v0.4.5 workflow. |
-| **6 November vertical-centering / IOR-warning patch** | Isolated experiment; **not merged** into the original 4.5 ZIP. |
-| **Additional ML models and alternative RF position selector** | External/retrospective experiments; did not replace the shipped Random Forest or position rules. |
+| **Direct EXFO `.stdr`** | Research as of 6 November; not established in the 4.7 candidate. |
+| **Uncharacterized TRC, iOLM, EI, MSOR and SOZ variants** | No universal support; only observed layouts characterized. |
+| **6 November comparator experiment** | Historical 4.5-era patch; revised centering and warnings incorporated in 4.6. |
+| **Other experimental ML models** | Separate studies; the 4.7 position pilot is optional, not an activated replacement of native values. |
 | **Universal compatibility, Telcordia/IEC certification and calibration** | **Not claimed**. Independent evidence and appropriate normative scope remain unavailable. |
+
+Documented through the **v0.4.7 review candidate (19 November 2026)**. The later standalone Windows build and its final adjustments are not yet independently inspected here. See [Validation](validation.md) for the 4.6 reader regressions and 4.7 pilot limits. The current candidate adds observed formats without extending support to all vendor variants.
 
 ## Updating this matrix
 

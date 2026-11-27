@@ -14,7 +14,7 @@
   <a href="case-studies.es.md"><img src="assets/nav/lang-es-selected.svg" alt="Español"></a>
 </p>
 
-> **Alcance:** v0.4.5 consolidada el 5 de noviembre de 2026. Estos casos conectan los resultados retrospectivos ya documentados en Validación con ejemplos didácticos inventados. No son nuevas pruebas del visor, capturas, trazas operativas ni registros individuales.
+> **Alcance:** hasta la candidata v0.4.7 del 19 de noviembre de 2026. Estos casos conectan los resultados retrospectivos ya documentados en Validación con ejemplos didácticos inventados. No son nuevas pruebas del visor, capturas, trazas operativas ni registros individuales.
 
 <p align="center">
   <img src="assets/case-studies/examples-es-light.svg#gh-light-mode-only" width="100%" alt="Dos ejemplos sintéticos">
@@ -98,6 +98,14 @@ Las regiones cubiertas no son idénticas y los registros son dependientes del mo
 
 **Conclusión:** mantener pérdida nativa, LSA, evidencia y revisión separadas permite auditar discrepancias sin corregir automáticamente por un puntaje RF.
 
+## Caso C · Formatos antiguos y mediciones no equivalentes
+
+Un SOR antiguo, ilustrativamente, puede situar el conector de lanzamiento en una coordenada nativa negativa mientras la curva comienza en cero. Deben conservarse ambos ejes sin trasladar silenciosamente la tabla nativa. En iOLM, una curva de reporte puede acompañar una tabla de eventos consolidada multipulso; un elemento agrupado no es otro evento independiente. Una pérdida hipotética informada como > 5 dB es un límite inferior, no una observación exacta de 5 dB. Las revisiones de lectores mantienen estas distinciones. Los campos provisionales NOVKER se mantienen como tentativos. No se fusionan archivos de nombre parecido si sus muestras o adquisición no coinciden.
+
+## Caso D · Por qué un modelo de posición debe poder abstenerse
+
+Supónganse tres coordenadas ilustrativas para un evento apto: 1000, 1002 y 1004 m. Son propuestas inventadas, no mediciones. Si la curva local no apoya una asociación única o las propuestas entran en conflicto con vecinos, puede corresponder no emitir propuesta, en vez de promediar automáticamente. La candidata 4.7 contrasta base, borde y RF de posición con una decisión Sugeno consultiva, distinta de la clasificación morfológica. Los estudios archivados muestran resultados dependientes de la referencia y eventos elegibles sin propuesta. Conservar coordenadas nativas y motivo de abstención; validar exactitud física independientemente.
+
 ## Estado de desarrollo
 
 | Estado al corte documental | Elementos |
@@ -105,10 +113,11 @@ Las regiones cubiertas no son idénticas y los registros son dependientes del mo
 | Incorporado en 4.5 | SOR/EI/MSOR/SOZ caracterizados, asociaciones revisables, IOR condicional, separaciones, LSA y asesoría RF contextual, informes. |
 | Experimental en la línea 4.x | Alternativas de localización con resultados dependientes de la referencia. |
 | Evaluado sin activar | Selector de posición con doble referencia y estudios de modelos externos. |
-| Ensayo separado del 6 de noviembre | Parche de centrado vertical/aviso IOR, no empaquetado en 4.5. |
-| Pendiente según el registro | Lectura directa STDR, nuevas referencias independientes y verificación real en Windows/navegador. |
+| Incorporado en 4.6 | Centrado revisado, bandeja, asociaciones condicionadas y lectores ampliados. |
+| Candidata 4.7 | Piloto optativo de posición, comparabilidad por magnitud y ficha editable. |
+| Pendiente según el registro | Lectura directa STDR, nuevas referencias independientes e inspección del ejecutable definitivo Windows. |
 
-El corte no implica haber inspeccionado versiones posteriores. Los resultados archivados se amplían en [Validación](validation.es.md) e [Historial de versiones](version-history.es.md); la publicación se rige por [Manejo de datos](data-handling.es.md).
+El corte de la candidata del 19 de noviembre no implica inspección de la entrega definitiva Windows. Los resultados archivados se amplían en [Validación](validation.es.md) e [Historial de versiones](version-history.es.md); la publicación se rige por [Manejo de datos](data-handling.es.md).
 
 ---
 

@@ -33,10 +33,12 @@ El proyecto no intenta forzar todas las trazas dentro de un modelo universal. Ex
 
 | Dimensión | Alcance documentado |
 |---|---|
-| Fabricantes caracterizados | EXFO, Ceyear, Yokogawa y JDSU |
-| Familias de formatos | SOR · EI · MSOR · SOZ |
-| Evolución | v0.1.0 a v0.4.5 (consolidación del 5 de noviembre de 2026) |
-| Regresión archivada v0.4.5 | 123 pruebas Python aprobadas con los datos internos disponibles |
+| Cobertura por fabricante | EXFO, Ceyear, Yokogawa, JDSU; NOVKER parcial; F2H estructural |
+| Familias de entrada caracterizadas | SOR (1.00/2.00) · EI · MSOR · SOZ · TRC · iOLM |
+| Evolución | v0.1.0 a candidata v0.4.7 (19 de noviembre de 2026) |
+| Evidencia | Regresión histórica, contraste de lectores y revisión experimental de posición; véase Validación |
+
+Corte documental: **candidata v0.4.7 del 19 de noviembre de 2026**. La aplicación independiente para Windows y sus ajustes definitivos posteriores aún no se han inspeccionado aquí.
 
 **Portafolio técnico, no distribución de software.** La documentación describe el desarrollo, sus resultados y límites. Las cifras de validación son archivadas, no CI público ni certificación. El código del visor y las mediciones operativas permanecen privados. Las ilustraciones son conceptuales o sintéticas; todavía no se incluyen capturas del visor real.
 
@@ -51,10 +53,12 @@ El proyecto no intenta forzar todas las trazas dentro de un modelo universal. Ex
 | Trazabilidad | Conservación de datos originales, procedencia, incertidumbres de interpretación y decisiones de revisión. |
 | Informes técnicos | Exportaciones y reportes locales con el contexto de análisis y comparación. |
 
+**v0.4.6–0.4.7:** lectores ampliados (TRC, SOR 1.00, iOLM, NOVKER y reconocimiento F2H), bandeja de revisión priorizada, propuestas optativas de posición (base, borde, RF y Sugeno), ficha de medición editable y comparabilidad por distancia, pérdida y reflectancia. Las propuestas experimentales no reemplazan valores nativos.
+
 <details>
 <summary>Detalle histórico de capacidades por versión</summary>
 
-La evolución del desarrollo documentada desde **v0.1.0 hasta v0.4.5** incluye:
+La evolución del desarrollo documentada desde **v0.1.0 hasta la candidata v0.4.7** incluye:
 
 - inspección segura de estructura y metadatos SOR 2.00;
 - selección de perfiles caracterizados basada en evidencia;
@@ -105,9 +109,9 @@ El desarrollo reúne competencias de ingeniería mecatrónica, software aplicado
 
 <h2 id="recorrido-guiado" align="center">Recorrido guiado</h2>
 
-**Conoce el flujo de trabajo antes de entrar en la historia de implementación.** Este recorrido de cinco etapas explica el uso documentado en v0.4.5:
+**Conoce el flujo de trabajo antes de entrar en la historia de implementación.** Este recorrido de cinco etapas explica el uso documentado en la candidata v0.4.7:
 
-**Abrir SOR/EI/MSOR/SOZ caracterizados → interpretar trazas y eventos con procedencia → revisar pérdida LSA y asesoría Random Forest → comparar mediciones y condiciones → conservar decisiones en sesiones/informes.**
+**Abrir SOR/EI/MSOR/SOZ/TRC/iOLM caracterizados → interpretar trazas y eventos con procedencia → revisar pérdida LSA y asesoría Random Forest → comparar mediciones y condiciones → conservar decisiones en sesiones/informes.**
 
 <p align="center">
   <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Cómo funciona"></a>
@@ -125,13 +129,13 @@ Reconocer un formato, recuperar sus eventos y estimar magnitudes ópticas **no t
 
 <h2 id="casos-de-estudio" align="center">Casos de estudio</h2>
 
-Dos decisiones de ingeniería explicadas con ejemplos sintéticos y evidencia archivada: diferencias de posición entre instrumentos y discrepancias entre pérdidas nativas y LSA. Incluye el estado documental de las investigaciones.
+Cuatro casos de ingeniería explicados con ejemplos sintéticos y evidencia archivada: diferencias de posición, pérdidas nativas y LSA, lectores antiguos/multipulso y localización consultiva con abstención. Incluye el estado documental de desarrollo.
 
 <p align="center">
   <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a>
 </p>
 
-<h2 id="alcance-actual" align="center">Alcance actual · documentado hasta v0.4.5</h2>
+<h2 id="alcance-actual" align="center">Alcance actual · candidata v0.4.7</h2>
 
 | Ecosistema | Estado | Papel dentro del proyecto |
 |---|---|---|
@@ -139,6 +143,8 @@ Dos decisiones de ingeniería explicadas con ejemplos sintéticos y evidencia ar
 | **Ceyear CE6422** | **Desarrollo activo** | Interpretación de traza, candidatos calculados, emparejamiento EI/SOR verificado para el diseño observado, diagnóstico terminal y comparación multiarchivo. |
 | **Yokogawa (SOR / SOZ caracterizados)** | **Soporte de eventos nativos caracterizados** | Escalas observadas de SOR y subtrazas multionda SOZ; se separa procedencia confirmada de identidad declarada. Contraste nativo y metrológico limitado. |
 | **JDSU T-BERD 6000A / 8126 MSOR** | **Contenedor caracterizado** | MSOR 2.10 observado con dos ondas, eventos nativos y referencias específicas verificadas; unidades y variantes desconocidas siguen sin soporte. |
+| **EXFO: diseños antiguos y propietarios** | Diseños observados caracterizados | TRC AppReg, SOR 1.00 e iOLM; ejes nativo y de curva, y campos multipulso separados. |
+| **NOVKER NK6000 / F2H** | Parcial / estructural | Curva y eventos NOVKER con pérdida provisional; reconocimiento F2H sin semántica óptica completa. |
 
 <p align="center"><strong>estructuralmente legible → perfil identificado → caracterizado semánticamente → validado empíricamente</strong></p>
 
@@ -158,7 +164,7 @@ La línea documentada separa el análisis por archivo del espacio de trabajo que
 | **Espacio de trabajo** | Mantiene hasta ocho análisis en pestañas independientes con zoom, selección, revisión y anotaciones propias. |
 | **Comparación** | Compara de dos a cuatro trazas como relación de presentación sin fusionar su procedencia ni afirmar identidad física. |
 
-La evolución completa, la base multiarchivo de 4.1 y las ampliaciones 4.3–4.5 se describen en <a href="architecture.es.md">Documentación técnica</a>.
+La evolución completa, la base multiarchivo de 4.1 y las ampliaciones 4.3–4.7 se describen en <a href="architecture.es.md">Documentación técnica</a>.
 
 <h2 id="enfoque-de-ingeniería" align="center">Enfoque de ingeniería</h2>
 
@@ -217,13 +223,15 @@ La consolidación archivada de v0.4.5 registra **123 pruebas Python aprobadas** 
 
 La jerarquía de evidencia, la frontera público/privado y los límites metrológicos están descritos en <a href="validation.es.md">Validación</a>.
 
+Las revisiones 4.6 y la candidata 4.7 añaden contrastes estructurales y semánticos, regresión de interfaz simulada y cobertura del piloto de posición. La concordancia con referencias y la conservación de campos nativos respaldan el comportamiento documentado, no una calibración. La compilación independiente de Windows se registra aparte; su aceptación y cambios definitivos no se han auditado aquí.
+
 <h2 id="manejo-de-datos" align="center">Manejo de datos</h2>
 
 OTDR Inside está diseñado como un flujo **local y de solo lectura**. Las mediciones fuente se procesan localmente y el visor no sobrescribe los originales.
 
 **Alcance permitido:** capturas revisadas del visor real, explicaciones de arquitectura de alto nivel e ilustraciones generales/completamente sintéticas. **No está autorizada la publicación del código fuente del visor**, incluso si se limpia o adapta, ni de sus pruebas/configuración interna, binarios o releases ejecutables. Cada captura debe revisarse para excluir metadatos operativos y contenido de trazas identificable.
 
-El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.otdr` reales, exportaciones de medición/informes/sesiones, curvas privadas, identificadores de rutas/clientes, seriales, hashes, programas propietarios ni materiales licenciados. Toda ilustración sintética se etiqueta como tal y no constituye una medición de validación.
+El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.iolm`, `.sor.txt`, `.otdr` reales, exportaciones de medición/informes/sesiones, curvas privadas, identificadores de rutas/clientes, seriales, hashes, programas propietarios ni materiales licenciados. Toda ilustración sintética se etiqueta como tal y no constituye una medición de validación.
 
 <p align="center">
   <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Política completa de manejo de datos"></a>
@@ -231,9 +239,9 @@ El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.
 
 <h2 id="limitaciones-conocidas" align="center">Limitaciones conocidas</h2>
 
-- El soporte `.EI`, `.MSOR` y `.SOZ` se limita a diseños caracterizados; no equivale a compatibilidad universal. La lectura directa EXFO `.stdr` y otras variantes siguen fuera de la entrega empaquetada v0.4.5. `.otdr` no es el flujo normal.
+- El soporte `.EI`, `.MSOR` y `.SOZ` se limita a diseños caracterizados; no equivale a compatibilidad universal. El soporte TRC e iOLM se limita a los diseños observados; la lectura directa `.stdr` sigue sin demostrarse en la candidata. `.otdr` no es el flujo normal.
 - Los puntajes RF son sugerencias morfológicas, no probabilidades calibradas ni etiquetas físicas; el modelo no sobrescribe valores nativos. La variación entre ventanas LSA no es incertidumbre calibrada de pérdida.
-- El parche de centrado/aviso IOR del 6 de noviembre y otros estudios son propuestas o ensayos separados, **no incluidos en la entrega del 5 de noviembre**.
+- El ensayo de centrado/aviso IOR del 6 de noviembre se incorporó en forma revisada en 4.6; el piloto de posición de 4.7 permanece consultivo.
 - La interpretación específica de fabricante sigue basada en perfiles/firmas y no equivale a compatibilidad SOR universal.
 - El nivel vertical mostrado es relativo y no se presenta como potencia óptica calibrada universalmente.
 - La cercanía de eventos del comparador v0.4.1 es una **ayuda visual de agrupamiento**, no una tolerancia física ni prueba de identidad.
@@ -250,7 +258,7 @@ El repositorio no distribuye `.sor`, `.ei`, `.msor`, `.soz`, `.trc`, `.stdr`, `.
 - ampliar formatos emparejados y fabricantes conservando controles de procedencia;
 - validar la lectura directa EXFO `.stdr` con un original permitido antes de afirmar compatibilidad;
 - estudiar la calidad de adquisición y elegibilidad de comparación con reglas explicables, sin reescribir automáticamente datos nativos;
-- contrastar el parche aislado de centrado y revisión en un navegador Windows real;
+- verificar la compilación definitiva de Windows y las capturas autorizadas;
 - añadir lotes, revisión de anomalías y etiquetas independientes de enlaces nuevos;
 - crear una galería revisada de capturas del visor e ilustraciones de trazas sintéticas independientes, sin publicar código fuente.
 

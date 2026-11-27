@@ -16,7 +16,7 @@
 
 <p align="center"><strong>Origin is part of the data. Evidence, review and cross-trace proximity are different dimensions.</strong></p>
 
-> **Scope.** This page documents the provenance model represented by archived releases through **v0.4.5**. Later releases may add relationships or sources, but they should not retroactively change what these historical provenance categories mean.
+> **Scope.** This page documents the provenance model represented by archived releases through the **v0.4.7 review candidate**. Later releases may add relationships or sources, but they should not retroactively change what these historical provenance categories mean.
 
 OTDR Inside keeps the origin of a value or event visible instead of flattening everything shown in the same interface into one undifferentiated event table.
 
@@ -154,6 +154,12 @@ In the comparator, a reference is chosen for a **relation and coordinate display
 
 A 5 November consolidation preserved these distinctions in session/report metadata. The 6 November unmerged vertical-centering experiment is documented separately, rather than assigned to the packaged 4.5.
 
+## v0.4.6–0.4.7 · multiple coordinates and conditional interpretation
+
+Legacy SOR preserves curve-origin positions, native shifted positions and original event fields as distinct values. TRC and iOLM retain source/member identity; iOLM multi-pulse loss, group components and sections are not single-pulse estimates or independent discrete events. Bounded quantities retain their inequality; provisional NOVKER losses are not normalized exact values. F2H recognition does not establish optical semantics.
+
+The position RF and Sugeno suggestion are experimental overlays, not additional native-event origins. A pilot may be not run, outside scope, not evaluable or yield no proposal. Verified Ceyear EI positions remain preferred where available. A user-entered measurement record is identified as user context, not instrument metadata; source and subtrace identity are maintained. Comparison eligibility is separate for distance, loss and reflectance. An assumed index used to size EI windows is not a verified index for scaling distance.
+
 ## Human review overlays the source
 
 Human review remains additive.
@@ -182,6 +188,8 @@ Human review remains additive.
 | **v0.4.3** | Yokogawa event profiles and morphology advice distinguish native data, externally confirmed source identity, and classifier output. |
 | **v0.4.4** | JDSU MSOR adds provenance of container and wavelength-specific subtrace; reviewed event correspondence never changes source. |
 | **v0.4.5** | Yokogawa SOZ and same-acquisition SOR copies, local LSA loss and RF review stay separate from native events and losses. |
+| **v0.4.6** | Legacy/native and curve axes, container identity, bounds and provisional fields remain distinct. |
+| **v0.4.7 candidate** | Position proposals, abstention, measurement context and magnitude eligibility remain separate from native records. |
 
 ## Presentation and export contract
 

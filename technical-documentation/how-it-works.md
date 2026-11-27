@@ -17,7 +17,7 @@
 
 <p align="center"><strong>From an OTDR file to a reviewable interpretation without losing data origins.</strong></p>
 
-> **Evidence scope.** This walkthrough explains the behavior documented for **v0.4.5, consolidated on 5 November 2026**. It is not an installation tutorial: the viewer's source code and executable are not publicly distributed. Exact UI control names may vary across revisions, and this page uses named controls only where the record identifies them. The illustrations are **original conceptual diagrams**, not application screenshots or field measurements.
+> **Evidence scope.** This walkthrough explains the behavior documented for **v0.4.7 review candidate, 19 November 2026**. It is not an installation tutorial: the viewer's source code and executable are not publicly distributed. Exact UI control names may vary across revisions, and this page uses named controls only where the record identifies them. The illustrations are **original conceptual diagrams**, not application screenshots or field measurements.
 
 <p align="center">
   <img src="assets/workflow/flow-light.svg#gh-light-mode-only" alt="Conceptual five-stage OTDR Inside walkthrough, light theme" width="100%">
@@ -34,6 +34,8 @@ Start from files with known acquisition provenance. Compatibility is limited to 
 | **Ceyear CE6422 SOR + EI** | Open SOR, then attach its EI only if acquisition and content verification succeed. | Never infer an EI/SOR pair from similar filenames alone. |
 | **Yokogawa SOR / SOZ** | Inspect SOR events or select a 1310/1550-nm subtrace in a SOZ container. | Instrument-declared identity can differ from externally confirmed source provenance. |
 | **JDSU MSOR** | Open a characterized container and inspect each wavelength with its native events. | The observed MSOR layout is not universal JDSU format support. |
+| **EXFO TRC / legacy SOR / iOLM** | Inspect the recognized layout and native versus curve positions; choose wavelength where applicable. | iOLM is multi-pulse; do not apply single-pulse LSA/position ML. |
+| **NOVKER / F2H** | Inspect recoverable information and profile limits. | NOVKER loss is provisional; F2H is structural. |
 
 For supported layouts, feature conditions and limits per vendor, use the dedicated matrix below. A recognized extension alone does not prove full semantic compatibility.
 
@@ -83,6 +85,8 @@ The curve level is **relative**, not universally calibrated optical power. No `K
 
 **Engineering decision.** Keep origins and warnings visible; request review when local windows, native readings and ML suggestions disagree.
 
+**Review queue and position pilot (4.6–4.7).** Inspect reading/axis/morphology/injection reasons and add review context. In supported candidate profiles, open Events → Experimental pilot → Calculate proposals (Spanish UI labels: Eventos → Piloto experimental → Calcular propuestas). Base, edge and RF coordinates are separate; Sugeno may abstain. A missing proposal does not erase a native event. Preserve the experimental coordinates in analysis JSON; do not treat them as primary markers.
+
 ## 4. Compare across files and instruments
 
 **Operator action.** Select **two to four previously opened traces**. Check comparability first: wavelength, pulse, IOR, origin, range and whether they describe the same link or acquisition.
@@ -93,6 +97,8 @@ The curve level is **relative**, not universally calibrated optical power. No `K
 
 **Avoid.** Counting a same-acquisition SOR/SOZ as two independent measurements; treating different wavelengths as interchangeable acquisitions; applying IOR conversion without valid inputs; interpreting smaller position differences as demonstrated physical accuracy.
 
+**Magnitude-specific comparison (4.7).** Review eligibility separately for distance, loss and reflectance. Centering is optional display-only; unknown IOR prevents common-axis conversion. Bounds, provisional loss and unverified signs are not exact comparable values. The comparison preserves manual associations and can abstain from ambiguous suggestions.
+
 ## 5. Save context and generate a report
 
 **Operator action.** Record review decisions and the comparison setup. Where applicable, produce documented outputs (PDF reports, CSV/JSON exports) and retain session state.
@@ -100,6 +106,8 @@ The curve level is **relative**, not universally calibrated optical power. No `K
 **What to preserve.** Version and localization method, source/container/subtrace, acquisition metadata, selected reference and axis, native versus calculated quantities, warnings, association proposals and human decisions. Original measurement files are not overwritten.
 
 **Limits.** IEC-oriented report fields support documentation, **not** IEC certification. Operational reports and exports are not authorized for publication in this public repository.
+
+In Diagnostics → Measurement record (Ficha de medición), record applicable end, temperature, launch length, connector/adapter and certificate scope. The editable context is stored per original/subtrace; it does not replace native metadata or verify the certificate. Restore sessions using the original files; rerun optional position proposals when needed.
 
 ## Three representative workflows
 
@@ -115,7 +123,7 @@ This page is **not a test session executed today**. It summarizes workflows and 
 
 **Actual viewer screenshots are not yet included.** They require a reviewed, permitted capture session following [Data handling](data-handling.md). We do not replace them with external images misrepresented as OTDR Inside screens.
 
-**Not part of packaged v0.4.5:** the isolated 6 November vertical-centering/IOR warning patch, direct EXFO `.stdr` ingestion research and additional model studies. These should not appear in a walkthrough as shipped features.
+Documented through the **v0.4.7 review candidate (19 November 2026)**. The later standalone Windows build and its final adjustments are not yet independently inspected here. The revised 4.6 comparator is documented; direct STDR support and the later Windows build remain unverified here.
 
 ---
 

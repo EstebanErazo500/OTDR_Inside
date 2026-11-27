@@ -92,3 +92,14 @@ otdr_inside/
 *.xls
 *.pkl
 *.pickle
+
+# Additional proprietary inputs and trained model artifacts
+*.[iI][oO][lL][mM]
+*.[sS][oO][rR].[tT][xX][tT]
+*.joblib
+*.onnx
+*.pt
+*.pth
+*.npz
+*.npy
+*.bin

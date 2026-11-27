@@ -16,7 +16,7 @@
 
 <p align="center"><strong>La validación es una jerarquía de evidencia, no una única puntuación de exactitud.</strong></p>
 
-> **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta **v0.4.5**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
+> **Alcance.** Esta página resume el modelo de validación documentado por las entregas archivadas hasta la **candidata v0.4.7**. Las trazas operativas y los corpus privados permanecen fuera del repositorio, por lo que se publican métodos y resultados agregados sin exponer rutas, clientes, nombres de archivos privados ni hashes.
 
 <p align="center">
   <img src="assets/validation/layers-es-light.svg#gh-light-mode-only" alt="Jerarquía de validación de OTDR Inside en modo claro" width="100%">
@@ -171,6 +171,16 @@ Se probó un selector alternativo de posiciones entrenado con dos referencias qu
 **Estado de investigaciones del 6 de noviembre (fuera del paquete 4.5).** Un parche separado de centrado/aviso IOR superó **124 pruebas Python** con corpus disponibles y JavaScript simulado, pero quedó como parche aislado y no sustituyó el ZIP original. La lectura directa `.stdr` solo se investigó. El ensayo RF frente a MLP/Extra Trees/HistGradientBoosting se ejecutó **fuera del visor** sin modificar el modelo activo. Se puede documentar como investigación, pero no como capacidades entregadas de 4.5.
 
 **Límite metrológico.** EXFO y Yokogawa son referencias documentales paritarias de este flujo controlado, no lecturas físicamente exactas por elección. JDSU aporta corroboración. Reexpresar al IOR de referencia es una transformación condicional, no la determinación del índice de grupo real ni calibración del equipo. Los campos orientados a IEC y las pruebas registradas no son certificados. Continúan pendientes una ejecución en Windows/navegador real y etiquetas físicas independientes de un enlace nuevo.
+
+### v0.4.6 · regresión de lectores y revisión de comparación
+
+La validación archivada del 10 de noviembre contrasta muestras TRC y eventos nativos con una extracción independiente, conserva resultados previos de lectores/detector/morfología y evalúa asociaciones con entradas controladas y perturbadas. Las simulaciones archivadas también encontraron parejas incorrectas: abstención y revisión siguen siendo necesarias. Las revisiones del 13 y 17 de noviembre cotejan SOR 1.00/AppReg y registros NOVKER, incluida la detección de corrupción y conservación de ausencias. NOVKER conserva semántica óptica provisional. El contraste iOLM/SOR/PDF incluye una pareja de nombre similar pero incompatible, excluida en vez de fusionada. Las pérdidas acotadas no son exactas.
+
+### v0.4.7 candidata · cobertura experimental de posición
+
+El estudio archivado utiliza un montaje conocido y referencias documentales, no una verdad física independiente en enlaces nuevos. Los resultados dependen de referencia y clase; las pruebas posteriores JDSU MSOR y EI directo incluyen eventos sin propuesta y conservan eventos originales y morfología. La candidata registra explícitamente elegibilidad y cobertura. Una coordenada alternativa no es automáticamente mejor y RF/Sugeno no entregan incertidumbre calibrada.
+
+El registro de la candidata documenta pruebas HTTP y JavaScript de producción con DOM simulado, no aceptación real en Windows. Las revisiones 4.6 también registran pruebas de interfaz simulada y contrastes de lectores/informes. Esta actualización del repositorio no repitió esas suites. El ejecutable definitivo, sus cambios posteriores de magnitudes/informes y aceptación requieren evidencia separada. No se añaden nuevas cifras privadas de corpus ni resultados numéricos.
 
 ## Por qué el número de pruebas no es una puntuación
 

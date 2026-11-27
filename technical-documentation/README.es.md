@@ -19,7 +19,7 @@
 
 Este directorio contiene la documentación técnica pública de OTDR Inside.
 
-El registro reconstruido cubre actualmente las entregas archivadas desde **v0.1.0 hasta v0.4.5**. Ese rango corresponde al material analizado para el repositorio público y no al final del proyecto. Las versiones posteriores deben ampliar la historia sin reescribir lo que realmente demostró cada entrega anterior.
+El registro reconstruido cubre v0.1.0 hasta la **candidata v0.4.7 del 19 de noviembre de 2026**, incluidas las revisiones intermedias de 4.6. La aplicación independiente para Windows y sus ajustes posteriores quedan pendientes de inspección.
 
 La documentación conserva la evolución técnica. El alcance actual permite capturas revisadas del visor, arquitectura conceptual y diagramas generales/sintéticos independientes; **no permite el código fuente de la aplicación ni mediciones operativas privadas**.
 
@@ -27,13 +27,13 @@ La documentación conserva la evolución técnica. El alcance actual permite cap
 
 | Página | Propósito |
 |---|---|
-| <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a> | Flujo del operador en cinco etapas: entradas caracterizadas, evidencia, revisión LSA/IA, comparación e informes (v0.4.5); sin código público ni capturas inventadas. |
-| <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a> | Alcance por fabricante y formato de EXFO, Ceyear, Yokogawa y JDSU, estados por capacidad, evidencia, precondiciones y variantes no demostradas. |
-| <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> | Concordancia de posiciones y pérdida LSA con ejemplos sintéticos, evidencia archivada y estado de desarrollo. |
-| <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución de ingeniería hasta v0.4.5, incluidas Yokogawa/JDSU/SOZ, estimación de pérdidas y límites de la evidencia. |
-| <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución hasta la base multiarchivo 4.1, auditoría 4.2 y ampliaciones 4.3–4.5 de fabricantes, IA y LSA. |
-| <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de procedencia SOR, EI, MSOR y SOZ; asesoría RF y pérdida nativa frente a LSA separadas. |
-| <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a> | Validación hasta v0.4.5, discrepancias de referencias, pruebas archivadas y límites IA/LSA. |
+| <a href="how-it-works.es.md"><img src="assets/nav/como-funciona.svg" alt="Recorrido guiado"></a> | Flujo del operador en cinco etapas: entradas caracterizadas, evidencia, revisión LSA/IA, comparación e informes (candidata v0.4.7); sin código público ni capturas inventadas. |
+| <a href="compatibility-matrix.es.md"><img src="assets/nav/compatibilidad.svg" alt="Matriz de compatibilidad"></a> | Alcance por fabricante y formato de EXFO, Ceyear, Yokogawa, JDSU, NOVKER y F2H estructural, estados por capacidad, evidencia, precondiciones y variantes no demostradas. |
+| <a href="case-studies.es.md"><img src="assets/nav/casos-estudio.svg" alt="Casos de estudio"></a> | Concordancia de posiciones, pérdidas LSA, lectores antiguos y localización consultiva con ejemplos sintéticos, evidencia archivada y estado de desarrollo. |
+| <a href="version-history.es.md"><img src="assets/nav/historial-versiones.svg" alt="Historial de versiones"></a> | Evolución de ingeniería hasta candidata v0.4.7, incluidas Yokogawa/JDSU/SOZ, estimación de pérdidas y límites de la evidencia. |
+| <a href="architecture.es.md"><img src="assets/nav/arquitectura.svg" alt="Arquitectura"></a> | Evolución hasta la base multiarchivo 4.1, auditoría 4.2 y ampliaciones 4.3–4.7 de lectores, IA, revisión y comparación. |
+| <a href="event-provenance.es.md"><img src="assets/nav/procedencia-eventos.svg" alt="Procedencia de eventos"></a> | Modelo de procedencia de entradas caracterizadas y posiciones nativas/calculadas; asesoría RF y pérdida nativa frente a LSA separadas. |
+| <a href="validation.es.md"><img src="assets/nav/validacion.svg" alt="Validación"></a> | Validación hasta candidata v0.4.7, discrepancias de referencias, pruebas archivadas y límites IA/LSA. |
 | <a href="data-handling.es.md"><img src="assets/nav/manejo-datos.svg" alt="Manejo de datos"></a> | Frontera de permisos, revisión de capturas e ilustraciones sintéticas y restricciones de código fuente/mediciones. |
 
 ## Principios de publicación
@@ -47,4 +47,4 @@ La documentación conserva la evolución técnica. El alcance actual permite cap
 
 ---
 
-Próxima incorporación pública prevista: **galería de capturas revisadas del visor**, representativa del flujo documentado en v0.4.5 y con ilustraciones sintéticas cuando corresponda. Las propuestas posteriores al paquete del 5 de noviembre no se presentan como funciones entregadas.
+Siguiente paso: verificar la compilación definitiva de Windows e incorporar capturas autorizadas. La candidata no se presenta como el ejecutable final.

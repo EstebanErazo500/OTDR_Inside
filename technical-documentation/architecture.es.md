@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Primero leer los bytes. Interpretar solo cuando la evidencia lo permite. Comparar sin borrar las fronteras de origen.</strong></p>
 
-> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta v0.4.5**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
+> **Alcance.** Esta página reconstruye la arquitectura representada por las entregas archivadas desde **v0.1.0 hasta la candidata v0.4.7**. Ese rango es un límite documental, no la arquitectura final del proyecto. Las versiones posteriores deben ampliar la línea temporal sin convertir v0.4.1 en un punto de llegada definitivo.
 
 OTDR Inside evolucionó añadiendo capas alrededor de una frontera estable de datos crudos. Primero separó estructura SOR de semántica de fabricante; después incorporó eventos calculados, evidencia, EI como segunda fuente, razonamiento terminal y finalmente un espacio de trabajo multiarchivo que compara trazas sin fusionar su procedencia.
 
@@ -131,6 +131,16 @@ Sesiones e informes conservan identidad de contenedor/subtraza, método de cálc
 
 **Después del paquete del 5 de noviembre:** el parche aislado de centrado/aviso IOR, la investigación de lectura EXFO `.stdr` y nuevas propuestas de IA/comparabilidad del 6 de noviembre siguen como investigación o cambios no integrados, no funciones empaquetadas en 4.5.
 
+### v0.4.6 · estrategias de lectura y bandeja de revisión
+
+Estrategias diferenciadas interpretan los diseños TRC, SOR 1.00, NOVKER e iOLM observados; F2H permanece estructural. Se mantiene identidad de contenedor/subtraza y diferencia entre coordenadas nativas y de curva. Las curvas de reporte iOLM no son adquisiciones de pulso único: elementos consolidados, secciones, grupos y magnitudes acotadas quedan separados. La bandeja integra motivos diagnósticos y anotaciones sin alterar mediciones originales. Las propuestas de comparación mantienen el orden, son revisables y pueden abstenerse.
+
+### v0.4.7 candidata · localización consultiva y contexto comparativo
+
+El clasificador morfológico se mantiene como servicio de interpretación separado. Una rama experimental produce propuestas base, borde y RF de posición, con sugerencia o abstención Sugeno; no desplaza marcadores principales ni sustituye eventos nativos. La ficha de medición se vincula a original y subtraza, sin reemplazar metadatos. La capa comparativa evalúa separadamente distancia, pérdida y reflectancia, y traslada procedencia, cobertura y advertencias a las salidas locales. Véanse [Compatibilidad](compatibility-matrix.es.md) y [Validación](validation.es.md).
+
+Corte documental: **candidata v0.4.7 del 19 de noviembre de 2026**. La aplicación independiente para Windows y sus ajustes definitivos posteriores aún no se han inspeccionado aquí.
+
 ## Hilo arquitectónico entre versiones
 
 | Aspecto | Estado inicial | Expansión hasta v0.4.1 |
@@ -145,7 +155,7 @@ Sesiones e informes conservan identidad de contenedor/subtraza, método de cálc
 
 Dos componentes permanecen idénticos byte a byte desde v0.1.0 hasta v0.4.2: `scanner.py` y el perfil EXFO validado. El sistema conserva por tanto un contrato estructural de larga duración mientras interpretación e interacción crecen alrededor.
 
-## Base de implementación · v0.4.1 (ampliada hasta v0.4.5)
+## Base de implementación · v0.4.1 (base histórica; ampliaciones en apartados específicos)
 
 El diagrama siguiente es la **base por archivo y espacio de trabajo de v0.4.1**. Las ampliaciones 4.2 y 4.3–4.5 se describen en sus respectivos diagramas y apartados anteriores; no se presenta como arquitectura final.
 
@@ -211,7 +221,7 @@ El comparador no reescribe los resultados por archivo. Construye una **vista de 
 | **Comparador** | funciones v0.4.1 de `web/app.js` | Grupos de cercanía, tramo común/completo y referencia visual. | Cercanía es relación de presentación, no identidad física. |
 | **Evidencia/localización v0.4.2** | `edge_precision.py` y cambios de interfaz/informes documentados | Excluidos explicados, sensibilidad terminal y método de posición opcional por clase. | No se sobrescriben silenciosamente el detector base ni los valores EI. |
 
-### Incorporaciones al mapa conceptual hasta v0.4.5
+### Incorporaciones históricas al mapa conceptual hasta v0.4.5
 
 | Nueva responsabilidad | Ruta caracterizada | Frontera |
 |---|---|---|
